@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" role="img" aria-label="NFTs asset class icon">
+  <rect width="64" height="64" rx="12" fill="#0B0D10"/>
+  <!-- Outer champagne-gold archival frame with top suspension bridge -->
+  <path d="M13 24 V13 H51 V24" stroke="#D4B475" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"/>
+  <line x1="32" y1="13" x2="32" y2="19.2" stroke="#D4B475" stroke-width="1.65"/>
+  <path d="M13 40 V51 H24" stroke="#D4B475" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M51 40 V51 H40" stroke="#D4B475" stroke-width="1.75" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- Inner soft violet-platinum corner brackets -->
+  <path d="M16.8 23.2 V16.8 H23.2" stroke="#A78BFA" stroke-width="1.45" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M47.2 23.2 V16.8 H40.8" stroke="#A78BFA" stroke-width="1.45" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M16.8 40.8 V47.2 H23.2" stroke="#A78BFA" stroke-width="1.45" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M47.2 40.8 V47.2 H40.8" stroke="#A78BFA" stroke-width="1.45" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- Isometric faceted crystal prism -->
+  <!-- Violet-platinum right prism contour -->
+  <path d="M32 19.2 L39.8 26.2 V38.2 L32 45.2" stroke="#A78BFA" stroke-width="1.7" stroke-linejoin="round"/>
+  <line x1="39.8" y1="26.2" x2="35.6" y2="30" stroke="#A78BFA" stroke-width="1.35" stroke-linecap="round"/>
+  <line x1="39.8" y1="38.2" x2="35.6" y2="36.6" stroke="#A78BFA" stroke-width="1.35" stroke-linecap="round"/>
+  <!-- Champagne-gold primary crystal body & facets -->
+  <path d="M32 19.2 L24.2 26.2 V38.2 L32 45.2" stroke="#D4B475" stroke-width="1.7" stroke-linejoin="round"/>
+  <path d="M32 19.2 L28.4 27.6 V39.6 L32 45.2 L35.6 36.6 V30 L32 19.2 Z" stroke="#D4B475" stroke-width="1.45" stroke-linejoin="round"/>
+  <line x1="24.2" y1="26.2" x2="28.4" y2="27.6" stroke="#D4B475" stroke-width="1.35"/>
+  <line x1="28.4" y1="27.6" x2="35.6" y2="30" stroke="#D4B475" stroke-width="1.35"/>
+  <line x1="24.2" y1="38.2" x2="28.4" y2="39.6" stroke="#D4B475" stroke-width="1.35"/>
+  <line x1="28.4" y1="39.6" x2="35.6" y2="36.6" stroke="#D4B475" stroke-width="1.35"/>
+</svg>

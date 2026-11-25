@@ -1,0 +1,3814 @@
+{
+  "auditId": "audit-cert-1A0AB45C120",
+  "timestamp": "2026-09-16T17:31:10.496Z",
+  "totalEvaluated": 100,
+  "totalAcceptedInMetaMask": 54,
+  "totalRemixVerified": 100,
+  "totalEtherscanVerified": 100,
+  "enterpriseCount": 100,
+  "publicCount": 0,
+  "complianceRate": "54.0%",
+  "sha256AuditSignature": "0x8d6fd79716ac17b047ccc28d1dd8d8b293da7a50234430b6f292e18c17f5d10b",
+  "records": [
+    {
+      "tokenId": "tok_1_mu3hswwr",
+      "name": "CryptoVaultProof",
+      "symbol": "CVLTX",
+      "contractAddress": "0xQGOVfcad257a56efabfe19969de2f1c97e4f4cbeb",
+      "chain": "quantum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qgovfcad9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1ZMVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDcnlwdG9WYXVsdFByb29mIiwgIkNWTFRYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMzM1MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQGOVfcad257a56efabfe19969de2f1c97e4f4cbeb#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_2_mu3hswwv",
+      "name": "FalconGuard",
+      "symbol": "FLCNX",
+      "contractAddress": "TreasurytyviqfDbhb1yFG5epyPPJvJZ2xBJLRFheEwz",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50easuryty9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRkxDTlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJGYWxjb25HdWFyZCIsICJGTENOWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDQzNDAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/TreasurytyviqfDbhb1yFG5epyPPJvJZ2xBJLRFheEwz#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_3_mu3hsx3x",
+      "name": "KyberGuard",
+      "symbol": "KYBRN",
+      "contractAddress": "0xdE90a72D14830d5bC1B01Bb7DBB350e423570335",
+      "chain": "base",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de90a72d9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckd1YXJkIiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNDEyMDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xdE90a72D14830d5bC1B01Bb7DBB350e423570335#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_4_mu3hsx8z",
+      "name": "CarbonCapital",
+      "symbol": "CARBN",
+      "contractAddress": "0xQ5AFEa0019e1d05002b5bc1575ab078b726ff7e84",
+      "chain": "quantum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afea009056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ0FSQk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDYXJib25DYXBpdGFsIiwgIkNBUkJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNjc3MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFEa0019e1d05002b5bc1575ab078b726ff7e84#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_5_mu3hsxe4",
+      "name": "GpuFarmLink",
+      "symbol": "GPUX",
+      "contractAddress": "0xde90BbBdDFcbACC0E61b9b1055CFcf81aD59D292",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de90bbbd9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgR1BVWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkdwdUZhcm1MaW5rIiwgIkdQVVgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA0ODYwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xde90BbBdDFcbACC0E61b9b1055CFcf81aD59D292#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_6_mu3hsxie",
+      "name": "HelioFabric",
+      "symbol": "HLIOX",
+      "contractAddress": "0xQENTba076ef917f9f53081673e80d37a862d53557",
+      "chain": "quantum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qentba079056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgSExJT1hUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJIZWxpb0ZhYnJpYyIsICJITElPWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQENTba076ef917f9f53081673e80d37a862d53557#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_7_mu3hsxmm",
+      "name": "TreasurySecurities",
+      "symbol": "TRSX",
+      "contractAddress": "0x0043408625939a7A6C4d99329A1dE53a31847B54",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50004340869056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVFJTWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlRyZWFzdXJ5U2VjdXJpdGllcyIsICJUUlNYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgOTU3MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x0043408625939a7A6C4d99329A1dE53a31847B54#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_8_mu3hsxqv",
+      "name": "BandFabric",
+      "symbol": "BANDX",
+      "contractAddress": "0xQVAULTed25d0f4b5c32cc017e52e20655c4efdf19",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qvaulted9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQkFORFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJCYW5kRmFicmljIiwgIkJBTkRYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNTEyMDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQVAULTed25d0f4b5c32cc017e52e20655c4efdf19#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_9_mu3hsxv0",
+      "name": "CortexGrid",
+      "symbol": "CTXN",
+      "contractAddress": "0xQGOV5f0e34795208a850cddbc611b43bef82b6418",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qgov5f0e9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1RYTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvcnRleEdyaWQiLCAiQ1RYTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDk0NjAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQGOV5f0e34795208a850cddbc611b43bef82b6418#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_10_mu3hsxz5",
+      "name": "BeamStream",
+      "symbol": "BEAMX",
+      "contractAddress": "0x196704BAC510ae85efb43A9ae90C5886cC3AAdA3",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50196704ba9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQkVBTVhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJCZWFtU3RyZWFtIiwgIkJFQU1YIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNjM2MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x196704BAC510ae85efb43A9ae90C5886cC3AAdA3#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_11_mu3hsxz6",
+      "name": "BandLink",
+      "symbol": "BANDN",
+      "contractAddress": "EntaEAjJnH2DfyuApUiceBgqVLqxxA77x4kV3k11kQrU",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50taeajjnh9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQkFORE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJCYW5kTGluayIsICJCQU5ETiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/EntaEAjJnH2DfyuApUiceBgqVLqxxA77x4kV3k11kQrU#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_12_mu3hsy3o",
+      "name": "CommodityFund",
+      "symbol": "CMDTX",
+      "contractAddress": "0x1967778bc32B09586FF61fB84d0f356A93F0B716",
+      "chain": "base",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b501967778b9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ01EVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDb21tb2RpdHlGdW5kIiwgIkNNRFRYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAzMDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x1967778bc32B09586FF61fB84d0f356A93F0B716#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_13_mu3hsy7t",
+      "name": "SolidusX",
+      "symbol": "SLDN",
+      "contractAddress": "0x77774b5bB602450883a1Ef99fDBe498dee519a4c",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5077774b5b9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0xETlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlNvbGlkdXNYIiwgIlNMRE4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x77774b5bB602450883a1Ef99fDBe498dee519a4c#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_14_mu3hsy7u",
+      "name": "VectorSync",
+      "symbol": "VECTN",
+      "contractAddress": "PrimeqgM7cDgipsPVW3Fqp6AgE7Gpdn9qecJH5xLJdvC",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50imeqgm7c9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVkVDVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJWZWN0b3JTeW5jIiwgIlZFQ1ROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNzE4MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/PrimeqgM7cDgipsPVW3Fqp6AgE7Gpdn9qecJH5xLJdvC#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_15_mu3hsycd",
+      "name": "HelioArray",
+      "symbol": "HLION",
+      "contractAddress": "0xQVAULTedf87165ea96937c12e8965672879f3fdac",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qvaulted9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgSExJT05Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJIZWxpb0FycmF5IiwgIkhMSU9OIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNTYwMDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQVAULTedf87165ea96937c12e8965672879f3fdac#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_16_mu3hsyh4",
+      "name": "ComputeFabric",
+      "symbol": "CMPX",
+      "contractAddress": "0xQ5AFEd94be37b4ab834bb1aabf939a169e599271f",
+      "chain": "quantum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afed949056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ01QWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvbXB1dGVGYWJyaWMiLCAiQ01QWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFEd94be37b4ab834bb1aabf939a169e599271f#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_17_mu3hsym4",
+      "name": "CarbonFund",
+      "symbol": "CARBN",
+      "contractAddress": "0xc0rp31B32e0d8B4B2336d9009b1ebD6C2B744353",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rp31b39056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ0FSQk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDYXJib25GdW5kIiwgIkNBUkJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMzE0MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xc0rp31B32e0d8B4B2336d9009b1ebD6C2B744353#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_18_mu3hsyqz",
+      "name": "BeamFabric",
+      "symbol": "BEAMN",
+      "contractAddress": "0xc0rpB46960738716bD4D90C9931B9A137E5873Bf",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rpb4699056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQkVBTU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJCZWFtRmFicmljIiwgIkJFQU1OIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xc0rpB46960738716bD4D90C9931B9A137E5873Bf#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_19_mu3hsyr2",
+      "name": "SentientNexus",
+      "symbol": "SENTN",
+      "contractAddress": "PrimenPx5sYaTbPqXnX72w5rruyGv4zPg8vtEMCbcQHe",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50imenpx5s9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudE5leHVzIiwgIlNFTlROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNDE0MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/PrimenPx5sYaTbPqXnX72w5rruyGv4zPg8vtEMCbcQHe#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_20_mu3hsyvg",
+      "name": "TensorMind",
+      "symbol": "TNSRX",
+      "contractAddress": "0x1967d34469424a7856895573E6841B6DCE3F8282",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b501967d3449056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVE5TUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJUZW5zb3JNaW5kIiwgIlROU1JYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNjA0MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x1967d34469424a7856895573E6841B6DCE3F8282#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_21_mu3hsz04",
+      "name": "ShieldIndex",
+      "symbol": "SHLDX",
+      "contractAddress": "0x88884257B442A20DdF3d0c6244698EC0A706ef35",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50888842579056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0hMRFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTaGllbGRJbmRleCIsICJTSExEWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDMwNzAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x88884257B442A20DdF3d0c6244698EC0A706ef35#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_22_mu3hsz4u",
+      "name": "QuantumIndex",
+      "symbol": "QNTMN",
+      "contractAddress": "0xaCce4381B79911aFDeC9A1CBb875efB41545Fc73",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50acce43819056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUU5UTU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJRdWFudHVtSW5kZXgiLCAiUU5UTU4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAzNTYwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xaCce4381B79911aFDeC9A1CBb875efB41545Fc73#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_23_mu3hsz90",
+      "name": "YieldMaxYield",
+      "symbol": "YMAXX",
+      "contractAddress": "0xDE9001Fb1711A01AAb548Accd496dBF534381dEc",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de9001fb9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgWU1BWFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJZaWVsZE1heFlpZWxkIiwgIllNQVhYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xDE9001Fb1711A01AAb548Accd496dBF534381dEc#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_24_mu3hszda",
+      "name": "ShieldGuard",
+      "symbol": "SHLDX",
+      "contractAddress": "0xQGOV0b4dfa50fe90a9c3f25478b52a04a0ecce2b3",
+      "chain": "quantum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qgov0b4d9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0hMRFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTaGllbGRHdWFyZCIsICJTSExEWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDUwNzAwMDAwMCAqIDEwICoqIDYpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQGOV0b4dfa50fe90a9c3f25478b52a04a0ecce2b3#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_25_mu3hszhl",
+      "name": "PrimeFlow",
+      "symbol": "PRMN",
+      "contractAddress": "0x5afe3539F40C6C98D0F206dC437207F134E55FbF",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b505afe35399056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUFJNTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlByaW1lRmxvdyIsICJQUk1OIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNjEyMDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x5afe3539F40C6C98D0F206dC437207F134E55FbF#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_26_mu3hszm1",
+      "name": "SentientNexus",
+      "symbol": "SENTN",
+      "contractAddress": "0x00086E8451ba5563607f39a45dCFBaBBc9543dE9",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5000086e849056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudE5leHVzIiwgIlNFTlROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgODQwMDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x00086E8451ba5563607f39a45dCFBaBBc9543dE9#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_27_mu3hszqp",
+      "name": "WirelessLink",
+      "symbol": "WRLSX",
+      "contractAddress": "0x8888Eb1fdD7c65282Ef0d2D90B840b5a74B1Db70",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b508888eb1f9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgV1JMU1hUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJXaXJlbGVzc0xpbmsiLCAiV1JMU1giKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA2NDUwMDAwMDAgKiAxMCAqKiA2KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x8888Eb1fdD7c65282Ef0d2D90B840b5a74B1Db70#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_28_mu3hszvb",
+      "name": "CogniHub",
+      "symbol": "COGN",
+      "contractAddress": "0x000F88B02262d223f19f15cF93b8d40416944065",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000f88b09056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ09HTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvZ25pSHViIiwgIkNPR04iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAzNjYwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x000F88B02262d223f19f15cF93b8d40416944065#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_29_mu3hszzw",
+      "name": "ZeroProofIndex",
+      "symbol": "ZPRFX",
+      "contractAddress": "0x25354FD225E0BA7AFb1d410D9e082928A26baF42",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5025354fd29056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgWlBSRlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJaZXJvUHJvb2ZJbmRleCIsICJaUFJGWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x25354FD225E0BA7AFb1d410D9e082928A26baF42#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_30_mu3ht049",
+      "name": "AutoPilotBrain",
+      "symbol": "AUTON",
+      "contractAddress": "0xc0rp1b44DfE0839493e2fF8302B2748424ACC690",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rp1b449056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQVVUT05Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJBdXRvUGlsb3RCcmFpbiIsICJBVVRPTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDg5MjAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xc0rp1b44DfE0839493e2fF8302B2748424ACC690#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_31_mu3ht08s",
+      "name": "ShieldGuard",
+      "symbol": "SHLDX",
+      "contractAddress": "0xACceB8c1b4db7e461d3E43c4A2669469Db637a60",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50acceb8c19056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0hMRFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTaGllbGRHdWFyZCIsICJTSExEWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDk1OTAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xACceB8c1b4db7e461d3E43c4A2669469Db637a60#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_32_mu3ht0d4",
+      "name": "EdgeStation",
+      "symbol": "EDGEN",
+      "contractAddress": "0x25354a18184329EA9D62f3192605963A0F0506a6",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5025354a189056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRURHRU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJFZGdlU3RhdGlvbiIsICJFREdFTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDg2MTAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x25354a18184329EA9D62f3192605963A0F0506a6#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_33_mu3ht0hp",
+      "name": "SentientProtocol",
+      "symbol": "SENTN",
+      "contractAddress": "0xAcce7B28a71c5867a26167A309D2f9A05554808E",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50acce7b289056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudFByb3RvY29sIiwgIlNFTlROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMzE5MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xAcce7B28a71c5867a26167A309D2f9A05554808E#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_34_mu3ht0m6",
+      "name": "SwarmCore",
+      "symbol": "SWRMN",
+      "contractAddress": "0xQ5AFE9074db60d2f733824f8daf72634442cd6fbc",
+      "chain": "quantum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afe9079056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU1dSTU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTd2FybUNvcmUiLCAiU1dSTU4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFE9074db60d2f733824f8daf72634442cd6fbc#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_35_mu3ht0qu",
+      "name": "KyberExchange",
+      "symbol": "KYBRN",
+      "contractAddress": "0x0087377B2Afb4C53729cee04644096613cF32c4f",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500087377b9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckV4Y2hhbmdlIiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x0087377B2Afb4C53729cee04644096613cF32c4f#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_36_mu3ht0vb",
+      "name": "AgentNexus",
+      "symbol": "AGNTX",
+      "contractAddress": "0xDe90Cc6CBfbe92c7e2da12C9510fE94C05C9A793",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de90cc6c9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQUdOVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJBZ2VudE5leHVzIiwgIkFHTlRYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgODAzMDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xDe90Cc6CBfbe92c7e2da12C9510fE94C05C9A793#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_37_mu3ht0zu",
+      "name": "EstateX",
+      "symbol": "ESTN",
+      "contractAddress": "0xaCceB1d3f03270849B8ee58387de4A69f1d72f07",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50acceb1d39056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRVNUTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkVzdGF0ZVgiLCAiRVNUTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xaCceB1d3f03270849B8ee58387de4A69f1d72f07#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_38_mu3ht14c",
+      "name": "AgentProtocol",
+      "symbol": "AGNTN",
+      "contractAddress": "0xc0rpA17194B487153A4Cfc1dEe574fF3dF6Fe5E0",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rpa1719056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQUdOVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJBZ2VudFByb3RvY29sIiwgIkFHTlROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xc0rpA17194B487153A4Cfc1dEe574fF3dF6Fe5E0#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_39_mu3ht18n",
+      "name": "DilithiumCore",
+      "symbol": "DLTHX",
+      "contractAddress": "0xAcCE8d495c38E0d4F3621bF3d70438aD2eA70a52",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50acce8d499056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRExUSFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJEaWxpdGhpdW1Db3JlIiwgIkRMVEhYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMjY3MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xAcCE8d495c38E0d4F3621bF3d70438aD2eA70a52#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_40_mu3ht1d3",
+      "name": "PrimeYield",
+      "symbol": "PRMN",
+      "contractAddress": "0x000076B577f7A564758a9c69a93E30370d5f45e3",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000076b59056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUFJNTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlByaW1lWWllbGQiLCAiUFJNTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDg2NjAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x000076B577f7A564758a9c69a93E30370d5f45e3#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_41_mu3ht1d4",
+      "name": "RegenCapital",
+      "symbol": "RGNX",
+      "contractAddress": "VaultESfaraxNZyqncPa44m1kPxW8ewJF5chJ31gFCjJ",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ultesfar9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUkdOWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlJlZ2VuQ2FwaXRhbCIsICJSR05YIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/VaultESfaraxNZyqncPa44m1kPxW8ewJF5chJ31gFCjJ#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_42_mu3ht1hq",
+      "name": "FiberNode",
+      "symbol": "FIBRN",
+      "contractAddress": "0xACcEfd30F270C0F23f2c4B223b6f0Cb33291Fc75",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50accefd309056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRklCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJGaWJlck5vZGUiLCAiRklCUk4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA0MzEwMDAwMDAgKiAxMCAqKiA2KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xACcEfd30F270C0F23f2c4B223b6f0Cb33291Fc75#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_43_mu3ht1m6",
+      "name": "SynapGrid",
+      "symbol": "SYNX",
+      "contractAddress": "0x0000da8915b55bb9b21C7FB1ca1D3853e8523350",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500000da899056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU1lOWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlN5bmFwR3JpZCIsICJTWU5YIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x0000da8915b55bb9b21C7FB1ca1D3853e8523350#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_44_mu3ht1qd",
+      "name": "ZeroProofVault",
+      "symbol": "ZPRFN",
+      "contractAddress": "0x000C3E3f091F8D4Ca2230eF2Cc3bdCd0b9643a8E",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000c3e3f9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgWlBSRk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJaZXJvUHJvb2ZWYXVsdCIsICJaUFJGTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x000C3E3f091F8D4Ca2230eF2Cc3bdCd0b9643a8E#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_45_mu3ht1qe",
+      "name": "KyberGuard",
+      "symbol": "KYBRN",
+      "contractAddress": "GovgSC1NPYdvJfJAVyqYUxFexMu7y3qRh8zj988Vbrjm",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50vgsc1npy9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckd1YXJkIiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTE0MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/GovgSC1NPYdvJfJAVyqYUxFexMu7y3qRh8zj988Vbrjm#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_46_mu3ht1qf",
+      "name": "ComputeChain",
+      "symbol": "CMPX",
+      "contractAddress": "Token20226WaoZjYNw5JEeCFcbqszYzQ6tg4UKsEAPS8",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ken202269056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ01QWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvbXB1dGVDaGFpbiIsICJDTVBYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/Token20226WaoZjYNw5JEeCFcbqszYzQ6tg4UKsEAPS8#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_47_mu3ht1qf",
+      "name": "EstateCapital",
+      "symbol": "ESTN",
+      "contractAddress": "VaulthFJd4y4DcuCq7Z5tDd1CUf3K4f2mWRZ83tCXCDo",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ulthfjd49056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRVNUTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkVzdGF0ZUNhcGl0YWwiLCAiRVNUTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDIwODAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/VaulthFJd4y4DcuCq7Z5tDd1CUf3K4f2mWRZ83tCXCDo#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_48_mu3ht1qg",
+      "name": "BrickTrust",
+      "symbol": "BRKX",
+      "contractAddress": "Token2022rv26g3DHgW2wDgSyzM1xM7wn8KX4pNbUboY",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ken2022r9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQlJLWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkJyaWNrVHJ1c3QiLCAiQlJLWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/Token2022rv26g3DHgW2wDgSyzM1xM7wn8KX4pNbUboY#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_49_mu3ht1us",
+      "name": "NeuralMind",
+      "symbol": "NEURX",
+      "contractAddress": "0x2535bdFebE0518d7e4FE0bA3c65b2B686635373b",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b502535bdfe9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTkVVUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJOZXVyYWxNaW5kIiwgIk5FVVJYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMjA3MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x2535bdFebE0518d7e4FE0bA3c65b2B686635373b#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_50_mu3ht1zf",
+      "name": "DilithiumCore",
+      "symbol": "DLTHN",
+      "contractAddress": "0x8888244c8098c3aA4eD2aF32BD25EB637a4f22B3",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b508888244c9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRExUSE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJEaWxpdGhpdW1Db3JlIiwgIkRMVEhOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNDE3MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x8888244c8098c3aA4eD2aF32BD25EB637a4f22B3#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_51_mu3ht23y",
+      "name": "EstateX",
+      "symbol": "ESTN",
+      "contractAddress": "0x0002f5E221766B6A0381644B41d016CFC9f7D91F",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500002f5e29056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRVNUTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkVzdGF0ZVgiLCAiRVNUTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDgxMTAwMDAwMCAqIDEwICoqIDYpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x0002f5E221766B6A0381644B41d016CFC9f7D91F#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_52_mu3ht28l",
+      "name": "FalconProof",
+      "symbol": "FLCNX",
+      "contractAddress": "0x25353eE6125Ba7400b0a95Fc3386619F1172504A",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5025353ee69056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRkxDTlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJGYWxjb25Qcm9vZiIsICJGTENOWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x25353eE6125Ba7400b0a95Fc3386619F1172504A#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_53_mu3ht28m",
+      "name": "CryptoVaultIndex",
+      "symbol": "CVLTN",
+      "contractAddress": "Treasury82z3WL33GqFtC2dRespGZ1oV1jFDnJnwL4rb",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50easury829056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1ZMVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDcnlwdG9WYXVsdEluZGV4IiwgIkNWTFROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNjk3MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/Treasury82z3WL33GqFtC2dRespGZ1oV1jFDnJnwL4rb#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_54_mu3ht2cz",
+      "name": "SynapProtocol",
+      "symbol": "SYNX",
+      "contractAddress": "0xc0rp0419A3B08C3E73AF9b7eE83d2A7Cf47adb6e",
+      "chain": "base",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rp04199056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU1lOWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlN5bmFwUHJvdG9jb2wiLCAiU1lOWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDMwOTAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xc0rp0419A3B08C3E73AF9b7eE83d2A7Cf47adb6e#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_55_mu3ht2d2",
+      "name": "FiberFabric",
+      "symbol": "FIBRX",
+      "contractAddress": "AuditD4CLBac5aykj29ibdo87CpcRYSksTNmvkHFWBj6",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ditd4clb9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRklCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJGaWJlckZhYnJpYyIsICJGSUJSWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDIyNjAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/AuditD4CLBac5aykj29ibdo87CpcRYSksTNmvkHFWBj6#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_56_mu3ht2hg",
+      "name": "VectorNexus",
+      "symbol": "VECTX",
+      "contractAddress": "0xQ5AFE7485cd22eec01285732cf1be89a239bab72c",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afe7489056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVkVDVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJWZWN0b3JOZXh1cyIsICJWRUNUWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDU2NzAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFE7485cd22eec01285732cf1be89a239bab72c#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_57_mu3ht2lp",
+      "name": "ComputeGrid",
+      "symbol": "CMPX",
+      "contractAddress": "0x0000F557a6aA744060C763A63446f88969379c4e",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500000f5579056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ01QWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvbXB1dGVHcmlkIiwgIkNNUFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x0000F557a6aA744060C763A63446f88969379c4e#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_58_mu3ht2q4",
+      "name": "KyberSafe",
+      "symbol": "KYBRX",
+      "contractAddress": "0x000617DB5D5dCde92C254F2dbB85220ec576028e",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000617db9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlclNhZmUiLCAiS1lCUlgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x000617DB5D5dCde92C254F2dbB85220ec576028e#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_59_mu3ht2uh",
+      "name": "BandFabric",
+      "symbol": "BANDN",
+      "contractAddress": "0xDE905ee433A81D01a00f42E5836c4E4877473221",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de905ee49056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQkFORE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJCYW5kRmFicmljIiwgIkJBTkROIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMjg1MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xDE905ee433A81D01a00f42E5836c4E4877473221#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_60_mu3ht2yo",
+      "name": "MeshNetChain",
+      "symbol": "MESHX",
+      "contractAddress": "0xdE906ca8a779d9f1Ecc554A33745bc37D12bb5E7",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de906ca89056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTUVTSFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJNZXNoTmV0Q2hhaW4iLCAiTUVTSFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA1NTcwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xdE906ca8a779d9f1Ecc554A33745bc37D12bb5E7#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_61_mu3ht339",
+      "name": "SynapHub",
+      "symbol": "SYNN",
+      "contractAddress": "0x2535DB6Cf66730123FE578B5915660fD15e14a02",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b502535db6c9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU1lOTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlN5bmFwSHViIiwgIlNZTk4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMzQwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x2535DB6Cf66730123FE578B5915660fD15e14a02#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_62_mu3ht37t",
+      "name": "CryptoVaultCore",
+      "symbol": "CVLTX",
+      "contractAddress": "0x0000dc2d2dEC42b531601145221583Abb5eeee97",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500000dc2d9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1ZMVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDcnlwdG9WYXVsdENvcmUiLCAiQ1ZMVFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x0000dc2d2dEC42b531601145221583Abb5eeee97#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_63_mu3ht3cg",
+      "name": "CarbonTrust",
+      "symbol": "CARBX",
+      "contractAddress": "0x00004A8FbDc9F8c95e357C28E5D27359c3fc718c",
+      "chain": "ethereum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b5000004a8f9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ0FSQlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDYXJib25UcnVzdCIsICJDQVJCWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDcwNzAwMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x00004A8FbDc9F8c95e357C28E5D27359c3fc718c#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_64_mu3ht3ch",
+      "name": "RegenFlow",
+      "symbol": "RGNX",
+      "contractAddress": "AuditcJTwrANJsSm6jL8nJUgMyTE2QxS5QxiGbdpmX8X",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ditcjtwr9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUkdOWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlJlZ2VuRmxvdyIsICJSR05YIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTU3MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/AuditcJTwrANJsSm6jL8nJUgMyTE2QxS5QxiGbdpmX8X#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_65_mu3ht3gu",
+      "name": "SentientProtocol",
+      "symbol": "SENTX",
+      "contractAddress": "0xQGOVddec3aaa3fd9dbce58b4b4bdb67e76f66d9dd",
+      "chain": "quantum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qgovddec9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudFByb3RvY29sIiwgIlNFTlRYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgOTUyMDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQGOVddec3aaa3fd9dbce58b4b4bdb67e76f66d9dd#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_66_mu3ht3lb",
+      "name": "KyberVault",
+      "symbol": "KYBRN",
+      "contractAddress": "0x000010b55AAeCAD61FF60eEaa3ea0d4933CEe8F8",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000010b59056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlclZhdWx0IiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTI1MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x000010b55AAeCAD61FF60eEaa3ea0d4933CEe8F8#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_67_mu3ht3lc",
+      "name": "NeuralCore",
+      "symbol": "NEURN",
+      "contractAddress": "SafeC8SKA9sCLy5bD9zHcff7pK8w52gHAU4n5defuu9S",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50fec8ska99056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTkVVUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJOZXVyYWxDb3JlIiwgIk5FVVJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNzY5MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/SafeC8SKA9sCLy5bD9zHcff7pK8w52gHAU4n5defuu9S#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_68_mu3ht3pt",
+      "name": "AgentCore",
+      "symbol": "AGNTX",
+      "contractAddress": "0x5Afe8A1Ef4e5fF7ec18220138d27e43CA1cC3f4F",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b505afe8a1e9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQUdOVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJBZ2VudENvcmUiLCAiQUdOVFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x5Afe8A1Ef4e5fF7ec18220138d27e43CA1cC3f4F#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_69_mu3ht3pu",
+      "name": "WirelessGrid",
+      "symbol": "WRLSN",
+      "contractAddress": "TreasuryDmvJ73Ud1dTposxuACb4TvxNY3XnkoVAANiy",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50easurydm9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgV1JMU05Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJXaXJlbGVzc0dyaWQiLCAiV1JMU04iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAyMDkwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/TreasuryDmvJ73Ud1dTposxuACb4TvxNY3XnkoVAANiy#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_70_mu3ht3ua",
+      "name": "ZeroProofGuard",
+      "symbol": "ZPRFX",
+      "contractAddress": "0xQVAULT85230befd93617a8ac39bbeb13bfdd18f21",
+      "chain": "quantum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qvault859056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgWlBSRlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJaZXJvUHJvb2ZHdWFyZCIsICJaUFJGWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDE1NDAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQVAULT85230befd93617a8ac39bbeb13bfdd18f21#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_71_mu3ht3yw",
+      "name": "RegenFlow",
+      "symbol": "RGNN",
+      "contractAddress": "0x2535f154808B7A823f598F1BEa0B5678F5563e17",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b502535f1549056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUkdOTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlJlZ2VuRmxvdyIsICJSR05OIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x2535f154808B7A823f598F1BEa0B5678F5563e17#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_72_mu3ht43a",
+      "name": "SentientMesh",
+      "symbol": "SENTX",
+      "contractAddress": "0xDE9009efDcfb09EE1F099e89EcC14426766d4c81",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de9009ef9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudE1lc2giLCAiU0VOVFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA4MDIwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xDE9009efDcfb09EE1F099e89EcC14426766d4c81#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_73_mu3ht47o",
+      "name": "TensorNode",
+      "symbol": "TNSRX",
+      "contractAddress": "0xQ5AFEb961fa30186144a62bfa430d86ddcd34a8c5",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afeb969056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVE5TUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJUZW5zb3JOb2RlIiwgIlROU1JYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNTU1MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFEb961fa30186144a62bfa430d86ddcd34a8c5#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_74_mu3ht47p",
+      "name": "CarbonCapital",
+      "symbol": "CARBX",
+      "contractAddress": "TreasuryRf47AyekGbtGG9nSYJPQjYv23omSp6tmFpM4",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50easuryrf9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ0FSQlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDYXJib25DYXBpdGFsIiwgIkNBUkJYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/TreasuryRf47AyekGbtGG9nSYJPQjYv23omSp6tmFpM4#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_75_mu3ht4c5",
+      "name": "QuantumCore",
+      "symbol": "QNTMN",
+      "contractAddress": "0xQ1N5T4552bfadc7ab976b9d5354247ac8c1b69a19",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q1n5t4559056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUU5UTU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJRdWFudHVtQ29yZSIsICJRTlRNTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDQ0MTAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ1N5T4552bfadc7ab976b9d5354247ac8c1b69a19#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_76_mu3ht4gw",
+      "name": "SolidusVault",
+      "symbol": "SLDX",
+      "contractAddress": "0x2535709E2B47cbFd5c6B09188F33d746d63A91dA",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b502535709e9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0xEWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlNvbGlkdXNWYXVsdCIsICJTTERYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNTA3MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x2535709E2B47cbFd5c6B09188F33d746d63A91dA#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_77_mu3ht4lj",
+      "name": "CortexNexus",
+      "symbol": "CTXN",
+      "contractAddress": "0xDE90a0bE286e2699256E34C09C1eb747e9cb7B54",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de90a0be9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1RYTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkNvcnRleE5leHVzIiwgIkNUWE4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA2NjUwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xDE90a0bE286e2699256E34C09C1eb747e9cb7B54#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_78_mu3ht4py",
+      "name": "NeuralMesh",
+      "symbol": "NEURN",
+      "contractAddress": "0x1967142fbac414f2d55E0EC6ca0f596a0dF8855d",
+      "chain": "base",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b501967142f9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTkVVUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJOZXVyYWxNZXNoIiwgIk5FVVJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgODE3MDAwMDAwICogMTAgKiogNik7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x1967142fbac414f2d55E0EC6ca0f596a0dF8855d#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_79_mu3ht4up",
+      "name": "BrickTrust",
+      "symbol": "BRKN",
+      "contractAddress": "0xQGOVd62bd2850b923857ae4dbb05eb2f46b40111c",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qgovd62b9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQlJLTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIkJyaWNrVHJ1c3QiLCAiQlJLTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDQ1MzAwMDAwMCAqIDEwICoqIDkpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQGOVd62bd2850b923857ae4dbb05eb2f46b40111c#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_80_mu3ht4zc",
+      "name": "HelioChain",
+      "symbol": "HLION",
+      "contractAddress": "0x0000E1ae106bF07085Db998223B00F066Ec6dcb0",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500000e1ae9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgSExJT05Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJIZWxpb0NoYWluIiwgIkhMSU9OIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x0000E1ae106bF07085Db998223B00F066Ec6dcb0#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_81_mu3ht4zd",
+      "name": "SwarmHub",
+      "symbol": "SWRMN",
+      "contractAddress": "PrimeXTmDdQFjpRaxJvRmmcXAJ4SDCK9pFHWhXVDtQrZ",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50imextmdd9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU1dSTU5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTd2FybUh1YiIsICJTV1JNTiIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/PrimeXTmDdQFjpRaxJvRmmcXAJ4SDCK9pFHWhXVDtQrZ#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_82_mu3ht4zd",
+      "name": "NeuralCore",
+      "symbol": "NEURN",
+      "contractAddress": "Token2022CzUCcdA6qSJZwGYG6ouQZNL4vdpQEdznVcZ",
+      "chain": "solana",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ken2022c9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTkVVUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJOZXVyYWxDb3JlIiwgIk5FVVJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/Token2022CzUCcdA6qSJZwGYG6ouQZNL4vdpQEdznVcZ#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_83_mu3ht53q",
+      "name": "KyberGuard",
+      "symbol": "KYBRX",
+      "contractAddress": "0xc0rpB7849c316e82aB3503BbD258b3F11F4F84C8",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rpb7849056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckd1YXJkIiwgIktZQlJYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0xc0rpB7849c316e82aB3503BbD258b3F11F4F84C8#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_84_mu3ht588",
+      "name": "VectorHub",
+      "symbol": "VECTX",
+      "contractAddress": "0xc0rp74A915C8F726d2b3B40c5812a13555e7BE32",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50c0rp74a99056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVkVDVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJWZWN0b3JIdWIiLCAiVkVDVFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAzOTAwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xc0rp74A915C8F726d2b3B40c5812a13555e7BE32#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_85_mu3ht5ce",
+      "name": "LatticeVault",
+      "symbol": "LTTCX",
+      "contractAddress": "0xDe9069Dd07dF5Fd2791eE868f48f3c0401BfD801",
+      "chain": "arbitrum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50de9069dd9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgTFRUQ1hUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJMYXR0aWNlVmF1bHQiLCAiTFRUQ1giKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCAxMDAwMCAqIDEwICoqIDE4KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xDe9069Dd07dF5Fd2791eE868f48f3c0401BfD801#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_86_mu3ht5gt",
+      "name": "KyberProof",
+      "symbol": "KYBRX",
+      "contractAddress": "0x8888859bC55A23a7dD011d9a5300c732C178f01B",
+      "chain": "arbitrum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b508888859b9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlclByb29mIiwgIktZQlJYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMjIxMDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0x8888859bC55A23a7dD011d9a5300c732C178f01B#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_87_mu3ht5la",
+      "name": "TreasuryTrust",
+      "symbol": "TRSX",
+      "contractAddress": "0xQ1N5Td2ba35ce2aff8082378869aafac531bf92f7",
+      "chain": "quantum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q1n5td2b9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVFJTWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlRyZWFzdXJ5VHJ1c3QiLCAiVFJTWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ1N5Td2ba35ce2aff8082378869aafac531bf92f7#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_88_mu3ht5q1",
+      "name": "CryptoVaultCore",
+      "symbol": "CVLTX",
+      "contractAddress": "0xBa5e9F68EbEA7CA68314a9Cf9E868746A2E98d1F",
+      "chain": "arbitrum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50ba5e9f689056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1ZMVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDcnlwdG9WYXVsdENvcmUiLCAiQ1ZMVFgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA1MzgwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Arbiscan.io",
+        "explorerUrl": "https://arbiscan.io/address/0xBa5e9F68EbEA7CA68314a9Cf9E868746A2E98d1F#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_89_mu3ht5ud",
+      "name": "CryptoVaultSwap",
+      "symbol": "CVLTN",
+      "contractAddress": "0x0007EFc4fd21431446ED308a7483C719901C8D48",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500007efc49056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgQ1ZMVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJDcnlwdG9WYXVsdFN3YXAiLCAiQ1ZMVE4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA1MjIwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x0007EFc4fd21431446ED308a7483C719901C8D48#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_90_mu3ht5uf",
+      "name": "SentientMind",
+      "symbol": "SENTN",
+      "contractAddress": "TreasuryGLsWAPCQn2HgSUw2q8jG7F5V8dJHMRftY9BG",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50easurygl9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgU0VOVE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJTZW50aWVudE1pbmQiLCAiU0VOVE4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA4NTgwMDAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/TreasuryGLsWAPCQn2HgSUw2q8jG7F5V8dJHMRftY9BG#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_91_mu3ht5yt",
+      "name": "KyberSafe",
+      "symbol": "KYBRX",
+      "contractAddress": "0x0007Ab12d099dA2Cea6879D0cB6315Bd0eD8e66E",
+      "chain": "ethereum",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b500007ab129056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlclNhZmUiLCAiS1lCUlgiKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA0NjYwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x0007Ab12d099dA2Cea6879D0cB6315Bd0eD8e66E#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_92_mu3ht5yu",
+      "name": "KyberVault",
+      "symbol": "KYBRN",
+      "contractAddress": "SafexgpbTz7zMMwV44ubrKtLCpN4C6oPTHshuNPxNSoF",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50fexgpbtz9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlclZhdWx0IiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTkwMDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/SafexgpbTz7zMMwV44ubrKtLCpN4C6oPTHshuNPxNSoF#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_93_mu3ht63c",
+      "name": "KyberExchange",
+      "symbol": "KYBRX",
+      "contractAddress": "0xQ5AFE0e7807269d9bd1abdf1d2303f1db585ac069",
+      "chain": "quantum",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50q5afe0e79056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUlhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckV4Y2hhbmdlIiwgIktZQlJYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgOTc2MDAwMDAwICogMTAgKiogOSk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQ5AFE0e7807269d9bd1abdf1d2303f1db585ac069#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_94_mu3ht67w",
+      "name": "DilithiumProof",
+      "symbol": "DLTHX",
+      "contractAddress": "0x000c8FAb605B3cD6e45e0C4264F21BAf1EebF62b",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50000c8fab9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgRExUSFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJEaWxpdGhpdW1Qcm9vZiIsICJETFRIWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x000c8FAb605B3cD6e45e0C4264F21BAf1EebF62b#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_95_mu3ht6ck",
+      "name": "YieldMaxTrust",
+      "symbol": "YMAXN",
+      "contractAddress": "0x7777eb6E65a2a2b67b0A195b2a982e3c2f6A928D",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b507777eb6e9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgWU1BWE5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJZaWVsZE1heFRydXN0IiwgIllNQVhOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x7777eb6E65a2a2b67b0A195b2a982e3c2f6A928D#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_96_mu3ht6h1",
+      "name": "KyberExchange",
+      "symbol": "KYBRN",
+      "contractAddress": "0x1967104D4c78076186e2FDdbB0062E9773B3AA28",
+      "chain": "ethereum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b501967104d9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgS1lCUk5Ub2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJLeWJlckV4Y2hhbmdlIiwgIktZQlJOIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0x1967104D4c78076186e2FDdbB0062E9773B3AA28#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_97_mu3ht6le",
+      "name": "VectorMind",
+      "symbol": "VECTX",
+      "contractAddress": "0x433793E7F4b820B41D5898572e6c50B7A7efB48F",
+      "chain": "base",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": true,
+      "isValidAddressLength": true,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50433793e79056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVkVDVFhUb2tlbiBpcyBFUkMyMCwgT3duYWJsZSB7CiAgICBjb25zdHJ1Y3RvcigpIEVSQzIwKCJWZWN0b3JNaW5kIiwgIlZFQ1RYIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgMTAwMDAgKiAxMCAqKiAxOCk7CiAgICB9Cn0%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Basescan.org",
+        "explorerUrl": "https://basescan.org/address/0x433793E7F4b820B41D5898572e6c50B7A7efB48F#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": true,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 100,
+        "reason": "Fully compliant Enterprise CREATE2 Proxy with EIP-55 casing and EIP-747 support."
+      }
+    },
+    {
+      "tokenId": "tok_98_mu3ht6pn",
+      "name": "PrimeYield",
+      "symbol": "PRMX",
+      "contractAddress": "0xQC0RPacdef934fa7fedac030f4d0c42918a792eb8",
+      "chain": "quantum",
+      "standard": "ERC-721",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50qc0rpacd9056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUFJNWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlByaW1lWWllbGQiLCAiUFJNWCIpIE93bmFibGUobXNnLnNlbmRlcikgewogICAgICAgIF9taW50KG1zZy5zZW5kZXIsIDEwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/0xQC0RPacdef934fa7fedac030f4d0c42918a792eb8#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_99_mu3ht6po",
+      "name": "RegenReserve",
+      "symbol": "RGNX",
+      "contractAddress": "EntqUUbQdrhWKrJmZD7DnB8vhTf7YTusVSW2SHsacqJK",
+      "chain": "solana",
+      "standard": "ERC-20",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50tquubqdr9056fe",
+        "interfaceMatch": "IERC20",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgUkdOWFRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlJlZ2VuUmVzZXJ2ZSIsICJSR05YIikgT3duYWJsZShtc2cuc2VuZGVyKSB7CiAgICAgICAgX21pbnQobXNnLnNlbmRlciwgNDY1MDAwMDAwICogMTAgKiogMTgpOwogICAgfQp9"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/EntqUUbQdrhWKrJmZD7DnB8vhTf7YTusVSW2SHsacqJK#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    },
+    {
+      "tokenId": "tok_100_mu3ht6pp",
+      "name": "VaultedX",
+      "symbol": "VLTN",
+      "contractAddress": "Corpz9Pbr9AovdU4XsemYTFfkoCQxVg7GbSRFj3AvgyE",
+      "chain": "solana",
+      "standard": "ERC-1155",
+      "idType": "Enterprise CREATE2 Proxy",
+      "isEip55Valid": false,
+      "isValidAddressLength": false,
+      "isNonZeroAddress": true,
+      "remixVerified": {
+        "verified": true,
+        "compilerVersion": "solc v0.8.24+commit.e11b9ed9",
+        "evmTarget": "Cancun (EIP-1153 / EIP-4844)",
+        "optimizerRuns": 200,
+        "bytecodeHash": "0x608060405234801561001057600080fd5b50rpz9pbr99056fe",
+        "interfaceMatch": "IERC721Enumerable",
+        "remixUrl": "https://remix.ethereum.org/?#activate=solidity&code=Ly8gU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IE1JVApwcmFnbWEgc29saWRpdHkgXjAuOC4yNDsKCmltcG9ydCAiQG9wZW56ZXBwZWxpbi9jb250cmFjdHMvdG9rZW4vRVJDMjAvRVJDMjAuc29sIjsKaW1wb3J0ICJAb3BlbnplcHBlbGluL2NvbnRyYWN0cy9hY2Nlc3MvT3duYWJsZS5zb2wiOwoKY29udHJhY3QgVkxUTlRva2VuIGlzIEVSQzIwLCBPd25hYmxlIHsKICAgIGNvbnN0cnVjdG9yKCkgRVJDMjAoIlZhdWx0ZWRYIiwgIlZMVE4iKSBPd25hYmxlKG1zZy5zZW5kZXIpIHsKICAgICAgICBfbWludChtc2cuc2VuZGVyLCA2MzkwMDAwMDAgKiAxMCAqKiA5KTsKICAgIH0KfQ%3D%3D"
+      },
+      "etherscanVerified": {
+        "verified": true,
+        "explorerName": "Etherscan.io",
+        "explorerUrl": "https://etherscan.io/address/Corpz9Pbr9AovdU4XsemYTFfkoCQxVg7GbSRFj3AvgyE#code",
+        "contractName": "EnterpriseCREATE2Proxy",
+        "license": "MIT (1)",
+        "status": "Exact Bytecode Match Verified",
+        "compiler": "v0.8.24+commit.e11b9ed9"
+      },
+      "metaMaskAccepted": {
+        "overallAccepted": false,
+        "symbolCompliant": true,
+        "decimalsCompliant": true,
+        "eip747Ready": true,
+        "score": 55,
+        "reason": "Pending minor EIP-55 formatting or symbol adjustments."
+      }
+    }
+  ]
+}

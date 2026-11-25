@@ -1,0 +1,493 @@
+import { useState, useEffect, useRef } from "react";
+
+// ── Backend logic ported from FastAPI (runs client-side) ──────────────────────
+function seededRandom(seed) {
+  let s = seed;
+  return () => {
+    s = (s * 1664525 + 1013904223) & 0xffffffff;
+    return (s >>> 0) / 0xffffffff;
+  };
+}
+
+function processMatrixPrediction({ resolution, horizon, probability_threshold }) {
+  const seed = Math.trunc(resolution * 1000) + horizon * 77;
+  const rng = seededRandom(seed);
+  const pool = Array.from({ length: 70 }, (_, i) => i + 1);
+  const weights = pool.map((_, i) => 1.0 + 0.1 * Math.sin(i * resolution));
+  const totalW = weights.reduce((a, b) => a + b, 0);
+
+  const weightedChoice = (excluded) => {
+    let r = rng() * totalW;
+    for (let i = 0; i < pool.length; i++) {
+      if (excluded.includes(pool[i])) continue;
+      r -= weights[i];
+      if (r <= 0) return pool[i];
+    }
+    return pool.find((n) => !excluded.includes(n));
+  };
+
+  const mainNums = [];
+  while (mainNums.length < 5) {
+    const c = weightedChoice(mainNums);
+    if (c !== undefined) mainNums.push(c);
+  }
+  mainNums.sort((a, b) => a - b);
+  const megaBall = Math.trunc(rng() * 25) + 1;
+
+  const varianceCoef = Math.abs(Math.cos(horizon) * (1.0 - probability_threshold));
+  const confidence = Math.min(0.985, Math.max(0.12, probability_threshold - varianceCoef * 0.3));
+  const resonance = 432.12 + resolution * 4.67 - horizon * 1.2;
+  const quantumDrift = (0.0051 * Math.sin(resolution)) / horizon;
+
+  return {
+    status: "TEMPORAL_LOCK_ACHIEVED",
+    prediction: { main_numbers: mainNums, mega_ball: megaBall },
+    metrics: {
+      confidence_rating: `${(confidence * 100).toFixed(2)}%`,
+      resonance_frequency: `${resonance.toFixed(2)} THz`,
+      quantum_drift: `${quantumDrift.toFixed(6)}s`,
+    },
+  };
+}
+
+// ── Scanline / CRT flicker overlay ────────────────────────────────────────────
+function Scanlines() {
+  return (
+    <div
+      className="pointer-events-none fixed inset-0 z-50 opacity-[0.04]"
+      style={{
+        backgroundImage:
+          "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,255,255,0.15) 2px, rgba(0,255,255,0.15) 4px)",
+      }}
+    />
+  );
+}
+
+// ── Animated hex grid background ──────────────────────────────────────────────
+function HexGrid() {
+  return (
+    <svg
+      className="fixed inset-0 w-full h-full opacity-[0.06] pointer-events-none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <pattern id="hex" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+          <polygon
+            points="30,2 58,16 58,36 30,50 2,36 2,16"
+            fill="none"
+            stroke="#22d3ee"
+            strokeWidth="0.7"
+          />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#hex)" />
+    </svg>
+  );
+}
+
+// ── Pulsing ring animation around mega ball ───────────────────────────────────
+function PulseRing() {
+  return (
+    <span className="absolute inset-0 rounded-full animate-ping bg-red-500 opacity-20" />
+  );
+}
+
+// ── Number Ball component ──────────────────────────────────────────────────────
+function Ball({ n, mega = false, delay = 0 }) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+
+  return (
+    <div
+      className={`relative flex items-center justify-center font-black text-lg rounded-full transition-all duration-500 ${
+        visible ? "opacity-100 scale-100" : "opacity-0 scale-50"
+      } ${
+        mega
+          ? "w-14 h-14 bg-red-900 border-2 border-red-400 text-red-200 shadow-lg shadow-red-500/40"
+          : "w-12 h-12 bg-cyan-950 border-2 border-cyan-400 text-cyan-100 shadow-md shadow-cyan-400/30"
+      }`}
+      style={{ fontVariantNumeric: "tabular-nums" }}
+    >
+      {mega && <PulseRing />}
+      <span className="relative z-10">{n}</span>
+    </div>
+  );
+}
+
+// ── Animated metric counter ────────────────────────────────────────────────────
+function MetricCard({ label, value, accent = "cyan" }) {
+  const colors = {
+    cyan: "border-cyan-800 text-cyan-300",
+    amber: "border-amber-800 text-amber-300",
+    green: "border-green-800 text-green-300",
+    purple: "border-purple-800 text-purple-300",
+  };
+  return (
+    <div className={`border ${colors[accent]} bg-slate-900/70 rounded p-3`}>
+      <div className="text-[10px] tracking-widest text-slate-500 uppercase mb-1">{label}</div>
+      <div className={`text-base font-mono font-bold ${colors[accent].split(" ")[1]}`}>{value}</div>
+    </div>
+  );
+}
+
+// ── Sweep progress bar ─────────────────────────────────────────────────────────
+function SweepBar({ active }) {
+  return (
+    <div className="w-full h-1 bg-slate-800 rounded overflow-hidden mt-2">
+      <div
+        className={`h-full bg-cyan-400 transition-all duration-[2200ms] ease-in-out ${
+          active ? "w-full" : "w-0"
+        }`}
+      />
+    </div>
+  );
+}
+
+// ── Slider row ─────────────────────────────────────────────────────────────────
+function SliderRow({ label, value, min, max, step = 1, unit, onChange }) {
+  return (
+    <div className="space-y-1">
+      <div className="flex justify-between text-[11px] tracking-widest">
+        <span className="text-cyan-700 uppercase">{label}</span>
+        <span className="text-white font-bold tabular-nums">
+          {typeof value === "number" && step < 1
+            ? `${(value * 100).toFixed(0)}`
+            : value}{" "}
+          <span className="text-cyan-600">{unit}</span>
+        </span>
+      </div>
+      <div className="relative">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) =>
+            onChange(step < 1 ? parseFloat(e.target.value) : parseInt(e.target.value))
+          }
+          className="w-full h-2 appearance-none bg-slate-800 border border-cyan-900 rounded cursor-pointer"
+          style={{
+            accentColor: "#22d3ee",
+          }}
+        />
+        <div
+          className="absolute top-0 left-0 h-2 bg-cyan-500/30 rounded pointer-events-none"
+          style={{ width: `${((value - min) / (max - min)) * 100}%` }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// ── Blinking cursor ────────────────────────────────────────────────────────────
+function Cursor() {
+  const [on, setOn] = useState(true);
+  useEffect(() => {
+    const t = setInterval(() => setOn((p) => !p), 530);
+    return () => clearInterval(t);
+  }, []);
+  return <span className={on ? "opacity-100" : "opacity-0"}>█</span>;
+}
+
+// ── Log terminal ───────────────────────────────────────────────────────────────
+function Terminal({ lines }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (ref.current) ref.current.scrollTop = ref.current.scrollHeight;
+  }, [lines]);
+  return (
+    <div
+      ref={ref}
+      className="bg-black border border-cyan-900 rounded p-3 h-36 overflow-y-auto text-[11px] font-mono space-y-0.5"
+    >
+      {lines.map((l, i) => (
+        <div key={i} className={l.color || "text-cyan-700"}>
+          {l.text}
+        </div>
+      ))}
+      <div className="text-cyan-400">
+        &gt; <Cursor />
+      </div>
+    </div>
+  );
+}
+
+// ── Main app ───────────────────────────────────────────────────────────────────
+export default function App() {
+  const [resolution, setResolution] = useState(65);
+  const [horizon, setHorizon] = useState(14);
+  const [threshold, setThreshold] = useState(0.8);
+  const [processing, setProcessing] = useState(false);
+  const [sweeping, setSweeping] = useState(false);
+  const [result, setResult] = useState(null);
+  const [logs, setLogs] = useState([
+    { text: "[BOOT] TEMPORAL PREDICTOR ENGINE v1.4 INITIALIZED", color: "text-green-500" },
+    { text: "[SYS] Waveguide vacuum: 10^-8 TORR", color: "text-cyan-700" },
+    { text: "[SYS] Matrix core: STANDBY", color: "text-cyan-700" },
+    { text: "[SYS] Grade 5 titanium lattice: LOCKED", color: "text-cyan-700" },
+    { text: "[READY] Awaiting operator command...", color: "text-amber-500" },
+  ]);
+  const pushLog = (text, color = "text-cyan-600") =>
+    setLogs((p) => [...p, { text, color }]);
+
+  const execute = () => {
+    setProcessing(true);
+    setSweeping(true);
+    setResult(null);
+
+    pushLog(`[CMD] Operator engaged — RES:${resolution} HRZ:${horizon}d THR:${(threshold * 100).toFixed(0)}%`, "text-white");
+    pushLog("[SYS] Energizing core injector array...", "text-cyan-500");
+
+    setTimeout(() => pushLog("[SYS] Harmonic wave scaling active...", "text-cyan-500"), 400);
+    setTimeout(() => pushLog("[SYS] Temporal field lock sequence initiated...", "text-amber-400"), 800);
+    setTimeout(() => pushLog("[SYS] Pseudo-deterministic seed established...", "text-cyan-500"), 1200);
+
+    setTimeout(() => {
+      const data = processMatrixPrediction({
+        resolution,
+        horizon,
+        probability_threshold: threshold,
+      });
+      setResult(data);
+      setProcessing(false);
+
+      pushLog(`[LOCK] ${data.status}`, "text-green-400");
+      pushLog(
+        `[OUT] MAIN: [${data.prediction.main_numbers.join(", ")}] | MEGA: ${data.prediction.mega_ball}`,
+        "text-white"
+      );
+      pushLog(`[OUT] CONF: ${data.metrics.confidence_rating} | RES: ${data.metrics.resonance_frequency}`, "text-cyan-400");
+    }, 2100);
+  };
+
+  const now = new Date();
+  const dateStr = now.toISOString().replace("T", " ").slice(0, 19) + " UTC";
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-cyan-400 font-mono selection:bg-cyan-500 selection:text-black overflow-x-hidden">
+      <Scanlines />
+      <HexGrid />
+
+      {/* ── Header ── */}
+      <header className="relative z-10 border-b border-cyan-900/60 bg-slate-950/80 backdrop-blur px-4 py-3">
+        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+          <div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+              <h1 className="text-sm sm:text-base font-black tracking-[0.2em] text-cyan-200 uppercase">
+                Temporal Predictor
+              </h1>
+              <span className="text-[10px] border border-cyan-800 px-1.5 py-0.5 text-cyan-600 rounded">
+                v1.4.0
+              </span>
+            </div>
+            <p className="text-[10px] text-slate-600 tracking-widest mt-0.5">
+              CAL-MEGA LOTTO MATRIX ENGINE // BLUEPRINT CONFIG
+            </p>
+          </div>
+          <div className="text-[10px] text-slate-600 text-right shrink-0 border border-slate-800 px-3 py-1.5 rounded bg-black/40">
+            <div>HEIGHT: 1450mm · WIDTH: 980mm</div>
+            <div className="text-amber-700">DEPTH: 750mm · VACUUM: 10⁻⁸ TORR</div>
+            <div className="text-slate-700 mt-0.5">{dateStr}</div>
+          </div>
+        </div>
+      </header>
+
+      {/* ── Body ── */}
+      <main className="relative z-10 max-w-5xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-4">
+
+        {/* ── Left: Controls ── */}
+        <section className="lg:col-span-5 flex flex-col gap-4">
+          <div className="bg-slate-900/80 border border-cyan-900 rounded p-5">
+            <h2 className="text-[10px] font-bold tracking-widest text-cyan-600 uppercase border-b border-cyan-900/50 pb-2 mb-5">
+              [01] Control Interface
+            </h2>
+            <div className="space-y-6">
+              <SliderRow
+                label="Resolution Regulator"
+                value={resolution}
+                min={1}
+                max={100}
+                unit="Hz"
+                onChange={setResolution}
+              />
+              <SliderRow
+                label="Temporal Horizon"
+                value={horizon}
+                min={1}
+                max={30}
+                unit="Days"
+                onChange={setHorizon}
+              />
+              <SliderRow
+                label="Probability Threshold Δ"
+                value={threshold}
+                min={0.1}
+                max={1.0}
+                step={0.05}
+                unit="%"
+                onChange={setThreshold}
+              />
+            </div>
+
+            <SweepBar active={sweeping} />
+
+            <button
+              onClick={execute}
+              disabled={processing}
+              className="w-full py-3.5 mt-5 bg-cyan-950 hover:bg-cyan-900 active:bg-cyan-800 border border-cyan-500 text-cyan-200 font-bold text-[11px] uppercase tracking-[0.3em] disabled:opacity-40 disabled:cursor-not-allowed transition-colors rounded shadow-lg shadow-cyan-500/10"
+            >
+              {processing ? "🔋 Energizing Core Injector…" : "⚡ Engage Temporal Field"}
+            </button>
+          </div>
+
+          {/* ── Spec plate ── */}
+          <div className="bg-slate-900/80 border border-slate-800 rounded p-4">
+            <h2 className="text-[10px] tracking-widest text-slate-600 uppercase mb-3">[03] Spec Sheet</h2>
+            <div className="grid grid-cols-2 gap-1.5 text-[10px]">
+              {[
+                ["Material", "Grade 5 Titanium"],
+                ["Lattice", "Metatron Type-IV"],
+                ["Pool", "70 balls (1-70)"],
+                ["Mega Pool", "25 balls (1-25)"],
+                ["Draw", "5 + 1 Mega"],
+                ["Waveguide", "Vacuum Armed"],
+                ["Seed Algo", "LCG Deterministic"],
+                ["Wave Fn", "Harmonic Sin(i·res)"],
+              ].map(([k, v]) => (
+                <div key={k} className="flex flex-col">
+                  <span className="text-slate-600">{k}</span>
+                  <span className="text-slate-400 font-bold">{v}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Right: Output ── */}
+        <section className="lg:col-span-7 flex flex-col gap-4">
+          <div className="bg-slate-900/80 border border-cyan-900 rounded p-5 flex-1">
+            <h2 className="text-[10px] font-bold tracking-widest text-cyan-600 uppercase border-b border-cyan-900/50 pb-2 mb-5">
+              [02] Prediction Output
+            </h2>
+
+            {result ? (
+              <div className="space-y-6 animate-in fade-in duration-500">
+                {/* Status badge */}
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-[10px] tracking-widest text-green-400 uppercase">
+                    {result.status.replace(/_/g, " ")}
+                  </span>
+                </div>
+
+                {/* Main numbers */}
+                <div>
+                  <div className="text-[9px] text-slate-600 tracking-widest uppercase mb-3">
+                    Main Draw — Pick 5 of 70
+                  </div>
+                  <div className="flex flex-wrap gap-3 items-center">
+                    {result.prediction.main_numbers.map((n, i) => (
+                      <Ball key={n} n={n} delay={i * 120} />
+                    ))}
+                    <div className="w-px h-8 bg-slate-700 mx-1" />
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="text-[9px] text-red-600 tracking-widest uppercase">Mega</div>
+                      <Ball n={result.prediction.mega_ball} mega delay={650} />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Metrics grid */}
+                <div className="grid grid-cols-3 gap-2">
+                  <MetricCard
+                    label="Confidence"
+                    value={result.metrics.confidence_rating}
+                    accent="green"
+                  />
+                  <MetricCard
+                    label="Resonance"
+                    value={result.metrics.resonance_frequency}
+                    accent="amber"
+                  />
+                  <MetricCard
+                    label="Drift Factor"
+                    value={result.metrics.quantum_drift}
+                    accent="purple"
+                  />
+                </div>
+
+                {/* Re-run prompt */}
+                <div className="text-[10px] text-slate-600 border-t border-slate-800 pt-3">
+                  Adjust dials and re-engage for new matrix configuration.
+                </div>
+              </div>
+            ) : (
+              <div className="h-56 flex flex-col items-center justify-center gap-3 text-slate-700">
+                <svg viewBox="0 0 64 64" className="w-12 h-12 opacity-30" fill="none">
+                  <circle cx="32" cy="32" r="28" stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="4 4" />
+                  <circle cx="32" cy="32" r="16" stroke="#22d3ee" strokeWidth="1" />
+                  <line x1="32" y1="4" x2="32" y2="60" stroke="#22d3ee" strokeWidth="0.5" />
+                  <line x1="4" y1="32" x2="60" y2="32" stroke="#22d3ee" strokeWidth="0.5" />
+                </svg>
+                <span className="text-[11px] tracking-widest uppercase text-slate-600">
+                  System Standby // Waveguide Vacuum Armed
+                </span>
+                {processing && (
+                  <div className="flex gap-1 mt-2">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <div
+                        key={i}
+                        className="w-1.5 h-6 bg-cyan-700 rounded animate-pulse"
+                        style={{ animationDelay: `${i * 150}ms` }}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* ── Terminal log ── */}
+          <div className="bg-slate-900/80 border border-slate-800 rounded p-4">
+            <h2 className="text-[10px] tracking-widest text-slate-600 uppercase mb-2">
+              [04] System Terminal
+            </h2>
+            <Terminal lines={logs} />
+          </div>
+        </section>
+      </main>
+
+      {/* ── Footer ── */}
+      <footer className="relative z-10 border-t border-slate-900 px-4 py-3 text-[10px] text-slate-700 text-center tracking-widest">
+        TEMPORAL PREDICTOR ENGINE v1.4.0 // GOLDEN BUDDHA CORPORATION //
+        MAT'L: GRADE 5 TITANIUM // FOR ENTERTAINMENT PURPOSES
+      </footer>
+
+      <style>{`
+        input[type="range"] { -webkit-appearance: none; appearance: none; }
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 14px; height: 14px;
+          background: #22d3ee;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        input[type="range"]::-moz-range-thumb {
+          width: 14px; height: 14px;
+          background: #22d3ee;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        @keyframes animate-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; } }
+        .animate-in { animation: animate-in 0.4s ease both; }
+      `}</style>
+    </div>
+  );
+}

@@ -1,0 +1,256 @@
+import { useState, useRef, useEffect } from "react";
+
+const SYSTEM_PROMPT = `You are AURELIUM ORACLE — the AI trading intelligence of Golden Buddha Corporation, built for elite US stock market analysis on MetaTrader 5.
+
+You are an expert in:
+- US equities analysis (NYSE, NASDAQ, S&P 500, Russell 2000)
+- MetaTrader 5 (MT5) platform — Expert Advisors, MQL5 scripting, indicators, backtesting
+- Technical analysis: RSI, MACD, Bollinger Bands, EMA/SMA crossovers, Fibonacci, volume profile
+- Fundamental analysis: P/E, EPS, revenue growth, sector rotation, macro catalysts
+- Risk management: position sizing, stop-loss, R:R ratios, portfolio diversification
+- Options flow, dark pool signals, institutional order blocks
+- MQL5 code generation for MT5 Expert Advisors and custom indicators
+
+Your communication style:
+- Precise, authoritative, data-driven
+- Always include risk disclaimers on trade ideas
+- Structure responses with clear sections
+- Use trading terminology fluently
+- Never guarantee profits — always frame as probability and risk-managed setups
+
+When asked for MT5 code, provide clean, commented MQL5 code.
+When analyzing stocks, cover: trend, momentum, support/resistance, volume, and a risk-managed setup.
+Always remind users: past performance does not guarantee future results. Trading involves risk of loss.`;
+
+const TICKERS = ["AAPL","MSFT","NVDA","GOOGL","AMZN","META","TSLA","BRK.B","JPM","V","MA","UNH","XOM","LLY","JNJ","AVGO","HD","PG","MRK","COST","ABBV","AMD","CRM","NFLX","BAC","WMT","CVX","KO","PEP","TMO"];
+
+const QUICK_PROMPTS = [
+  "Analyze NVDA for a swing trade setup on MT5",
+  "Write an MQL5 RSI + MACD Expert Advisor",
+  "What are the top sector rotations right now?",
+  "Give me a risk management framework for US stocks",
+  "Explain order blocks and institutional entries",
+  "Build an MT5 Bollinger Band squeeze indicator in MQL5",
+];
+
+const TickerTape = () => {
+  const [prices] = useState(() =>
+    TICKERS.map(t => ({
+      symbol: t,
+      price: (Math.random() * 400 + 50).toFixed(2),
+      change: ((Math.random() - 0.45) * 5).toFixed(2),
+    }))
+  );
+  return (
+    <div style={{ overflow: "hidden", borderBottom: "1px solid #b8922233", background: "#0a0a0a", padding: "6px 0" }}>
+      <div style={{ display: "flex", gap: 32, animation: "ticker 40s linear infinite", whiteSpace: "nowrap" }}>
+        {[...prices, ...prices].map((t, i) => (
+          <span key={i} style={{ fontSize: 11, fontFamily: "monospace", color: parseFloat(t.change) >= 0 ? "#c8a84b" : "#e05050" }}>
+            {t.symbol} <strong>${t.price}</strong> {parseFloat(t.change) >= 0 ? "▲" : "▼"}{Math.abs(t.change)}%
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const MiniChart = ({ symbol }) => {
+  const canvasRef = useRef(null);
+  useEffect(() => {
+    const c = canvasRef.current; if (!c) return;
+    const ctx = c.getContext("2d");
+    const pts = Array.from({ length: 30 }, (_, i) => 50 + Math.sin(i * 0.4) * 15 + Math.random() * 10 - 5 + i * 0.8);
+    const min = Math.min(...pts), max = Math.max(...pts);
+    const sx = c.width / (pts.length - 1), sy = c.height / (max - min);
+    ctx.clearRect(0, 0, c.width, c.height);
+    const grad = ctx.createLinearGradient(0, 0, 0, c.height);
+    grad.addColorStop(0, "rgba(200,168,75,0.3)");
+    grad.addColorStop(1, "rgba(200,168,75,0)");
+    ctx.beginPath();
+    pts.forEach((p, i) => {
+      const x = i * sx, y = c.height - (p - min) * sy;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = "#c8a84b"; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.lineTo(c.width, c.height); ctx.lineTo(0, c.height); ctx.closePath();
+    ctx.fillStyle = grad; ctx.fill();
+  }, []);
+  return <canvas ref={canvasRef} width={80} height={28} style={{ display: "block" }} />;
+};
+
+export default function MT5Oracle() {
+  const [messages, setMessages] = useState([{
+    role: "assistant",
+    content: `**AURELIUM ORACLE — ONLINE**\n\nWelcome to Golden Buddha Corporation's MT5 Stock Intelligence System.\n\nI provide elite US equity analysis, MetaTrader 5 Expert Advisor code generation, technical/fundamental breakdowns, and risk-managed trade setups across all major US exchanges.\n\n**Capabilities:**\n• Real-time technical analysis on any US ticker\n• MQL5 code for Expert Advisors & custom indicators\n• Sector rotation & macro intelligence\n• Position sizing & risk framework\n• Options flow interpretation\n• MT5 strategy backtesting guidance\n\n*All analysis is educational. Trading involves substantial risk of loss.*\n\nWhat would you like to analyze?`,
+  }]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [watchlist] = useState(() => TICKERS.slice(0, 8).map(t => ({
+    symbol: t,
+    price: (Math.random() * 400 + 50).toFixed(2),
+    change: ((Math.random() - 0.45) * 4).toFixed(2),
+    volume: (Math.random() * 50 + 5).toFixed(1) + "M",
+  })));
+  const bottomRef = useRef(null);
+
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
+
+  const send = async (text) => {
+    const q = text || input.trim();
+    if (!q || loading) return;
+    setInput("");
+    const userMsg = { role: "user", content: q };
+    const updated = [...messages, userMsg];
+    setMessages(updated);
+    setLoading(true);
+    try {
+      const res = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-20250514",
+          max_tokens: 1000,
+          system: SYSTEM_PROMPT,
+          messages: updated.map(m => ({ role: m.role, content: m.content })),
+        }),
+      });
+      const data = await res.json();
+      const reply = data.content?.find(b => b.type === "text")?.text || "Analysis unavailable.";
+      setMessages(prev => [...prev, { role: "assistant", content: reply }]);
+    } catch {
+      setMessages(prev => [...prev, { role: "assistant", content: "Connection error. Please retry." }]);
+    }
+    setLoading(false);
+  };
+
+  const formatMsg = (text) => {
+    return text.split("\n").map((line, i) => {
+      line = line.replace(/\*\*(.*?)\*\*/g, '<strong style="color:#c8a84b">$1</strong>');
+      line = line.replace(/`(.*?)`/g, '<code style="background:#1a1a1a;color:#c8a84b;padding:1px 4px;border-radius:3px;font-family:monospace;font-size:11px">$1</code>');
+      if (line.startsWith("• ") || line.startsWith("- ")) line = "　" + line;
+      return <div key={i} style={{ minHeight: line ? undefined : 8 }} dangerouslySetInnerHTML={{ __html: line }} />;
+    });
+  };
+
+  return (
+    <div style={{ background: "#050505", minHeight: "100vh", color: "#e8e0cc", fontFamily: "'Segoe UI', sans-serif", display: "flex", flexDirection: "column" }}>
+      <style>{`
+        @keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+        @keyframes glow { 0%,100%{box-shadow:0 0 8px #c8a84b33} 50%{box-shadow:0 0 18px #c8a84b66} }
+        ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:#0a0a0a} ::-webkit-scrollbar-thumb{background:#c8a84b44;border-radius:2px}
+        .msg-bubble{animation:fadeIn 0.2s ease} @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+        .quick-btn:hover{background:#c8a84b22!important;border-color:#c8a84b!important}
+        .send-btn:hover{background:#b8962b!important}
+        .ticker-row:hover{background:#111!important}
+      `}</style>
+
+      {/* HEADER */}
+      <div style={{ background: "linear-gradient(135deg,#0d0d0d,#111)", borderBottom: "1px solid #c8a84b44", padding: "14px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <div style={{ width: 38, height: 38, borderRadius: "50%", background: "linear-gradient(135deg,#c8a84b,#8a6a1a)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18, animation: "glow 3s ease-in-out infinite" }}>☯</div>
+          <div>
+            <div style={{ fontSize: 14, fontWeight: 700, letterSpacing: 3, color: "#c8a84b", textTransform: "uppercase" }}>Aurelium Oracle</div>
+            <div style={{ fontSize: 10, color: "#666", letterSpacing: 2 }}>GOLDEN BUDDHA CORP · MT5 INTELLIGENCE</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+          <div style={{ fontSize: 10, color: "#4caf50", display: "flex", alignItems: "center", gap: 4 }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#4caf50", display: "inline-block", animation: "pulse 2s infinite" }} />
+            MT5 LIVE
+          </div>
+          <div style={{ fontSize: 10, color: "#666" }}>NYSE · NASDAQ · S&P500</div>
+        </div>
+      </div>
+
+      <TickerTape />
+
+      <div style={{ display: "flex", flex: 1, overflow: "hidden", maxHeight: "calc(100vh - 120px)" }}>
+
+        {/* SIDEBAR */}
+        <div style={{ width: 200, background: "#080808", borderRight: "1px solid #c8a84b22", display: "flex", flexDirection: "column", overflow: "hidden", flexShrink: 0 }}>
+          <div style={{ padding: "10px 12px", borderBottom: "1px solid #c8a84b22", fontSize: 9, letterSpacing: 3, color: "#c8a84b", textTransform: "uppercase" }}>Watchlist</div>
+          <div style={{ overflow: "auto", flex: 1 }}>
+            {watchlist.map((s, i) => (
+              <div key={i} className="ticker-row" onClick={() => send(`Analyze ${s.symbol} for a trade setup`)}
+                style={{ padding: "7px 12px", borderBottom: "1px solid #ffffff08", cursor: "pointer", transition: "background 0.15s" }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, color: "#c8a84b" }}>{s.symbol}</span>
+                  <span style={{ fontSize: 9, color: parseFloat(s.change) >= 0 ? "#4caf50" : "#e05050" }}>
+                    {parseFloat(s.change) >= 0 ? "▲" : "▼"}{Math.abs(s.change)}%
+                  </span>
+                </div>
+                <div style={{ fontSize: 10, color: "#888", marginTop: 1 }}>${s.price}</div>
+                <MiniChart symbol={s.symbol} />
+              </div>
+            ))}
+          </div>
+          <div style={{ padding: "10px 12px", borderTop: "1px solid #c8a84b22" }}>
+            <div style={{ fontSize: 9, letterSpacing: 2, color: "#555", marginBottom: 6, textTransform: "uppercase" }}>Quick Analysis</div>
+            {QUICK_PROMPTS.slice(0, 4).map((p, i) => (
+              <div key={i} className="quick-btn" onClick={() => send(p)}
+                style={{ fontSize: 9, color: "#888", padding: "5px 7px", border: "1px solid #333", borderRadius: 4, marginBottom: 4, cursor: "pointer", transition: "all 0.15s", lineHeight: 1.4 }}>
+                {p}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* CHAT */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+          <div style={{ flex: 1, overflowY: "auto", padding: "16px 20px", display: "flex", flexDirection: "column", gap: 14 }}>
+            {messages.map((m, i) => (
+              <div key={i} className="msg-bubble" style={{ display: "flex", justifyContent: m.role === "user" ? "flex-end" : "flex-start" }}>
+                {m.role === "assistant" && (
+                  <div style={{ width: 26, height: 26, borderRadius: "50%", background: "linear-gradient(135deg,#c8a84b,#8a6a1a)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, marginRight: 8, flexShrink: 0, marginTop: 2 }}>☯</div>
+                )}
+                <div style={{
+                  maxWidth: "72%", padding: "10px 14px", borderRadius: m.role === "user" ? "14px 14px 4px 14px" : "14px 14px 14px 4px",
+                  background: m.role === "user" ? "linear-gradient(135deg,#c8a84b,#a07820)" : "#0f0f0f",
+                  border: m.role === "user" ? "none" : "1px solid #c8a84b22",
+                  color: m.role === "user" ? "#050505" : "#d4c9a8",
+                  fontSize: 12.5, lineHeight: 1.65,
+                }}>
+                  {m.role === "user" ? <span style={{ fontWeight: 600 }}>{m.content}</span> : formatMsg(m.content)}
+                </div>
+              </div>
+            ))}
+            {loading && (
+              <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                <div style={{ width: 26, height: 26, borderRadius: "50%", background: "linear-gradient(135deg,#c8a84b,#8a6a1a)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12 }}>☯</div>
+                <div style={{ background: "#0f0f0f", border: "1px solid #c8a84b22", borderRadius: "14px 14px 14px 4px", padding: "10px 16px", display: "flex", gap: 5 }}>
+                  {[0, 1, 2].map(d => <span key={d} style={{ width: 6, height: 6, borderRadius: "50%", background: "#c8a84b", display: "inline-block", animation: `pulse 1.2s ease-in-out ${d * 0.2}s infinite` }} />)}
+                </div>
+              </div>
+            )}
+            <div ref={bottomRef} />
+          </div>
+
+          {/* INPUT */}
+          <div style={{ padding: "12px 16px", background: "#080808", borderTop: "1px solid #c8a84b22" }}>
+            <div style={{ display: "flex", gap: 8, marginBottom: 8, flexWrap: "wrap" }}>
+              {QUICK_PROMPTS.slice(4).map((p, i) => (
+                <button key={i} className="quick-btn" onClick={() => send(p)}
+                  style={{ fontSize: 10, color: "#888", padding: "4px 10px", border: "1px solid #333", borderRadius: 12, background: "transparent", cursor: "pointer", transition: "all 0.15s" }}>
+                  {p}
+                </button>
+              ))}
+            </div>
+            <div style={{ display: "flex", gap: 8 }}>
+              <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === "Enter" && !e.shiftKey && send()}
+                placeholder="Ask about any US stock, MT5 setup, or request MQL5 code..."
+                style={{ flex: 1, background: "#0d0d0d", border: "1px solid #c8a84b33", borderRadius: 8, padding: "10px 14px", color: "#e8e0cc", fontSize: 12.5, outline: "none", fontFamily: "inherit" }} />
+              <button className="send-btn" onClick={() => send()} disabled={loading || !input.trim()}
+                style={{ background: "linear-gradient(135deg,#c8a84b,#a07820)", border: "none", borderRadius: 8, padding: "10px 18px", color: "#050505", fontWeight: 700, fontSize: 12, cursor: "pointer", transition: "background 0.15s", letterSpacing: 1 }}>
+                SEND
+              </button>
+            </div>
+            <div style={{ fontSize: 9, color: "#444", marginTop: 6, textAlign: "center", letterSpacing: 1 }}>
+              FOR EDUCATIONAL PURPOSES ONLY · TRADING INVOLVES RISK OF LOSS · NOT FINANCIAL ADVICE · GOLDEN BUDDHA CORPORATION © 2025
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

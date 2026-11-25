@@ -1,0 +1,27 @@
+{
+  "transactionHash": "0x8bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5a",
+  "type": "0x02 (EIP-1559 Dynamic Fee)",
+  "chainId": 8453,
+  "nonce": 14,
+  "from": "0xc1F851aC749A38b92807Fe09AF9498f30c2C6bcb",
+  "to": null,
+  "gasLimit": 2450000,
+  "maxFeePerGasGwei": 22.4,
+  "maxPriorityFeePerGasGwei": 1.5,
+  "estimatedCostEth": "0.05488",
+  "value": "0 ETH",
+  "data": "0x608060405234801561001057600080fd5b506040516109a03803806109a083398101604081905261002f9161009056034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba7523398e2e48794f2464c86498d8bf04166c5d1c33d8688d5b0b4fee7bcac8353ff77850c8d28347b4c68349c5259f98d3b94f50be49061fb173ed02cf16882e0ec1665c49abb90a44a6e7c4130963b85af3c3e1e5f9faff661c295391d796b88c182c916e8dbe65c0444dcd8d082046d611966e075486a706d70e4b8f539748a7a40850459687946832455e842a2a3ada8f000000000000000000000000c1f851ac749a38b92807fe09af9498f30c2c6bcbf6b899009b07ac5b7eb19bf123ba8a90f8da9c9a8684c49c57fd11eb89eb654d",
+  "rawTransactionHex": "0x02034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba608060405234801561001057600080fd5b506040516109a03803806109a083398101604081905261002f9161009056034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660",
+  "accessList": [],
+  "signature": {
+    "v": 28,
+    "r": "0x8bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5a",
+    "s": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2"
+  },
+  "cliCommands": {
+    "foundryCast": "cast send --rpc-url ${RPC_URL} --private-key ${PRIVATE_KEY} --create 0x608060405234801561001057600080fd5b506040516109... --gas-limit 2450000 --max-fee-per-gas 22.4gwei",
+    "hardhatConsole": "const Contract = await ethers.getContractFactory(\"BRKNStreamExporterToken\");\nconst token = await Contract.deploy(\"0xc1F851aC749A38b92807Fe09AF9498f30c2C6bcb\", \"0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2\");\nawait token.waitForDeployment();\nconsole.log(\"Deployed to:\", await token.getAddress());",
+    "ethersSnippet": "const tx = await signer.sendTransaction({\n  data: \"0x608060405234801561001057600080fd5b506040516109a03803806109a083...\",\n  gasLimit: 2450000,\n  maxFeePerGas: ethers.parseUnits(\"22.4\", \"gwei\"),\n  maxPriorityFeePerGas: ethers.parseUnits(\"1.5\", \"gwei\")\n});\nconsole.log(\"Tx Hash:\", tx.hash);",
+    "curlRpc": "curl -X POST ${RPC_URL} -H \"Content-Type: application/json\" -d '{\"jsonrpc\":\"2.0\",\"method\":\"eth_sendRawTransaction\",\"params\":[\"0x02034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547...\"],\"id\":1}'"
+  }
+}

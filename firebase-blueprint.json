@@ -1,0 +1,401 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Private authenticated TWE Workspace user profile isolated by UID.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID matching the document ID."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "minLength": 3,
+          "maxLength": 254,
+          "description": "Verified account email address (PII - owner/admin only)."
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "User display name shown in the workspace."
+        },
+        "organization": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Institutional desk or entity name."
+        },
+        "preferredHub": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[a-z0-9\\-]+$",
+          "description": "Last active TWE workspace hub identifier."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server last-modified timestamp."
+        }
+      },
+      "required": [
+        "uid",
+        "email",
+        "displayName",
+        "organization",
+        "preferredHub",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminRecord": {
+      "title": "AdminRecord",
+      "description": "Trusted server-managed administrator allowlist document keyed by Firebase Auth UID.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "grantedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "grantedAt"]
+    },
+    "TweAsset": {
+      "title": "TweAsset",
+      "description": "Persisted digital asset, token, NFT, commodity, or currency record in the TWE Firestore registry.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the owning operator."
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "pattern": "^[A-Z0-9._\\-]+$",
+          "description": "Asset ticker symbol."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Human-readable asset name."
+        },
+        "kind": {
+          "type": "string",
+          "enum": ["Tokens", "NFTs", "Commodities", "Currencies"],
+          "description": "TWE 4-class asset classification."
+        },
+        "chain": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Settlement chain label."
+        },
+        "standard": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 32,
+          "description": "Token standard (e.g., ERC-3643, ERC-20, ERC-721)."
+        },
+        "contractAddress": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 128,
+          "description": "On-chain contract or specification identifier."
+        },
+        "priceUsd": {
+          "type": "number",
+          "description": "Reference mark price in USD (>= 0)."
+        },
+        "supplyFormatted": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Formatted token supply string (supports uint256 scale)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Active", "Review", "Restricted", "Archived"],
+          "description": "Lifecycle status; Archived is terminal."
+        },
+        "watchlisted": {
+          "type": "boolean",
+          "description": "Whether the asset is pinned to the user watchlist."
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 500,
+          "description": "Operator notes or compliance reference."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "symbol",
+        "name",
+        "kind",
+        "chain",
+        "standard",
+        "contractAddress",
+        "priceUsd",
+        "supplyFormatted",
+        "status",
+        "watchlisted",
+        "notes",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "TweOrder": {
+      "title": "TweOrder",
+      "description": "Persisted institutional ATS order linked to a parent TweAsset record.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "assetId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Document ID of the parent asset in /assets/{assetId}."
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "pattern": "^[A-Z0-9._\\-]+$"
+        },
+        "side": {
+          "type": "string",
+          "enum": ["BUY", "SELL"]
+        },
+        "orderType": {
+          "type": "string",
+          "enum": ["MARKET", "LIMIT", "PEGGED", "ICEBERG", "FOK", "IOC", "TWAP", "VWAP"]
+        },
+        "quantity": {
+          "type": "number",
+          "description": "Order quantity (> 0)."
+        },
+        "limitPriceUsd": {
+          "type": "number",
+          "description": "Limit or execution price in USD (>= 0)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["OPEN", "FILLED", "CANCELLED"],
+          "description": "Order lifecycle status; FILLED and CANCELLED are terminal."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "assetId",
+        "symbol",
+        "side",
+        "orderType",
+        "quantity",
+        "limitPriceUsd",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "VaultLedgerEntry": {
+      "title": "VaultLedgerEntry",
+      "description": "Persisted Sovereign Vault tranche allocation, token burn, or audit entry.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "recordType": {
+          "type": "string",
+          "enum": ["TRANCHE", "BURN", "AUDIT"]
+        },
+        "symbol": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 24,
+          "pattern": "^[A-Z0-9._\\-]+$"
+        },
+        "amountFormatted": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "txHash": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "memo": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 300
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "FINALIZED"],
+          "description": "FINALIZED is terminal and immutable."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "recordType",
+        "symbol",
+        "amountFormatted",
+        "txHash",
+        "memo",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "NftEditionRecord": {
+      "title": "NftEditionRecord",
+      "description": "Persisted NFT Studio / Foundry edition with RarityService score and metadata hashes.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "collection": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "rarityScore": {
+          "type": "number"
+        },
+        "rarityTier": {
+          "type": "string",
+          "enum": ["Mythic", "Legendary", "Epic", "Rare", "Uncommon", "Common"]
+        },
+        "traitsSummary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 400
+        },
+        "ipfsCid": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 128
+        },
+        "sha256Hash": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 128
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "name",
+        "collection",
+        "rarityScore",
+        "rarityTier",
+        "traitsSummary",
+        "ipfsCid",
+        "sha256Hash",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private owner-isolated user profile documents keyed by Firebase Auth UID."
+    },
+    "/admins/{adminId}": {
+      "schema": { "$ref": "#/entities/AdminRecord" },
+      "description": "Trusted administrator directory (client writes forbidden)."
+    },
+    "/assets/{assetId}": {
+      "schema": { "$ref": "#/entities/TweAsset" },
+      "description": "User-owned persisted digital assets synced from Token Atlas, Token Foundry, and Planetary System."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/TweOrder" },
+      "description": "User-owned persisted ATS orders referencing an existing parent asset document."
+    },
+    "/vaultRecords/{recordId}": {
+      "schema": { "$ref": "#/entities/VaultLedgerEntry" },
+      "description": "User-owned persisted Sovereign Vault tranche allocations, token burn receipts, and audit entries."
+    },
+    "/nftEditions/{editionId}": {
+      "schema": { "$ref": "#/entities/NftEditionRecord" },
+      "description": "User-owned persisted NFT Studio and Super NFT Foundry editions with RarityService scores."
+    }
+  }
+}

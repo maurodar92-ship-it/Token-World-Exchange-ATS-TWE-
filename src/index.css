@@ -1,0 +1,190 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* Platinum Light Palette */
+    --twe-bg-canvas: #F3F4F6;
+    --twe-bg-surface: #FFFFFF;
+    --twe-bg-elevated: #F8F9FB;
+    --twe-bg-muted: #ECEEF2;
+    --twe-border: #D9DDE4;
+    --twe-border-strong: #C2C8D3;
+    --twe-text-primary: #111318;
+    --twe-text-secondary: #4B5262;
+    --twe-text-muted: #6C7486;
+    --twe-gold: #A8843E;
+    --twe-gold-soft: #EFE6D2;
+    --twe-platinum: #64748B;
+  }
+
+  .dark {
+    /* Graphite, Champagne-Gold & Platinum Dark Palette */
+    --twe-bg-canvas: #0B0D10;
+    --twe-bg-surface: #12151A;
+    --twe-bg-elevated: #181C23;
+    --twe-bg-muted: #1E232C;
+    --twe-border: #262C37;
+    --twe-border-strong: #353D4B;
+    --twe-text-primary: #F1F3F6;
+    --twe-text-secondary: #B4BCC9;
+    --twe-text-muted: #7C8596;
+    --twe-gold: #D4B475;
+    --twe-gold-soft: rgba(212, 180, 117, 0.14);
+    --twe-platinum: #CBD5E1;
+  }
+
+  html, body {
+    font-family: var(--font-sans);
+    background-color: var(--twe-bg-canvas);
+    color: var(--twe-text-primary);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom clean thin scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 133, 150, 0.35);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 180, 117, 0.55);
+}
+
+@keyframes twe-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes twe-orbit-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.twe-spin-slow {
+  animation: twe-orbit-spin 22s linear infinite;
+}
+
+.twe-spin-reverse {
+  animation: twe-orbit-spin-reverse 16s linear infinite;
+}
+
+/* Intensity-tiered 14D Wilder's RSI signal pulse animations */
+@keyframes twe-rsi-buy-subtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.28);
+    border-color: rgba(16, 185, 129, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 14px 2px rgba(16, 185, 129, 0.32);
+    border-color: rgba(16, 185, 129, 0.8);
+  }
+}
+
+@keyframes twe-rsi-buy-intense {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.55);
+    border-color: rgba(52, 211, 153, 0.85);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 22px 4px rgba(16, 185, 129, 0.65);
+    border-color: rgba(110, 231, 183, 1);
+    transform: scale(1.015);
+  }
+}
+
+@keyframes twe-rsi-sell-subtle {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.28);
+    border-color: rgba(244, 63, 94, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 14px 2px rgba(244, 63, 94, 0.32);
+    border-color: rgba(244, 63, 94, 0.8);
+  }
+}
+
+@keyframes twe-rsi-sell-intense {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.55);
+    border-color: rgba(251, 113, 133, 0.85);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 22px 4px rgba(244, 63, 94, 0.65);
+    border-color: rgba(253, 164, 175, 1);
+    transform: scale(1.015);
+  }
+}
+
+@keyframes twe-sigma-alert-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.32);
+  }
+  50% {
+    box-shadow: 0 0 18px 2px rgba(244, 63, 94, 0.34);
+  }
+}
+
+.animate-rsi-buy-subtle {
+  animation: twe-rsi-buy-subtle 2.2s ease-in-out infinite;
+}
+
+.animate-rsi-buy-intense {
+  animation: twe-rsi-buy-intense 0.85s ease-in-out infinite;
+}
+
+.animate-rsi-sell-subtle {
+  animation: twe-rsi-sell-subtle 2.2s ease-in-out infinite;
+}
+
+.animate-rsi-sell-intense {
+  animation: twe-rsi-sell-intense 0.85s ease-in-out infinite;
+}
+
+.animate-sigma-pulse {
+  animation: twe-sigma-alert-pulse 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .twe-spin-slow,
+  .twe-spin-reverse,
+  .animate-rsi-buy-subtle,
+  .animate-rsi-buy-intense,
+  .animate-rsi-sell-subtle,
+  .animate-rsi-sell-intense,
+  .animate-sigma-pulse {
+    animation: none;
+  }
+}

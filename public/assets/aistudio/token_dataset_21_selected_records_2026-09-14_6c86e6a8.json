@@ -1,0 +1,2312 @@
+[
+  {
+    "id": "tok_2_mu1k7hqh",
+    "name": "HelioFabric",
+    "symbol": "HLIOX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000Fe9Ce23C983c5bCea435d548204c389d18ED5",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xe378c2f5b656d85bcab7f0aa81254f989bd1ea703b70bce651337f8a78588b8b",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "702158151712893709771749285",
+    "tokenStandard": "ERC-721",
+    "narrative": "depin",
+    "launchStatus": "Audited",
+    "initialSupply": "10,000",
+    "decimals": 0,
+    "marketCap": 292445,
+    "priceUsd": 29.2445,
+    "liquidityPair": "MOG/ETH (Uniswap v2)",
+    "liquidityPoolId": 29,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 578,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title HelioFabric (HLIOX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract HLIOX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 4437,
+    "auditFirm": "OpenZeppelin",
+    "securityScore": 84,
+    "createdAt": "2026-08-24T22:36:15.911Z",
+    "creationTx": "0x236274272d612addd9399aecda76359197980facba8293f7a288621d6e3554d7",
+    "deployerAddress": "0x1967C5A376916524a600e12338a994b69Ac37688",
+    "quantum_entropy_signature": "05226efd7e68318426b181ed18f8f6d77836a914ea2f1bf0141b17294b3399e7"
+  },
+  {
+    "id": "tok_5_mu1k7hqi",
+    "name": "SentientHub",
+    "symbol": "SENTX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x0005d21e2c61E0d37F0bfd220173a630039FBcA7",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x13da37f3f6eb2f9e38c23a4f96cd733f0ea44dba4928e0dcceed83837b1bd2ad",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "5",
+    "tokenStandard": "ERC-20",
+    "narrative": "ai_agents",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "833,000,000",
+    "decimals": 9,
+    "marketCap": 3676090000,
+    "priceUsd": 36.7609,
+    "liquidityPair": "reUSD/scrvUSD (Curve)",
+    "liquidityPoolId": 44,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 309,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title SentientHub (SENTX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract SENTX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 8517,
+    "auditFirm": "Trail of Bits",
+    "securityScore": 84,
+    "createdAt": "2026-09-02T04:30:54.235Z",
+    "creationTx": "0x50fb592b9bc057d99ac24405fad9655bc0789b581ec08d22599b5c35368a90bf",
+    "deployerAddress": "0x4E59B44847B379578588920cA78fbf26c0b4956c",
+    "quantum_entropy_signature": "8d16dd493385073caabf531e46a2da495b9ce9f4194e980b0b9f1767b89aaf3d"
+  },
+  {
+    "id": "tok_6_mu1k7hqi",
+    "name": "BandStation",
+    "symbol": "BANDX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x0006B9779fE4Ff3Ad1c7B4AaC1024CbCcA22d3E7",
+    "isVanity": true,
+    "contractArchetype": "OpenZeppelin Timelock Governor (CREATE2 Salt Grinded)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xb46e5775f297a0153495e4b95aa43c915703048b4f0f508743225c0260847527",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "6",
+    "tokenStandard": "ERC-721",
+    "narrative": "depin",
+    "launchStatus": "Deployed",
+    "initialSupply": "10,000",
+    "decimals": 0,
+    "marketCap": 172809,
+    "priceUsd": 17.2809,
+    "liquidityPair": "mETH/ETH (Mantle / Uniswap)",
+    "liquidityPoolId": 13,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 305,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title BandStation (BANDX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract BANDX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 8355,
+    "auditFirm": "Halborn",
+    "securityScore": 96,
+    "createdAt": "2026-09-11T12:42:54.308Z",
+    "creationTx": "0x5b165d6df8f7da959eda740ddbc3ad82d91bced334fc9b62c00c35d681bd5a2e",
+    "deployerAddress": "0x4E59B44847B379578588920cA78fbf26c0b4956c",
+    "quantum_entropy_signature": "c4d2d6b59e6cec10f0e27b65ff88dc0ee4d1f9788672990821f7ce43cbc788f8"
+  },
+  {
+    "id": "tok_8_mu1k7hqi",
+    "name": "PrimeSecurities",
+    "symbol": "PRMX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000F8613269613280DdE838806FcD012f5258932",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xbdfcbcfd3d583c3557aff95b5cb8d9f91e707a31ed92700bb64a36b05b125c6e",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "461748173697435741447654087",
+    "tokenStandard": "ERC-1155",
+    "narrative": "rwa",
+    "launchStatus": "Rug-Proof Vault",
+    "initialSupply": "437,000,000",
+    "decimals": 9,
+    "marketCap": 579980000,
+    "priceUsd": 5.7998,
+    "liquidityPair": "WBTC/USDC (Uniswap v3)",
+    "liquidityPoolId": 57,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 726,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title PrimeSecurities (PRMX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract PRMX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 16523,
+    "auditFirm": "Code4rena",
+    "securityScore": 82,
+    "createdAt": "2026-08-31T17:01:29.529Z",
+    "creationTx": "0x3144bbc1b79db309603305edd7653c52e8f7e38cc4b004910d58b447af86b6c6",
+    "deployerAddress": "0x0000000000FfE8b47B3E11CeEbB996d80F0E67E3",
+    "quantum_entropy_signature": "182f7e4018e00893716150af69ea6d6569ee58cf4581bef228414b61a377aece"
+  },
+  {
+    "id": "tok_16_mu1k7hqj",
+    "name": "BrickYield",
+    "symbol": "BRKN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x0001916e6714c1b7e8Abd620Ab9cEC442C6F1828",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x7b8d869bea46f511c6a20fab84f6d9aecbee95a2a69371fcb754433a9422ee75",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "268461833949529860582126408",
+    "tokenStandard": "ERC-1155",
+    "narrative": "rwa",
+    "launchStatus": "Deployed",
+    "initialSupply": "915,000,000",
+    "decimals": 9,
+    "marketCap": 4438620000,
+    "priceUsd": 44.3862,
+    "liquidityPair": "ezETH/ETH (Balancer / Curve)",
+    "liquidityPoolId": 11,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 387,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title BrickYield (BRKN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract BRKN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 16310,
+    "auditFirm": "Hacken",
+    "securityScore": 84,
+    "createdAt": "2026-08-29T06:22:09.568Z",
+    "creationTx": "0x9d4c62e2d3e5a9b9f784aa55a491d4819e8e00d2930ffc8d9d7026350db4a09e",
+    "deployerAddress": "0x1967C5A376916524a600e12338a994b69Ac37688",
+    "quantum_entropy_signature": "e0a5b713d2783a1e633c676e1b9fa7afbdcbd3eb048093f2d21aac263951dbae"
+  },
+  {
+    "id": "tok_22_mu1k7hqj",
+    "name": "ZeroProofSafe",
+    "symbol": "ZPRFN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000D23134f46F96906b1f3B62076c31E5Dca0c09",
+    "isVanity": true,
+    "contractArchetype": "OpenZeppelin Timelock Governor (CREATE2 Salt Grinded)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x3ac1cef3c5f91a4c5453b9e3a493e0cf0fa4b58045f1e81af10e00f389c6e4ea",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "409271839189070722304487010",
+    "tokenStandard": "ERC-1155",
+    "narrative": "quantum_defi",
+    "launchStatus": "Audited",
+    "initialSupply": "522,000,000",
+    "decimals": 18,
+    "marketCap": 839470000,
+    "priceUsd": 8.3947,
+    "liquidityPair": "cUSDO/USDC (Curve)",
+    "liquidityPoolId": 43,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 424,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title ZeroProofSafe (ZPRFN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract ZPRFN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 4972,
+    "auditFirm": "Halborn",
+    "securityScore": 97,
+    "createdAt": "2026-08-19T10:10:49.447Z",
+    "creationTx": "0xbef2ed3b999ec1edd26f94b64c187b9e3d34671f2e2a3b7a9707cea4aff19e5c",
+    "deployerAddress": "0x4E59B44847B379578588920cA78fbf26c0b4956c",
+    "quantum_entropy_signature": "325fff6fa7c5ab3be32c1a417f928d02f9db2481c2cc7280d10b1bfac2a3b309"
+  },
+  {
+    "id": "tok_26_mu1k7hqk",
+    "name": "ComputeArray",
+    "symbol": "CMPX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x00022d74BaBe5397e8c7Cd8e921eb2cA4A8a09Af",
+    "isVanity": true,
+    "contractArchetype": "Gnosis Safe Multi-Sig Core (Enterprise 4-of-7)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xb959461b8e2155fc4031f1aa0921d251a691c72fcc9389bcabf6989d85b8d7e3",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "535462837138361085504702010",
+    "tokenStandard": "ERC-1155",
+    "narrative": "depin",
+    "launchStatus": "Deployed",
+    "initialSupply": "223,000,000",
+    "decimals": 18,
+    "marketCap": 2242900000,
+    "priceUsd": 22.429,
+    "liquidityPair": "ETH+/ETH (Curve)",
+    "liquidityPoolId": 46,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 327,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title ComputeArray (CMPX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract CMPX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 4055,
+    "auditFirm": "Halborn",
+    "securityScore": 81,
+    "createdAt": "2026-08-20T14:07:58.622Z",
+    "creationTx": "0x2035f97600fcfc4681c1470993deaf087dfcb1e5df94b4a25576128f2e6c59e9",
+    "deployerAddress": "0x1967C5A376916524a600e12338a994b69Ac37688",
+    "quantum_entropy_signature": "ac35d70ce0cc517ab6539c3d9509c2495d62e3a565a078825467ba79f3634e27"
+  },
+  {
+    "id": "tok_31_mu1k7hqk",
+    "name": "MeshNetCluster",
+    "symbol": "MESHX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000DAa7f371ea8F68EfDe3CbDa7A8A1B9B6E0952",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x8f02033b7a79b14a72ea832426fb22a439292a09b58ee259da603c6d37e673d7",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "31",
+    "tokenStandard": "ERC-1155",
+    "narrative": "depin",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "786,000,000",
+    "decimals": 9,
+    "marketCap": 3641729999,
+    "priceUsd": 36.4173,
+    "liquidityPair": "USDC/fxUSD (Curve)",
+    "liquidityPoolId": 42,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 498,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title MeshNetCluster (MESHX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract MESHX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 6607,
+    "auditFirm": "CertiK",
+    "securityScore": 92,
+    "createdAt": "2026-09-09T06:55:27.266Z",
+    "creationTx": "0x4ad5b5e9f6d07fa3d72e30950c4a19620f5c2b7d5b663569db8559997babc287",
+    "deployerAddress": "0x5AfE48A2F594F8e619e63b09Cd4d64593C1FC891",
+    "quantum_entropy_signature": "8553ac798c26cac17d4f42e11f67d6e8caa361361b8af534b3790fc49781919d"
+  },
+  {
+    "id": "tok_34_mu1k7hqk",
+    "name": "RegenCredit",
+    "symbol": "RGNX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000F6EE71ba9182084b813Bd98ad0e8Fa922Ad44",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x1fe6cc8445cfaea14c08d46ab2ff73ae5c819ec6557949f23365fd28db0dfbe8",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "944978248878549590801387644",
+    "tokenStandard": "ERC-1155",
+    "narrative": "rwa",
+    "launchStatus": "Deployed",
+    "initialSupply": "147,000,000",
+    "decimals": 9,
+    "marketCap": 1436810000,
+    "priceUsd": 14.3681,
+    "liquidityPair": "FLOKI/ETH (Uniswap v3)",
+    "liquidityPoolId": 28,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 676,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title RegenCredit (RGNX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract RGNX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 4805,
+    "auditFirm": "Hacken",
+    "securityScore": 86,
+    "createdAt": "2026-08-22T21:49:59.909Z",
+    "creationTx": "0xaf97b22f44c3a8fb9df097642367b9585f4f55be37a37414bea0fec66afd896e",
+    "deployerAddress": "0x5AfE48A2F594F8e619e63b09Cd4d64593C1FC891",
+    "quantum_entropy_signature": "7ce5f1bec61101c3e43efd2be02cc386cb72a34a7855a53a6e95fbb629a0c49f"
+  },
+  {
+    "id": "tok_38_mu1k7hql",
+    "name": "KyberSafe",
+    "symbol": "KYBRN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000230Cb87E0bC7BdF0E571393F5b0324B1b7b02",
+    "isVanity": true,
+    "contractArchetype": "Gas-Optimized Zero-Calldata Institutional Contract",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xaf31c20e1a40f4a81e417824284047d30b4bd039f06ebd1dcb6011beef17830a",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "38",
+    "tokenStandard": "ERC-20",
+    "narrative": "quantum_defi",
+    "launchStatus": "Deployed",
+    "initialSupply": "752,000,000",
+    "decimals": 18,
+    "marketCap": 3492969999,
+    "priceUsd": 34.9297,
+    "liquidityPair": "osETH/rETH (Curve)",
+    "liquidityPoolId": 14,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 449,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title KyberSafe (KYBRN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract KYBRN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 18204,
+    "auditFirm": "Hacken",
+    "securityScore": 98,
+    "createdAt": "2026-08-21T20:55:08.796Z",
+    "creationTx": "0x123fb696d752d01e13e0cacef68eee05ea21c78f9b9ec3e94f170ccebf630aad",
+    "deployerAddress": "0x5AfE48A2F594F8e619e63b09Cd4d64593C1FC891",
+    "quantum_entropy_signature": "e9b8637caf76d9e54ad9d6255f5491b96799c564223f95116eae2bbb0891a63b"
+  },
+  {
+    "id": "tok_39_mu1k7hql",
+    "name": "YieldMaxReserve",
+    "symbol": "YMAXX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x0003B579Ed443e60c032f1Dc1a2ec88E489FdF98",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x7364f518f7fc6ca904de130635b68e76d2d2f1da7833a4226bf0c7c419eafe28",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "410871433649680199124252830",
+    "tokenStandard": "ERC-1155",
+    "narrative": "rwa",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "357,000,000",
+    "decimals": 18,
+    "marketCap": 345200000,
+    "priceUsd": 3.452,
+    "liquidityPair": "MKR/ETH (Uniswap v3)",
+    "liquidityPoolId": 18,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 535,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title YieldMaxReserve (YMAXX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract YMAXX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 14821,
+    "auditFirm": "OpenZeppelin",
+    "securityScore": 96,
+    "createdAt": "2026-08-22T14:43:35.089Z",
+    "creationTx": "0x12d792a102dea46c5df000e9031ecb7f4250068695fefec4b4b64ec9259de979",
+    "deployerAddress": "0x0000000000FfE8b47B3E11CeEbB996d80F0E67E3",
+    "quantum_entropy_signature": "33e173526c714d6eaa6a1090bc248dddae9b63d4db59b7a876d51875058f992b"
+  },
+  {
+    "id": "tok_43_mu1k7hql",
+    "name": "CogniSync",
+    "symbol": "COGX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x00088d35F67550d114582c6f9f6Aa09A4336Ba71",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x31cf1a6dbf2bfe88bdccd4f0b4542eed8efbd377819f0620090016d1d7aaa756",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "204016945997614834628407675",
+    "tokenStandard": "ERC-20",
+    "narrative": "ai_agents",
+    "launchStatus": "Deployed",
+    "initialSupply": "820,000,000",
+    "decimals": 9,
+    "marketCap": 3959109999,
+    "priceUsd": 39.5911,
+    "liquidityPair": "UNI/ETH (Uniswap v3)",
+    "liquidityPoolId": 15,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 624,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title CogniSync (COGX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract COGX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 21273,
+    "auditFirm": "Halborn",
+    "securityScore": 83,
+    "createdAt": "2026-08-26T03:04:45.046Z",
+    "creationTx": "0x7871eba1768a534fe534b4f891ed9759af6b917b54753e89e834b2c76c6a5503",
+    "deployerAddress": "0x2535d76e7b1657999B0182E47d8964d4a30b1c45",
+    "quantum_entropy_signature": "1b1ab81e5540d1089e46ffbf13508bb35af0e083ae05fbd0b5b782d4df8fa448"
+  },
+  {
+    "id": "tok_57_mu1k7hqm",
+    "name": "AutoPilotBrain",
+    "symbol": "AUTOX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000CA59218Ccb52Af43EAdEfB69A18bE4C82977a",
+    "isVanity": true,
+    "contractArchetype": "Gnosis Safe Multi-Sig Core (Enterprise 4-of-7)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xc7a5c40c07c5eb898251016f9013bd2f206c90b00dce672c8b27b863f55cf79d",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "57",
+    "tokenStandard": "ERC-1155",
+    "narrative": "ai_agents",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "332,000,000",
+    "decimals": 9,
+    "marketCap": 2264760000,
+    "priceUsd": 22.6476,
+    "liquidityPair": "ETH+/ETH (Curve)",
+    "liquidityPoolId": 46,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 582,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title AutoPilotBrain (AUTOX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract AUTOX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 20759,
+    "auditFirm": "Code4rena",
+    "securityScore": 93,
+    "createdAt": "2026-09-06T17:04:28.286Z",
+    "creationTx": "0xa0230c1220acec0eb3e5fb060f9070f0e703ac8fe87605f5ddc635e77df9f90e",
+    "deployerAddress": "0xc0rp89f4B537a179427D60D64860D4e2a8685afe",
+    "quantum_entropy_signature": "11e0f5d9d69436a471eb15d4ba2edc45c808b47247ca4850baf8fdf8324d2c0c"
+  },
+  {
+    "id": "tok_61_mu1k7hqn",
+    "name": "SentientNode",
+    "symbol": "SENTN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000b5057CaEA9547711ad13eF722cC5E6A39f68c",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x9687e610f3d5ad9c97b1d16c20c332f2bd46dfa81cf8b5351b24d80aee9ef983",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "61",
+    "tokenStandard": "ERC-721",
+    "narrative": "ai_agents",
+    "launchStatus": "Deployed",
+    "initialSupply": "10,000",
+    "decimals": 0,
+    "marketCap": 57785,
+    "priceUsd": 5.7785,
+    "liquidityPair": "ETHx/ETH (Curve)",
+    "liquidityPoolId": 54,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 456,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title SentientNode (SENTN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract SENTN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 18057,
+    "auditFirm": "Code4rena",
+    "securityScore": 86,
+    "createdAt": "2026-09-03T00:18:55.151Z",
+    "creationTx": "0x909460d501af0746f7d6822634024fce4b25c55451b2766060b0b97ad5eeea4b",
+    "deployerAddress": "0x1967C5A376916524a600e12338a994b69Ac37688",
+    "quantum_entropy_signature": "d7943955639ac7088f35f46530cdee7a8b159db5f55fa147f09c02ae290301d6"
+  },
+  {
+    "id": "tok_70_mu1k7hqn",
+    "name": "AutoPilotSync",
+    "symbol": "AUTOX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000497Ed2c11FDa6fAA50E25De048369d0780375",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x156d1f78bb7b61171fbda540ce83c9caea129e7bff41996e57d90b526af86c26",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "70",
+    "tokenStandard": "ERC-20",
+    "narrative": "ai_agents",
+    "launchStatus": "Audited",
+    "initialSupply": "671,000,000",
+    "decimals": 6,
+    "marketCap": 2377950000,
+    "priceUsd": 23.7795,
+    "liquidityPair": "FLOKI/ETH (Uniswap v3)",
+    "liquidityPoolId": 28,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 304,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title AutoPilotSync (AUTOX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract AUTOX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 14406,
+    "auditFirm": "CertiK",
+    "securityScore": 89,
+    "createdAt": "2026-08-16T18:29:44.801Z",
+    "creationTx": "0xf7bfb2b3093a9b7649cb2dda117b8011f4c428dbd592df53ba9213b347211cc6",
+    "deployerAddress": "0x4E59B44847B379578588920cA78fbf26c0b4956c",
+    "quantum_entropy_signature": "64b06ac1b22575d5d70ef00df00aebeb335641a2541d8cc28f6c5030d402a831"
+  },
+  {
+    "id": "tok_73_mu1k7hqo",
+    "name": "ZeroProofCore",
+    "symbol": "ZPRFX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000D9E76596634e5b9A97c69313cbB9339bC6992",
+    "isVanity": true,
+    "contractArchetype": "Gnosis Safe Multi-Sig Core (Enterprise 4-of-7)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xb35ef0712ab0a4d442ca30bffe3511b8d763a02f606a3eab39d9ae9f86d0b672",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "73",
+    "tokenStandard": "ERC-20",
+    "narrative": "quantum_defi",
+    "launchStatus": "Audited",
+    "initialSupply": "691,000,000",
+    "decimals": 6,
+    "marketCap": 358030000,
+    "priceUsd": 3.5803,
+    "liquidityPair": "LINK/ETH (Uniswap v3)",
+    "liquidityPoolId": 17,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 534,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title ZeroProofCore (ZPRFX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract ZPRFX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 16995,
+    "auditFirm": "Hacken",
+    "securityScore": 97,
+    "createdAt": "2026-08-31T01:42:58.190Z",
+    "creationTx": "0x3384720931021bd59495d6dc5a26b0d26a944b85321cb3a1ffb1392248594da6",
+    "deployerAddress": "0x1967C5A376916524a600e12338a994b69Ac37688",
+    "quantum_entropy_signature": "d63f79bd7ef459bbe8b77024c97a5910d8e486db546c5a283454eb6c8275ea5c"
+  },
+  {
+    "id": "tok_80_mu1k7hqo",
+    "name": "KyberGuard",
+    "symbol": "KYBRN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x00036b5cF1Bea2cDe34EA44426DB828Fc14E1Efe",
+    "isVanity": true,
+    "contractArchetype": "Gas-Optimized Zero-Calldata Institutional Contract",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x66d1340179d26f34d084ee203e71e37a6a08901ae46b1e2b93287453cc4d4817",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "80",
+    "tokenStandard": "ERC-1155",
+    "narrative": "quantum_defi",
+    "launchStatus": "Deployed",
+    "initialSupply": "503,000,000",
+    "decimals": 9,
+    "marketCap": 2916600000,
+    "priceUsd": 29.166,
+    "liquidityPair": "LDO/ETH (Uniswap v3)",
+    "liquidityPoolId": 19,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 304,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title KyberGuard (KYBRN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract KYBRN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 5111,
+    "auditFirm": "CertiK",
+    "securityScore": 92,
+    "createdAt": "2026-08-27T22:20:45.017Z",
+    "creationTx": "0x3e6d0954d85297bd0ffd47da648f9b3bcc53ae2e6eb4d21610d78ccfc319628a",
+    "deployerAddress": "0x4E59B44847B379578588920cA78fbf26c0b4956c",
+    "quantum_entropy_signature": "5df58ce87e402ed3b5172bfccbc4952c9102de0d936fd8ce9dbcc54bb314716c"
+  },
+  {
+    "id": "tok_81_mu1k7hqo",
+    "name": "BrickCredit",
+    "symbol": "BRKX",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000C45E3DcC44e16cDcC8cf06f8eF38F746b309c",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Account Abstraction Paymaster (ERC-4337)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x830dac682f0486142939859bfb7773832e2a68cc13ee7e1cc745bc4f3278b7f3",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "332183367803593572269673472",
+    "tokenStandard": "ERC-1155",
+    "narrative": "rwa",
+    "launchStatus": "Deployed",
+    "initialSupply": "861,000,000",
+    "decimals": 6,
+    "marketCap": 2690490000,
+    "priceUsd": 26.9049,
+    "liquidityPair": "USDe/USDT (Curve)",
+    "liquidityPoolId": 34,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 290,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title BrickCredit (BRKX)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract BRKX is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 19039,
+    "auditFirm": "Code4rena",
+    "securityScore": 98,
+    "createdAt": "2026-09-06T23:30:32.725Z",
+    "creationTx": "0x3477289e852e15855fd9a21bb80566285ed89debf0411e357897bfecdd182830",
+    "deployerAddress": "0x0000000000FfE8b47B3E11CeEbB996d80F0E67E3",
+    "quantum_entropy_signature": "e75c464a33c72691399cf781f032479ccca47d5d5e0fedb002a382c51d6f1680"
+  },
+  {
+    "id": "tok_86_mu1k7hqp",
+    "name": "GpuFarmStream",
+    "symbol": "GPUN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x000E9558A5073741a57Edc15B980c1026Bfbfaff",
+    "isVanity": true,
+    "contractArchetype": "Gas-Optimized Zero-Calldata Institutional Contract",
+    "isEnterprise": true,
+    "enterpriseSalt": "0x93c4e070f2a90d72ef24b60453308942c2761ef184e81cbaf57d117811b72a54",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "614348252645294605999437364",
+    "tokenStandard": "ERC-1155",
+    "narrative": "depin",
+    "launchStatus": "Audited",
+    "initialSupply": "361,000,000",
+    "decimals": 6,
+    "marketCap": 812670000,
+    "priceUsd": 8.1267,
+    "liquidityPair": "WISE/WETH (Uniswap v3)",
+    "liquidityPoolId": 45,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 503,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title GpuFarmStream (GPUN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract GPUN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 17595,
+    "auditFirm": "Trail of Bits",
+    "securityScore": 89,
+    "createdAt": "2026-09-04T07:31:12.914Z",
+    "creationTx": "0xc654e99979e0cd26d21381611df4686db5222eaa265c685974e666706541d4eb",
+    "deployerAddress": "0x2535d76e7b1657999B0182E47d8964d4a30b1c45",
+    "quantum_entropy_signature": "259172fc6640618bdee2c1976f017dc96e7d3c179df2e2f2de63533c8d58c23c"
+  },
+  {
+    "id": "tok_92_mu1k7hqp",
+    "name": "SwarmMind",
+    "symbol": "SWRMN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x00051880360d358112b2Aafd354687e39Dd02099",
+    "isVanity": true,
+    "contractArchetype": "Gas-Optimized Zero-Calldata Institutional Contract",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xba6eae5d16841fa14c94a1857e52457b39bb217601705ffe25ad13bc09787cac",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "onchain_identity",
+    "tokenId": "92",
+    "tokenStandard": "ERC-20",
+    "narrative": "ai_agents",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "115,000,000",
+    "decimals": 9,
+    "marketCap": 4305700000,
+    "priceUsd": 43.057,
+    "liquidityPair": "reUSD/scrvUSD (Curve)",
+    "liquidityPoolId": 44,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 557,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title SwarmMind (SWRMN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract SWRMN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 20954,
+    "auditFirm": "Halborn",
+    "securityScore": 95,
+    "createdAt": "2026-08-19T05:49:45.950Z",
+    "creationTx": "0x6a767bbee558775c467665b835541cc213b9f988d4eb30af7e7512f739370c0d",
+    "deployerAddress": "0xc0rp89f4B537a179427D60D64860D4e2a8685afe",
+    "quantum_entropy_signature": "015b953c4fc5108c656dbeb484b85466e0623aaf730955a2156c72b64798170e"
+  },
+  {
+    "id": "tok_99_mu1k7hqq",
+    "name": "QuantumProof",
+    "symbol": "QNTMN",
+    "chain": "ethereum",
+    "networkId": 1,
+    "contractAddress": "0x0003f66aE08fDCbB13e74353F887a85873316507",
+    "isVanity": true,
+    "contractArchetype": "Enterprise Transparent Upgradeable Proxy (EIP-1967)",
+    "isEnterprise": true,
+    "enterpriseSalt": "0xe3f7485d7f778311477b9f571cef60fa9f3c4205644d95a42af935cf880505ee",
+    "enterpriseTier": "Tier-1 Institutional",
+    "genre": "defi_liquidity",
+    "tokenId": "99",
+    "tokenStandard": "ERC-721",
+    "narrative": "quantum_defi",
+    "launchStatus": "Liquidity Locked",
+    "initialSupply": "10,000",
+    "decimals": 0,
+    "marketCap": 213935,
+    "priceUsd": 21.3935,
+    "liquidityPair": "BLUR/ETH (Uniswap v3)",
+    "liquidityPoolId": 24,
+    "reserveShares": "900000000000000000000",
+    "treasuryShares": "9000000000000000000000",
+    "targetOwner": "Mauro Lomibao Dar III",
+    "powerOfTwoReserves": 256,
+    "coinmarketcapMetric": 692,
+    "tokenomics": {
+      "tagline": "Algorithmic 2⁸ Reserve Tokenomics with EVM uint256 Boundary Enforcement",
+      "executiveSummary": "Dual-tier institutional token architecture incorporating 2^8 (256) Sovereign Reserve shares, audited OpenZeppelin ERC-20 framework, strict mathematical uint256 ceilings, and participant-backed economic liquidity.",
+      "tokenomics": [
+        {
+          "category": "2⁸ Sovereign Reserve Pool (256 Shares)",
+          "percentage": 25.6,
+          "lockup": "48-Month Sovereign Timelock"
+        },
+        {
+          "category": "Macro Treasury Allocation",
+          "percentage": 25.6,
+          "lockup": "36-Month DAO Escrow"
+        },
+        {
+          "category": "Public AMM Liquidity Reserves",
+          "percentage": 25.6,
+          "lockup": "100% Locked Liquidity Invariant (x*y=k)"
+        },
+        {
+          "category": "Ecosystem Grants & Staking Yield",
+          "percentage": 23.2,
+          "lockup": "Continuous Block Vesting"
+        }
+      ],
+      "solidityStub": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\n/**\n * @title QuantumProof (QNTMN)\n * @notice Mathematical Boundaries: uint256 ceiling (2^256 - 1) strictly enforced.\n * @notice Economic Realities: Liquidity requires participant capital; no artificial value without reserves.\n * @notice Smart Contract Architecture: OpenZeppelin governed by Sovereign Owner.\n * @custom:reserve-shares 2^8 (256 Reserves)\n * @custom:coinmarketcap-floor >= 2^8 (256 Metric Floor)\n * @custom:owner Mauro Lomibao Dar III\n */\ncontract QNTMN is ERC20Permit, Ownable2Step {\n    uint256 public constant UINT256_MAX = type(uint256).max; // 2^256 - 1\n    uint256 public constant RESERVE_SHARES_2_EXP_8 = 256; // 2^8 Reserves\n    uint256 public constant CMC_METRIC_FLOOR = 256; // >= 2^8 Floor\n\n    address public immutable SOVEREIGN_CUSTODIAN;\n    uint256 public immutable reserveAllocation;\n\n    event ReserveSharesAllocated(address indexed custodian, uint256 shares);\n\n    constructor(\n        string memory tokenName,\n        string memory tokenSymbol,\n        uint256 initialSupply,\n        address initialOwner\n    ) \n        ERC20(tokenName, tokenSymbol) \n        ERC20Permit(tokenName) \n        Ownable(initialOwner) \n    {\n        require(initialSupply <= UINT256_MAX, \"Math boundary: exceeds uint256\");\n        SOVEREIGN_CUSTODIAN = initialOwner;\n        reserveAllocation = RESERVE_SHARES_2_EXP_8;\n        _mint(initialOwner, initialSupply);\n        emit ReserveSharesAllocated(initialOwner, RESERVE_SHARES_2_EXP_8);\n    }\n}",
+      "securityScore": 99,
+      "auditNotes": "Mathematical Boundary Certified: Max uint256 ceiling verified. No literal infinity permitted. Standard OpenZeppelin Ownable2Step architecture. Real-world liquidity required for AMM pricing.",
+      "pillars": {
+        "mathematicalBoundaries": {
+          "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+          "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+          "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+          "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+        },
+        "economicRealities": {
+          "capitalBackingRequired": true,
+          "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+          "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+        },
+        "smartContractArchitecture": {
+          "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+          "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+          "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+        }
+      },
+      "powerOfTwo": {
+        "reserveSharesPowerOfTwo": 256,
+        "reserveSharesExponent": 8,
+        "reserveSharesFormatted": "2^8 (256 Reserves / Shares)",
+        "reserveOwner": "Mauro Lomibao Dar III",
+        "coinmarketcapMetricFloor": 256,
+        "coinmarketcapMetricDescription": "CoinMarketCap floor metric indexed at >= 2^8 (256 points / floor tier)",
+        "smartContractAddressBatchCount": 256
+      }
+    },
+    "tokenomicsPillars": {
+      "mathematicalBoundaries": {
+        "uint256Ceiling": "115792089237316195423570985008687907853269984665640564039457584007913129639935 (2^256 - 1)",
+        "uint256ExponentialNotation": "2^256 - 1 (~1.1579e77 wei)",
+        "noLiteralInfinityExplanation": "Numbers on EVM blockchains are limited by data types (such as uint256, which has a hard ceiling of 2^256 - 1). They cannot represent literal infinity. Checked arithmetic prevents silent overflows.",
+        "overflowProtection": "Solidity 0.8+ checked arithmetic / SafeMath boundary validation"
+      },
+      "economicRealities": {
+        "capitalBackingRequired": true,
+        "liquidityReserveMechanics": "Real liquidity reserves require actual capital deposited by participants, and market values depend entirely on real-world market dynamics, not automated code commands.",
+        "marketDynamicsDependence": "Constant product invariant (x * y = k) mandates real token and collateral deposits. Monetary velocity and valuation stem from verifiable trading volume and order books."
+      },
+      "smartContractArchitecture": {
+        "standardFramework": "OpenZeppelin Contracts v5.0 (ERC-20 / ERC-4626 / Permit / Ownable2Step)",
+        "governanceModel": "Ownable2Step + MultiSig (Owner: Mauro Lomibao Dar III)",
+        "monetaryCreationTruth": "Standard contracts (such as OpenZeppelin ERC-20) define fixed or mintable supplies governed by an owner address or multisig, but they cannot create monetary value on their own."
+      }
+    },
+    "holderCount": 6185,
+    "auditFirm": "CertiK",
+    "securityScore": 84,
+    "createdAt": "2026-08-29T00:22:14.925Z",
+    "creationTx": "0x592216a01bba1e7da0f6be42b84955f3531367f8665928bb28d818c441cd16f1",
+    "deployerAddress": "0x0000000000FfE8b47B3E11CeEbB996d80F0E67E3",
+    "quantum_entropy_signature": "d14986378c3956b5e8e66c221e112166c5bcb85b2a8daa26f501c7baf223a14c"
+  }
+]

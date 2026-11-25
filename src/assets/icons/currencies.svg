@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" role="img" aria-label="Currencies asset class icon">
+  <rect width="64" height="64" rx="12" fill="#0B0D10"/>
+  <!-- Outer gold motion arcs -->
+  <path d="M13.2 26.8 A20.5 20.5 0 0 1 26.2 13.4" stroke="#D4B475" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M50.8 37.2 A20.5 20.5 0 0 1 37.8 50.6" stroke="#D4B475" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Cyan-platinum opposing orbital arcs -->
+  <path d="M17.4 42.6 A17.8 17.8 0 0 1 42.8 18.2" stroke="#7DD3FC" stroke-width="1.55" stroke-linecap="round"/>
+  <path d="M46.6 21.4 A17.8 17.8 0 0 1 21.2 45.8" stroke="#7DD3FC" stroke-width="1.55" stroke-linecap="round"/>
+  <!-- Precision champagne-gold meridian globe wireframe -->
+  <circle cx="32" cy="32" r="13.6" stroke="#D4B475" stroke-width="1.65"/>
+  <line x1="18.4" y1="32" x2="45.6" y2="32" stroke="#D4B475" stroke-width="1.45"/>
+  <line x1="32" y1="18.4" x2="32" y2="45.6" stroke="#D4B475" stroke-width="1.45"/>
+  <ellipse cx="32" cy="32" rx="7.2" ry="13.6" stroke="#D4B475" stroke-width="1.45"/>
+  <path d="M21.8 23.2 Q32 28.4 42.2 23.2" stroke="#D4B475" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M21.8 40.8 Q32 35.6 42.2 40.8" stroke="#D4B475" stroke-width="1.4" stroke-linecap="round"/>
+  <!-- Dual opposing diagonal FX exchange arrows -->
+  <path d="M42.2 23.2 L47.6 16.4" stroke="#D4B475" stroke-width="1.65" stroke-linecap="round"/>
+  <path d="M44.2 15.6 H48.8 V20.2" stroke="#D4B475" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M21.8 40.8 L16.4 47.6" stroke="#D4B475" stroke-width="1.65" stroke-linecap="round"/>
+  <path d="M19.8 48.4 H15.2 V43.8" stroke="#D4B475" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

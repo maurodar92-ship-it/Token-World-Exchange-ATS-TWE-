@@ -1,0 +1,553 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // =========================================================================
+    // GLOBAL SAFETY NET — Default Deny All
+    // =========================================================================
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // =========================================================================
+    // HARDENED GLOBAL PRIMITIVES
+    // =========================================================================
+    function isValidId(id) {
+      return id is string
+        && id.size() >= 1
+        && id.size() <= 128
+        && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isBootstrappedAdmin() {
+      return isVerifiedUser()
+        && request.auth.token.email == 'maurodar08@gmail.com';
+    }
+
+    function isAdmin() {
+      return isBootstrappedAdmin()
+        || (isVerifiedUser()
+          && exists(/databases/$(database)/documents/admins/$(request.auth.uid)));
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isValidTicker(val) {
+      return val is string
+        && val.size() >= 1
+        && val.size() <= 24
+        && val.matches('^[A-Z0-9._\\-]+$');
+    }
+
+    // =========================================================================
+    // VALIDATION BLUEPRINTS (Anti-Update-Gap — No existing()/diff() here)
+    // =========================================================================
+    function isValidUser(data, userId) {
+      return data.keys().hasAll([
+          'uid',
+          'email',
+          'displayName',
+          'organization',
+          'preferredHub',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'uid',
+          'email',
+          'displayName',
+          'organization',
+          'preferredHub',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidId(data.uid)
+        && data.uid == userId
+        && (data.uid == request.auth.uid || isAdmin())
+        && data.email is string
+        && data.email.size() >= 3
+        && data.email.size() <= 254
+        && data.displayName is string
+        && data.displayName.size() >= 1
+        && data.displayName.size() <= 120
+        && data.organization is string
+        && data.organization.size() >= 1
+        && data.organization.size() <= 120
+        && data.preferredHub is string
+        && data.preferredHub.size() >= 1
+        && data.preferredHub.size() <= 64
+        && data.preferredHub.matches('^[a-z0-9\\-]+$')
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidAsset(data) {
+      return data.keys().hasAll([
+          'ownerId',
+          'symbol',
+          'name',
+          'kind',
+          'chain',
+          'standard',
+          'contractAddress',
+          'priceUsd',
+          'supplyFormatted',
+          'status',
+          'watchlisted',
+          'notes',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'ownerId',
+          'symbol',
+          'name',
+          'kind',
+          'chain',
+          'standard',
+          'contractAddress',
+          'priceUsd',
+          'supplyFormatted',
+          'status',
+          'watchlisted',
+          'notes',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidId(data.ownerId)
+        && (data.ownerId == request.auth.uid || isAdmin())
+        && isValidTicker(data.symbol)
+        && data.name is string
+        && data.name.size() >= 1
+        && data.name.size() <= 120
+        && data.kind is string
+        && data.kind.size() >= 1
+        && data.kind.size() <= 32
+        && data.kind in ['Tokens', 'NFTs', 'Commodities', 'Currencies']
+        && data.chain is string
+        && data.chain.size() >= 1
+        && data.chain.size() <= 64
+        && data.standard is string
+        && data.standard.size() >= 1
+        && data.standard.size() <= 32
+        && data.contractAddress is string
+        && data.contractAddress.size() >= 2
+        && data.contractAddress.size() <= 128
+        && (data.priceUsd is int || data.priceUsd is float)
+        && data.priceUsd >= 0
+        && data.supplyFormatted is string
+        && data.supplyFormatted.size() >= 1
+        && data.supplyFormatted.size() <= 120
+        && data.status is string
+        && data.status.size() >= 1
+        && data.status.size() <= 24
+        && data.status in ['Active', 'Review', 'Restricted', 'Archived']
+        && data.watchlisted is bool
+        && data.notes is string
+        && data.notes.size() >= 0
+        && data.notes.size() <= 500
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidOrder(data) {
+      return data.keys().hasAll([
+          'ownerId',
+          'assetId',
+          'symbol',
+          'side',
+          'orderType',
+          'quantity',
+          'limitPriceUsd',
+          'status',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'ownerId',
+          'assetId',
+          'symbol',
+          'side',
+          'orderType',
+          'quantity',
+          'limitPriceUsd',
+          'status',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidId(data.ownerId)
+        && (data.ownerId == request.auth.uid || isAdmin())
+        && isValidId(data.assetId)
+        && isValidTicker(data.symbol)
+        && data.side is string
+        && data.side.size() >= 3
+        && data.side.size() <= 4
+        && data.side in ['BUY', 'SELL']
+        && data.orderType is string
+        && data.orderType.size() >= 3
+        && data.orderType.size() <= 12
+        && data.orderType in ['MARKET', 'LIMIT', 'PEGGED', 'ICEBERG', 'FOK', 'IOC', 'TWAP', 'VWAP']
+        && (data.quantity is int || data.quantity is float)
+        && data.quantity > 0
+        && (data.limitPriceUsd is int || data.limitPriceUsd is float)
+        && data.limitPriceUsd >= 0
+        && data.status is string
+        && data.status.size() >= 4
+        && data.status.size() <= 12
+        && data.status in ['OPEN', 'FILLED', 'CANCELLED']
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidVaultRecord(data) {
+      return data.keys().hasAll([
+          'ownerId',
+          'recordType',
+          'symbol',
+          'amountFormatted',
+          'txHash',
+          'memo',
+          'status',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'ownerId',
+          'recordType',
+          'symbol',
+          'amountFormatted',
+          'txHash',
+          'memo',
+          'status',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidId(data.ownerId)
+        && (data.ownerId == request.auth.uid || isAdmin())
+        && data.recordType is string
+        && data.recordType.size() >= 4
+        && data.recordType.size() <= 12
+        && data.recordType in ['TRANCHE', 'BURN', 'AUDIT']
+        && isValidTicker(data.symbol)
+        && data.amountFormatted is string
+        && data.amountFormatted.size() >= 1
+        && data.amountFormatted.size() <= 120
+        && data.txHash is string
+        && data.txHash.size() >= 4
+        && data.txHash.size() <= 128
+        && data.txHash.matches('^[a-zA-Z0-9_\\-]+$')
+        && data.memo is string
+        && data.memo.size() >= 0
+        && data.memo.size() <= 300
+        && data.status is string
+        && data.status.size() >= 7
+        && data.status.size() <= 12
+        && data.status in ['PENDING', 'FINALIZED']
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    function isValidNftEdition(data) {
+      return data.keys().hasAll([
+          'ownerId',
+          'name',
+          'collection',
+          'rarityScore',
+          'rarityTier',
+          'traitsSummary',
+          'ipfsCid',
+          'sha256Hash',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.keys().hasOnly([
+          'ownerId',
+          'name',
+          'collection',
+          'rarityScore',
+          'rarityTier',
+          'traitsSummary',
+          'ipfsCid',
+          'sha256Hash',
+          'createdAt',
+          'updatedAt'
+        ])
+        && isValidId(data.ownerId)
+        && (data.ownerId == request.auth.uid || isAdmin())
+        && data.name is string
+        && data.name.size() >= 1
+        && data.name.size() <= 120
+        && data.collection is string
+        && data.collection.size() >= 1
+        && data.collection.size() <= 120
+        && (data.rarityScore is int || data.rarityScore is float)
+        && data.rarityScore >= 0
+        && data.rarityTier is string
+        && data.rarityTier.size() >= 4
+        && data.rarityTier.size() <= 16
+        && data.rarityTier in ['Mythic', 'Legendary', 'Epic', 'Rare', 'Uncommon', 'Common']
+        && data.traitsSummary is string
+        && data.traitsSummary.size() >= 1
+        && data.traitsSummary.size() <= 400
+        && data.ipfsCid is string
+        && data.ipfsCid.size() >= 4
+        && data.ipfsCid.size() <= 128
+        && data.sha256Hash is string
+        && data.sha256Hash.size() >= 8
+        && data.sha256Hash.size() <= 128
+        && data.createdAt is timestamp
+        && data.updatedAt is timestamp;
+    }
+
+    // =========================================================================
+    // COLLECTION 1: /users/{userId} (PII-Isolated Private Profile)
+    // =========================================================================
+    match /users/{userId} {
+      allow get: if isSignedIn()
+        && isValidId(userId)
+        && (isOwner(userId) || isAdmin());
+
+      allow list: if false;
+
+      allow create: if isVerifiedUser()
+        && isValidId(userId)
+        && isValidUser(incoming(), userId)
+        && userId == request.auth.uid
+        && incoming().email == request.auth.token.email
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser()
+        && isValidId(userId)
+        && isValidUser(incoming(), userId)
+        && incoming().uid == existing().uid
+        && incoming().email == existing().email
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin()
+          || (
+            isOwner(userId)
+            && incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'organization', 'preferredHub', 'updatedAt'])
+          )
+        );
+
+      allow delete: if isVerifiedUser()
+        && isValidId(userId)
+        && (isOwner(userId) || isAdmin());
+    }
+
+    // =========================================================================
+    // COLLECTION 2: /admins/{adminId} (Trusted RBAC Directory)
+    // =========================================================================
+    match /admins/{adminId} {
+      allow get: if isVerifiedUser()
+        && isValidId(adminId)
+        && (isOwner(adminId) || isBootstrappedAdmin());
+
+      allow list: if false;
+      allow create, update, delete: if false;
+    }
+
+    // =========================================================================
+    // COLLECTION 3: /assets/{assetId} (Persisted TWE Digital Assets)
+    // =========================================================================
+    match /assets/{assetId} {
+      allow get: if isSignedIn()
+        && isValidId(assetId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+
+      allow list: if isSignedIn()
+        && (existing().ownerId == request.auth.uid || isBootstrappedAdmin());
+
+      allow create: if isVerifiedUser()
+        && isValidId(assetId)
+        && isValidAsset(incoming())
+        && incoming().ownerId == request.auth.uid
+        && incoming().status in ['Active', 'Review']
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser()
+        && isValidId(assetId)
+        && isValidAsset(incoming())
+        && incoming().ownerId == existing().ownerId
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin()
+          || (
+            existing().ownerId == request.auth.uid
+            && existing().status != 'Archived'
+            && (
+              // Action 1: Toggle Watchlist
+              incoming().diff(existing()).affectedKeys().hasOnly(['watchlisted', 'updatedAt'])
+              // Action 2: Update Market Price & Notes
+              || incoming().diff(existing()).affectedKeys().hasOnly(['priceUsd', 'notes', 'updatedAt'])
+              // Action 3: Transition Lifecycle Status
+              || incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt'])
+            )
+          )
+        );
+
+      allow delete: if isVerifiedUser()
+        && isValidId(assetId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+    }
+
+    // =========================================================================
+    // COLLECTION 4: /orders/{orderId} (Persisted ATS Orders — Parent Asset Sync)
+    // =========================================================================
+    match /orders/{orderId} {
+      allow get: if isSignedIn()
+        && isValidId(orderId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+
+      allow list: if isSignedIn()
+        && (existing().ownerId == request.auth.uid || isBootstrappedAdmin());
+
+      allow create: if isVerifiedUser()
+        && isValidId(orderId)
+        && isValidOrder(incoming())
+        && incoming().ownerId == request.auth.uid
+        && incoming().status == 'OPEN'
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time
+        && exists(/databases/$(database)/documents/assets/$(incoming().assetId))
+        && get(/databases/$(database)/documents/assets/$(incoming().assetId)).data.ownerId == request.auth.uid;
+
+      allow update: if isVerifiedUser()
+        && isValidId(orderId)
+        && isValidOrder(incoming())
+        && incoming().ownerId == existing().ownerId
+        && incoming().assetId == existing().assetId
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin()
+          || (
+            existing().ownerId == request.auth.uid
+            && existing().status == 'OPEN'
+            && (
+              // Action 1: Settle or Cancel Open Order (Terminal State Transition)
+              (incoming().status in ['FILLED', 'CANCELLED']
+                && incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt']))
+              // Action 2: Amend Limit Price or Quantity while OPEN
+              || (incoming().status == 'OPEN'
+                && incoming().diff(existing()).affectedKeys().hasOnly(['limitPriceUsd', 'quantity', 'updatedAt']))
+            )
+          )
+        );
+
+      allow delete: if isVerifiedUser()
+        && isValidId(orderId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+    }
+
+    // =========================================================================
+    // COLLECTION 5: /vaultRecords/{recordId} (Sovereign Vault & Burn Ledger)
+    // =========================================================================
+    match /vaultRecords/{recordId} {
+      allow get: if isSignedIn()
+        && isValidId(recordId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+
+      allow list: if isSignedIn()
+        && (existing().ownerId == request.auth.uid || isBootstrappedAdmin());
+
+      allow create: if isVerifiedUser()
+        && isValidId(recordId)
+        && isValidVaultRecord(incoming())
+        && incoming().ownerId == request.auth.uid
+        && incoming().status == 'PENDING'
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser()
+        && isValidId(recordId)
+        && isValidVaultRecord(incoming())
+        && incoming().ownerId == existing().ownerId
+        && incoming().txHash == existing().txHash
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin()
+          || (
+            existing().ownerId == request.auth.uid
+            && existing().status == 'PENDING'
+            && (
+              // Action 1: Finalize Vault Record (Terminal Lock)
+              (incoming().status == 'FINALIZED'
+                && incoming().diff(existing()).affectedKeys().hasOnly(['status', 'updatedAt']))
+              // Action 2: Update Memo while PENDING
+              || (incoming().status == 'PENDING'
+                && incoming().diff(existing()).affectedKeys().hasOnly(['memo', 'updatedAt']))
+            )
+          )
+        );
+
+      allow delete: if isVerifiedUser()
+        && isValidId(recordId)
+        && (
+          isAdmin()
+          || (existing().ownerId == request.auth.uid && existing().status == 'PENDING')
+        );
+    }
+
+    // =========================================================================
+    // COLLECTION 6: /nftEditions/{editionId} (NFT Studio & Rarity Ledger)
+    // =========================================================================
+    match /nftEditions/{editionId} {
+      allow get: if isSignedIn()
+        && isValidId(editionId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+
+      allow list: if isSignedIn()
+        && (existing().ownerId == request.auth.uid || isBootstrappedAdmin());
+
+      allow create: if isVerifiedUser()
+        && isValidId(editionId)
+        && isValidNftEdition(incoming())
+        && incoming().ownerId == request.auth.uid
+        && incoming().createdAt == request.time
+        && incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedUser()
+        && isValidId(editionId)
+        && isValidNftEdition(incoming())
+        && incoming().ownerId == existing().ownerId
+        && incoming().sha256Hash == existing().sha256Hash
+        && incoming().createdAt == existing().createdAt
+        && incoming().updatedAt == request.time
+        && (
+          isAdmin()
+          || (
+            existing().ownerId == request.auth.uid
+            && incoming().diff(existing()).affectedKeys().hasOnly(['rarityScore', 'rarityTier', 'ipfsCid', 'updatedAt'])
+          )
+        );
+
+      allow delete: if isVerifiedUser()
+        && isValidId(editionId)
+        && (existing().ownerId == request.auth.uid || isAdmin());
+    }
+  }
+}

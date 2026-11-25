@@ -1,0 +1,6 @@
+{
+  "name": "Token World Exchange ATS — TWE Workspace",
+  "description": "Full-stack Graphite, Champagne-Gold & Platinum TWE Asset Workspace featuring 17 hubs, 4-Token Systems, CMDTX Codex, live SSE trade notifications, and Gemini AI studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

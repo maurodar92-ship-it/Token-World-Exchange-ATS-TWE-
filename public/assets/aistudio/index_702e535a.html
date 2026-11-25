@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RESONANCE.III — Phenomenon III</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#070a10;
+    --panel:#0c1119;
+    --panel-2:#0f1520;
+    --line:rgba(120,200,255,0.12);
+    --cyan:#28d9f0;
+    --green:#5ef29a;
+    --magenta:#c86bff;
+    --gold:#c9a227;
+    --ink:#d9e3ef;
+    --ink-dim:#6b7a8f;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;background:#000;color:var(--ink);font-family:'JetBrains Mono',monospace;}
+  .display{font-family:'Cinzel Decorative',serif;}
+
+  .phone-frame{
+    max-width:460px;margin:0 auto;min-height:100vh;background:var(--bg);
+    position:relative;overflow:hidden;
+    box-shadow:0 0 60px rgba(40,217,240,0.06) inset;
+  }
+  .phone-frame::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(ellipse 70% 30% at 50% 0%, rgba(40,217,240,0.07), transparent 60%);
+  }
+
+  header.top{
+    position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;
+    padding:16px 16px 12px;border-bottom:1px solid var(--line);
+  }
+  .brand-row{display:flex;align-items:center;gap:10px;}
+  .brand-row svg{width:22px;height:22px;}
+  .brand-title{font-size:0.95rem;letter-spacing:0.06em;color:#eef4fb;font-weight:700;}
+  .brand-mark{font-size:0.55rem;letter-spacing:0.2em;color:var(--gold);display:block;margin-top:1px;}
+
+  .freq-tabs{display:flex;gap:6px;}
+  .freq-tab{
+    font-size:0.72rem;padding:6px 10px;border-radius:8px;border:1px solid var(--line);
+    color:var(--ink-dim);cursor:pointer;background:transparent;font-family:'JetBrains Mono',monospace;
+  }
+  .freq-tab.active{background:var(--cyan);color:#001820;border-color:var(--cyan);font-weight:700;}
+  .refresh-btn{
+    width:32px;height:32px;border-radius:8px;border:1px solid var(--line);background:transparent;
+    color:var(--ink-dim);cursor:pointer;display:flex;align-items:center;justify-content:center;margin-left:6px;
+  }
+  .refresh-btn:active svg{animation:spin .6s linear;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .link-row{
+    position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;
+    margin:14px 16px;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);
+    font-size:0.78rem;
+  }
+  .link-row .online{color:var(--green);font-weight:700;display:flex;align-items:center;gap:6px;}
+  .link-row .online .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 2s infinite;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0.3;}}
+  .link-row .meta{color:var(--ink-dim);display:flex;gap:12px;}
+
+  .wave-box{
+    position:relative;z-index:1;margin:0 16px 14px;border:1px solid var(--line);border-radius:12px;
+    background:linear-gradient(180deg,#081018,#04070c);overflow:hidden;
+  }
+  .wave-tag{
+    position:absolute;top:10px;left:10px;font-size:0.62rem;color:var(--cyan);
+    background:rgba(40,217,240,0.08);border:1px solid rgba(40,217,240,0.3);padding:3px 8px;border-radius:6px;z-index:2;
+  }
+  .wave-stability{
+    position:absolute;bottom:10px;right:10px;font-size:0.62rem;color:var(--green);
+    background:rgba(94,242,154,0.08);border:1px solid rgba(94,242,154,0.3);padding:3px 8px;border-radius:6px;z-index:2;
+  }
+  canvas#waveCanvas{display:block;width:100%;height:210px;}
+
+  .index-row{
+    position:relative;z-index:1;display:flex;justify-content:space-between;margin:0 16px 14px;
+  }
+  .index-block .lbl, .noise-block .lbl{font-size:0.68rem;color:var(--ink-dim);letter-spacing:0.05em;margin-bottom:4px;}
+  .index-block .val{font-size:2rem;color:var(--cyan);font-weight:700;}
+  .index-block .delta{font-size:0.75rem;color:var(--green);margin-left:6px;}
+  .noise-block{text-align:right;}
+  .noise-block .val{font-size:1.3rem;color:var(--magenta);font-weight:700;}
+
+  .pulse-btn{
+    display:block;width:calc(100% - 32px);margin:0 16px 18px;padding:14px;border:none;border-radius:10px;
+    background:linear-gradient(90deg,var(--cyan),#5ef2e0);color:#001820;font-weight:700;font-size:0.82rem;
+    letter-spacing:0.05em;cursor:pointer;font-family:'JetBrains Mono',monospace;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    transition:transform .15s;
+  }
+  .pulse-btn:active{transform:scale(0.98);}
+  .pulse-btn.firing{animation:flash .4s;}
+  @keyframes flash{0%{filter:brightness(1);}50%{filter:brightness(1.6);}100%{filter:brightness(1);}}
+
+  .dual-cards{position:relative;z-index:1;display:flex;gap:10px;margin:0 16px 14px;}
+  .mini-card{flex:1;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--panel);position:relative;}
+  .mini-card.cyan{border-color:rgba(40,217,240,0.35);}
+  .mini-card.magenta{border-color:rgba(200,107,255,0.35);}
+  .mini-card .mlbl{font-size:0.62rem;color:var(--ink-dim);letter-spacing:0.08em;display:flex;justify-content:space-between;}
+  .mini-card .mval{font-size:1.15rem;color:#eef4fb;font-weight:700;margin:6px 0 2px;}
+  .mini-card .msub{font-size:0.68rem;}
+  .mini-card.cyan .msub{color:var(--cyan);}
+  .mini-card.magenta .msub{color:var(--magenta);}
+
+  .grid-section{position:relative;z-index:1;margin:0 16px 24px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--panel-2);}
+  .grid-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;}
+  .grid-head .gt{font-size:0.78rem;color:#eef4fb;display:flex;align-items:center;gap:6px;}
+  .grid-head .gm{font-size:0.62rem;color:var(--ink-dim);}
+  .calib-badge{font-size:0.6rem;color:var(--green);background:rgba(94,242,154,0.08);border:1px solid rgba(94,242,154,0.3);padding:2px 7px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;margin-top:6px;}
+  .calib-badge .dot{width:5px;height:5px;border-radius:50%;background:var(--green);}
+  canvas#lissCanvas{width:100%;height:140px;display:block;}
+
+  footer.sig{position:relative;z-index:1;text-align:center;padding:10px 16px 26px;color:var(--ink-dim);font-size:0.6rem;letter-spacing:0.08em;}
+  footer.sig .m{color:var(--gold);display:block;margin-top:6px;letter-spacing:0.15em;}
+  .conn-note{position:relative;z-index:1;text-align:center;font-size:0.6rem;color:var(--ink-dim);margin:-4px 0 10px;}
+</style>
+</head>
+<body>
+
+<div class="phone-frame">
+
+  <header class="top">
+    <div class="brand-row">
+      <svg viewBox="0 0 40 40" fill="none">
+        <polygon points="20,4 34,32 6,32" stroke="var(--green)" stroke-width="2.5"/>
+        <circle cx="20" cy="20" r="4" fill="var(--green)"/>
+      </svg>
+      <div>
+        <span class="brand-title">RESONANCE.III</span>
+        <span class="brand-mark">PHENOMENON III · GBC</span>
+      </div>
+    </div>
+    <div class="freq-tabs" id="freqTabs">
+      <button class="freq-tab active" data-freq="432">432Hz</button>
+      <button class="freq-tab" data-freq="528">528Hz</button>
+      <button class="freq-tab" data-freq="852">852Hz</button>
+      <button class="refresh-btn" id="refreshBtn" title="Refresh link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v6h6M20 20v-6h-6M4 10a8 8 0 0114-4M20 14a8 8 0 01-14 4"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="conn-note" id="connNote">connecting to resonance backend…</div>
+
+  <div class="link-row">
+    <span class="online"><span class="dot"></span>LINK ONLINE</span>
+    <span class="meta"><span>📶 <span id="linkPct">98%</span></span><span>((•)) <span id="nodeLabel">NODE_04</span></span></span>
+  </div>
+
+  <div class="wave-box">
+    <span class="wave-tag" id="waveTag">FREQ: 432Hz // CH_ALPHA</span>
+    <span class="wave-stability" id="stabilityTag">STABILITY: STABLE</span>
+    <canvas id="waveCanvas"></canvas>
+  </div>
+
+  <div class="index-row">
+    <div class="index-block">
+      <div class="lbl">RESONANCE INDEX</div>
+      <div><span class="val" id="resVal">93.95%</span><span class="delta" id="resDelta">▲ 0.04%</span></div>
+    </div>
+    <div class="noise-block">
+      <div class="lbl">NOISE FLOOR</div>
+      <div class="val" id="noiseVal">-112.6 dB</div>
+    </div>
+  </div>
+
+  <button class="pulse-btn" id="pulseBtn">⚡ EMIT RESONANCE PULSE</button>
+
+  <div class="dual-cards">
+    <div class="mini-card cyan">
+      <div class="mlbl"><span>NODE GRID</span><span>🖥️</span></div>
+      <div class="mval" id="nodeGridVal">4/4</div>
+      <div class="msub" id="nodeGridSub">ACTIVE NODES</div>
+    </div>
+    <div class="mini-card magenta">
+      <div class="mlbl"><span>SPECTRAL</span><span>🎛️</span></div>
+      <div class="mval" id="spectralVal">432Hz</div>
+      <div class="msub" id="spectralSub">HARMONIC RATIO 1:1</div>
+    </div>
+  </div>
+
+  <div class="grid-section">
+    <div class="grid-head">
+      <span class="gt">&gt;_ QUANTUM GRID DEVIATION</span>
+      <span class="gm">MATRIX MAP</span>
+    </div>
+    <canvas id="lissCanvas"></canvas>
+    <span class="calib-badge"><span class="dot"></span>CALIBRATED</span>
+  </div>
+
+  <footer class="sig">
+    Simulated resonance-field visualization for illustration within the PHENOMENON III ecosystem. No biometric, medical, or real sensor hardware is read.
+    <span class="m display">GOLDEN BUDDHA CORPORATION · Ѳ Ο Σ</span>
+  </footer>
+
+</div>
+
+<script>
+const API_BASE = "http://localhost:8000";
+const WS_URL = "ws://localhost:8000/ws/resonance";
+
+let state = {
+  freq: "432",
+  resonance_index: 93.95,
+  resonance_delta: 0.04,
+  noise_floor_db: -112.6,
+  waveform: [],
+  quantum_grid: [],
+  active_nodes: 4,
+  total_nodes: 4,
+  stability: "STABLE",
+};
+
+let ws = null;
+let usingBackend = false;
+let simStart = performance.now();
+
+// ---------- Local simulation fallback (mirrors backend math) ----------
+function bandBase(freq){ return {"432":93.95,"528":96.4,"852":89.1}[freq]; }
+
+function simulateStep(){
+  const t = (performance.now() - simStart) / 1000;
+  const baseHz = parseFloat(state.freq);
+  const wf = [];
+  for(let i=0;i<64;i++){
+    const phase = (i/64) * 2*Math.PI;
+    let h = Math.sin(phase + t*(baseHz/200));
+    h += 0.35*Math.sin(2*phase + t*(baseHz/90));
+    h += (Math.random()-0.5)*0.12;
+    wf.push(Math.max(-1,Math.min(1,h)));
+  }
+  const drift = Math.sin(t/9)*0.6;
+  const noise = (Math.random()-0.5)*0.1;
+  const val = Math.max(0,Math.min(100, bandBase(state.freq) + drift + noise));
+  state.resonance_delta = +(val - state.resonance_index).toFixed(2);
+  state.resonance_index = +val.toFixed(2);
+  state.noise_floor_db = +(-112.6 + (Math.random()-0.5)*0.8).toFixed(1);
+  state.waveform = wf;
+  state.quantum_grid = Array.from({length:120}, (_,i) => {
+    const u = (i/120)*2*Math.PI;
+    return { x: Math.sin(u + t*0.15), y: Math.sin(2*u)*0.6 };
+  });
+  state.stability = state.resonance_index > 70 ? "STABLE" : "FLUCTUATING";
+  render();
+}
+
+// ---------- Try connecting to real backend ----------
+function connectBackend(){
+  try{
+    ws = new WebSocket(WS_URL);
+    ws.onopen = () => {
+      usingBackend = true;
+      document.getElementById('connNote').textContent = "connected to live resonance backend";
+    };
+    ws.onmessage = (evt) => {
+      const d = JSON.parse(evt.data);
+      state = {...state, ...d};
+      render();
+    };
+    ws.onerror = () => { fallbackToSim(); };
+    ws.onclose = () => { if(usingBackend){ usingBackend=false; fallbackToSim(); } };
+    setTimeout(() => { if(!usingBackend) fallbackToSim(); }, 1500);
+  }catch(e){ fallbackToSim(); }
+}
+let simInterval = null;
+function fallbackToSim(){
+  if(simInterval) return;
+  document.getElementById('connNote').textContent = "no backend detected — running local simulation";
+  simInterval = setInterval(simulateStep, 200);
+  simulateStep();
+}
+
+// ---------- Rendering ----------
+const waveCanvas = document.getElementById('waveCanvas');
+const wctx = waveCanvas.getContext('2d');
+const lissCanvas = document.getElementById('lissCanvas');
+const lctx = lissCanvas.getContext('2d');
+
+function resizeCanvases(){
+  [waveCanvas, lissCanvas].forEach(c => {
+    const rect = c.getBoundingClientRect();
+    c.width = rect.width * devicePixelRatio;
+    c.height = rect.height * devicePixelRatio;
+  });
+}
+window.addEventListener('resize', resizeCanvases);
+
+function drawWave(){
+  resizeCanvases();
+  const w = waveCanvas.width, h = waveCanvas.height;
+  wctx.clearRect(0,0,w,h);
+  // grid
+  wctx.strokeStyle = "rgba(40,217,240,0.06)";
+  wctx.lineWidth = 1;
+  for(let x=0;x<w;x+=w/16){ wctx.beginPath(); wctx.moveTo(x,0); wctx.lineTo(x,h); wctx.stroke(); }
+  for(let y=0;y<h;y+=h/8){ wctx.beginPath(); wctx.moveTo(0,y); wctx.lineTo(w,y); wctx.stroke(); }
+
+  const wf = state.waveform.length ? state.waveform : new Array(64).fill(0);
+  const step = w / (wf.length - 1);
+  const mid = h*0.62;
+  const amp = h*0.38;
+
+  const grad = wctx.createLinearGradient(0,0,0,h);
+  grad.addColorStop(0, "rgba(94,242,154,0.35)");
+  grad.addColorStop(1, "rgba(40,217,240,0.02)");
+
+  wctx.beginPath();
+  wctx.moveTo(0, mid - wf[0]*amp);
+  wf.forEach((v,i) => wctx.lineTo(i*step, mid - v*amp));
+  wctx.lineTo(w, h); wctx.lineTo(0,h); wctx.closePath();
+  wctx.fillStyle = grad;
+  wctx.fill();
+
+  wctx.beginPath();
+  wctx.moveTo(0, mid - wf[0]*amp);
+  wf.forEach((v,i) => wctx.lineTo(i*step, mid - v*amp));
+  wctx.strokeStyle = "#5ef29a";
+  wctx.lineWidth = 2*devicePixelRatio;
+  wctx.stroke();
+}
+
+function drawLissajous(){
+  const w = lissCanvas.width, h = lissCanvas.height;
+  lctx.clearRect(0,0,w,h);
+  lctx.strokeStyle = "rgba(40,217,240,0.08)";
+  for(let x=0;x<w;x+=w/12){ lctx.beginPath(); lctx.moveTo(x,0); lctx.lineTo(x,h); lctx.stroke(); }
+  for(let y=0;y<h;y+=h/6){ lctx.beginPath(); lctx.moveTo(0,y); lctx.lineTo(w,y); lctx.stroke(); }
+
+  const pts = state.quantum_grid.length ? state.quantum_grid : [];
+  if(pts.length < 2) return;
+  const cx = w/2, cy = h/2, sx = w*0.42, sy = h*0.75;
+  lctx.beginPath();
+  pts.forEach((p,i) => {
+    const x = cx + p.x*sx, y = cy + p.y*sy;
+    if(i===0) lctx.moveTo(x,y); else lctx.lineTo(x,y);
+  });
+  lctx.strokeStyle = "#28d9f0";
+  lctx.lineWidth = 2.4*devicePixelRatio;
+  lctx.shadowColor = "#28d9f0";
+  lctx.shadowBlur = 8;
+  lctx.stroke();
+  lctx.shadowBlur = 0;
+}
+
+function render(){
+  document.getElementById('resVal').textContent = state.resonance_index.toFixed(2) + '%';
+  const dEl = document.getElementById('resDelta');
+  const up = state.resonance_delta >= 0;
+  dEl.textContent = (up?'▲ ':'▼ ') + Math.abs(state.resonance_delta).toFixed(2) + '%';
+  dEl.style.color = up ? '#5ef29a' : '#ff6b7a';
+  document.getElementById('noiseVal').textContent = state.noise_floor_db + ' dB';
+  document.getElementById('waveTag').textContent = `FREQ: ${state.freq}Hz // CH_ALPHA`;
+  document.getElementById('stabilityTag').textContent = `STABILITY: ${state.stability}`;
+  document.getElementById('nodeGridVal').textContent = `${state.active_nodes}/${state.total_nodes}`;
+  document.getElementById('spectralVal').textContent = `${state.freq}Hz`;
+  drawWave();
+  drawLissajous();
+}
+
+// ---------- Interactions ----------
+document.getElementById('freqTabs').addEventListener('click', async (e) => {
+  const btn = e.target.closest('.freq-tab');
+  if(!btn) return;
+  document.querySelectorAll('.freq-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  state.freq = btn.dataset.freq;
+  if(usingBackend){
+    try{ await fetch(`${API_BASE}/api/resonance/frequency`, {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({freq: state.freq})}); }catch(e){}
+  }
+});
+
+document.getElementById('refreshBtn').addEventListener('click', () => {
+  if(!usingBackend) connectBackend();
+});
+
+document.getElementById('pulseBtn').addEventListener('click', async (e) => {
+  e.target.classList.add('firing');
+  setTimeout(()=>e.target.classList.remove('firing'), 400);
+  if(usingBackend){
+    try{
+      const res = await fetch(`${API_BASE}/api/resonance/pulse`, {method:'POST'});
+      const d = await res.json();
+      state.resonance_index = d.resonance_index;
+    }catch(e){}
+  } else {
+    state.resonance_index = Math.min(100, state.resonance_index + (1 + Math.random()*1.5));
+    render();
+  }
+});
+
+// ---------- Init ----------
+resizeCanvases();
+connectBackend();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1039 @@
+import React, { useState, useEffect, useRef } from "react";
+
+/* ============================================================
+   PHENOMENON III — "GOD" : The Omni-Harmonic Resonance Array
+   Cosmic / sacred-geometry GBC-branded interactive dashboard.
+   Rebuilt as readable source from a minified production bundle.
+   ============================================================ */
+
+// ---------- Design tokens ----------
+const COLOR = {
+  cyan: "#00f0ff",
+  pink: "#ff006e",
+  gold: "#ffd700",
+  green: "#39ff14",
+  dim: "#8a9ab5",
+  panel: "rgba(3,7,18,0.8)",
+  panelSoft: "rgba(3,7,18,0.7)",
+};
+
+// ---------- Ambient background: starfield ----------
+function StarField() {
+  const stars = Array.from({ length: 100 }, (_, i) => ({
+    id: i,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    size: Math.random() * 2 + 0.5,
+    delay: Math.random() * 5,
+    color: i % 7 === 0 ? COLOR.cyan : i % 11 === 0 ? COLOR.pink : "#ffffff",
+  }));
+
+  return (
+    <div className="fixed inset-0 cosmic-bg pointer-events-none" style={{ zIndex: 0 }}>
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="absolute rounded-full animate-pulse-glow"
+          style={{
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            width: star.size,
+            height: star.size,
+            background: star.color,
+            boxShadow: `0 0 ${star.size * 2}px ${star.color}`,
+            animationDelay: `${star.delay}s`,
+          }}
+        />
+      ))}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+    </div>
+  );
+}
+Mauro L. Dar's Floating physics/sacred-math equations ----------
+const EQUATIONS = [
+  "∇·E = ρ/ε₀", "∂ψ/∂t + Hψ = 0", "ds² = g_μν dxᵘdxᵛ", "Δx·Δp ≥ ℏ/2",
+  "F = dp/dτ", "R_μν − ½Rg_μν = 8πG T_μν", "S = k_B ln Ω", "E² = (pc)² + (mc²)²",
+  "∮ B·dA = 0", "iℏ∂ψ/∂t = Ĥψ", "G = 8πG/c⁴ T", "∂_μ F^μν = J^ν",
+  "φ = (1+√5)/2", "e^(iπ) + 1 = 0", "∇²ψ + k²ψ = 0", "dS/dt ≥ 0",
+  "PV = nRT", "λ = h/p",
+];
+
+function FloatingEquations() {
+  return (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 1 }}>
+      {EQUATIONS.map((eq, i) => (
+        <div
+          key={i}
+          className="absolute font-mono text-xs whitespace-nowrap animate-float-up opacity-20"
+          style={{
+            left: `${(i * 7) % 90 + 5}%`,
+            color: i % 3 === 0 ? COLOR.cyan : i % 3 === 1 ? COLOR.pink : COLOR.gold,
+            animationDelay: `${(i * 2.3) % 20}s`,
+            animationDuration: `${18 + (i % 7) * 2}s`,
+            fontSize: "0.65rem",
+          }}
+        >
+          {eq}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ---------- Central archangel / robed figure illustration ----------
+function ArchangelFigure() {
+  return (
+    <svg
+      viewBox="0 0 500 500"
+      className="w-full max-w-md mx-auto"
+      style={{ filter: "drop-shadow(0 0 40px rgba(0,240,255,0.3))" }}
+    >
+      <defs>
+        <radialGradient id="auraGrad" cx="50%" cy="40%">
+          <stop offset="0%" stopColor={COLOR.cyan} stopOpacity="0.4" />
+          <stop offset="60%" stopColor="#0b0f2e" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="transparent" />
+        </radialGradient>
+        <linearGradient id="robeGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#0d1b4a" />
+          <stop offset="50%" stopColor="#1a0a3e" />
+          <stop offset="100%" stopColor="#030712" />
+        </linearGradient>
+        <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor={COLOR.gold} />
+          <stop offset="100%" stopColor="#b8860b" />
+        </linearGradient>
+      </defs>
+
+      {/* aura */}
+      <ellipse cx="250" cy="250" rx="220" ry="220" fill="url(#auraGrad)" />
+
+      {/* outer ring of gold motes */}
+      {Array.from({ length: 36 }, (_, i) => {
+        const angle = (i * Math.PI * 2) / 36;
+        const r = 200;
+        return (
+          <circle
+            key={i}
+            cx={250 + r * Math.cos(angle)}
+            cy={250 + r * Math.sin(angle)}
+            r="1"
+            fill={COLOR.gold}
+            opacity="0.6"
+          />
+        );
+      })}
+
+      {/* faint orbit traces */}
+      {["M80,150 Q200,80 350,120", "M60,250 Q250,180 440,260", "M100,350 Q250,300 400,340"].map(
+        (d, i) => (
+          <path key={i} d={d} fill="none" stroke="#006aff" strokeWidth="0.5" opacity="0.3" />
+        )
+      )}
+
+      {/* body silhouette glow */}
+      <path
+        d="M250,140 C230,130 200,150 190,180 C180,210 190,240 210,260 C210,280 220,310 230,340 L260,350 L270,300 C280,280 290,260 290,240 C310,220 320,190 310,160 C300,140 270,130 250,140Z"
+        fill={COLOR.cyan}
+        opacity="0.08"
+      />
+
+      {/* face */}
+      <path
+        d="M220,160 C218,150 222,140 230,135 C238,132 245,138 245,145 C245,152 242,155 240,158 C242,162 244,168 242,175 C240,180 235,182 232,180 C228,176 222,170 220,160Z"
+        fill="#c4956a"
+      />
+      <path d="M230,175 Q235,178 240,175" fill="none" stroke="#8b6914" strokeWidth="0.8" />
+      <path d="M228,165 Q232,163 236,165" fill="none" stroke="#5a3d1a" strokeWidth="0.6" />
+      <line x1="234" y1="168" x2="234" y2="172" stroke="#5a3d1a" strokeWidth="0.5" />
+      <path d="M227,163 Q234,160 241,163" fill="none" stroke="#3a2d1a" strokeWidth="0.8" />
+      <path d="M226,160 Q228,157 230,158" fill="none" stroke="#3a2d1a" strokeWidth="0.6" />
+      <path d="M236,157 Q238,158 240,160" fill="none" stroke="#3a2d1a" strokeWidth="0.6" />
+
+      {/* shoulders */}
+      <path d="M205,190 Q200,180 210,170 L220,165 Q215,180 210,200 Z" fill="url(#robeGrad)" stroke="url(#goldGrad)" strokeWidth="1" />
+      <path d="M295,190 Q300,180 290,170 L280,165 Q285,180 290,200 Z" fill="url(#robeGrad)" stroke="url(#goldGrad)" strokeWidth="1" />
+
+      {/* robe */}
+      <path
+        d="M210,200 C195,205 175,220 165,260 C155,300 160,350 170,400 L230,410 L250,390 L270,410 L330,400 C340,350 345,300 335,260 C325,220 305,205 290,200 C280,260 260,300 250,310 C240,300 220,260 210,200Z"
+        fill="url(#robeGrad)"
+        stroke="url(#goldGrad)"
+        strokeWidth="1.5"
+      />
+      <path d="M210,200 L180,240 L220,260 L195,300 L240,320" fill="none" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.7" />
+      <path d="M290,200 L320,240 L280,260 L305,300 L260,320" fill="none" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.7" />
+      <line x1="250" y1="210" x2="250" y2="380" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.5" />
+
+      {/* wings */}
+      <path d="M195,220 L140,260 L145,280 L200,240 Z" fill="url(#robeGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
+      <path d="M305,220 L360,260 L355,280 L300,240 Z" fill="url(#robeGrad)" stroke="url(#goldGrad)" strokeWidth="1.5" />
+
+      {/* hem motes */}
+      {[{ cx: 175, cy: 370 }, { cx: 220, cy: 390 }, { cx: 250, cy: 395 }, { cx: 280, cy: 390 }, { cx: 325, cy: 370 }].map(
+        (p, i) => <circle key={i} cx={p.cx} cy={p.cy} r="6" fill={COLOR.gold} opacity="0.4" />
+      )}
+
+      {/* circuitry halo */}
+      <g>
+        <line x1="120" y1="100" x2="122" y2="400" stroke={COLOR.green} strokeWidth="1" opacity="0.4" />
+        <line x1="380" y1="100" x2="378" y2="400" stroke={COLOR.green} strokeWidth="1" opacity="0.4" />
+        {[0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300].map((y, i) => (
+          <g key={i}>
+            <line x1="120" y1={100 + y} x2="125" y2={100 + y} stroke={COLOR.cyan} strokeWidth="0.5" opacity="0.3" />
+            <line x1="375" y1={100 + y} x2="380" y2={100 + y} stroke={COLOR.cyan} strokeWidth="0.5" opacity="0.3" />
+          </g>
+        ))}
+        {Array.from({ length: 6 }, (_, row) => (
+          <g key={row}>
+            {[0, 1, 0, 1, 0, 1, 1, 0].map((bit, col) => (
+              <rect key={`b-${row}-${col}`} x={122 + col * 32} y={110 + row * 42} width="2" height="15" fill={COLOR.cyan} opacity="0.15" rx="0.5" />
+            ))}
+            {[1, 0, 1, 1, 0, 0, 1, 0].map((bit, col) => (
+              <rect key={`b2-${row}-${col}`} x={194 + col * 32} y={110 + row * 42} width="2" height="15" fill="url(#goldGrad)" opacity="0.15" rx="0.5" />
+            ))}
+          </g>
+        ))}
+      </g>
+
+      {/* crown rings */}
+      <g opacity="0.6">
+        <ellipse cx="250" cy="120" rx="150" ry="20" fill="none" stroke={COLOR.cyan} strokeWidth="0.8"
+          transform="rotate(-10, 250, 120)" className="animate-rotate-slow" style={{ transformOrigin: "250px 120px" }} />
+        <ellipse cx="250" cy="120" rx="180" ry="15" fill="none" stroke={COLOR.pink} strokeWidth="0.5"
+          transform="rotate(15, 250, 120)" className="animate-rotate-reverse" style={{ transformOrigin: "250px 120px" }} />
+      </g>
+
+      {/* circuit glyph, right */}
+      <g opacity="0.5">
+        <rect x="380" y="200" width="30" height="30" fill="none" stroke={COLOR.gold} strokeWidth="0.8" />
+        <line x1="380" y1="230" x2="400" y2="210" stroke={COLOR.gold} strokeWidth="0.5" />
+        <path d="M390,200 A10,10 0 0,0 400,220 L390,230 A20,20 0 0,1 380,210 Z" fill="none" stroke={COLOR.gold} strokeWidth="0.5" />
+      </g>
+
+      {/* triple-loop emblem, left */}
+      <g opacity="0.6" transform="translate(90, 300)">
+        {[0, 120, 240].map((deg) => (
+          <ellipse key={deg} cx="0" cy="0" rx="25" ry="10" fill="none" stroke={COLOR.pink} strokeWidth="0.8" transform={`rotate(${deg})`} />
+        ))}
+        <circle cx="0" cy="0" r="4" fill={COLOR.pink} opacity="0.4" />
+      </g>
+    </svg>
+  );
+}
+
+// ---------- Hexagram seal (interactive) ----------
+function HexSeal({ interactive = false, onClick, active, size = 220 }) {
+  const c = size / 2;
+  const rInner = size * 0.35;
+  const rStar = size * 0.48;
+
+  const triUp = Array.from({ length: 3 }, (_, i) => {
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / 3;
+    return `${c + rInner * Math.cos(a)},${c + rInner * Math.sin(a)}`;
+  }).join(" ");
+
+  const triDown = Array.from({ length: 3 }, (_, i) => {
+    const a = Math.PI / 2 + (i * 2 * Math.PI) / 3;
+    return `${c + rInner * Math.cos(a)},${c + rInner * Math.sin(a)}`;
+  }).join(" ");
+
+  const starPoints = Array.from({ length: 16 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 16 - Math.PI / 2;
+    return { x: c + rStar * Math.cos(a), y: c + rStar * Math.sin(a), id: i };
+  });
+
+  const rayBase = size * 0.4;
+
+  return (
+    <svg
+      viewBox={`0 0 ${size} ${size}`}
+      className={interactive ? "cursor-pointer" : ""}
+      style={{ width: size, height: size }}
+      onClick={onClick}
+    >
+      <circle cx={c} cy={c} r={rStar + 8} fill="none" stroke={active ? COLOR.cyan : "#1e3a5f"}
+        strokeWidth="1.5" strokeDasharray="4 3" className="animate-rotate-slow" style={{ transformOrigin: `${c}px ${c}px` }} />
+
+      {starPoints.map((p) => (
+        <text key={p.id} x={p.x} y={p.y} textAnchor="middle" dominantBaseline="central"
+          fontSize="8" fill={active ? COLOR.gold : COLOR.dim}>★</text>
+      ))}
+
+      <circle cx={c} cy={c} r={rStar} fill={active ? `${COLOR.cyan}08` : "none"}
+        stroke={active ? COLOR.cyan : COLOR.dim} strokeWidth="1" />
+
+      {[80, 95, 110, 125, 140, 155, 170].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        const inner = rayBase * 0.3, outer = rayBase * 0.85;
+        return (
+          <line key={deg} x1={c + inner * Math.cos(rad)} y1={c + inner * Math.sin(rad)}
+            x2={c + outer * Math.cos(rad)} y2={c + outer * Math.sin(rad)}
+            stroke={active ? COLOR.gold : COLOR.dim} strokeWidth="0.5" opacity="0.5" />
+        );
+      })}
+
+      {[30, 90, 150, 210, 270, 330].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        return (
+          <circle key={deg} cx={c + (rayBase + 12) * Math.cos(rad)} cy={c + (rayBase + 12) * Math.sin(rad)}
+            r="5" fill="none" stroke={active ? COLOR.cyan : COLOR.dim} strokeWidth="1.5" />
+        );
+      })}
+
+      <polygon points={triUp} fill="none" stroke={active ? COLOR.gold : "#fff"} strokeWidth="2.5" strokeLinejoin="round" />
+      <polygon points={triDown} fill="none" stroke={active ? COLOR.gold : "#fff"} strokeWidth="2.5" strokeLinejoin="round" />
+
+      {Array.from({ length: 24 }, (_, i) => {
+        const a = (i * Math.PI * 2) / 24;
+        const inner = rInner * 0.3, outer = rInner * 0.65;
+        return (
+          <line key={`ray-${i}`} x1={c + inner * Math.cos(a)} y1={c + inner * Math.sin(a)}
+            x2={c + outer * Math.cos(a)} y2={c + outer * Math.sin(a)}
+            stroke={active ? COLOR.gold : COLOR.cyan} strokeWidth="0.8" opacity="0.7" />
+        );
+      })}
+
+      <circle cx={c} cy={c} r="7" fill={active ? COLOR.gold : "#fff"} />
+    </svg>
+  );
+}
+
+// ---------- Cosmic seal (larger, dual-triangle) ----------
+function CosmicSeal({ size = 240, active }) {
+  const c = size / 2;
+  const r = size * 0.4;
+  const dodecagon = Array.from({ length: 12 }, (_, i) => {
+    const a = (i * 2 * Math.PI) / 12 - Math.PI / 2;
+    return `${c + (r + 18) * Math.cos(a)},${c + (r + 18) * Math.sin(a)}`;
+  });
+
+  return (
+    <svg viewBox={`0 0 ${size} ${size}`} style={{ width: size, height: size }}>
+      <circle cx={c} cy={c} r={c - 2} fill="#030712" />
+
+      {Array.from({ length: 12 }, (_, i) => {
+        const a = (i * 2 * Math.PI) / 12 - Math.PI / 2;
+        const x = c + (r + 28) * Math.cos(a), y = c + (r + 28) * Math.sin(a);
+        return (
+          <text key={i} x={x} y={y} textAnchor="middle" dominantBaseline="central"
+            fontSize="10" fill={active ? COLOR.gold : COLOR.dim}>★</text>
+        );
+      })}
+
+      <circle cx={c} cy={c} r={r + 12} fill={active ? `${COLOR.cyan}06` : "none"}
+        stroke={active ? COLOR.cyan : "#1e3a5f"} strokeWidth="1.5" strokeDasharray="4 2"
+        className="animate-rotate-slow" style={{ transformOrigin: `${c}px ${c}px` }} />
+      <circle cx={c} cy={c} r={r + 3} fill="none" stroke={active ? COLOR.pink : "#1e3a5f"} strokeWidth="2" />
+
+      {[80, 95, 110, 125, 140, 155, 170].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        const inner = r * 0.3, outer = r * 0.85;
+        return (
+          <line key={deg} x1={c + inner * Math.cos(rad)} y1={c + inner * Math.sin(rad)}
+            x2={c + outer * Math.cos(rad)} y2={c + outer * Math.sin(rad)}
+            stroke={active ? COLOR.gold : "#1e3a5f"} strokeWidth="0.6" opacity="0.6" />
+        );
+      })}
+
+      <polygon points={dodecagon.join(" ")} fill={active ? "#00f0ff0a" : "none"}
+        stroke={active ? COLOR.gold : "#3a1a0a"} strokeWidth="1" />
+
+      {Array.from({ length: 2 }, (_, i) => {
+        const tri = Array.from({ length: 3 }, (_, j) => {
+          const a = -Math.PI / 2 + i * Math.PI + (j * 2 * Math.PI) / 3;
+          return `${c + r * Math.cos(a)},${c + r * Math.sin(a)}`;
+        });
+        return <polygon key={i} points={tri.join(" ")} fill="none" stroke={active ? COLOR.gold : "#fff"} strokeWidth="2" strokeLinejoin="round" />;
+      })}
+
+      {[30, 90, 150, 210, 270, 330].map((deg) => {
+        const rad = (deg * Math.PI) / 180;
+        return (
+          <circle key={deg} cx={c + (r + 12) * Math.cos(rad)} cy={c + (r + 12) * Math.sin(rad)}
+            r="5" fill="none" stroke={active ? COLOR.cyan : COLOR.dim} strokeWidth="1.5" />
+        );
+      })}
+
+      {Array.from({ length: 24 }, (_, i) => {
+        const a = (i * Math.PI * 2) / 24;
+        return (
+          <line key={i} x1={c + 8 * Math.cos(a)} y1={c + 8 * Math.sin(a)}
+            x2={c + r * 0.4 * Math.cos(a)} y2={c + r * 0.4 * Math.sin(a)}
+            stroke={active ? COLOR.gold : COLOR.cyan} strokeWidth="0.7" opacity="0.6" />
+        );
+      })}
+
+      <circle cx={c} cy={c} r="7" fill={active ? COLOR.gold : "#fff"} opacity="0.9" />
+    </svg>
+  );
+}
+
+// ---------- Ankh glyph ----------
+function AnkhGlyph({ size = 200 }) {
+  return (
+    <svg viewBox="0 0 200 320" style={{ width: size, height: size * 1.6 }}>
+      <defs>
+        <filter id="glowA">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      {[0, 30, -30].map((n, i) => (
+        <line key={i} x1={100 + n * 0.5} y1="0" x2={100 + n * 2} y2="320"
+          stroke={i === 0 ? COLOR.green : i === 1 ? COLOR.pink : COLOR.cyan} strokeWidth="1" opacity="0.6" />
+      ))}
+      <g filter="url(#glowA)">
+        <ellipse cx="100" cy="80" rx="40" ry="45" fill="none" stroke={COLOR.cyan} strokeWidth="3" />
+        <line x1="100" y1="125" x2="100" y2="290" stroke={COLOR.cyan} strokeWidth="4" />
+        <line x1="55" y1="170" x2="145" y2="170" stroke={COLOR.cyan} strokeWidth="3" />
+        <polygon points="85,170 55,200 70,200 100,240 130,200 115,200" fill="none" stroke={COLOR.cyan} strokeWidth="2.5" />
+      </g>
+      {[60, 100, 140].map((x) => (
+        <text key={x} x={x} y="80" textAnchor="middle" fontSize="6" fill={COLOR.pink} opacity="0.8" fontFamily="monospace">01</text>
+      ))}
+    </svg>
+  );
+}
+
+// ---------- Dragon-node glyph ----------
+function DragonGlyph({ size = 200 }) {
+  return (
+    <svg viewBox="0 0 200 300" style={{ width: size, height: size * 1.5 }}>
+      <defs>
+        <filter id="glowD">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      <line x1="100" y1="0" x2="60" y2="300" stroke={COLOR.pink} strokeWidth="2" opacity="0.5" />
+      <line x1="100" y1="0" x2="140" y2="300" stroke={COLOR.pink} strokeWidth="2" opacity="0.5" />
+      <line x1="100" y1="0" x2="100" y2="280" stroke={COLOR.green} strokeWidth="1" opacity="0.4" />
+      <g filter="url(#glowD)">
+        <circle cx="100" cy="80" r="50" fill="none" stroke={COLOR.cyan} strokeWidth="2" />
+        <path d="M75,60 Q80,45 100,50 Q115,55 120,70 Q125,85 110,90 Q95,92 85,80 Q78,72 75,60Z" fill="none" stroke={COLOR.cyan} strokeWidth="1.5" />
+        <circle cx="105" cy="65" r="3" fill={COLOR.cyan} />
+        <line x1="100" y1="130" x2="100" y2="250" stroke={COLOR.cyan} strokeWidth="3" />
+        <path d="M80,160 L60,180 L75,185 L70,210 L85,200 L100,220 L100,250" fill="none" stroke={COLOR.cyan} strokeWidth="2" />
+        <path d="M120,160 L140,180 L125,185 L130,210 L115,200 L100,220 L100,250" fill="none" stroke={COLOR.cyan} strokeWidth="2" />
+        <path d="M70,250 L100,280 L130,250" fill="none" stroke={COLOR.cyan} strokeWidth="2" />
+        {Array.from({ length: 8 }, (_, i) => (
+          <line key={i} x1={60 + i * 12} y1="95" x2={60 + i * 12} y2="110" stroke={COLOR.cyan} strokeWidth="0.8" opacity="0.6" />
+        ))}
+        {Array.from({ length: 6 }, (_, i) => (
+          <line key={i} x1="100" y1={135 + i * 18} x2="93" y2={135 + i * 18} stroke={COLOR.pink} strokeWidth="0.5" opacity="0.6" />
+        ))}
+      </g>
+    </svg>
+  );
+}
+
+// ---------- Sigil lineage column (heaven → earth) ----------
+const SIGILS = [
+  { name: "Alpha", path: "M50,25 L50,75 M50,25 Q50,15 60,15 M35,65 L65,65", color: COLOR.cyan, tier: "heaven" },
+  { name: "Phi", path: "M50,15 L50,85 M35,50 Q50,25 65,50", color: COLOR.cyan, tier: "heaven" },
+  { name: "Omega", path: "M25,75 Q50,95 75,75 M25,45 L25,75 M75,45 L75,75 M35,40 Q50,60 65,40", color: COLOR.cyan, tier: "heaven" },
+  { name: "Ascension", path: "M50,20 L50,70 M50,20 L40,30 M50,20 L60,30 M35,70 L65,70 M40,60 L60,60", color: COLOR.cyan, tier: "heaven" },
+  { name: "Star", path: "M50,15 L55,45 L50,35 L45,45 Z M50,35 L50,85 M25,55 L75,55 M30,25 L70,85 M30,85 L70,25", color: COLOR.cyan, tier: "heaven" },
+  { name: "Bridge", path: "M50,30 L50,70 M30,45 Q50,15 70,45 Q70,65 50,70 Q30,65 30,45 Z", color: COLOR.gold, tier: "earth" },
+  { name: "Gateway", path: "M25,40 L75,40 L75,80 L25,80 Z M50,40 L50,80 M30,45 Q50,30 70,45", color: COLOR.gold, tier: "earth" },
+];
+
+function SigilColumn() {
+  return (
+    <div className="relative w-full" style={{ height: 420 }}>
+      <svg viewBox="0 0 100 420" className="w-full h-full">
+        <defs>
+          <filter id="symGlow">
+            <feGaussianBlur stdDeviation="2" result="b" />
+            <feMerge>
+              <feMergeNode in="b" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <linearGradient id="heavenGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={COLOR.cyan} stopOpacity="0.8" />
+            <stop offset="100%" stopColor={COLOR.cyan} stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="earthGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={COLOR.gold} stopOpacity="0.8" />
+            <stop offset="100%" stopColor={COLOR.gold} stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        {Array.from({ length: 40 }, (_, i) => (
+          <circle key={`s${i}`} cx={10 + Math.random() * 80} cy={Math.random() * 420}
+            r={Math.random() * 1.5} fill={Math.random() > 0.5 ? COLOR.cyan : COLOR.pink}
+            opacity={0.2 + Math.random() * 0.4} />
+        ))}
+
+        {Array.from({ length: 5 }, (_, t) => (
+          <line key={`c${t}`} x1={10 + t * 18} y1={20 + t * 15} x2={70 - t * 12} y2={40 + t * 20}
+            stroke={COLOR.cyan} strokeWidth="0.3" opacity="0.25" />
+        ))}
+        {Array.from({ length: 4 }, (_, t) => (
+          <line key={`c2${t}`} x1={20 + t * 15} y1={100 + t * 20} x2={80 - t * 10} y2={80 + t * 25}
+            stroke="#ffffff" strokeWidth="0.2" opacity="0.15" />
+        ))}
+
+        <rect x="0" y="350" width="100" height="70" fill="url(#earthGrad)" opacity="0.6" />
+        <rect x="0" y="300" width="100" height="55" fill="#ff6347" opacity="0.15" />
+
+        {SIGILS.map((sig, i) => {
+          const y = 30 + i * 48;
+          return (
+            <g key={i} filter="url(#symGlow)">
+              <path d={sig.path} fill="none" stroke={sig.color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <text x="85" y={y} textAnchor="end" fontSize="5" fill={sig.color} fontFamily="monospace" opacity="0.8">
+                {sig.name}
+              </text>
+              <circle cx="50" cy={y - 12} r="1" fill={sig.color}>
+                <animate attributeName="opacity" values="1;0;1" dur={`${2 + i * 0.3}s`} repeatCount="indefinite" />
+              </circle>
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+// ---------- Resonance array: oscilloscope + frequency controls ----------
+const RESONANCE_MODES = [
+  { id: "phi", label: "Φ", desc: "Golden Ratio", value: 1.618 },
+  { id: "psi", label: "Ψ", desc: "Wave Function", value: "Σ" },
+  { id: "omega", label: "Ω", desc: "Resistance", value: "∞" },
+  { id: "delta", label: "Δ", desc: "Flux", value: "" },
+  { id: "sigma", label: "Σ", desc: "Summation", value: "∑" },
+  { id: "lambda", label: "Λ", desc: "Cosmological", value: "λ" },
+];
+
+function ResonanceArray() {
+  const [activeMode, setActiveMode] = useState(0);
+  const [resonance, setResonance] = useState(65);
+  const [frequency, setFrequency] = useState(7.83); // Schumann resonance default
+  const [isActive, setIsActive] = useState(true);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    if (!isActive) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    let t = 0;
+
+    const interval = setInterval(() => {
+      canvas.width = 400;
+      canvas.height = 120;
+      ctx.fillStyle = "rgba(3, 7, 18, 0.15)";
+      ctx.fillRect(0, 0, 400, 120);
+
+      const waveColors = [COLOR.cyan, COLOR.pink, COLOR.green, COLOR.gold];
+      for (let k = 0; k < 3; k++) {
+        ctx.beginPath();
+        ctx.strokeStyle = waveColors[k];
+        ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.6;
+        for (let x = 0; x < 400; x++) {
+          const y =
+            60 +
+            Math.sin(x * 0.02 + t * 0.05 + k * 2) * (15 + resonance * 0.4) +
+            Math.cos(x * 0.01 + t * 0.03) * 8;
+          x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      t++;
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [isActive, resonance]);
+
+  return (
+    <div className="space-y-4">
+      <div className="neon-border-cyan rounded-lg overflow-hidden relative" style={{ background: "rgba(3,7,18,0.8)" }}>
+        <canvas ref={canvasRef} className="w-full" style={{ height: 120 }} />
+        <div className="absolute top-2 left-3 font-mono text-xs neon-text-cyan">WAVEFORM RESONANCE</div>
+        <div className="absolute top-2 right-3 font-mono text-xs" style={{ color: COLOR.gold }}>
+          {frequency.toFixed(2)} Hz
+        </div>
+      </div>
+
+      <div className="grid grid-cols-6 gap-1">
+        {RESONANCE_MODES.map((mode, i) => (
+          <button
+            key={mode.id}
+            onClick={() => setActiveMode(i)}
+            className="flex flex-col items-center p-2 rounded transition-all font-mono text-xs"
+            style={{
+              background: activeMode === i ? "#00f0ff15" : "#0c152550",
+              borderColor: activeMode === i ? COLOR.cyan : "#1e3a5f",
+              borderWidth: 1,
+            }}
+          >
+            <span className="font-bold text-lg" style={{ color: activeMode === i ? COLOR.cyan : COLOR.dim }}>
+              {mode.label}
+            </span>
+            <span style={{ color: COLOR.gold, fontSize: "0.55rem" }}>{mode.desc}</span>
+            <span className="font-mono" style={{ color: COLOR.pink, fontSize: "0.65rem" }}>{mode.value}</span>
+          </button>
+        ))}
+      </div>
+
+      <div className="space-y-3">
+        <label className="flex items-center gap-3 text-xs font-mono" style={{ color: COLOR.dim }}>
+          <span className="w-24">RESONANCE</span>
+          <input type="range" min="0" max="100" value={resonance}
+            onChange={(e) => setResonance(Number(e.target.value))} className="flex-1" />
+          <span className="neon-text-cyan w-12 text-right">{resonance}%</span>
+        </label>
+        <label className="flex items-center gap-3 text-xs font-mono" style={{ color: COLOR.dim }}>
+          <span className="w-24">FREQUENCY</span>
+          <input type="range" min="1" max="20" step="0.01" value={frequency}
+            onChange={(e) => setFrequency(Number(e.target.value))} className="flex-1" />
+          <span className="neon-text-gold w-16 text-right">{frequency.toFixed(2)} Hz</span>
+        </label>
+        <button
+          onClick={() => setIsActive(!isActive)}
+          className="w-full py-2 rounded text-xs font-mono tracking-widest transition-all neon-border-cyan"
+          style={{ color: isActive ? COLOR.cyan : COLOR.pink, background: "rgba(3,7,18,0.6)" }}
+        >
+          {isActive ? "◉ ACTIVE" : "○ STANDBY"}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// ---------- Module card (selectable list item) ----------
+function ModuleCard({ icon, name, subtitle, role, color, onClick, active }) {
+  return (
+    <button
+      onClick={onClick}
+      className="w-full text-left p-4 rounded-lg transition-all border-2"
+      style={{
+        background: active ? `${color}15` : "rgba(12, 21, 37, 0.6)",
+        borderColor: active ? color : "#1e3a5f",
+        boxShadow: active ? `0 0 20px ${color}30` : "none",
+      }}
+    >
+      <div className="flex items-start gap-3">
+        <div className="flex-shrink-0" style={{ color }}>{icon}</div>
+        <div className="flex-1 min-w-0">
+          <div className="font-bold tracking-wide" style={{ color, fontSize: "0.9rem" }}>{name}</div>
+          <div className="text-xs mt-0.5" style={{ color: COLOR.dim }}>{subtitle}</div>
+          {role && <div className="text-xs mt-1 font-mono" style={{ color: COLOR.gold, opacity: 0.8 }}>{role}</div>}
+        </div>
+        <div className="text-xs mt-1" style={{ color }}>{active ? "◉" : "○"}</div>
+      </div>
+    </button>
+  );
+}
+
+// ---------- Module icons ----------
+function ZeusIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      <path d="M20,5 L25,18 L18,18 L28,38 L15,20 L22,20 Z" fill={COLOR.gold} opacity="0.9" />
+      <circle cx="20" cy="8" r="4" fill="none" stroke={COLOR.gold} strokeWidth="1" />
+    </svg>
+  );
+}
+function HermesIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      <circle cx="20" cy="14" r="6" fill="none" stroke={COLOR.cyan} strokeWidth="1.5" />
+      <line x1="14" y1="14" x2="26" y2="14" stroke={COLOR.cyan} strokeWidth="1.5" />
+      <line x1="20" y1="8" x2="20" y2="35" stroke={COLOR.cyan} strokeWidth="1.5" />
+      {[-6, 6].map((dx) => (
+        <path key={dx} d={`M20,14 Q${20 + dx},20 ${20 + dx * 1.5},25`} fill="none" stroke={COLOR.green} strokeWidth="1" />
+      ))}
+      <line x1="12" y1="25" x2="28" y2="25" stroke={COLOR.green} strokeWidth="1" />
+    </svg>
+  );
+}
+function SpacetimeIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      {[0, 60, 120].map((deg) => (
+        <ellipse key={deg} cx="20" cy="20" rx="15" ry="6" fill="none" stroke={COLOR.pink} strokeWidth="1" transform={`rotate(${deg}, 20, 20)`} />
+      ))}
+      <circle cx="20" cy="20" r="3" fill={COLOR.pink} />
+    </svg>
+  );
+}
+function DnaIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      <path d="M12,5 Q28,12 12,20 Q28,28 12,35" fill="none" stroke={COLOR.cyan} strokeWidth="1" />
+      <path d="M28,5 Q12,12 28,20 Q12,28 28,35" fill="none" stroke={COLOR.pink} strokeWidth="1" />
+      {[8, 15, 22, 29].map((y) => (
+        <line key={y} x1="12" y1={y} x2="28" y2={y} stroke={COLOR.gold} strokeWidth="0.5" opacity="0.6" />
+      ))}
+    </svg>
+  );
+}
+function FieldIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      <circle cx="20" cy="20" r="14" fill="none" stroke={COLOR.cyan} strokeWidth="1" strokeDasharray="3 2" />
+      <circle cx="20" cy="20" r="8" fill="none" stroke={COLOR.gold} strokeWidth="1" />
+      <circle cx="20" cy="20" r="3" fill={COLOR.gold} />
+      {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => {
+        const x = 20 + 18 * Math.cos((deg * Math.PI) / 180);
+        const y = 20 + 18 * Math.sin((deg * Math.PI) / 180);
+        return <circle key={deg} cx={x} cy={y} r="1" fill={COLOR.cyan} />;
+      })}
+    </svg>
+  );
+}
+function ReactorIcon() {
+  return (
+    <svg viewBox="0 0 40 40" className="w-10 h-10">
+      <rect x="8" y="8" width="24" height="24" fill="none" stroke={COLOR.green} strokeWidth="1.5" />
+      <rect x="14" y="14" width="12" height="12" fill="none" stroke={COLOR.green} strokeWidth="1" />
+      {[0, 90, 180, 270].map((deg) => (
+        <line key={deg} x1="20" y1="20" x2={20 + 16 * Math.cos((deg * Math.PI) / 180)} y2={20 + 16 * Math.sin((deg * Math.PI) / 180)}
+          stroke={COLOR.cyan} strokeWidth="0.5" opacity="0.5" />
+      ))}
+      <circle cx="20" cy="20" r="3" fill={COLOR.green} />
+    </svg>
+  );
+}
+
+// ---------- Tabs ----------
+const TABS = ["OMNIVIEW", "SACRED GEOMETRY", "MODULES", "ARRAY"];
+
+const GEOMETRIC_KEYS = [
+  { k: "Φ", v: "1.618033988...", d: "Divine Golden Ratio" },
+  { k: "π", v: "3.141592653...", d: "Circular constant" },
+  { k: "e", v: "2.718281828...", d: "Natural base" },
+  { k: "√2", v: "1.414213562...", d: "Diagonal measure" },
+];
+
+const MODULE_INFO = [
+  { id: "zeus", label: "ZEUS · Plasma Conductor" },
+  { id: "hermes", label: "HERMES · Network Node" },
+  { id: "spacetime", label: "SPACETIME · Endule Core" },
+];
+
+const SYSTEM_LOG = [
+  ["03:31", "Resonance locked at φ = 1.618...", COLOR.cyan],
+  ["03:30", "DNA helix array calibrated", COLOR.pink],
+  ["03:29", "Quantum field coherence: 99.97%", COLOR.green],
+  ["03:28", "Zeus plasma conductor: nominal", COLOR.gold],
+  ["03:27", "Hermes network latency: 0.001ms", COLOR.cyan],
+  ["03:26", "Reality matrix entropy: stable", COLOR.green],
+];
+
+// ---------- Main app ----------
+export default function PhenomenonIII() {
+  const [tab, setTab] = useState(0);
+  const [activeSeal, setActiveSeal] = useState(null);
+  const [activeModule, setActiveModule] = useState(null);
+  const [glitch, setGlitch] = useState(false);
+  const [clock, setClock] = useState("00:00:00");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setClock(new Date().toLocaleTimeString("en-US", { hour12: false }));
+      if (Math.random() > 0.92) {
+        setGlitch(true);
+        setTimeout(() => setGlitch(false), 200);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentModule = MODULE_INFO.find((m) => m.id === activeModule);
+
+  return (
+    <div className="relative w-full h-full overflow-hidden bg-surface text-ink font-sans flex flex-col">
+      <StarField />
+      <FloatingEquations />
+
+      {/* Header */}
+      <header
+        className="relative z-10 flex items-center justify-between px-3 py-2 border-b"
+        style={{ borderColor: "#1e3a5f80", background: "rgba(3, 7, 18, 0.7)", backdropFilter: "blur(8px)" }}
+      >
+        <div className="flex items-baseline gap-2">
+          <span className="neon-text-cyan font-bold tracking-widest" style={{ fontSize: "1.4rem" }}>III</span>
+          <span className="font-mono text-xs tracking-wider" style={{ color: COLOR.dim }}>PHENOMENON</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <div className="flex gap-1">
+            {TABS.map((label, i) => (
+              <button
+                key={label}
+                onClick={() => setTab(i)}
+                className="px-2 py-1 text-xs font-mono transition-all rounded"
+                style={{
+                  color: i === tab ? COLOR.cyan : i === 2 && activeModule ? COLOR.pink : COLOR.dim,
+                  background: i === tab ? "#00f0ff15" : "transparent",
+                  border: i === tab ? "1px solid #00f0ff40" : "1px solid transparent",
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <div className="font-mono text-xs neon-text-green ml-2">{clock}</div>
+        </div>
+      </header>
+
+      {/* Main content */}
+      <main className="relative z-10 flex-1 overflow-y-auto px-3 py-3" style={{ scrollBehavior: "smooth" }}>
+        {tab === 0 && (
+          <div className="space-y-4">
+            <div className="text-center space-y-1">
+              <h1 className={`font-bold tracking-[0.3em] text-2xl ${glitch ? "animate-glitch" : ""}`} style={{ color: COLOR.cyan }}>
+                PHENOMENON III
+              </h1>
+              <div className="flex items-center justify-center gap-2">
+                <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, transparent, #ffd700, transparent)", maxWidth: 80 }} />
+                <span className="font-serif italic tracking-wider" style={{ color: COLOR.gold, fontSize: "0.9rem" }}>GOD</span>
+                <div className="h-px flex-1" style={{ background: "linear-gradient(90deg, transparent, #ffd700, transparent)", maxWidth: 80 }} />
+              </div>
+              <p className="font-mono text-xs" style={{ color: COLOR.dim }}>The Omni-Harmonic Resonance Array</p>
+            </div>
+
+            <div className="flex justify-center"><ArchangelFigure /></div>
+
+            <div className="neon-border-cyan rounded-lg p-3 relative overflow-hidden" style={{ background: COLOR.panel }}>
+              <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, #00f0ff, #ff006e, transparent)" }} />
+              <div className="text-center mb-3">
+                <span className="font-serif italic text-sm tracking-[0.2em]" style={{ color: COLOR.gold }}>MAURO L. DAR III</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <ModuleCard icon={<ZeusIcon />} name="ZEUS" subtitle="Plasma-Conductor" role="Algorithm-Weaver" color={COLOR.gold}
+                  onClick={() => { setActiveModule("zeus"); setTab(2); }} active={activeModule === "zeus"} />
+                <ModuleCard icon={<HermesIcon />} name="HERMES" subtitle="Network-Node" role="Power-Coupler" color={COLOR.cyan}
+                  onClick={() => { setActiveModule("hermes"); setTab(2); }} active={activeModule === "hermes"} />
+                <ModuleCard icon={<SpacetimeIcon />} name="SPACETIME" subtitle="Engineering Module" role="Endule Core" color={COLOR.green}
+                  onClick={() => { setActiveModule("spacetime"); setTab(2); }} active={activeModule === "spacetime"} />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-2">
+              <button onClick={() => setTab(1)} className="neon-border-pink rounded-lg p-3 flex flex-col items-center text-center transition-all hover:bg-pink-950/20" style={{ background: COLOR.panelSoft }}>
+                <HexSeal size={80} />
+                <span className="text-xs font-mono mt-2" style={{ color: COLOR.pink }}>SACRED GEOMETRY</span>
+              </button>
+              <button onClick={() => setTab(3)} className="neon-border-cyan rounded-lg p-3 flex flex-col items-center text-center transition-all hover:bg-cyan-950/20" style={{ background: COLOR.panelSoft }}>
+                <div className="text-3xl neon-text-cyan mb-1">◉</div>
+                <span className="text-xs font-mono mt-2" style={{ color: COLOR.cyan }}>RESONANCE ARRAY</span>
+              </button>
+            </div>
+
+            <div className="text-center">
+              <p className="font-mono text-xs leading-relaxed" style={{ color: COLOR.dim }}>
+                <span style={{ color: COLOR.gold }}>ΦΑΙΝΟΜΕΝΟΝ</span> · The manifest universe, bridging ancient wisdom with computational consciousness.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {tab === 1 && (
+          <div className="space-y-4">
+            <div className="text-center">
+              <h2 className="font-bold tracking-widest neon-text-pink" style={{ fontSize: "1rem" }}>SACRED GEOMETRY</h2>
+              <p className="font-mono text-xs mt-1" style={{ color: COLOR.dim }}>Click a seal to activate resonance</p>
+            </div>
+
+            <div className="flex justify-center">
+              <div className="relative">
+                <CosmicSeal size={280} active={activeSeal === "cosmic"} />
+                <button
+                  onClick={() => setActiveSeal(activeSeal === "cosmic" ? null : "cosmic")}
+                  className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs font-mono rounded px-3 py-1"
+                  style={{ color: activeSeal === "cosmic" ? COLOR.gold : COLOR.dim, background: "rgba(3,7,18,0.9)", border: `1px solid ${activeSeal === "cosmic" ? COLOR.gold : "#1e3a5f"}` }}
+                >
+                  COSMIC SEAL {activeSeal === "cosmic" ? "◉" : "○"}
+                </button>
+              </div>
+            </div>
+
+            <div className="flex justify-center">
+              <HexSeal size={180} interactive active={activeSeal === "hex"} onClick={() => setActiveSeal(activeSeal === "hex" ? null : "hex")} />
+            </div>
+
+            <div className="neon-border-cyan rounded-lg p-3" style={{ background: COLOR.panel }}>
+              <h3 className="font-mono text-xs neon-text-cyan mb-2">GEOMETRICAL KEYS</h3>
+              <div className="space-y-2 text-xs font-mono" style={{ color: COLOR.dim }}>
+                {GEOMETRIC_KEYS.map((item) => (
+                  <div key={item.k} className="flex items-center gap-3">
+                    <span className="neon-text-gold w-8 text-right font-serif" style={{ fontSize: "1.1rem" }}>{item.k}</span>
+                    <span className="flex-1 font-mono" style={{ color: COLOR.cyan, fontSize: "0.75rem" }}>{item.v}</span>
+                    <span style={{ color: "#8a9ab570", fontSize: "0.65rem" }}>{item.d}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex justify-center"><AnkhGlyph size={100} /></div>
+          </div>
+        )}
+
+        {tab === 2 && (
+          <div className="space-y-4">
+            <div className="text-center">
+              <h2 className="font-bold tracking-widest neon-text-cyan" style={{ fontSize: "1rem" }}>ENGINEERING MODULES</h2>
+              <p className="font-mono text-xs mt-1 neon-text-pink">{currentModule?.label || "SELECT MODULE"}</p>
+            </div>
+
+            {activeModule !== "zeus" && (
+              <ModuleCard icon={<ZeusIcon />} name="ZEUS" subtitle="Plasma-Conductor" role="Algorithm-Weaver" color={COLOR.gold}
+                onClick={() => setActiveModule("zeus")} active={activeModule === "zeus"} />
+            )}
+            {activeModule === "zeus" && (
+              <div className="neon-border-cyan rounded-lg p-3 space-y-3" style={{ background: "rgba(255,215,0,0.05)" }}>
+                <div className="flex items-center gap-2">
+                  <ZeusIcon />
+                  <div>
+                    <div className="font-bold" style={{ color: COLOR.gold }}>ZEUS · Plasma-Conductor</div>
+                    <div className="text-xs font-mono" style={{ color: COLOR.dim }}>Algorithm-Weaver Protocol v3.3</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                  {[["VOLTAGE", "⚡ 10¹² V", COLOR.gold], ["PLASMA TEMP", " 1.5×10 K", COLOR.pink],
+                    ["OUTPUT", "⚙ 847.3 GJ", COLOR.cyan], ["STABILITY", "✓ 99.97%", COLOR.green]].map(([label, val, color]) => (
+                    <div key={label} className="p-2 rounded border" style={{ borderColor: "#1e3a5f", background: "#0c152550" }}>
+                      <div style={{ color: COLOR.dim, fontSize: "0.6rem" }}>{label}</div>
+                      <div style={{ color, fontSize: "0.8rem" }}>{val}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {activeModule !== "hermes" && (
+              <ModuleCard icon={<HermesIcon />} name="HERMES" subtitle="Network-Node" role="Power-Coupler" color={COLOR.cyan}
+                onClick={() => setActiveModule("hermes")} active={activeModule === "hermes"} />
+            )}
+            {activeModule === "hermes" && (
+              <div className="neon-border-cyan rounded-lg p-3 space-y-3" style={{ background: "rgba(0,240,255,0.05)" }}>
+                <div className="flex items-center gap-2">
+                  <HermesIcon />
+                  <div>
+                    <div className="font-bold" style={{ color: COLOR.cyan }}>HERMES · Network-Node</div>
+                    <div className="text-xs font-mono" style={{ color: COLOR.dim }}>Power-Coupler Matrix v3.3</div>
+                  </div>
+                </div>
+                {["NODE_α", "NODE_β", "NODE_γ", "NODE_δ"].map((node, i) => (
+                  <div key={node} className="flex items-center gap-2">
+                    <span className="font-mono text-xs" style={{ color: COLOR.gold }}>{node}</span>
+                    <div className="flex-1 h-1 rounded-full overflow-hidden" style={{ background: "#1e3a5f" }}>
+                      <div className="h-full rounded-full transition-all" style={{ width: `${40 + i * 15}%`, background: COLOR.cyan }} />
+                    </div>
+                    <span className="font-mono text-xs" style={{ color: COLOR.green }}>{(90 + i * 3).toFixed(0)}%</span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {activeModule !== "spacetime" && (
+              <ModuleCard icon={<ReactorIcon />} name="SPACETIME ENGINEERING" subtitle="Module Endule" role="Reality Matrix" color={COLOR.green}
+                onClick={() => setActiveModule("spacetime")} active={activeModule === "spacetime"} />
+            )}
+            {activeModule === "spacetime" && (
+              <div className="neon-border-cyan rounded-lg p-3 space-y-3" style={{ background: "rgba(57,255,20,0.05)" }}>
+                <div className="flex items-center gap-2">
+                  <ReactorIcon />
+                  <div>
+                    <div className="font-bold" style={{ color: COLOR.green }}>SPACETIME · Module Endule</div>
+                    <div className="text-xs font-mono" style={{ color: COLOR.dim }}>Reality Matrix v3.3</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-3 gap-2">
+                  {["TENSOR", "CURVATURE", "ENTROPY"].map((label, i) => (
+                    <div key={label} className="text-center p-2 rounded border" style={{ borderColor: "#1e3a5f", background: "#0c152550" }}>
+                      <div className="font-mono text-xs" style={{ color: COLOR.dim }}>{label}</div>
+                      <div className="font-bold font-mono mt-1" style={{ color: [COLOR.cyan, COLOR.pink, COLOR.gold][i], fontSize: "0.9rem" }}>
+                        {["g_μν", "R_μν", "S"][i]}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="neon-border-cyan rounded-lg p-3 space-y-2" style={{ background: COLOR.panel }}>
+              <h3 className="font-mono text-xs neon-text-cyan">SYSTEM COMPONENTS</h3>
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { icon: <FieldIcon />, name: "Aether-Coupling Coil", desc: "Energy Transfer", c: COLOR.gold },
+                  { icon: <DnaIcon />, name: "DNA Helix Array", desc: "Bio-Computation", c: COLOR.pink },
+                  { icon: <SpacetimeIcon />, name: "Quantum Field", desc: "Wave Dynamics", c: COLOR.cyan },
+                  { icon: <HermesIcon />, name: "Meridian Network", desc: "Energy Flow", c: COLOR.green },
+                ].map((item) => (
+                  <div key={item.name} className="flex items-center gap-2 p-2 rounded border" style={{ borderColor: "#1e3a5f", background: "#0c152550" }}>
+                    {item.icon}
+                    <div>
+                      <div className="text-xs font-mono" style={{ color: item.c }}>{item.name}</div>
+                      <div className="text-xs" style={{ color: "#8a9ab570", fontSize: "0.6rem" }}>{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {tab === 3 && (
+          <div className="space-y-4">
+            <div className="text-center">
+              <h2 className="font-bold tracking-widest neon-text-cyan" style={{ fontSize: "1rem" }}>RESONANCE ARRAY</h2>
+              <p className="font-mono text-xs mt-1" style={{ color: COLOR.gold }}>OMNI-HARMONIC CONTROLS</p>
+            </div>
+
+            <ResonanceArray />
+
+            <div className="neon-border-pink rounded-lg p-3" style={{ background: COLOR.panel }}>
+              <h3 className="font-mono text-xs neon-text-pink mb-3">MYSTICAL SIGNAL ARRAY</h3>
+              <SigilColumn />
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="neon-border-cyan rounded-lg p-3 flex flex-col items-center" style={{ background: COLOR.panel }}>
+                <DragonGlyph size={90} />
+                <div className="text-xs font-mono mt-2 neon-text-cyan">DRAGON NODE</div>
+                <div className="text-xs font-mono" style={{ color: COLOR.dim, fontSize: "0.6rem" }}>Circuit Matrix Active</div>
+              </div>
+              <div className="neon-border-pink rounded-lg p-3 flex flex-col items-center" style={{ background: COLOR.panel }}>
+                <AnkhGlyph size={80} />
+                <div className="text-xs font-mono mt-2 neon-text-pink">ANKH GATE</div>
+                <div className="text-xs font-mono" style={{ color: COLOR.dim, fontSize: "0.6rem" }}>Life-Stream Online</div>
+              </div>
+            </div>
+
+            <div className="neon-border-cyan rounded-lg p-3 font-mono text-xs space-y-1" style={{ background: COLOR.panel }}>
+              <h3 className="neon-text-green mb-2">SYSTEM LOG</h3>
+              {SYSTEM_LOG.map(([time, msg, color], i) => (
+                <div key={i} className="flex gap-2">
+                  <span style={{ color: "#8a9ab570" }}>[{time}]</span>
+                  <span style={{ color }}>{msg}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </main>
+
+      <footer
+        className="relative z-10 border-t px-3 py-1.5 flex items-center justify-between"
+        style={{ borderColor: "#1e3a5f80", background: "rgba(3, 7, 18, 0.85)" }}
+      >
+        <span className="font-mono text-xs" style={{ color: "#8a9ab570" }}>PHENOMENON III · v3.3.0</span>
+        <span className="font-mono text-xs" style={{ color: "#00f0ff80" }}>■ TRANSMISSION ACTIVE</span>
+      </footer>
+    </div>
+  );
+}

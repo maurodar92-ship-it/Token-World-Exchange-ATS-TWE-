@@ -1,0 +1,3054 @@
+{
+  "vaultVersion": "2.5.0",
+  "exportedAt": "2026-10-26T09:03:10.740Z",
+  "totalTokens": 203,
+  "standard": "EIP-256 / secp256k1 & ed25519",
+  "notes": "Functional private keys compatible with Foundry, Hardhat, cast, MetaMask, and Phantom.",
+  "tokens": [
+    {
+      "id": "token-mao-mao-sovereign-01",
+      "name": "Mao-Mao Sovereign",
+      "symbol": "MAOMAO",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x889812A6dB8E7764f9A4Fa9D23e618Fa4b0B5711",
+      "deployerAddress": "0x7f1146445cc0d7A30AF8a5f93dF4bE67A2fe6c9c",
+      "deployerPrivateKey": "0x8553c78549374f2bd202e05d249c9ade2d006e40531249ad761faf28b5f4507c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8553c78549374f2bd202e05d249c9ade2d006e40531249ad761faf28b5f4507c"
+      }
+    },
+    {
+      "id": "tok_1_mvgpybhl",
+      "name": "ComputeLink",
+      "symbol": "CMPX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "Corp6DLyRfw8dfMH2oaTueSUZ48HDMToz8T5wpq5ScEk",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "tY5p3LxyRbYhsGqoaYDqp8MyexgrTqfVHjsD8XWNYrXsDnVHYHNXGwCSgyBGzLzEBFByiPfSJJDzyGXHnyTib8At",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'tY5p3LxyRbYhsGqoaYDqp8MyexgrTqfVHjsD8XWNYrXsDnVHYHNXGwCSgyBGzLzEBFByiPfSJJDzyGXHnyTib8At')"
+      }
+    },
+    {
+      "id": "tok_2_mvgpybw6",
+      "name": "LatticeProof",
+      "symbol": "LTTCN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x2535AFA0b4BC1996b0Ec042835221932Ea107e82",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xf9f0c5b003831b4a8236adeccedbf8dd0e9b8c65d98bd2be9ba278775b376ddb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xf9f0c5b003831b4a8236adeccedbf8dd0e9b8c65d98bd2be9ba278775b376ddb"
+      }
+    },
+    {
+      "id": "tok_3_mvgpyc2t",
+      "name": "TensorNexus",
+      "symbol": "TNSRX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x00229EEf3Ce72d5443ddBdE42dB534D17BC99fD3",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x68df3b47829bfdc470c4cd0a333a5f162a611dde7a1b9ac793a7792afeb2b474",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x68df3b47829bfdc470c4cd0a333a5f162a611dde7a1b9ac793a7792afeb2b474"
+      }
+    },
+    {
+      "id": "tok_4_mvgpyc86",
+      "name": "BeamFabric",
+      "symbol": "BEAMN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x8888c07B2216acA35A7774EfBF0A07f56571E92F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8a3749d50bd119bf8b6af0ce26737ebd56577aaf32c8021203940d95744bd8be",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8a3749d50bd119bf8b6af0ce26737ebd56577aaf32c8021203940d95744bd8be"
+      }
+    },
+    {
+      "id": "tok_5_mvgpycd0",
+      "name": "CarbonTrust",
+      "symbol": "CARBX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00000069034EABD5Cc75E024afFb35c23869dF2e",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xb56d7d3f333cb8ccd15ff7344b2c27ebf2c7a27beceade0d59287dfc69ca4ac9",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xb56d7d3f333cb8ccd15ff7344b2c27ebf2c7a27beceade0d59287dfc69ca4ac9"
+      }
+    },
+    {
+      "id": "tok_6_mvgpychy",
+      "name": "QuantumProof",
+      "symbol": "QNTMX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQENTab7c05cfc8d94636c00d870f2d7d389366dd0",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x27c10c68db7cbbb96fcdfd145ae0adb6b619794b7672fd8bdd26c9a5620a17b3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x27c10c68db7cbbb96fcdfd145ae0adb6b619794b7672fd8bdd26c9a5620a17b3"
+      }
+    },
+    {
+      "id": "tok_7_mvgpyci1",
+      "name": "PrimeFlow",
+      "symbol": "PRMX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "Treasury8EeyyFn4z1Bky5m2ByAyEvEBG2xX5G3F383C",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "t5BoMhz3TvQrCmmxJC1yXiz5XNwdHksPH7NMtus3Ap25uwhbzw2Gb3fSMcnkk3ziaPiSxAiqM5BGM4JxtAnDCBY9",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 't5BoMhz3TvQrCmmxJC1yXiz5XNwdHksPH7NMtus3Ap25uwhbzw2Gb3fSMcnkk3ziaPiSxAiqM5BGM4JxtAnDCBY9')"
+      }
+    },
+    {
+      "id": "tok_8_mvgpycml",
+      "name": "FiberArray",
+      "symbol": "FIBRX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0xDE90B22933dF6dD7E68CBAeB5Fd0D88F76e87b8E",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x5147f305d30409172ff7eccd9f0af7cfda41809e4ab8e4dbf0265079a93bd5b7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x5147f305d30409172ff7eccd9f0af7cfda41809e4ab8e4dbf0265079a93bd5b7"
+      }
+    },
+    {
+      "id": "tok_9_mvgpycqu",
+      "name": "HelioFabric",
+      "symbol": "HLIOX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x000D7938d7895A8a8f6a67B2Cc989F8E2c3db939",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x61c1407eae2f93dadef40c8b590633d7547384272fde06b9525d6d0070a73e81",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x61c1407eae2f93dadef40c8b590633d7547384272fde06b9525d6d0070a73e81"
+      }
+    },
+    {
+      "id": "tok_10_mvgpycr0",
+      "name": "FalconSafe",
+      "symbol": "FLCNX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "EntMRWQBsaWXzGpkxKwhQjsNc9QmLzKDJNLwQaXS3ouQ",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "aPxaieWsrYatXHq1bostMjvR81Y1TvNTqmmtZaunzuh2WcGPfbtXmKDwcFHEB9LtnwC4BTCvFujuW9EdaqhzsVNK",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'aPxaieWsrYatXHq1bostMjvR81Y1TvNTqmmtZaunzuh2WcGPfbtXmKDwcFHEB9LtnwC4BTCvFujuW9EdaqhzsVNK')"
+      }
+    },
+    {
+      "id": "tok_11_mvgpycvg",
+      "name": "PrimeX",
+      "symbol": "PRMX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0xDe902AF3DAb50a7976254bA35C94bbe37bb062A5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x609e148cf21f0ee10da0fa19203fbe76125041e968da772811cd9b4b883dd952",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x609e148cf21f0ee10da0fa19203fbe76125041e968da772811cd9b4b883dd952"
+      }
+    },
+    {
+      "id": "tok_12_mvgpycvh",
+      "name": "CortexBrain",
+      "symbol": "CTXX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "Safegr5oB5vdFMtzeBbo68d4yKeqDiQfziNFrauHKvFA",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "nxTu4q24A8kQWLx1fKs1yRQNL4LJso1d4v784tMXk3qQcPevVqs5FcusWU2ib1u6kWi8iWFC4UyqjEb3AbkkSiH4",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'nxTu4q24A8kQWLx1fKs1yRQNL4LJso1d4v784tMXk3qQcPevVqs5FcusWU2ib1u6kWi8iWFC4UyqjEb3AbkkSiH4')"
+      }
+    },
+    {
+      "id": "tok_13_mvgpyczl",
+      "name": "RegenYield",
+      "symbol": "RGNX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0000C43DC8A769Caea1feD0490D63498f96cFAc5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x0238662fb9d07e91e958cebfa98e0ce62dfd1934c77a696ee7be1b4db93a1da3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x0238662fb9d07e91e958cebfa98e0ce62dfd1934c77a696ee7be1b4db93a1da3"
+      }
+    },
+    {
+      "id": "tok_14_mvgpyd3i",
+      "name": "BrickVault",
+      "symbol": "BRKX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x008a4B0d3597eB66CD4834BD9e2D5436c75C9638",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1ebe7533bc6511e13d93f4d018478adfe6ff53adb954b0b7dff1e1ccc8e41811",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1ebe7533bc6511e13d93f4d018478adfe6ff53adb954b0b7dff1e1ccc8e41811"
+      }
+    },
+    {
+      "id": "tok_15_mvgpyd7j",
+      "name": "CogniGrid",
+      "symbol": "COGX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0xc0rp684a7c2c57aD4582e8f809Ce938877e23921",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1042f95335e10e58a21101b5b7303ecb8ae3ee62d23245da1683aeb3f31b0c18",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1042f95335e10e58a21101b5b7303ecb8ae3ee62d23245da1683aeb3f31b0c18"
+      }
+    },
+    {
+      "id": "tok_16_mvgpyd7l",
+      "name": "HelioFabric",
+      "symbol": "HLION",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "SafeLw1ZBXzzVdfSiUsMJTvds7gPtiQYJcGRxYmLg3HG",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "yKDs9E7yoQj9P2QnncGWdcaNNGZ7cb5JdV6mgut64qHQZ7se9SbXPeErmX4gxfPB2a911yFpn3feWLAFUL8mWQ4y",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'yKDs9E7yoQj9P2QnncGWdcaNNGZ7cb5JdV6mgut64qHQZ7se9SbXPeErmX4gxfPB2a911yFpn3feWLAFUL8mWQ4y')"
+      }
+    },
+    {
+      "id": "tok_17_mvgpydbj",
+      "name": "HelioFabric",
+      "symbol": "HLIOX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0001e20bCf696C6c28C5797AEA16703fA92fAa83",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xb441bc4de00ecef3ef534fc68cb02528ea37607278e663416529e98123fafdcf",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xb441bc4de00ecef3ef534fc68cb02528ea37607278e663416529e98123fafdcf"
+      }
+    },
+    {
+      "id": "tok_18_mvgpydfc",
+      "name": "LatticeExchange",
+      "symbol": "LTTCN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQ1N5T31e76527d9b0c1b95ba0cf254479c9fe7da4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x777af74f2f767a6fe52460b3cd45a9d83bc8da6f6152a99b675374a09a893df1",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x777af74f2f767a6fe52460b3cd45a9d83bc8da6f6152a99b675374a09a893df1"
+      }
+    },
+    {
+      "id": "tok_19_mvgpydj8",
+      "name": "WirelessChain",
+      "symbol": "WRLSN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x8888eD5c15b39aE8A75a441a47A24b2fB4aE3296",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8e881efdd6b7926ba85a0c72d10f7897c6e3f7200b39018d44d42632d8d7d615",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8e881efdd6b7926ba85a0c72d10f7897c6e3f7200b39018d44d42632d8d7d615"
+      }
+    },
+    {
+      "id": "tok_20_mvgpydn4",
+      "name": "DilithiumExchange",
+      "symbol": "DLTHN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0xaCCE17B26eBB4CACb35d28F8572Df852B6cbA56B",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc551ba870bd498ed65e21c83b6b4a28cacd87fdb28529798cf95f8f9b2efb50b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc551ba870bd498ed65e21c83b6b4a28cacd87fdb28529798cf95f8f9b2efb50b"
+      }
+    },
+    {
+      "id": "tok_21_mvgpydr5",
+      "name": "TreasuryYield",
+      "symbol": "TRSN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0xc0rpd7DfE303E05E430DA6B5A041E1a98AdC1641",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x84e6b1965b73c6f8103b629bb66234d9f3a662b31712809c348a1f23e324eba7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x84e6b1965b73c6f8103b629bb66234d9f3a662b31712809c348a1f23e324eba7"
+      }
+    },
+    {
+      "id": "tok_22_mvgpydva",
+      "name": "BeamStation",
+      "symbol": "BEAMN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0xACce54dbB7a7d3A48E839C0632A1610cC0438d26",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x97c2858b7488c808b70a3e00c32fd8e83ff7a35d6069c8a86430e8b80c99531b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x97c2858b7488c808b70a3e00c32fd8e83ff7a35d6069c8a86430e8b80c99531b"
+      }
+    },
+    {
+      "id": "tok_23_mvgpydzb",
+      "name": "TensorGrid",
+      "symbol": "TNSRN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x5AfECC85294cE2c6ff170C9eA4b81B6Cb04EfcC9",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x38a7fba42106ba73bb4de0fe029432dbc4c6e1c375e39ec56d51247cf67e2fbd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x38a7fba42106ba73bb4de0fe029432dbc4c6e1c375e39ec56d51247cf67e2fbd"
+      }
+    },
+    {
+      "id": "tok_24_mvgpye33",
+      "name": "BrickX",
+      "symbol": "BRKN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0xACCe965F369B96C2eF5a5e67c51739FF2CF462bf",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd717ccee724f606253dafce4fa0a3e688da3c237c2b9852c7ab1e3c2a8cc1384",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd717ccee724f606253dafce4fa0a3e688da3c237c2b9852c7ab1e3c2a8cc1384"
+      }
+    },
+    {
+      "id": "tok_25_mvgpye35",
+      "name": "ComputeRelay",
+      "symbol": "CMPN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "GovmwUwdE2tWbB2jGYJvjEuQznxtArjuxuNJxTiEYWbX",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "aWW4DKLmoMsbGYxbVE47ZBYYWZCNRPEhF8rPVGfwCzqKhLMP4mW5nq4yxgtQtmYhaK3US8pRp4veEcJD13CeEBMw",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'aWW4DKLmoMsbGYxbVE47ZBYYWZCNRPEhF8rPVGfwCzqKhLMP4mW5nq4yxgtQtmYhaK3US8pRp4veEcJD13CeEBMw')"
+      }
+    },
+    {
+      "id": "tok_26_mvgpye7a",
+      "name": "SensorNode",
+      "symbol": "SNSRN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0xACce5c111c2A780EDE233373D1919b34685B352F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2ca1517cbf3b4e2241fc4aceabc9b39360cb0eb389ac829204d230c0e88e8223",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2ca1517cbf3b4e2241fc4aceabc9b39360cb0eb389ac829204d230c0e88e8223"
+      }
+    },
+    {
+      "id": "tok_27_mvgpye7c",
+      "name": "WirelessLink",
+      "symbol": "WRLSX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "Corpnp8hmSJpN4UHbhq1wuxJfXqZ1YXPhBUMNfHMxm3m",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "P8akD3wW6DLHogciEaozSuSbiZxfBpjE7uxrNwmWDRgJiUwfV8k3vJ4XLdG1MPbSsgFA7MXHfW7B9UTh6oyvPfuc",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'P8akD3wW6DLHogciEaozSuSbiZxfBpjE7uxrNwmWDRgJiUwfV8k3vJ4XLdG1MPbSsgFA7MXHfW7B9UTh6oyvPfuc')"
+      }
+    },
+    {
+      "id": "tok_28_mvgpyebt",
+      "name": "QuantumGuard",
+      "symbol": "QNTMN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x253592b68342E16E8844652a468059fc0ad13875",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x3362b5868c1bf8908c22695dc2725df77eb0adc2410d104808e1bb76c2843cd5",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x3362b5868c1bf8908c22695dc2725df77eb0adc2410d104808e1bb76c2843cd5"
+      }
+    },
+    {
+      "id": "tok_29_mvgpyefq",
+      "name": "TensorBrain",
+      "symbol": "TNSRX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0xACce0A6458eD2aBEb17CaA27016a4e5ed9A1229c",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x5da70da4d9ffc791d4ee255abb3418488cdcedd21951055d58af7a74981205f7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x5da70da4d9ffc791d4ee255abb3418488cdcedd21951055d58af7a74981205f7"
+      }
+    },
+    {
+      "id": "tok_30_mvgpyeju",
+      "name": "CryptoVaultGuard",
+      "symbol": "CVLTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0004d30A457EDc7C44B6589DFF7B2F150201A3C2",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe42ed29ba775bf48bf1cebddb59b57ea527ac43a3ba0c5af11b9c71c3810d834",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe42ed29ba775bf48bf1cebddb59b57ea527ac43a3ba0c5af11b9c71c3810d834"
+      }
+    },
+    {
+      "id": "tok_31_mvgpyejw",
+      "name": "AutoPilotHub",
+      "symbol": "AUTON",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "PrimeFJRitQ4mrkhdGRKJyFEt3fk5ibBTnS3f9FNwnT1",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "MZznsoMFt9FJGa2gyTiPurNo1MF2RCKrdQWY2XadKw2Y4H6vk7RgpZiVyqeutQbGuQasEb1GzFbY2Q4HnQQSFLZj",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'MZznsoMFt9FJGa2gyTiPurNo1MF2RCKrdQWY2XadKw2Y4H6vk7RgpZiVyqeutQbGuQasEb1GzFbY2Q4HnQQSFLZj')"
+      }
+    },
+    {
+      "id": "tok_32_mvgpyenx",
+      "name": "BrickTrust",
+      "symbol": "BRKX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQC0RP935ce4fb601815336771e1866f3019bedd99",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1710c2cb1f3fc305e4ded26032fa54076074e7474a9573a65e3e9f3256c020c0",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1710c2cb1f3fc305e4ded26032fa54076074e7474a9573a65e3e9f3256c020c0"
+      }
+    },
+    {
+      "id": "tok_33_mvgpyerx",
+      "name": "KyberCore",
+      "symbol": "KYBRN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQ5AFE492937a0883242f7e57e0df71568fa17e16f",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x05eafba083b66a3f6434a9bb76b41cf89121a44235342e8f48632b8cee57e3eb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x05eafba083b66a3f6434a9bb76b41cf89121a44235342e8f48632b8cee57e3eb"
+      }
+    },
+    {
+      "id": "tok_34_mvgpyewa",
+      "name": "SynapNexus",
+      "symbol": "SYNX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0xc0rp878d2c9AE9552E98e6AbAe317e2Eb3dF4846",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xdeef3b10e5f54eef35a28ffe97a3f314aa3172cc539aac59d00f0027fb2c30f3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xdeef3b10e5f54eef35a28ffe97a3f314aa3172cc539aac59d00f0027fb2c30f3"
+      }
+    },
+    {
+      "id": "tok_35_mvgpyf0p",
+      "name": "CommodityX",
+      "symbol": "CMDTX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x00094eA4C4c08a72B00e4647eE268A11C2e6b8fa",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x59cddcd7cda641177fde52648c16c539ddd834cba1de0e444e14b66c42c1cc91",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x59cddcd7cda641177fde52648c16c539ddd834cba1de0e444e14b66c42c1cc91"
+      }
+    },
+    {
+      "id": "tok_36_mvgpyf0s",
+      "name": "ShieldExchange",
+      "symbol": "SHLDN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "Token20226uCMvLJkNHoXA2k9UXtX1jnDpLQEhUZ5k87",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "bMpnpSK68nGBwYnoGa3BWMEMNjYheeoDpxLbhiXPt3uDsQCvDtqm64gP1Uhh1GJKDkh8iTFhwxY6iVGBBW6JHnTQ",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'bMpnpSK68nGBwYnoGa3BWMEMNjYheeoDpxLbhiXPt3uDsQCvDtqm64gP1Uhh1GJKDkh8iTFhwxY6iVGBBW6JHnTQ')"
+      }
+    },
+    {
+      "id": "tok_37_mvgpyf54",
+      "name": "CommodityReserve",
+      "symbol": "CMDTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00000211EAC6A93027788339DDCdd0aF4563A2eF",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xff0031a10a61bea3c6c46a730f0afaffe0bf35ad1738510982c1bbdf75b848ed",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xff0031a10a61bea3c6c46a730f0afaffe0bf35ad1738510982c1bbdf75b848ed"
+      }
+    },
+    {
+      "id": "tok_38_mvgpyf9l",
+      "name": "CogniCore",
+      "symbol": "COGX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0xc0rpddfb20EecC20b592e48110C9233A00b3f0C6",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x157022743f1d305a583be34fc00b499ad9d5e5fe4e991e5a9b3afd15eda569dd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x157022743f1d305a583be34fc00b499ad9d5e5fe4e991e5a9b3afd15eda569dd"
+      }
+    },
+    {
+      "id": "tok_39_mvgpyfe2",
+      "name": "FalconIndex",
+      "symbol": "FLCNN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x7777b0E6949127c294b16d146dc8aB0A4dEF45e5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x4e4746a51c04b437d814bad8b3bbfa245d98ffe902b305bc9433449d1f5c4fa9",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x4e4746a51c04b437d814bad8b3bbfa245d98ffe902b305bc9433449d1f5c4fa9"
+      }
+    },
+    {
+      "id": "tok_40_mvgpyfij",
+      "name": "HelioFabric",
+      "symbol": "HLION",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQVAULT92e2895d2b9e42e76d19a810c7ac23ffc42",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc593a5856f04d8f2e9ab3d6d4197939b63e928f4ab55451473b68a2488f5fa73",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc593a5856f04d8f2e9ab3d6d4197939b63e928f4ab55451473b68a2488f5fa73"
+      }
+    },
+    {
+      "id": "tok_41_mvgpyfmw",
+      "name": "SwarmProtocol",
+      "symbol": "SWRMX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0xdE90bb6fAa2800941eFB12b96173D944B7cE6b0d",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x79c145fd88ba95f3dfe5edfa7b190a55bc92a36612706ce5af61d26889e3a73e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x79c145fd88ba95f3dfe5edfa7b190a55bc92a36612706ce5af61d26889e3a73e"
+      }
+    },
+    {
+      "id": "tok_42_mvgpyfrh",
+      "name": "PrimeReserve",
+      "symbol": "PRMN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQ1N5T9fd3773fc0033494c860f46060930f883258",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd4ed8f0a53490d4575dd10ba5b1b0ac47eb782da9a12e158bdf6e42d825b1b3b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd4ed8f0a53490d4575dd10ba5b1b0ac47eb782da9a12e158bdf6e42d825b1b3b"
+      }
+    },
+    {
+      "id": "tok_43_mvgpyfw1",
+      "name": "EdgeArray",
+      "symbol": "EDGEX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQ5AFE9cd3fd7337efc5507b8b7becd394ab25af8c",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x801abbb301dfd0d70b541d00b595ce3a9490406bc1d9edc150a7b9209ff99fcd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x801abbb301dfd0d70b541d00b595ce3a9490406bc1d9edc150a7b9209ff99fcd"
+      }
+    },
+    {
+      "id": "tok_44_mvgpyg0i",
+      "name": "BeamNode",
+      "symbol": "BEAMN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x00000fDE706C7F557e78632FF609A1D6115F73e0",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x241eaa45abad801fbd67a41d83f74cf91990edbe612be5e22bb2fe17fc57fa41",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x241eaa45abad801fbd67a41d83f74cf91990edbe612be5e22bb2fe17fc57fa41"
+      }
+    },
+    {
+      "id": "tok_45_mvgpyg52",
+      "name": "TensorCore",
+      "symbol": "TNSRN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0xACCe5bE90b47Eb2814816927ED335Dc908F2eE51",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xb714d1ec6219bd299c53e4f2931f97e56f9a36eef3161342228316265d4664bc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xb714d1ec6219bd299c53e4f2931f97e56f9a36eef3161342228316265d4664bc"
+      }
+    },
+    {
+      "id": "tok_46_mvgpyg9f",
+      "name": "SynapBrain",
+      "symbol": "SYNX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0xDE9076b0C1b01A391006dC05e0dACE7aD9431FBc",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa7e1e8bf7b6b9bfdcb8867160b3c6c2f77b26666ef68be95adf7eb4412a37f72",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa7e1e8bf7b6b9bfdcb8867160b3c6c2f77b26666ef68be95adf7eb4412a37f72"
+      }
+    },
+    {
+      "id": "tok_47_mvgpygdt",
+      "name": "ComputeCluster",
+      "symbol": "CMPX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0xc0rp88988f38E2eEd728BEA2Fa8Ab88C68c487De",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xbc7419260bcff1624f01c17ddf871b64c8f0abec44590f4d44634dc710109f5b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xbc7419260bcff1624f01c17ddf871b64c8f0abec44590f4d44634dc710109f5b"
+      }
+    },
+    {
+      "id": "tok_48_mvgpygi7",
+      "name": "NeuralMind",
+      "symbol": "NEURN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x433725effA6D0280Ce8849b9d12E3279380F8ebd",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa78881959e362f5978490998a391151117b1eaf4c225fb94b3d01876fc79991f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa78881959e362f5978490998a391151117b1eaf4c225fb94b3d01876fc79991f"
+      }
+    },
+    {
+      "id": "tok_49_mvgpygmc",
+      "name": "FalconVault",
+      "symbol": "FLCNX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0xEEeEa2e5383F8c710B5AC3231212af324D16D3fa",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7ac1bb652b7de0b8f1facb127e4766a32bea238cbd004957069e9b31c7d0f12c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7ac1bb652b7de0b8f1facb127e4766a32bea238cbd004957069e9b31c7d0f12c"
+      }
+    },
+    {
+      "id": "tok_50_mvgpygqe",
+      "name": "DilithiumPool",
+      "symbol": "DLTHN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x25355599dAdc31dbf40C0Ba02620c2468d593066",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x20defaff9297d176f6fe7c32b06c3455d13882fbcc5a3ffcfbd51b1d98ac7f62",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x20defaff9297d176f6fe7c32b06c3455d13882fbcc5a3ffcfbd51b1d98ac7f62"
+      }
+    },
+    {
+      "id": "tok_51_mvgpyguf",
+      "name": "BandRelay",
+      "symbol": "BANDN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQVAULT147b3e5cbe3431951db06d3f8738cb0eb10",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x4021423a056dfc24d6ed6c1f4aab77cecae959c6807acfca45fc26ccdaff7ecc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x4021423a056dfc24d6ed6c1f4aab77cecae959c6807acfca45fc26ccdaff7ecc"
+      }
+    },
+    {
+      "id": "tok_52_mvgpygys",
+      "name": "MeshNetRelay",
+      "symbol": "MESHX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x8888c8F84BD4f76c8EBf74a69e8a1Ea843073848",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa6c75b1d8655bae80ab168bc2e3c82237bbd6856c38332bd3bc80eb86a6371de",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa6c75b1d8655bae80ab168bc2e3c82237bbd6856c38332bd3bc80eb86a6371de"
+      }
+    },
+    {
+      "id": "tok_53_mvgpyh2x",
+      "name": "TensorNode",
+      "symbol": "TNSRX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x00006c87C79cCEcEC8030996C59bdc0DF0464C9A",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x497a24977b0ff3eec2c1980b2db9ed738a7cf9aa0aede465303b78110953a1ac",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x497a24977b0ff3eec2c1980b2db9ed738a7cf9aa0aede465303b78110953a1ac"
+      }
+    },
+    {
+      "id": "tok_54_mvgpyh7a",
+      "name": "BrickCapital",
+      "symbol": "BRKN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0xBa5E721C398de5625A7992f60005a84b36e3D54F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x64a308b2c2c1c9ae8baed846e5588215a9a0ea4ec5306e1a97ed2af689b1f39c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x64a308b2c2c1c9ae8baed846e5588215a9a0ea4ec5306e1a97ed2af689b1f39c"
+      }
+    },
+    {
+      "id": "tok_55_mvgpyhbq",
+      "name": "GpuFarmFabric",
+      "symbol": "GPUN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0xDe90323eE7A59E23D1617d187434D6Ee13318350",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x72b89784e55478032729b041c9dd246cb3d6136286dfaf3589cdfcb6ad756989",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x72b89784e55478032729b041c9dd246cb3d6136286dfaf3589cdfcb6ad756989"
+      }
+    },
+    {
+      "id": "tok_56_mvgpyhg2",
+      "name": "BeamLink",
+      "symbol": "BEAMN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x8888B97806451c682Fabd416C6f537138A853f30",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1072ad3e4d33a82f85384ff44adeafa714df8738f9617d6deeb1a3f212cef364",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1072ad3e4d33a82f85384ff44adeafa714df8738f9617d6deeb1a3f212cef364"
+      }
+    },
+    {
+      "id": "tok_57_mvgpyhke",
+      "name": "HelioStation",
+      "symbol": "HLION",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x0007bC363eE84ecc8747D684D031C6600CC9e36F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x943f44b1e6d8f6a584bacc855ddda9c48a5c5e667ae567e9b9b5fc7b60f396dc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x943f44b1e6d8f6a584bacc855ddda9c48a5c5e667ae567e9b9b5fc7b60f396dc"
+      }
+    },
+    {
+      "id": "tok_58_mvgpyhkh",
+      "name": "SynapHub",
+      "symbol": "SYNN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "PrimewG5NnUFfquWKqeex4EiqN5kv8GyALJ6XAMZrPbi",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "Mj8ASXkciZB5LaJGQJdD2GGW1qAPbyi9DVmzPM2CxBy7T7NTJudZtTZqRXZRLuVTMBXEsjvDXx5Zz2Hn9Paga1X3",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'Mj8ASXkciZB5LaJGQJdD2GGW1qAPbyi9DVmzPM2CxBy7T7NTJudZtTZqRXZRLuVTMBXEsjvDXx5Zz2Hn9Paga1X3')"
+      }
+    },
+    {
+      "id": "tok_59_mvgpyhob",
+      "name": "CortexProtocol",
+      "symbol": "CTXN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0xaccE2b3d358F4B43d8b27260472950D4139AF5a5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x5982fa456094a41ea4fca2e3bd79ebc69833bd376944d22ea7bb3070e7fd836c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x5982fa456094a41ea4fca2e3bd79ebc69833bd376944d22ea7bb3070e7fd836c"
+      }
+    },
+    {
+      "id": "tok_60_mvgpyhs9",
+      "name": "VaultedVault",
+      "symbol": "VLTN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQ1N5Tb665f8f8cb87b60bde37b5d6bbfeba007630",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8482bfde19bea3203602b4bd614515820e0a78a2e4361fe5e420199729eec21b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8482bfde19bea3203602b4bd614515820e0a78a2e4361fe5e420199729eec21b"
+      }
+    },
+    {
+      "id": "tok_61_mvgpyhsc",
+      "name": "QuantumPool",
+      "symbol": "QNTMN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "PrimewMxBVCxGwcMKcte19KWS1jdjCqYTPy4w3bwfHGf",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "tGmPaRuf4RZ9iGUhCYBzPS1zBPa6pJ8xa4Ks7Yk4MSTR4Wca5VPsZv2wVKn1jHvDtkKZnd6eDyKuaBji4cF3dUYu",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'tGmPaRuf4RZ9iGUhCYBzPS1zBPa6pJ8xa4Ks7Yk4MSTR4Wca5VPsZv2wVKn1jHvDtkKZnd6eDyKuaBji4cF3dUYu')"
+      }
+    },
+    {
+      "id": "tok_62_mvgpyhwa",
+      "name": "ZeroProofGuard",
+      "symbol": "ZPRFN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQ1N5T285756c17fddeafcce753768a3066920fa1e",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x4a2097cb58f46d869ea01c8236797363c40b37f75ba9523e55ef266cfdf55891",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x4a2097cb58f46d869ea01c8236797363c40b37f75ba9523e55ef266cfdf55891"
+      }
+    },
+    {
+      "id": "tok_63_mvgpyi0b",
+      "name": "SentientMind",
+      "symbol": "SENTN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x00001598065972E5Da3050e7a415DDa97027807D",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8b60690612f76162722695b45121a85657c31685374a0e8f0180e4e433d77d80",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8b60690612f76162722695b45121a85657c31685374a0e8f0180e4e433d77d80"
+      }
+    },
+    {
+      "id": "tok_64_mvgpyi47",
+      "name": "FiberArray",
+      "symbol": "FIBRX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x000b9E5fac9E88059d2bcb0fFC7b4e6f238f6e45",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x0ef2de2a242c37ebdd1083240c2b9bf5e4ea06d85b6e3faea3fd637b64070145",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x0ef2de2a242c37ebdd1083240c2b9bf5e4ea06d85b6e3faea3fd637b64070145"
+      }
+    },
+    {
+      "id": "tok_65_mvgpyi82",
+      "name": "BrickFund",
+      "symbol": "BRKN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQGOVbf6e6fb9889525ca37e7201ca22f0f8757686",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x99dc0d4761e4287278c866778ab69b36b8b3334fba7a247f45144a9d0c800c16",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x99dc0d4761e4287278c866778ab69b36b8b3334fba7a247f45144a9d0c800c16"
+      }
+    },
+    {
+      "id": "tok_66_mvgpyi84",
+      "name": "FalconSafe",
+      "symbol": "FLCNN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "Inst2UWGrqxdMNGqEDZTfYWgMj6XqRjRWrqPaffJPBP6",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "XZiKvrBWohuKtan2jRtYVPStdBHKKGp4DKDFRDuJZnM429JjPb1YtsUmHfXhr5wc2HJBv6xHKZ3DXZMBZAjs1oZZ",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'XZiKvrBWohuKtan2jRtYVPStdBHKKGp4DKDFRDuJZnM429JjPb1YtsUmHfXhr5wc2HJBv6xHKZ3DXZMBZAjs1oZZ')"
+      }
+    },
+    {
+      "id": "tok_67_mvgpyi86",
+      "name": "QuantumProof",
+      "symbol": "QNTMX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "GovL1S2uZcLLpEzwncV4YVuwVbMQRhXAGTYRVc4nyziQ",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "gCoQikZkkVr1bwT3f5YhpcjNNB7KcmMJngd2Be3uG7pkmKrvNep8i2kn5UqTk5EUxA8tQ2xGJ99EZ6NjGyqC4v2T",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'gCoQikZkkVr1bwT3f5YhpcjNNB7KcmMJngd2Be3uG7pkmKrvNep8i2kn5UqTk5EUxA8tQ2xGJ99EZ6NjGyqC4v2T')"
+      }
+    },
+    {
+      "id": "tok_68_mvgpyiby",
+      "name": "SentientProtocol",
+      "symbol": "SENTX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQ5AFE550d91aa84f10e1bb318d728dc735e933b54",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2f1bc5404f8acfeb01c1aed9ede232cd53266fccf20d2fdc42d76e1349ebd2b0",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2f1bc5404f8acfeb01c1aed9ede232cd53266fccf20d2fdc42d76e1349ebd2b0"
+      }
+    },
+    {
+      "id": "tok_69_mvgpyibz",
+      "name": "SynapBrain",
+      "symbol": "SYNX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "SafeR56kzZHtdkYTL4fLN3cGq7pauqNTXKQrDCBpjRAX",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "MU8w1FVxhQY1d9S5ecY1w6qZvp4hf4jgxc8pTMxwvBYKYSDPVN8ZmGDqjs4dJct26PAQPgqcrd3BALQtNSrPNsyB",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'MU8w1FVxhQY1d9S5ecY1w6qZvp4hf4jgxc8pTMxwvBYKYSDPVN8ZmGDqjs4dJct26PAQPgqcrd3BALQtNSrPNsyB')"
+      }
+    },
+    {
+      "id": "tok_70_mvgpyigk",
+      "name": "BrickCapital",
+      "symbol": "BRKN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQGOV9e66056b754bb70066b91a002c20d1ae6ec00",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe04c386cfeae37c3825a03f1bea9e064ccbfaf14815097a6f7a646e00db2c801",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe04c386cfeae37c3825a03f1bea9e064ccbfaf14815097a6f7a646e00db2c801"
+      }
+    },
+    {
+      "id": "tok_71_mvgpyil2",
+      "name": "VaultedCapital",
+      "symbol": "VLTN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0xaCCef31436D9c4f873eB99aF68e271C618C2511e",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xdd1e220be28f3adcd0ce7cfb66e355470c5d095a79247bebe41f3f07d2ddc51e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xdd1e220be28f3adcd0ce7cfb66e355470c5d095a79247bebe41f3f07d2ddc51e"
+      }
+    },
+    {
+      "id": "tok_72_mvgpyipc",
+      "name": "GpuFarmLink",
+      "symbol": "GPUN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x1967f43D133d84b075DbcBbf00EB9f798728dCe5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x181a82b1a6d8515f0f08f46004c6a206e24a7e94dc44db31a64ab7933a1aa48a",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x181a82b1a6d8515f0f08f46004c6a206e24a7e94dc44db31a64ab7933a1aa48a"
+      }
+    },
+    {
+      "id": "tok_73_mvgpyitp",
+      "name": "FiberArray",
+      "symbol": "FIBRX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00003A8166B632db0ED8D98db659A13bED6888d8",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x9a4451867cd003d437354857bf807cbe7c14118dd027f9299a07ed51f19f4b30",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x9a4451867cd003d437354857bf807cbe7c14118dd027f9299a07ed51f19f4b30"
+      }
+    },
+    {
+      "id": "tok_74_mvgpyiyc",
+      "name": "SwarmNode",
+      "symbol": "SWRMX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0xaCcEad9dFB85E00a002F442fe11A972d1D52a4e4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xdad6c156f7065b461319e2594239c06a9d1ddc06ff00c2d6c7744db8ff94039f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xdad6c156f7065b461319e2594239c06a9d1ddc06ff00c2d6c7744db8ff94039f"
+      }
+    },
+    {
+      "id": "tok_75_mvgpyj2v",
+      "name": "RegenSecurities",
+      "symbol": "RGNX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQVAULT08139fa8d5bfcb2a30146006d32709fc14c",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa8566416c68000ef820cdddb6b470aa8bad2488017a5f880cb3fdeb07193bf47",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa8566416c68000ef820cdddb6b470aa8bad2488017a5f880cb3fdeb07193bf47"
+      }
+    },
+    {
+      "id": "tok_76_mvgpyj71",
+      "name": "GpuFarmNode",
+      "symbol": "GPUN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x253559e25fa038590bCF51feB7d79e5C3E00590D",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1b66586960625c3b40e1bc646f8c52c74772966fbc34d64d34c6d7f284043057",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1b66586960625c3b40e1bc646f8c52c74772966fbc34d64d34c6d7f284043057"
+      }
+    },
+    {
+      "id": "tok_77_mvgpyjb2",
+      "name": "GpuFarmStream",
+      "symbol": "GPUX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00cDF7Fd89157c7E1d7e494a2a37Df7De9CfdEE5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x88b577b441f8936b4a3195964d9b4abfe41c69e84ff93358ec7a4e906f9b0e02",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x88b577b441f8936b4a3195964d9b4abfe41c69e84ff93358ec7a4e906f9b0e02"
+      }
+    },
+    {
+      "id": "tok_78_mvgpyjf4",
+      "name": "CommoditySecurities",
+      "symbol": "CMDTN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0xcafE7f2BFEF33ca178f67C793537FBcd13C7c53f",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x255a39ffc422de5e19248080c5bdbf471978520189dd6a808618091235535975",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x255a39ffc422de5e19248080c5bdbf471978520189dd6a808618091235535975"
+      }
+    },
+    {
+      "id": "tok_79_mvgpyjix",
+      "name": "FiberStream",
+      "symbol": "FIBRN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQENTc604c1f4c13ff32b96d73d90744a2af77ffad",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1d7fc0a9eabe662da86c136fa662edecd8545998fc81152b4c3fa4d8a5336e59",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1d7fc0a9eabe662da86c136fa662edecd8545998fc81152b4c3fa4d8a5336e59"
+      }
+    },
+    {
+      "id": "tok_80_mvgpyjmp",
+      "name": "EdgeLink",
+      "symbol": "EDGEX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x5afea925681fA16878aAb0Ba915575cB09a22f57",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x68ace66a97fc08232d2ae59645c893c9157871e2acedd91b06bf4d8003476a50",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x68ace66a97fc08232d2ae59645c893c9157871e2acedd91b06bf4d8003476a50"
+      }
+    },
+    {
+      "id": "tok_81_mvgpyjql",
+      "name": "CryptoVaultSwap",
+      "symbol": "CVLTX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQ5AFE1590cb62559804cc3a92dd8bc155509493cd",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x71cbaa1200adb14d1f2a8ee701502abf76bc9e99bd827f159c635db5856f6aaf",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x71cbaa1200adb14d1f2a8ee701502abf76bc9e99bd827f159c635db5856f6aaf"
+      }
+    },
+    {
+      "id": "tok_82_mvgpyjuw",
+      "name": "EdgeGrid",
+      "symbol": "EDGEX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x8888ae3EA846ECC456516c6228B101d786094B64",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd5160d6bc141b33fd58e9e5514e7d57cc6f58fa36677c7a0a20406a4149877c4",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd5160d6bc141b33fd58e9e5514e7d57cc6f58fa36677c7a0a20406a4149877c4"
+      }
+    },
+    {
+      "id": "tok_83_mvgpyjza",
+      "name": "NeuralSync",
+      "symbol": "NEURN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00064d1e90B91217ea34a26Beec57cBca92C8468",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x03a2879243168c3945ba4710576b580af4d19fa085e7a8491ee39f31da54dcec",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x03a2879243168c3945ba4710576b580af4d19fa085e7a8491ee39f31da54dcec"
+      }
+    },
+    {
+      "id": "tok_84_mvgpyk3j",
+      "name": "FalconVault",
+      "symbol": "FLCNX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0xDe90A9fdc33ac6F14b0014313486009F6780Bfc9",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xce156b5a2b0a396d506a4f3962573ab690c6177e0b6e5ad9032098608d1ec8c7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xce156b5a2b0a396d506a4f3962573ab690c6177e0b6e5ad9032098608d1ec8c7"
+      }
+    },
+    {
+      "id": "tok_85_mvgpyk7t",
+      "name": "RegenCredit",
+      "symbol": "RGNN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x0000eD6371EB5d98Ecf03a3662E89e1DD4932010",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x362e83061fedec1463f10170cff2818e63b8eb1148639b43be72db4358ccdd52",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x362e83061fedec1463f10170cff2818e63b8eb1148639b43be72db4358ccdd52"
+      }
+    },
+    {
+      "id": "tok_86_mvgpykc3",
+      "name": "SynapSync",
+      "symbol": "SYNX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x5aFef79F54B737eEAe42554590ed9A819a83A373",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe30db79e1e04bfd3ae3d4b5db4aa35bf08dbd3dc2de939837415ddeb79efbc72",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe30db79e1e04bfd3ae3d4b5db4aa35bf08dbd3dc2de939837415ddeb79efbc72"
+      }
+    },
+    {
+      "id": "tok_87_mvgpykg0",
+      "name": "CortexSync",
+      "symbol": "CTXX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQ5AFEcb0ec388addd6982208a82f16c0bd8f3a2c4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7b90eb07b2cdffda02f47c1cfcb8e299ec525acab0519248c8300614be25083b",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7b90eb07b2cdffda02f47c1cfcb8e299ec525acab0519248c8300614be25083b"
+      }
+    },
+    {
+      "id": "tok_88_mvgpykjy",
+      "name": "TreasuryCapital",
+      "symbol": "TRSN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x88881f164D873aA3B64c0b2FD311F4684c1A85F4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x856055e37a47a9492263c6f271133dcb0a7f2cc3cac9545dfdc8d3ef47371865",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x856055e37a47a9492263c6f271133dcb0a7f2cc3cac9545dfdc8d3ef47371865"
+      }
+    },
+    {
+      "id": "tok_89_mvgpykk0",
+      "name": "ShieldCore",
+      "symbol": "SHLDN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "InstPwWiJdVBDmiw9uzPyvnDAbn7iTJ4xEUQhnJutJUg",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "aijG7pGA14trme2ueR7wGtDGHsGAiTrdeS7Ku44oPHmAxm4MC7XWGRbxvMsetAXsTpv19pm47U6H4HsioM1wLzf7",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'aijG7pGA14trme2ueR7wGtDGHsGAiTrdeS7Ku44oPHmAxm4MC7XWGRbxvMsetAXsTpv19pm47U6H4HsioM1wLzf7')"
+      }
+    },
+    {
+      "id": "tok_90_mvgpyknx",
+      "name": "FalconSafe",
+      "symbol": "FLCNN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-721",
+      "contractAddress": "0xQENT03fdae93cbacaf805a4b029e84914a0d9cd6d",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2fb3e2ff4115d78ab583405661430e413a34d14c3ce0a7213c5a1c8c92310598",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2fb3e2ff4115d78ab583405661430e413a34d14c3ce0a7213c5a1c8c92310598"
+      }
+    },
+    {
+      "id": "tok_91_mvgpykrz",
+      "name": "YieldMaxSecurities",
+      "symbol": "YMAXX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0000E83e53Ed4247E59d480e3F8DdC30F97e994a",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x3fb64f4ba4a10b28ca63382d51d57f70cbc756d343923484726406faf27de3bc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x3fb64f4ba4a10b28ca63382d51d57f70cbc756d343923484726406faf27de3bc"
+      }
+    },
+    {
+      "id": "tok_92_mvgpykwa",
+      "name": "TreasurySecurities",
+      "symbol": "TRSX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-1155",
+      "contractAddress": "0xQ1N5T015412d845fedfc9509f8162917b67074117",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x3c143f8259f810e1f017ac80d0868c66fab74cb7b9f3d898cbff70c5bfcb8024",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x3c143f8259f810e1f017ac80d0868c66fab74cb7b9f3d898cbff70c5bfcb8024"
+      }
+    },
+    {
+      "id": "tok_93_mvgpyl0u",
+      "name": "KyberVault",
+      "symbol": "KYBRX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0xc0rpdaEdA45cFCF07924e0903762113D55A26842",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x54d9e326f05bd4955d8d6ff881b71ccf65a7ebc1f6cbab5119f230cb5a06aafa",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x54d9e326f05bd4955d8d6ff881b71ccf65a7ebc1f6cbab5119f230cb5a06aafa"
+      }
+    },
+    {
+      "id": "tok_94_mvgpyl57",
+      "name": "QuantumProof",
+      "symbol": "QNTMX",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQGOV9050dd76935fd1d139dcf4999c879f44328f7",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x45f75f90baed161922d5a77906f888a5d8f9f8ccdc789e94c44e2c34e4360758",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x45f75f90baed161922d5a77906f888a5d8f9f8ccdc789e94c44e2c34e4360758"
+      }
+    },
+    {
+      "id": "tok_95_mvgpyl9l",
+      "name": "TensorNode",
+      "symbol": "TNSRN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0xc0rp25Cd5d045D0A2De724A4Ff3e371B4458A447",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xecd3a1efb75b83c4957d2206c6871ed942a0fd08e106b4a6588a72b9b12f6af2",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xecd3a1efb75b83c4957d2206c6871ed942a0fd08e106b4a6588a72b9b12f6af2"
+      }
+    },
+    {
+      "id": "tok_96_mvgpyldy",
+      "name": "PrimeFlow",
+      "symbol": "PRMN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x00EAb706f95aB56D1aA75F2a24e16656B75bdc44",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc34eb52dbaf501f58c4d0469c2b8572855b5a97e897c571c85371ac1c8a38a29",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc34eb52dbaf501f58c4d0469c2b8572855b5a97e897c571c85371ac1c8a38a29"
+      }
+    },
+    {
+      "id": "tok_97_mvgpyle0",
+      "name": "CommodityReserve",
+      "symbol": "CMDTN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "Corp4TAKB5hwUDRdZ8GqERJRsyhexKnjkfjDWCXpbRpG",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "2YWctG4EgZVSprbCP4ovejkKSo8B3d9qwUqG9ra35MMc9HvtoLnr1eJL8RnLF6foEUFe6FDHr66UJBAS9Tw8uWY9",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '2YWctG4EgZVSprbCP4ovejkKSo8B3d9qwUqG9ra35MMc9HvtoLnr1eJL8RnLF6foEUFe6FDHr66UJBAS9Tw8uWY9')"
+      }
+    },
+    {
+      "id": "tok_98_mvgpyli2",
+      "name": "WirelessArray",
+      "symbol": "WRLSX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0xc0rpB1Ed5c59E71512b308fa32Fe1D95a5ba3E00",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd0f472b8709eeca4836651b2bda271e601f419363bb5cbcb9ae70ab814fb2c42",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd0f472b8709eeca4836651b2bda271e601f419363bb5cbcb9ae70ab814fb2c42"
+      }
+    },
+    {
+      "id": "tok_99_mvgpylm7",
+      "name": "QuantumExchange",
+      "symbol": "QNTMN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x1967618F194cb5E72dc3c8381B6C36A48de28e78",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x69b10f96bb33514113c8f32cbddf8316e1d89f0f52f5721096a34cb2e36d3031",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x69b10f96bb33514113c8f32cbddf8316e1d89f0f52f5721096a34cb2e36d3031"
+      }
+    },
+    {
+      "id": "tok_100_mvgpylql",
+      "name": "FalconVault",
+      "symbol": "FLCNN",
+      "chain": "quantum",
+      "networkId": 2026,
+      "standard": "ERC-20",
+      "contractAddress": "0xQVAULT754d8770f1991e3c6d231f0f431bd2789c8",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xfb3a7f2869017b1bcf06ac5c003ad42578d936fa03fdef366857959c39957be4",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xfb3a7f2869017b1bcf06ac5c003ad42578d936fa03fdef366857959c39957be4"
+      }
+    },
+    {
+      "id": "tok_dup_mvocn5a1_aq8ty9",
+      "name": "Mao-Mao Sovereign (Copy)",
+      "symbol": "MAOMAO",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x0000a7B57b9C8ccFc372fCE3477D8271F09BEE8a",
+      "deployerAddress": "0x409C8C62018dcF62048848CbE15682130EbB501f",
+      "deployerPrivateKey": "0x567f8ba91480209e114d557b1b94722cb4638c88c21b8c2987f68154871d1b1c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x567f8ba91480209e114d557b1b94722cb4638c88c21b8c2987f68154871d1b1c"
+      }
+    },
+    {
+      "id": "tok_dup_mvocnfqq_pdp4mb",
+      "name": "Mao-Mao Sovereign (Copy)",
+      "symbol": "MAOMAO",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0xc0rp7a7a4d16aB01c485Ba3a2b2f6D8653d5B103",
+      "deployerAddress": "0x409C8C62018dcF62048848CbE15682130EbB501f",
+      "deployerPrivateKey": "0x567f8ba91480209e114d557b1b94722cb4638c88c21b8c2987f68154871d1b1c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x567f8ba91480209e114d557b1b94722cb4638c88c21b8c2987f68154871d1b1c"
+      }
+    },
+    {
+      "id": "tok_1_mvocy360",
+      "name": "WirelessNode",
+      "symbol": "WRLSX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0008p6D1zmyAJ6nzMb9pTRYLxf1X4ZsZr873Du5emn",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "xL2tTd5bxe9JoKsiK3rmSRN6AAenrmoBXk3BN1WRqyu5spPS6Wr7ZVaSkckBtQ9FiNiw1pZbFSww8i8KCxMZ19xW",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'xL2tTd5bxe9JoKsiK3rmSRN6AAenrmoBXk3BN1WRqyu5spPS6Wr7ZVaSkckBtQ9FiNiw1pZbFSww8i8KCxMZ19xW')"
+      }
+    },
+    {
+      "id": "tok_2_mvocy370",
+      "name": "HelioLink",
+      "symbol": "HLIOX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x0001EfEA35cA16FD93365d1250f31b45A53D07C4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7a0399905290bec0f6d24bbab952b10f68a10d3c2e2772c89b3b0ccb0ed8cf32",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7a0399905290bec0f6d24bbab952b10f68a10d3c2e2772c89b3b0ccb0ed8cf32"
+      }
+    },
+    {
+      "id": "tok_3_mvocy37p",
+      "name": "LatticeIndex",
+      "symbol": "LTTCX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000e5ceBF4F9B258A736E77A812140f7E42a3BC4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x96a0067b8ba6e79a76c481e9f6d0053c9a587b9e5c72be651dfa61717209fa14",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x96a0067b8ba6e79a76c481e9f6d0053c9a587b9e5c72be651dfa61717209fa14"
+      }
+    },
+    {
+      "id": "tok_4_mvocy38d",
+      "name": "CortexProtocol",
+      "symbol": "CTXX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000b9870Ae36ef826364aE3515127602472bA664",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd038ee38f1af2dccdd2d0196b3af110f4ce293b12e1ce9480bead6e0fa0eb74d",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd038ee38f1af2dccdd2d0196b3af110f4ce293b12e1ce9480bead6e0fa0eb74d"
+      }
+    },
+    {
+      "id": "tok_5_mvocy391",
+      "name": "ZeroProofSwap",
+      "symbol": "ZPRFN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0001613d854D8A3e222636cc8272Abf07a58EbDa",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe71140f455f86a166bbf1a9ec3085ccf40496cd7ecbee6d4d4e4f2f6eed4ab80",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe71140f455f86a166bbf1a9ec3085ccf40496cd7ecbee6d4d4e4f2f6eed4ab80"
+      }
+    },
+    {
+      "id": "tok_6_mvocy39n",
+      "name": "BandLink",
+      "symbol": "BANDX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x000bC48Ba86EfC0494A06AFaB084C08Dacc14AD3",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x39ea71002d2cb2e7991a796fa1bcf9f08d3311306cedd0eae481f00ccab962bc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x39ea71002d2cb2e7991a796fa1bcf9f08d3311306cedd0eae481f00ccab962bc"
+      }
+    },
+    {
+      "id": "tok_7_mvocy3a8",
+      "name": "CommodityYield",
+      "symbol": "CMDTX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x000edbd55E499432d4C519bcE4Af20f8dd822717",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe732b36b4e3f4918544863a91b0e3d3a107fe2f09d8007e3ad68243dcf766382",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe732b36b4e3f4918544863a91b0e3d3a107fe2f09d8007e3ad68243dcf766382"
+      }
+    },
+    {
+      "id": "tok_8_mvocy3at",
+      "name": "BeamStation",
+      "symbol": "BEAMX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0008E451C9D2fDb86dF04a18010F3251918F8547",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xaccc5d860e3a4f6dde4ed71de7f9fc4b8d6f451edb2ffb12ecc1ce9165615fa2",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xaccc5d860e3a4f6dde4ed71de7f9fc4b8d6f451edb2ffb12ecc1ce9165615fa2"
+      }
+    },
+    {
+      "id": "tok_9_mvocy3be",
+      "name": "RegenFlow",
+      "symbol": "RGNN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x000E43AAeae1E9c3090A9a8c74508a2Ec91F63B2",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7bd2087284257887ffb42a9ec9b20a772947d75a2e6055e524bc74b654d1442d",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7bd2087284257887ffb42a9ec9b20a772947d75a2e6055e524bc74b654d1442d"
+      }
+    },
+    {
+      "id": "tok_10_mvocy3c0",
+      "name": "SentientCore",
+      "symbol": "SENTN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000bF23cc840745A8324E40f973e81dF0f55d6b1",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa5a9952df1b98658d260202a258c420a9cc9988590c0977677b7ccbf890800cb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa5a9952df1b98658d260202a258c420a9cc9988590c0977677b7ccbf890800cb"
+      }
+    },
+    {
+      "id": "tok_11_mvocy3c1",
+      "name": "SentientHub",
+      "symbol": "SENTX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000F3CYmNS97Kk4X3UEfSXu9nL2HyzNh9o7yDoyLqc",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "isbvqudtztddxZgPLc59Tvn3gBg4TezABsqxAdVX9aHeopp4x8b6zpavRfkQv8YxFYcU5YYMhkkey7KcRNZ9fCkm",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'isbvqudtztddxZgPLc59Tvn3gBg4TezABsqxAdVX9aHeopp4x8b6zpavRfkQv8YxFYcU5YYMhkkey7KcRNZ9fCkm')"
+      }
+    },
+    {
+      "id": "tok_12_mvocy3cn",
+      "name": "HelioStation",
+      "symbol": "HLIOX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x00036F1fD8B80f02d8d2E06fBecBc18B587D6fd8",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x50433e524b85bc8d05fa577544882e94983d953b220182d9ab00ccc5b8dac314",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x50433e524b85bc8d05fa577544882e94983d953b220182d9ab00ccc5b8dac314"
+      }
+    },
+    {
+      "id": "tok_13_mvocy3d9",
+      "name": "YieldMaxTrust",
+      "symbol": "YMAXN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x0002e666b8E42C22A8A2D7D6d035503d1801e851",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x9186b31ea2c020a4cf356ba6fa63358d5f58e0b1c3875f5ea53f629f3efac030",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x9186b31ea2c020a4cf356ba6fa63358d5f58e0b1c3875f5ea53f629f3efac030"
+      }
+    },
+    {
+      "id": "tok_14_mvocy3da",
+      "name": "WirelessStation",
+      "symbol": "WRLSN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "0x000YdrK6ttHBrynEqyEDaZxDST45txfpRA73TyKtKs",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "Q9zW5sFzdicM3U5PNUtBSs9vaKJbB8LA2p2PtrB2hCi7rfT92bkoXdd5UQur7ep9RWPfub5HqyChyQD9qKRsHBiq",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'Q9zW5sFzdicM3U5PNUtBSs9vaKJbB8LA2p2PtrB2hCi7rfT92bkoXdd5UQur7ep9RWPfub5HqyChyQD9qKRsHBiq')"
+      }
+    },
+    {
+      "id": "tok_15_mvocy3da",
+      "name": "KyberPool",
+      "symbol": "KYBRX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x0005AnYV5XxRU1H1LeFsdouZWtGFsgnhs3Kp1pqQ2K",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "9xBckb73z89iCjuRXhD8prrKCBkpiJFWqtc7KtZmidgbQnce3QBxvkiRpeUcvW6kmiYrA6ZGw2Kci5GXNurtXHoQ",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '9xBckb73z89iCjuRXhD8prrKCBkpiJFWqtc7KtZmidgbQnce3QBxvkiRpeUcvW6kmiYrA6ZGw2Kci5GXNurtXHoQ')"
+      }
+    },
+    {
+      "id": "tok_16_mvocy3dy",
+      "name": "SensorChain",
+      "symbol": "SNSRX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x0002F935F2690a40BA96Bd0Ab517010532aFDC8a",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xec6ab43aff91133b2c0db09bd123cfd554dfedf777f9c94d02415d72d7f08838",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xec6ab43aff91133b2c0db09bd123cfd554dfedf777f9c94d02415d72d7f08838"
+      }
+    },
+    {
+      "id": "tok_17_mvocy3ek",
+      "name": "VectorProtocol",
+      "symbol": "VECTN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x0001bD8882339F511D519642f1050E07584A4Df3",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1eab84d5894e10eb2cfc14c63890e788c3af77ff63edf3515c0ceefcb06aaf51",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1eab84d5894e10eb2cfc14c63890e788c3af77ff63edf3515c0ceefcb06aaf51"
+      }
+    },
+    {
+      "id": "tok_18_mvocy3f6",
+      "name": "SentientMesh",
+      "symbol": "SENTN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000562B190557e756AE394bb152Df97FB4baCD13",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x02e551f3f609b912221acf2da9c808e39b3d2dc9b06fe453d2f0bcd29dfbfb5f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x02e551f3f609b912221acf2da9c808e39b3d2dc9b06fe453d2f0bcd29dfbfb5f"
+      }
+    },
+    {
+      "id": "tok_19_mvocy3fr",
+      "name": "BeamLink",
+      "symbol": "BEAMN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x0001050499016cb35a2F73a82630AA47b01Fb996",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xf504e83e8684494838b40eee39611080507489289aece2b0a3f7b68d7f8657c3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xf504e83e8684494838b40eee39611080507489289aece2b0a3f7b68d7f8657c3"
+      }
+    },
+    {
+      "id": "tok_20_mvocy3gd",
+      "name": "ComputeGrid",
+      "symbol": "CMPN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000a2902907d38c4FA65D77A7d161Db15aDFCAEe",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2e0cd0246f900bf6377d666aaee95bc699f202d6d0cb7a2e2070e5d2541dce20",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2e0cd0246f900bf6377d666aaee95bc699f202d6d0cb7a2e2070e5d2541dce20"
+      }
+    },
+    {
+      "id": "tok_21_mvocy3ge",
+      "name": "CogniGrid",
+      "symbol": "COGN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000TXKqqtHqawHmFgq8PYtbdCQbbQUTCFJyFKAoXbv",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "ihaUq6rxKBbTJSF9PCCJNUBP1dUKSZevMcxJXRJ9T4UqHbvcbbLgHiwdpTFtoup41swGL38dFDPT5vn3oCfWt55k",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'ihaUq6rxKBbTJSF9PCCJNUBP1dUKSZevMcxJXRJ9T4UqHbvcbbLgHiwdpTFtoup41swGL38dFDPT5vn3oCfWt55k')"
+      }
+    },
+    {
+      "id": "tok_22_mvocy3gz",
+      "name": "LatticeVault",
+      "symbol": "LTTCN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x0002148C6DD63EfEbbe675a573674Be4c4784ad5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x91a691a8e8ca2ce12da11d67b6f11c46f186d86e7de5875e71575611785ba0fd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x91a691a8e8ca2ce12da11d67b6f11c46f186d86e7de5875e71575611785ba0fd"
+      }
+    },
+    {
+      "id": "tok_23_mvocy3hk",
+      "name": "BandRelay",
+      "symbol": "BANDX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0006313A6F29406F8C2aBF8a12986E35Ccbd6751",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xec37e75427da308a6a0e772bf1281c781d069c59241b74e794209fe27e19f2dd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xec37e75427da308a6a0e772bf1281c781d069c59241b74e794209fe27e19f2dd"
+      }
+    },
+    {
+      "id": "tok_24_mvocy3i8",
+      "name": "AgentNexus",
+      "symbol": "AGNTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000260a7c7cf6B74353c5364A2c50ADf9815c4c0",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7244a39607ef5e61ce81017c12f28f933c52f803b491d4092920b4f30c55ef45",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7244a39607ef5e61ce81017c12f28f933c52f803b491d4092920b4f30c55ef45"
+      }
+    },
+    {
+      "id": "tok_25_mvocy3iv",
+      "name": "ShieldVault",
+      "symbol": "SHLDX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000Bd2a63951728Fff94a4d2a31b96E233685e1C",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2cb079d6461a5f8aa26254fd27fa25c525565a05414f5d707cd52a4acdb1abf7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2cb079d6461a5f8aa26254fd27fa25c525565a05414f5d707cd52a4acdb1abf7"
+      }
+    },
+    {
+      "id": "tok_26_mvocy3jh",
+      "name": "BeamChain",
+      "symbol": "BEAMN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000ecD46a23c3Ea456B66d09873689E88BA897b5",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x82476347209e70c52dd8eeabe33c8e44999b02b234baa039b9b1ed2944b4fb3c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x82476347209e70c52dd8eeabe33c8e44999b02b234baa039b9b1ed2944b4fb3c"
+      }
+    },
+    {
+      "id": "tok_27_mvocy3k2",
+      "name": "GpuFarmStation",
+      "symbol": "GPUX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0005BB71C157b87f855D38855DcF5ECb310ac451",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x224186049e1755ef6d63f7377d3b7b582a769ba1abcb30bc4fcf588e73ff1e40",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x224186049e1755ef6d63f7377d3b7b582a769ba1abcb30bc4fcf588e73ff1e40"
+      }
+    },
+    {
+      "id": "tok_28_mvocy3kn",
+      "name": "EdgeGrid",
+      "symbol": "EDGEX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x00068e18f6F13BBF3A5fA3b4b628B71108e278B9",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x190684e0d9c2b3114042da1b1a7b54951f2a5a56ad76d95606c6769cd640c5b0",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x190684e0d9c2b3114042da1b1a7b54951f2a5a56ad76d95606c6769cd640c5b0"
+      }
+    },
+    {
+      "id": "tok_29_mvocy3l9",
+      "name": "BeamArray",
+      "symbol": "BEAMN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x000908B511A0bE7563b44b5De0eC9E0ee1FA222d",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7ebe79e45cf6ff1a5eea923cb0f064bc6f43fadd43a540905de96d1bc9215485",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7ebe79e45cf6ff1a5eea923cb0f064bc6f43fadd43a540905de96d1bc9215485"
+      }
+    },
+    {
+      "id": "tok_30_mvocy3m1",
+      "name": "BeamFabric",
+      "symbol": "BEAMN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0003155b48DAE12F17B88765d75A014C4d4E9594",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x7e1eeef7513d6b6dccf5005b01ec201b33379b8200e9f9d222b9e8e7557d68f9",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x7e1eeef7513d6b6dccf5005b01ec201b33379b8200e9f9d222b9e8e7557d68f9"
+      }
+    },
+    {
+      "id": "tok_31_mvocy3mn",
+      "name": "ZeroProofSwap",
+      "symbol": "ZPRFX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x0009221883e12F1215855461F3073800E7Cca734",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x697147f116b6950f3d0689d2365df83c7d8d291821fba3467e169418ec73cf71",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x697147f116b6950f3d0689d2365df83c7d8d291821fba3467e169418ec73cf71"
+      }
+    },
+    {
+      "id": "tok_32_mvocy3mo",
+      "name": "HelioFabric",
+      "symbol": "HLIOX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "0x000n8ZJ7JtUjEVGsatQvJH6DPvbWgzaTQo5RwAygF9",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "Bbs23tCcoiM2Drb4zMjwpyVCDQjfUHjMqDRjwJCD6FJQz5RdLL2dPibyW7ThZMKTAfLke8BmMgmpkA9UukebSDRC",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'Bbs23tCcoiM2Drb4zMjwpyVCDQjfUHjMqDRjwJCD6FJQz5RdLL2dPibyW7ThZMKTAfLke8BmMgmpkA9UukebSDRC')"
+      }
+    },
+    {
+      "id": "tok_33_mvocy3nc",
+      "name": "FalconIndex",
+      "symbol": "FLCNN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00081155139f19FEcb72042D290306d0Dd948B07",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x4d0c481d4179d6b7985cd80d7beef315935c8520c38e1958ffccea7edc9dff16",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x4d0c481d4179d6b7985cd80d7beef315935c8520c38e1958ffccea7edc9dff16"
+      }
+    },
+    {
+      "id": "tok_34_mvocy3o0",
+      "name": "CryptoVaultSafe",
+      "symbol": "CVLTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000A9b7DD79a9aCAd17821B82E42C81c1e3d4F6F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x1b9f92f664fd17f512331cc3824f8980417a2e0cf1fecf19eda42136f28a92ff",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x1b9f92f664fd17f512331cc3824f8980417a2e0cf1fecf19eda42136f28a92ff"
+      }
+    },
+    {
+      "id": "tok_35_mvocy3op",
+      "name": "ZeroProofSwap",
+      "symbol": "ZPRFX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x0009A05bba2929d313Bad27b33c273de7c57bcf1",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xbb0eef69a6f3a43f041586d38d865e53dc1b01d60b717d0307055c989c7085bb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xbb0eef69a6f3a43f041586d38d865e53dc1b01d60b717d0307055c989c7085bb"
+      }
+    },
+    {
+      "id": "tok_36_mvocy3pd",
+      "name": "CryptoVaultSwap",
+      "symbol": "CVLTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0003c7Fa61BB66b15ebbfD520CEEB01E117fe43A",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xf7c74500d0f745124b96843bf02ce7d409a6265ebc8d29f3f90f8628384b2665",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xf7c74500d0f745124b96843bf02ce7d409a6265ebc8d29f3f90f8628384b2665"
+      }
+    },
+    {
+      "id": "tok_37_mvocy3pz",
+      "name": "BrickReserve",
+      "symbol": "BRKN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000d9a6879eB5F5f81E2999a248B7BaCF4ADcA9d",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8a445f5045eab16366f28ab3be3c4594f330f5fd0c97b07e6534ec43646e0b5e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8a445f5045eab16366f28ab3be3c4594f330f5fd0c97b07e6534ec43646e0b5e"
+      }
+    },
+    {
+      "id": "tok_38_mvocy3qm",
+      "name": "FalconVault",
+      "symbol": "FLCNX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0005c666654D21b606CF2c3c8e368eE97eB090c7",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x42ba297e2e962c238547ef3dd9e10ea416499f61fee8c54ec5e9a0d9eba74c37",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x42ba297e2e962c238547ef3dd9e10ea416499f61fee8c54ec5e9a0d9eba74c37"
+      }
+    },
+    {
+      "id": "tok_39_mvocy3r9",
+      "name": "BeamGrid",
+      "symbol": "BEAMX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000204b3a921cf8f3d8230Fe12896e4b61a304ac",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc6d628c7f33be359cc74a5165287feebff8ed51a687caed7dce38d0ca41c3f4f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc6d628c7f33be359cc74a5165287feebff8ed51a687caed7dce38d0ca41c3f4f"
+      }
+    },
+    {
+      "id": "tok_40_mvocy3ra",
+      "name": "SensorGrid",
+      "symbol": "SNSRN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "0x000TaRqbRw8CUtiFLyD2xaZENeT4WSVF4iPL7QDsw8",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "6hN887ALtXUnHMcEbwN1SDB9z6Cxt5XskQfH3toM7ebrit4eTkKgJSnrKNGEeuj87Kmqwg9zqzZxPsok4ZjapBsR",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '6hN887ALtXUnHMcEbwN1SDB9z6Cxt5XskQfH3toM7ebrit4eTkKgJSnrKNGEeuj87Kmqwg9zqzZxPsok4ZjapBsR')"
+      }
+    },
+    {
+      "id": "tok_41_mvocy3ru",
+      "name": "HelioNode",
+      "symbol": "HLIOX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x0004bE67Bb50643C213CA0e98C1c237e35172a3A",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xeb5f9a86d7419c3a0aaea6f24c8b8170c08fc4c3367700ac2301b9f91e1973b0",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xeb5f9a86d7419c3a0aaea6f24c8b8170c08fc4c3367700ac2301b9f91e1973b0"
+      }
+    },
+    {
+      "id": "tok_42_mvocy3si",
+      "name": "BandLink",
+      "symbol": "BANDX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000673798Ae2B1BB84B4FD2EB76Af80AFd625E7A",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x47d37df4040fe3006ed21d1811ba0c97837044eadeb828437ab3f89c7dab1037",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x47d37df4040fe3006ed21d1811ba0c97837044eadeb828437ab3f89c7dab1037"
+      }
+    },
+    {
+      "id": "tok_43_mvocy3t3",
+      "name": "AutoPilotMesh",
+      "symbol": "AUTOX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x0003C468184bAADdB64ebd7ba322899bbab07FD4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x9a38c57c4a0211fdf36b784034d6712b9c17e82b652ecb91727d9a1367121e3f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x9a38c57c4a0211fdf36b784034d6712b9c17e82b652ecb91727d9a1367121e3f"
+      }
+    },
+    {
+      "id": "tok_44_mvocy3to",
+      "name": "QuantumSafe",
+      "symbol": "QNTMX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000534706Fdf473F534742138fe7dA50CBB22D5f",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xef482c445b4c3425e05245b37c35ade22a4b28bb6fc8ed195918bc89231ae0f9",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xef482c445b4c3425e05245b37c35ade22a4b28bb6fc8ed195918bc89231ae0f9"
+      }
+    },
+    {
+      "id": "tok_45_mvocy3uc",
+      "name": "HelioStation",
+      "symbol": "HLION",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0005852e431d2a70f0A1285B4941ceA0526C594a",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x5aca65b608292e3d3db642d406a87649ea60ea7eb9ba189a0fd9858cbf3cdd38",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x5aca65b608292e3d3db642d406a87649ea60ea7eb9ba189a0fd9858cbf3cdd38"
+      }
+    },
+    {
+      "id": "tok_46_mvocy3v1",
+      "name": "BrickYield",
+      "symbol": "BRKX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x0006a5f74fe6232dE667Da91cAE8619759e74947",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xfa7125449bb12e49b817e674e12f79b511da7d92cc6662238680740526460a4e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xfa7125449bb12e49b817e674e12f79b511da7d92cc6662238680740526460a4e"
+      }
+    },
+    {
+      "id": "tok_47_mvocy3vm",
+      "name": "EdgeChain",
+      "symbol": "EDGEN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0005De85c6e709c4C8056aBfDbe7B0e60DE2e1F0",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc809c04c72524c5fd722b02ee27f54183f0ea8e8b5acc10e52badf62267c12c1",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc809c04c72524c5fd722b02ee27f54183f0ea8e8b5acc10e52badf62267c12c1"
+      }
+    },
+    {
+      "id": "tok_48_mvocy3vn",
+      "name": "BeamChain",
+      "symbol": "BEAMN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000U2x2Wv2xYErD57vDrVF2GrPQpGi5p8fSjukmwn3",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "yPg3y4mJvFHcsbmmfehmibULpC94Beink8CF4x6QzGcbssk16qaR2Gb4MaqrCocWD39Y7wdFjzedxe7jakz1eG3R",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'yPg3y4mJvFHcsbmmfehmibULpC94Beink8CF4x6QzGcbssk16qaR2Gb4MaqrCocWD39Y7wdFjzedxe7jakz1eG3R')"
+      }
+    },
+    {
+      "id": "tok_49_mvocy3w9",
+      "name": "ComputeLink",
+      "symbol": "CMPX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x00006E44AA3e040F9D7177c0fd23dd97c7F5C68B",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x2972b8d08ce9365776c45e72fbd48fabea4f8723d16c092dbd59bd327e5e56d6",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x2972b8d08ce9365776c45e72fbd48fabea4f8723d16c092dbd59bd327e5e56d6"
+      }
+    },
+    {
+      "id": "tok_50_mvocy3wt",
+      "name": "VaultedYield",
+      "symbol": "VLTX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x000ab763ed7F8eA82990f93d7b463B821Fe7EE9c",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xa35e781ecde9fa17d2906e50bbdafc63d40f7a69f6dd8eb4301e7b164527651c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xa35e781ecde9fa17d2906e50bbdafc63d40f7a69f6dd8eb4301e7b164527651c"
+      }
+    },
+    {
+      "id": "tok_51_mvocy3xf",
+      "name": "AutoPilotMesh",
+      "symbol": "AUTON",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x0007025A5EF1E69578Af17d47092D1fd8D2E79d4",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x541d1e14f71ec560aa94be74b0b96eee590e15311fa9da5d933fb15825e3174d",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x541d1e14f71ec560aa94be74b0b96eee590e15311fa9da5d933fb15825e3174d"
+      }
+    },
+    {
+      "id": "tok_52_mvocy3xy",
+      "name": "FiberStream",
+      "symbol": "FIBRX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x00055cda1Cdb2B3E935d89707C73e4E370ec6656",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xc65963608473918fe462094d2bf6bedd1b4323f412b6ca15a55dd6b876c2dbc4",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xc65963608473918fe462094d2bf6bedd1b4323f412b6ca15a55dd6b876c2dbc4"
+      }
+    },
+    {
+      "id": "tok_53_mvocy3yl",
+      "name": "KyberSafe",
+      "symbol": "KYBRX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000C0980b2eBD5D274019f62E19cFFE75790c545",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8e6814bcbfad4e33664222e44ac83e3145de799b6348bf1920bae2844d67335d",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8e6814bcbfad4e33664222e44ac83e3145de799b6348bf1920bae2844d67335d"
+      }
+    },
+    {
+      "id": "tok_54_mvocy3z7",
+      "name": "VaultedTrust",
+      "symbol": "VLTX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x00040Eea45A56dcf5ce25d4206f7D3A30ef14258",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x54818cf76fd9680a3aaf5caa6f398bdf476115a7a4d7c9fade88433f353a44c9",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x54818cf76fd9680a3aaf5caa6f398bdf476115a7a4d7c9fade88433f353a44c9"
+      }
+    },
+    {
+      "id": "tok_55_mvocy3z8",
+      "name": "BandNode",
+      "symbol": "BANDN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000T3raKTBqjvBtQXvd6LBhxUXvHZv2SoUijfaN796",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "8cDUxvdpnpnd65crwFVP6z5go361xpr9vU5oSJohoHt6MPCTo3pArFCDXAH9W1y3PKGVTWfpmpUqBy53Wv9JBaLo",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '8cDUxvdpnpnd65crwFVP6z5go361xpr9vU5oSJohoHt6MPCTo3pArFCDXAH9W1y3PKGVTWfpmpUqBy53Wv9JBaLo')"
+      }
+    },
+    {
+      "id": "tok_56_mvocy3z9",
+      "name": "KyberProof",
+      "symbol": "KYBRN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x000sjXqqAWmSCe5y98S1m7h5Dqpr7eX8zydkXqy1xk",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "ri9uXZAcvXGNqWFo1t7bptBs4nE7uZvxoZfZ8f1qXftSFGfr9RuTtdNN4SWCMvGJS2wt8vjDrU3dj7Q1EYUnnjsy",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'ri9uXZAcvXGNqWFo1t7bptBs4nE7uZvxoZfZ8f1qXftSFGfr9RuTtdNN4SWCMvGJS2wt8vjDrU3dj7Q1EYUnnjsy')"
+      }
+    },
+    {
+      "id": "tok_57_mvocy3zv",
+      "name": "HelioChain",
+      "symbol": "HLIOX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x0009105FBA1786e171bcA494ec2f6bF8d870595d",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x742d5a80f050bc81b39c258f4d720c143df9e12df0f54dbe2e10195e00e30ecb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x742d5a80f050bc81b39c258f4d720c143df9e12df0f54dbe2e10195e00e30ecb"
+      }
+    },
+    {
+      "id": "tok_58_mvocy40i",
+      "name": "YieldMaxFlow",
+      "symbol": "YMAXX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x0008D401bC514C58F3232A82dB89DBA0283D4F59",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x21debf686511e4c39223b13622d93e1b3e9e2706cedf0d5b2a9567a9f555b27c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x21debf686511e4c39223b13622d93e1b3e9e2706cedf0d5b2a9567a9f555b27c"
+      }
+    },
+    {
+      "id": "tok_59_mvocy419",
+      "name": "BandLink",
+      "symbol": "BANDN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x0003b009CfBfdB13C10A74a1ccbFbBb67fc9A482",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x343296ada9be9a4d61e6a8207ae08dd22ab74510385b09a58930712f959a626a",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x343296ada9be9a4d61e6a8207ae08dd22ab74510385b09a58930712f959a626a"
+      }
+    },
+    {
+      "id": "tok_60_mvocy41a",
+      "name": "DilithiumIndex",
+      "symbol": "DLTHN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x000mQ8QSwuNzWwcre2mX71SWaGrYXCfvWGH9yPXBGw",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "wbdP6HK6twEcrVHTpMgXFNbwTN8bPENugPjMBjmSC2io5n1gmTMs5mz6NukbToSCQqzaB13r9kibTThMN2bCgier",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'wbdP6HK6twEcrVHTpMgXFNbwTN8bPENugPjMBjmSC2io5n1gmTMs5mz6NukbToSCQqzaB13r9kibTThMN2bCgier')"
+      }
+    },
+    {
+      "id": "tok_61_mvocy41v",
+      "name": "NeuralMesh",
+      "symbol": "NEURX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0004E0a20910A2084bDA97e8c99eBBB698378EAB",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x96a43e90fb7324a0ef59e08c3523e6d04d8f704302a33990f34b08968a36a6f3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x96a43e90fb7324a0ef59e08c3523e6d04d8f704302a33990f34b08968a36a6f3"
+      }
+    },
+    {
+      "id": "tok_62_mvocy42i",
+      "name": "LatticeIndex",
+      "symbol": "LTTCX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x00051dfef9114b76796593Be9712Fff8486f0350",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xdfc03d0e3d1266905412856813e3ece2bc951210200345754a835b871816d8a2",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xdfc03d0e3d1266905412856813e3ece2bc951210200345754a835b871816d8a2"
+      }
+    },
+    {
+      "id": "tok_63_mvocy434",
+      "name": "CommodityVault",
+      "symbol": "CMDTX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x0003e23358fe9DD87DF11515345eb7EfeE3bD669",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd7a12f4d2ff9e28a23f344c7be81229a9ad9ac74bc94fef8c999f2c26b783e09",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd7a12f4d2ff9e28a23f344c7be81229a9ad9ac74bc94fef8c999f2c26b783e09"
+      }
+    },
+    {
+      "id": "tok_64_mvocy43p",
+      "name": "CryptoVaultSwap",
+      "symbol": "CVLTN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000EDfbd19C1C4917496663CA6E18DA7374298c2",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x95f789a20b7780e0d5eb8f3e10b0307e7157c5cf54afba470603f19f5596d85a",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x95f789a20b7780e0d5eb8f3e10b0307e7157c5cf54afba470603f19f5596d85a"
+      }
+    },
+    {
+      "id": "tok_65_mvocy44c",
+      "name": "KyberIndex",
+      "symbol": "KYBRX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x0007bcecd3b9A1d37D223076c3D1D912a7F2Ca34",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xda918bf30ca1ffa724a2c30ddb5ae7658ded9b233f3c184d3a6581cc9d3d8f0f",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xda918bf30ca1ffa724a2c30ddb5ae7658ded9b233f3c184d3a6581cc9d3d8f0f"
+      }
+    },
+    {
+      "id": "tok_66_mvocy44y",
+      "name": "ComputeStream",
+      "symbol": "CMPX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000B0d7785e9FB2863e1C415C9D282d3B88a4798",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x0ae0971b0ba8006b3ed1f936fbbdce6f1c7c932d2e5b555bf93460040db7305e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x0ae0971b0ba8006b3ed1f936fbbdce6f1c7c932d2e5b555bf93460040db7305e"
+      }
+    },
+    {
+      "id": "tok_67_mvocy45k",
+      "name": "RegenFlow",
+      "symbol": "RGNN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-20",
+      "contractAddress": "0x000763784CD48b35B06e6f7e5Eeba3a9307d15f7",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xce6a6de4c366186bb105b0589f61b777ad8afa8eed79fcc7925317a42ce8e2e3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xce6a6de4c366186bb105b0589f61b777ad8afa8eed79fcc7925317a42ce8e2e3"
+      }
+    },
+    {
+      "id": "tok_68_mvocy468",
+      "name": "LatticeCore",
+      "symbol": "LTTCN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000A171245808F3f6AC1811a86030d498b74959b",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x00ce1b7ee740569bc344084a5c7d6952ff6aa08f43f8094fe9e51031d73c9b33",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x00ce1b7ee740569bc344084a5c7d6952ff6aa08f43f8094fe9e51031d73c9b33"
+      }
+    },
+    {
+      "id": "tok_69_mvocy468",
+      "name": "RegenTrust",
+      "symbol": "RGNX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000CprtUmpf7mwKDPnD3qSh3BJQokBe4ASKKpqftLC",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "3pmZ4YCPKY6xcZUu3iZGZsZhryGH9cegyWTuDTrGPbcg6p46ec4jRwaWw8hZF27nqyVuhGEeLZVBnwSji44LeE2S",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '3pmZ4YCPKY6xcZUu3iZGZsZhryGH9cegyWTuDTrGPbcg6p46ec4jRwaWw8hZF27nqyVuhGEeLZVBnwSji44LeE2S')"
+      }
+    },
+    {
+      "id": "tok_70_mvocy46t",
+      "name": "MeshNetArray",
+      "symbol": "MESHN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x000E3de657e3506AB85C98B881e9Be8F4cAa1559",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x9546373a81267b158e474d708bf927bd72b5c633d9e536df85424bbe5decdca4",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x9546373a81267b158e474d708bf927bd72b5c633d9e536df85424bbe5decdca4"
+      }
+    },
+    {
+      "id": "tok_71_mvocy47g",
+      "name": "AutoPilotMesh",
+      "symbol": "AUTON",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x000A293319075431Bef41A51343B5D53f369723B",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x130a030ea15e1046245fa9e33995e4ff5a2b5e15188c454df1cf109c17812c52",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x130a030ea15e1046245fa9e33995e4ff5a2b5e15188c454df1cf109c17812c52"
+      }
+    },
+    {
+      "id": "tok_72_mvocy482",
+      "name": "SynapNexus",
+      "symbol": "SYNN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000B8637DD543C177E439c47FAD061Bc47fd339E",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x6b987cecb1ed4e89858ebe2cce035dab66d3875275a913308e61433f643a7dc0",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x6b987cecb1ed4e89858ebe2cce035dab66d3875275a913308e61433f643a7dc0"
+      }
+    },
+    {
+      "id": "tok_73_mvocy48p",
+      "name": "CommodityFlow",
+      "symbol": "CMDTN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x000444AB116363CB7c78cC8753bFb32eF6D9a874",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x6913f329398297a0413820f2fd063ee8d8aa01061f25fdfa34c71cd51e09eedc",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x6913f329398297a0413820f2fd063ee8d8aa01061f25fdfa34c71cd51e09eedc"
+      }
+    },
+    {
+      "id": "tok_74_mvocy49g",
+      "name": "CommodityFlow",
+      "symbol": "CMDTX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x0000A38C91AB7BfA4b85E8D3214bE76cc89Cfbc0",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x9f3c9652be6b27784353abecf31ecd91ef295c012e1032a7cac24d43d31d770c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x9f3c9652be6b27784353abecf31ecd91ef295c012e1032a7cac24d43d31d770c"
+      }
+    },
+    {
+      "id": "tok_75_mvocy4a6",
+      "name": "FalconSwap",
+      "symbol": "FLCNX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00068C19d981539eb0913be2E758f6d737E6D604",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xddfdafe9356722e130c391390e8155c21d3cd8e6fcbd208d777d00edc3ad1474",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xddfdafe9356722e130c391390e8155c21d3cd8e6fcbd208d777d00edc3ad1474"
+      }
+    },
+    {
+      "id": "tok_76_mvocy4a7",
+      "name": "TensorGrid",
+      "symbol": "TNSRX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000LAiWLna98p3zhFdMG2YA6wfnU1P2Zw5L4xV44Pm",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "kNWNxutbfWVQVNphE1NxM3C8RLXwvu5M2RSvyHqbig4EDqVXcRXtmAUoGWAyExAP4E6kLueEcuZyu5jiZBZr4ymm",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'kNWNxutbfWVQVNphE1NxM3C8RLXwvu5M2RSvyHqbig4EDqVXcRXtmAUoGWAyExAP4E6kLueEcuZyu5jiZBZr4ymm')"
+      }
+    },
+    {
+      "id": "tok_77_mvocy4a7",
+      "name": "SynapMind",
+      "symbol": "SYNN",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "0x000ey1KXYoWoBF6bMpmAad4NHZtJ9FJvJ4jvKGxsiz",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "7YuCpXDPREET2Fg6qoWHo9KE2PT93TA71PHvTGGrujFMyE2uSFVpWpxHB7pXZQj5hbwfM5tWv4kwa2NcmZWAHjd8",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo '7YuCpXDPREET2Fg6qoWHo9KE2PT93TA71PHvTGGrujFMyE2uSFVpWpxHB7pXZQj5hbwfM5tWv4kwa2NcmZWAHjd8')"
+      }
+    },
+    {
+      "id": "tok_78_mvocy4a8",
+      "name": "EstateReserve",
+      "symbol": "ESTX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x000Vi6phn1Ux3j8aoXmMahEd959kwywd429t881dWQ",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "yo7TUNzfvrWLyMzQGTqtTLmbSgDhYMC7tGAX7c4PevZD76QAHwmLc5KV4MJSyEhjKsFwSQJgPWXqDekC626EuSPA",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'yo7TUNzfvrWLyMzQGTqtTLmbSgDhYMC7tGAX7c4PevZD76QAHwmLc5KV4MJSyEhjKsFwSQJgPWXqDekC626EuSPA')"
+      }
+    },
+    {
+      "id": "tok_79_mvocy4b5",
+      "name": "QuantumGuard",
+      "symbol": "QNTMN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x000Cec30Fb6ED72501c6cc98059a6Caa9Fb34265",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xe90dc14c95bc84f82091e990ff2d21fc6ce407b7cc6f4403e64eaa30a3eb51c7",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xe90dc14c95bc84f82091e990ff2d21fc6ce407b7cc6f4403e64eaa30a3eb51c7"
+      }
+    },
+    {
+      "id": "tok_80_mvocy4bt",
+      "name": "YieldMaxX",
+      "symbol": "YMAXN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000B4a1BeB73FF4eCDC47Eb785A93108817965b9",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd1828045dfdbd6649af3014331b33a4123508514a09c291c540e113f88bbbecd",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd1828045dfdbd6649af3014331b33a4123508514a09c291c540e113f88bbbecd"
+      }
+    },
+    {
+      "id": "tok_81_mvocy4cf",
+      "name": "CarbonCapital",
+      "symbol": "CARBX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x0002aFAaF2a457adA5356a93c4E9874864F75864",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xddee5a1cd5b1458d14ee8f69b2f4551eec34fc4be1a57bdb26a27c15a8e65d07",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xddee5a1cd5b1458d14ee8f69b2f4551eec34fc4be1a57bdb26a27c15a8e65d07"
+      }
+    },
+    {
+      "id": "tok_82_mvocy4d2",
+      "name": "BeamArray",
+      "symbol": "BEAMN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000E2cb5722028F87573fD27D62aeC44c21f8250",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x8509197a470ae8f308a59fb027887c154f2ba3db56e589db5fc7b6b277b11cb5",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x8509197a470ae8f308a59fb027887c154f2ba3db56e589db5fc7b6b277b11cb5"
+      }
+    },
+    {
+      "id": "tok_83_mvocy4do",
+      "name": "CarbonCredit",
+      "symbol": "CARBX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-20",
+      "contractAddress": "0x000A26F271A625C22FE656dB045aD24743dEC148",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x85d5b63789a5974eb2ee414490a7396c2345e69836fcf0c2d351069c38861c3c",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x85d5b63789a5974eb2ee414490a7396c2345e69836fcf0c2d351069c38861c3c"
+      }
+    },
+    {
+      "id": "tok_84_mvocy4ea",
+      "name": "BandArray",
+      "symbol": "BANDX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x000BaBD831Ff722a5C17126A65adE70Fa044420F",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xdbf16507e6809a2145580c2c79991516d5134b412df788db51e68c41af1101be",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xdbf16507e6809a2145580c2c79991516d5134b412df788db51e68c41af1101be"
+      }
+    },
+    {
+      "id": "tok_85_mvocy4ey",
+      "name": "SynapNode",
+      "symbol": "SYNN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00098998E94D51EB38f99905c74B243bf755568C",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x067e6aeddcc7f1f60c6d89d945fa3de6ffdb9066e356eef8567db6a1e5e66554",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x067e6aeddcc7f1f60c6d89d945fa3de6ffdb9066e356eef8567db6a1e5e66554"
+      }
+    },
+    {
+      "id": "tok_86_mvocy4ez",
+      "name": "SensorNode",
+      "symbol": "SNSRX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000qxsyeYPqJXtnnqjHjWLe8ZkYzz6dvuTsL6s9X2U",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "oEgBTagC4DaRRPFDBg2xzFyiqbd78xLLkZPkeWF5Ev45kYacxECDuWBCVz1LwKHUv8T9qjtULA3MhXpeRAZfSugh",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'oEgBTagC4DaRRPFDBg2xzFyiqbd78xLLkZPkeWF5Ev45kYacxECDuWBCVz1LwKHUv8T9qjtULA3MhXpeRAZfSugh')"
+      }
+    },
+    {
+      "id": "tok_87_mvocy4fk",
+      "name": "CryptoVaultProof",
+      "symbol": "CVLTN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-20",
+      "contractAddress": "0x000094e1B0F23B5F7FAAA9D4C68413162a81b920",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x357c8bb2f65d682143fda69fd2ef56f8d4a4114e5d37219cded4b56419d9c3cb",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x357c8bb2f65d682143fda69fd2ef56f8d4a4114e5d37219cded4b56419d9c3cb"
+      }
+    },
+    {
+      "id": "tok_88_mvocy4fk",
+      "name": "ShieldProof",
+      "symbol": "SHLDX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-721",
+      "contractAddress": "0x0001sBvpwSEywYVnYhdDkUENKXsr4YcT2FdgkbR4TL",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "A9KP4aF1yRAp7EFmY7uGs25KRhCfNiVXUVUkCkWFfWubEhdcCvWpAr8DRioEcSr4dVouQrmThjTWL2rJeN465uJ5",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'A9KP4aF1yRAp7EFmY7uGs25KRhCfNiVXUVUkCkWFfWubEhdcCvWpAr8DRioEcSr4dVouQrmThjTWL2rJeN465uJ5')"
+      }
+    },
+    {
+      "id": "tok_89_mvocy4g7",
+      "name": "FalconSwap",
+      "symbol": "FLCNX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-721",
+      "contractAddress": "0x00099F6f71027CD47a0298a7C35ac530ffc15F62",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x5c77dc467a49acb50d0472067705ed5afa8d3d159d907f14c6dc23a03e182cb2",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x5c77dc467a49acb50d0472067705ed5afa8d3d159d907f14c6dc23a03e182cb2"
+      }
+    },
+    {
+      "id": "tok_90_mvocy4gu",
+      "name": "LatticeGuard",
+      "symbol": "LTTCN",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-721",
+      "contractAddress": "0x000a49354D4157C5a302dEFB64BA9A137bB5De56",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x12dad44a62a779f1c8e7d556ec8aeaecb8607cbcc3ec6501639e441153768e4a",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x12dad44a62a779f1c8e7d556ec8aeaecb8607cbcc3ec6501639e441153768e4a"
+      }
+    },
+    {
+      "id": "tok_91_mvocy4gu",
+      "name": "KyberProof",
+      "symbol": "KYBRX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x000uCwX7MuQUUJLoaUheVWQWtGcCbBnYPsoSLUjxEK",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "ehCf4aTZASQbv4D6Ss3UyoXiawrhE4w2GjPg1a4uJWyEgVtaEFXS7xmNqtwNHo9thMGW5bAJH5v8thcUzXRfpxrT",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'ehCf4aTZASQbv4D6Ss3UyoXiawrhE4w2GjPg1a4uJWyEgVtaEFXS7xmNqtwNHo9thMGW5bAJH5v8thcUzXRfpxrT')"
+      }
+    },
+    {
+      "id": "tok_92_mvocy4hg",
+      "name": "FalconCore",
+      "symbol": "FLCNN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x0005B170fd936b2f3b10f177c6B68D74aA53015D",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x892f9cc246db0a9a10a9c4b1ca65c601327f4fed92fded9db3b8278c43d80c26",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x892f9cc246db0a9a10a9c4b1ca65c601327f4fed92fded9db3b8278c43d80c26"
+      }
+    },
+    {
+      "id": "tok_93_mvocy4i3",
+      "name": "VaultedTrust",
+      "symbol": "VLTN",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x000991b7bA61F749Ac2c071ABB30140E3C0E303c",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xf26650044808638f7a52485f7195e2d7582f1ba5fbc1a7c4bf81fb24874f720e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xf26650044808638f7a52485f7195e2d7582f1ba5fbc1a7c4bf81fb24874f720e"
+      }
+    },
+    {
+      "id": "tok_94_mvocy4io",
+      "name": "FiberCluster",
+      "symbol": "FIBRN",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000Dc2A95faa3c75B2E6a45023F0EAF1e2f4d4FE",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x162dba6b79cf2ffb3829040b374b107d4f58e84a7cd4743171b07a40220b03d3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x162dba6b79cf2ffb3829040b374b107d4f58e84a7cd4743171b07a40220b03d3"
+      }
+    },
+    {
+      "id": "tok_95_mvocy4ja",
+      "name": "ZeroProofVault",
+      "symbol": "ZPRFX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x0001DeFD37282CdDe51264786e891940782a4502",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x492bf3fe81f84daeca510bc686eb69e2ec567149b135c34e0993a3166126d940",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x492bf3fe81f84daeca510bc686eb69e2ec567149b135c34e0993a3166126d940"
+      }
+    },
+    {
+      "id": "tok_96_mvocy4jx",
+      "name": "VaultedCredit",
+      "symbol": "VLTX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000F1c9c1FD86e235a6e85C48a30bF02F9Ed676A",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x790709924feb3f123ee8378346aeed8e3889a9bc1a0ec31223c19fc8c062ee84",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x790709924feb3f123ee8378346aeed8e3889a9bc1a0ec31223c19fc8c062ee84"
+      }
+    },
+    {
+      "id": "tok_97_mvocy4ki",
+      "name": "VaultedCapital",
+      "symbol": "VLTX",
+      "chain": "arbitrum",
+      "networkId": 42161,
+      "standard": "ERC-1155",
+      "contractAddress": "0x000D9f8bCD309813caF14cdDC132dC0Acc56b938",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0x83ced78026c00ec7cd5bbddedd07a72fa743cea5cabf3f2f902dbe870e6998b3",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0x83ced78026c00ec7cd5bbddedd07a72fa743cea5cabf3f2f902dbe870e6998b3"
+      }
+    },
+    {
+      "id": "tok_98_mvocy4kj",
+      "name": "PrimeReserve",
+      "symbol": "PRMX",
+      "chain": "solana",
+      "networkId": 101,
+      "standard": "ERC-20",
+      "contractAddress": "0x000RpeT5u6q5sJx4DnmeaTpREHkfx5kqgXRzMEHsqB",
+      "deployerAddress": "2TTeGtPdU2g58QWUKzqneeVcson4a4mmB9PpCxAE4Gr6",
+      "deployerPrivateKey": "QjDyEMoZ1tK6ztS1obarqXn34RmJWaHcbnCGTkabbrrFs1sEhje2gse4tuNkQQXtUB9WQHy3enF5ePTfLf3eJeWJ",
+      "curve": "ed25519",
+      "importCommands": {
+        "solanaCli": "solana config set --keypair <(echo 'QjDyEMoZ1tK6ztS1obarqXn34RmJWaHcbnCGTkabbrrFs1sEhje2gse4tuNkQQXtUB9WQHy3enF5ePTfLf3eJeWJ')"
+      }
+    },
+    {
+      "id": "tok_99_mvocy4l7",
+      "name": "TreasuryVault",
+      "symbol": "TRSX",
+      "chain": "ethereum",
+      "networkId": 1,
+      "standard": "ERC-1155",
+      "contractAddress": "0x00075520f421cB8003b51A554e85ee2c4bBEF131",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd846db2671649e03672abf27e435d392c2f6ebeea6c8835a59a0773629ff680e",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd846db2671649e03672abf27e435d392c2f6ebeea6c8835a59a0773629ff680e"
+      }
+    },
+    {
+      "id": "tok_100_mvocy4lv",
+      "name": "EdgeChain",
+      "symbol": "EDGEX",
+      "chain": "base",
+      "networkId": 8453,
+      "standard": "ERC-721",
+      "contractAddress": "0x000215C0736eCbb70C9a233a4E5d43ff84f8AA0E",
+      "deployerAddress": "0x70Ac9Bb89d5C3d4a47D5cd11B108Fea9ad4E94f0",
+      "deployerPrivateKey": "0xd847f3bf4157232509f28550d250d098abeb2879ffbd8809f3c4d509e5293745",
+      "curve": "secp256k1",
+      "importCommands": {
+        "foundryCast": "cast wallet import deployer --private-key 0xd847f3bf4157232509f28550d250d098abeb2879ffbd8809f3c4d509e5293745"
+      }
+    }
+  ]
+}

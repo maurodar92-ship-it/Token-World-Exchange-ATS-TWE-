@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TWE // Aether Tech-Superpower & Global Node Command Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            obsidian: '#0b0e14',
+            panel: '#111621',
+            rack: '#151a24',
+            metal: '#1b2230',
+            emeraldGrid: '#10b981',
+            cyanNeon: '#22d3ee',
+            amberLed: '#f59e0b',
+            magentaLed: '#ec4899',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-obsidian: #0b0e14;
+      --panel-bg: #111621;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+    }
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      background-color: var(--bg-obsidian);
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    /* Brushed dark anodized metal panel effect */
+    .metal-panel {
+      background: linear-gradient(145deg, #161c28 0%, #0e121a 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 12px 30px -10px rgba(0, 0, 0, 0.75);
+    }
+    .rack-screw {
+      width: 10px;
+      height: 10px;
+      border-radius: 9999px;
+      background: radial-gradient(circle at 35% 35%, #475569, #0f172a);
+      border: 1px solid #090d16;
+      box-shadow: inset 0 1px 1px rgba(255,255,255,0.2);
+      position: relative;
+    }
+    .rack-screw::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 1.5px;
+      width: 5px;
+      height: 1px;
+      background: #090d16;
+      transform: rotate(35deg);
+    }
+    /* Neon LED Pad Glows */
+    .led-pad {
+      transition: all 0.15s ease;
+      position: relative;
+    }
+    .led-pad.active-red {
+      background: linear-gradient(180deg, #ff5f5f 0%, #dc2626 100%);
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.8), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #fff;
+      border-color: #fca5a5;
+    }
+    .led-pad.active-blue {
+      background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%);
+      box-shadow: 0 0 16px rgba(59, 130, 246, 0.8), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #fff;
+      border-color: #93c5fd;
+    }
+    .led-pad.active-amber {
+      background: linear-gradient(180deg, #fbbf24 0%, #d97706 100%);
+      box-shadow: 0 0 16px rgba(245, 158, 11, 0.8), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #0b0e14;
+      border-color: #fde68a;
+    }
+    .led-pad.active-green {
+      background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.8), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #0b0e14;
+      border-color: #a7f3d0;
+    }
+    .led-pad.active-cyan {
+      background: linear-gradient(180deg, #22d3ee 0%, #0891b2 100%);
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.85), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #0b0e14;
+      border-color: #a5f3fc;
+    }
+    .led-pad.active-magenta {
+      background: linear-gradient(180deg, #f472b6 0%, #db2777 100%);
+      box-shadow: 0 0 16px rgba(236, 72, 153, 0.85), inset 0 1px 2px rgba(255,255,255,0.6);
+      color: #fff;
+      border-color: #fbcfe8;
+    }
+    /* Custom Vertical Fader Track */
+    .fader-track {
+      background: #090c12;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.9);
+      position: relative;
+      cursor: ns-resize;
+      touch-action: none;
+    }
+    .fader-thumb {
+      background: linear-gradient(180deg, #475569 0%, #1e293b 50%, #0f172a 100%);
+      border: 1px solid #94a3b8;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.8);
+      position: absolute;
+      left: -4px;
+      right: -4px;
+      height: 14px;
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .fader-thumb::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 2px;
+      right: 2px;
+      height: 2px;
+      background: #22d3ee;
+      box-shadow: 0 0 6px #22d3ee;
+    }
+    /* Rotary Knob Cursor */
+    .rotary-dial {
+      cursor: ns-resize;
+      touch-action: none;
+    }
+    /* Superpower Active Pulse */
+    @keyframes superpowerGlow {
+      0%, 100% { box-shadow: 0 0 18px rgba(34, 211, 238, 0.35), inset 0 0 12px rgba(16, 185, 129, 0.2); }
+      50% { box-shadow: 0 0 32px rgba(236, 72, 153, 0.55), inset 0 0 20px rgba(34, 211, 238, 0.35); }
+    }
+    .superpower-active-frame {
+      animation: superpowerGlow 2.8s infinite ease-in-out;
+      border-color: rgba(34, 211, 238, 0.65) !important;
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0b0e14; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #334155; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-obsidian text-slate-200 selection:bg-cyan-500/30">
+
+  <!-- Toast / Status Notification Banner (Replaces alert()) -->
+  <div id="toastBanner" class="fixed bottom-4 right-4 z-50 pointer-events-none opacity-0 translate-y-2 transition-all duration-300 max-w-sm">
+    <div class="metal-panel rounded-xl px-4 py-3 border border-cyan-500/40 flex items-center gap-3 shadow-2xl">
+      <span id="toastDot" class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span>
+      <div>
+        <div id="toastTitle" class="font-mono text-xs font-bold text-cyan-300 uppercase tracking-wider">SYSTEM TELEMETRY</div>
+        <div id="toastMessage" class="text-xs text-slate-300 mt-0.5">Command deck initialized.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. TOP NAVIGATION & TELEMETRY HEADER (Token World Exchange UI) -->
+  <header class="sticky top-0 z-40 bg-[#0b0e14]/95 backdrop-blur-md border-b border-white/10 px-3 sm:px-6 py-2.5">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <!-- Brand Identity -->
+      <div class="flex items-center gap-2.5">
+        <button id="toggleBackendBtn" title="Open Full-Stack API & Backend Inspector" class="p-2 rounded-lg bg-[#151b26] hover:bg-[#1e2636] border border-white/10 text-slate-300 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="px-2.5 py-1 rounded-lg bg-gradient-to-br from-amber-200 to-amber-400 text-[#0b0e14] font-mono font-extrabold text-xs sm:text-sm tracking-tight shadow-md">
+          TWE
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-2">
+            <span class="font-semibold text-sm sm:text-base tracking-tight text-white">Token World Exchange</span>
+            <span class="hidden md:inline-block font-mono text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">AETHER NODE v4.2</span>
+          </div>
+          <span class="font-mono text-[10px] text-slate-400 hidden sm:inline">QUANTUM RWA CONTAINMENT &amp; MODULAR SYNTH DECK</span>
+        </div>
+      </div>
+
+      <!-- Live Telemetry & Action Controls -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- QAMM Delta Hedge Slippage Readout -->
+        <div class="hidden lg:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-[#111621] border border-white/10">
+          <div>
+            <div class="font-mono text-[9px] uppercase tracking-wider text-slate-400">QAMM DELTA HEDGE SLIPPAGE</div>
+            <div id="slippageValue" class="font-mono text-xs font-bold text-amber-300">0.00004%</div>
+          </div>
+          <div class="h-6 w-[1px] bg-white/10"></div>
+          <div>
+            <div class="font-mono text-[9px] uppercase tracking-wider text-slate-400">GRID COHERENCE</div>
+            <div id="coherenceValue" class="font-mono text-xs font-bold text-emerald-400">99.998%</div>
+          </div>
+        </div>
+
+        <!-- Love in the Ledger / Resonance Lock Button -->
+        <button id="loveLedgerBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-950/50 hover:bg-rose-900/60 border border-rose-500/40 text-rose-300 font-mono text-xs transition active:scale-95">
+          <svg id="heartIcon" class="w-3.5 h-3.5 text-rose-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          <span class="hidden sm:inline">Love in the Ledger</span>
+          <span id="ledgerCount" class="text-[10px] bg-rose-500/20 px-1.5 rounded text-rose-200">108</span>
+        </button>
+
+        <!-- Master Audio Engine Toggle -->
+        <button id="masterAudioBtn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#151b26] hover:bg-[#1e2636] border border-cyan-500/40 text-cyan-300 font-mono text-xs transition active:scale-95" title="Enable / Mute Web Audio Engine">
+          <svg id="audioOffIcon" class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/></svg>
+          <svg id="audioOnIcon" class="w-4 h-4 text-emerald-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+          <span id="audioStatusLabel" class="font-bold">AUDIO: OFF</span>
+        </button>
+
+        <!-- Backend API & State Drawer Button -->
+        <button id="openApiHeaderBtn" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#151b26] hover:bg-[#1e2636] border border-white/10 text-slate-200 font-mono text-xs transition" title="Inspect Full-Stack API & Telemetry">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <svg class="w-4 h-4 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span class="px-1.5 py-0.2 rounded bg-amber-300 text-[#0b0e14] font-bold text-[10px]">2</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 4. SPECIALTIES MODE BAR: TECH-SUPERPOWERS OVERDRIVE DECK -->
+  <section class="max-w-7xl w-full mx-auto px-3 sm:px-6 pt-4">
+    <div id="superpowerDeck" class="metal-panel rounded-2xl p-3 sm:p-4 border border-white/10 transition-all duration-300">
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+        <!-- Master Superpower Mode Toggle -->
+        <div class="flex items-center justify-between sm:justify-start gap-3">
+          <button id="superpowerMasterToggle" class="flex items-center gap-2.5 px-4 py-2 rounded-xl bg-[#1a2232] hover:bg-[#222c40] border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold tracking-wider transition active:scale-95">
+            <span id="spMasterLed" class="w-2.5 h-2.5 rounded-full bg-slate-600"></span>
+            <span>TECH SUPERPOWERS MODE</span>
+            <span id="spMasterState" class="px-1.5 py-0.5 rounded bg-black/40 text-[10px] text-slate-400">STANDBY</span>
+          </button>
+          <div class="hidden sm:block text-xs font-mono text-slate-400">
+            <span class="text-cyan-400">SYNTH-TO-GRID</span> OVERDRIVE MATRIX
+          </div>
+        </div>
+
+        <!-- 4 Specialty Superpower Ability Presets -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 flex-1 max-w-3xl">
+          <button data-power="chronos" class="power-btn px-3 py-2 rounded-xl bg-[#10151f] hover:bg-[#171f2e] border border-white/10 text-left transition flex flex-col justify-between">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-mono text-[10px] text-cyan-400 font-bold">01 // CHRONOS</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-cyan-500/40 power-dot"></span>
+            </div>
+            <span class="text-xs font-semibold text-slate-200 mt-0.5 truncate">Time-Dilation</span>
+          </button>
+
+          <button data-power="emp" class="power-btn px-3 py-2 rounded-xl bg-[#10151f] hover:bg-[#171f2e] border border-white/10 text-left transition flex flex-col justify-between">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-mono text-[10px] text-amber-400 font-bold">02 // AETHER EMP</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500/40 power-dot"></span>
+            </div>
+            <span class="text-xs font-semibold text-slate-200 mt-0.5 truncate">Pulse Overdrive</span>
+          </button>
+
+          <button data-power="quantum" class="power-btn px-3 py-2 rounded-xl bg-[#10151f] hover:bg-[#171f2e] border border-white/10 text-left transition flex flex-col justify-between">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-mono text-[10px] text-fuchsia-400 font-bold">03 // QUANTUM</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-fuchsia-500/40 power-dot"></span>
+            </div>
+            <span class="text-xs font-semibold text-slate-200 mt-0.5 truncate">Phase-Shift</span>
+          </button>
+
+          <button data-power="gravity" class="power-btn px-3 py-2 rounded-xl bg-[#10151f] hover:bg-[#171f2e] border border-white/10 text-left transition flex flex-col justify-between">
+            <div class="flex items-center justify-between w-full">
+              <span class="font-mono text-[10px] text-emerald-400 font-bold">04 // ORBITAL</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/40 power-dot"></span>
+            </div>
+            <span class="text-xs font-semibold text-slate-200 mt-0.5 truncate">Gravity Well</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN UNIFIED COMMAND WORKSPACE -->
+  <main class="max-w-7xl w-full mx-auto px-3 sm:px-6 py-4 grid grid-cols-1 lg:grid-cols-12 gap-4 flex-1">
+
+    <!-- LEFT / TOP COLUMN (5 Cols on Desktop): EARTH CONTAINMENT GRID & RWA HUB NODES -->
+    <section class="lg:col-span-5 flex flex-col gap-4">
+      <div class="metal-panel rounded-2xl p-3 sm:p-4 flex flex-col justify-between relative overflow-hidden min-h-[470px] sm:min-h-[540px]">
+        <!-- Top Mode Badge Overlay -->
+        <div class="relative z-10 flex items-center justify-between gap-2">
+          <div class="px-3 py-1.5 rounded-lg bg-[#0b0e14]/85 backdrop-blur border border-white/10 font-mono text-[11px] tracking-wider text-slate-200">
+            MODE: <span id="globeModeLabel" class="text-emerald-400 font-bold">EARTH CONTAINMENT GRID</span>
+          </div>
+          <div class="px-2.5 py-1 rounded-lg bg-[#0b0e14]/85 backdrop-blur border border-white/10 font-mono text-[10px] text-cyan-300">
+            <span id="superpowerHudTag">NOMINAL FIELD</span>
+          </div>
+        </div>
+
+        <!-- Interactive 3D-Style Canvas Globe -->
+        <div id="globeContainer" class="relative w-full flex-1 my-2 flex items-center justify-center cursor-grab active:cursor-grabbing">
+          <canvas id="earthCanvas" class="w-full h-full block rounded-xl"></canvas>
+        </div>
+
+        <!-- Globe Overlay Control Dock (Matches Reference Image 6556.jpg) -->
+        <div id="globeControlDock" class="relative z-10 bg-[#0d111a]/90 backdrop-blur-md border border-white/10 rounded-xl p-2.5 flex flex-col gap-2 transition-all duration-300">
+          <div class="grid grid-cols-2 gap-2">
+            <button id="btnRwaMode" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#161d2b] hover:bg-[#1e2738] border border-white/10 font-mono text-xs text-slate-300 transition">
+              <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              <span>RWA Hub Nodes</span>
+            </button>
+            <button id="btnGridMode" class="flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-emerald-500 text-[#0b0e14] font-bold font-mono text-xs shadow-[0_0_15px_rgba(16,185,129,0.45)] transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span>Earth Containment Grid</span>
+            </button>
+          </div>
+
+          <!-- Selectable RWA Hub City Nodes -->
+          <div class="flex flex-wrap items-center gap-1.5">
+            <button data-node="houston" class="node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#182030] border border-amber-400/70 text-amber-300 font-mono text-xs font-semibold transition">Houston</button>
+            <button data-node="singapore" class="node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-300 hover:text-white font-mono text-xs transition">Singapore</button>
+            <button data-node="rotterdam" class="node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-300 hover:text-white font-mono text-xs transition">Rotterdam</button>
+            <button data-node="dubai" class="node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-300 hover:text-white font-mono text-xs transition">Dubai</button>
+            <button id="resetGlobeBtn" title="Reset Orbital Orientation" class="p-1.5 rounded-lg bg-[#141a26] hover:bg-[#1e2738] border border-white/10 text-slate-300 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bottom Hide/Show Controls + Selected Node Coordinate Bar -->
+        <div class="relative z-10 mt-2 flex items-center justify-between gap-2 pt-2 border-t border-white/10">
+          <button id="toggleGlobeControlsBtn" class="px-2.5 py-1 rounded-lg bg-[#141a26] hover:bg-[#1d2536] border border-white/10 font-mono text-[11px] text-slate-300 flex items-center gap-1.5 transition">
+            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg>
+            <span id="hideControlsText">Hide Controls</span>
+          </button>
+          <div class="font-mono text-[11px] text-slate-400">
+            NODE: <span id="selectedNodeName" class="text-slate-200 font-semibold">HOUSTON</span>
+            <span id="selectedNodeCoords" class="text-amber-300 ml-1">29.76°, -95.36°</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Polyphonic Trigger Keyboard (Playable Synth Keys) -->
+      <div class="metal-panel rounded-2xl p-3 border border-white/10">
+        <div class="flex items-center justify-between mb-2">
+          <span class="font-mono text-[11px] font-bold text-cyan-300 tracking-wider">TACTILE HARMONIC TRIGGER DECK</span>
+          <span class="font-mono text-[10px] text-slate-400">CLICK / TAP OR KEYS [A-K]</span>
+        </div>
+        <div id="synthKeyboard" class="grid grid-cols-8 gap-1.5 h-16">
+          <!-- Keys populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT / BOTTOM COLUMN (7 Cols on Desktop): AURORA OSCILLATOR + AETHER SYNTH MK.1 + STUDIO CONTROL DECK -->
+    <section class="lg:col-span-7 flex flex-col gap-4">
+
+      <!-- TOP MODULE: AETHER SYNTH MK.1 + AURORA OSCILLATOR -->
+      <div class="metal-panel rounded-2xl p-3 sm:p-4 border border-cyan-500/25 relative">
+        <!-- Rack Screws -->
+        <div class="flex items-center justify-between mb-3 pb-2 border-b border-white/10">
+          <div class="flex items-center gap-2">
+            <span class="rack-screw"></span>
+            <span class="font-mono font-bold text-sm sm:text-base tracking-wider text-cyan-300 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">AETHER SYNTH MK.1</span>
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-300 border border-amber-500/30">AURORA OSCILLATOR CORE</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <!-- Level & Sync LED indicators -->
+            <div class="hidden sm:flex items-center gap-1.5 font-mono text-[10px] text-slate-400">
+              <span>LEVEL</span>
+              <span class="w-2 h-2 rounded-xs bg-amber-400 shadow-[0_0_6px_#fbbf24]"></span>
+              <span class="w-2 h-2 rounded-xs bg-amber-400 shadow-[0_0_6px_#fbbf24]"></span>
+              <span class="ml-2">SYNC</span>
+              <span class="w-2 h-2 rounded-xs bg-cyan-400 shadow-[0_0_6px_#22d3ee]"></span>
+              <span class="w-2 h-2 rounded-xs bg-cyan-400 shadow-[0_0_6px_#22d3ee]"></span>
+              <span class="w-2 h-2 rounded-xs bg-cyan-400 shadow-[0_0_6px_#22d3ee]"></span>
+            </div>
+            <span class="rack-screw"></span>
+          </div>
+        </div>
+
+        <!-- Aurora Modular LED Pads + Live Oscilloscope + Main Rotary Dials -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+
+          <!-- Left Column: Aurora Oscillator Illuminated Square Pads (OSC A, OSC B, FM, SYNC, SUB) -->
+          <div class="md:col-span-3 bg-[#0c1018] rounded-xl p-2.5 border border-white/10 flex flex-col justify-between gap-2">
+            <div class="font-mono text-[10px] text-amber-300/90 tracking-wider border-b border-white/5 pb-1">AURORA MODULES</div>
+            <div class="grid grid-cols-5 md:grid-cols-1 gap-1.5">
+              <button data-mod="oscA" class="aurora-pad led-pad active-red py-2 px-2 rounded-lg border border-white/15 font-mono text-[11px] font-bold flex items-center justify-center md:justify-between">
+                <span>OSC A</span>
+                <span class="hidden md:inline text-[9px] opacity-80">ON</span>
+              </button>
+              <button data-mod="oscB" class="aurora-pad led-pad active-blue py-2 px-2 rounded-lg border border-white/15 font-mono text-[11px] font-bold flex items-center justify-center md:justify-between">
+                <span>OSC B</span>
+                <span class="hidden md:inline text-[9px] opacity-80">ON</span>
+              </button>
+              <button data-mod="fm" class="aurora-pad led-pad active-amber py-2 px-2 rounded-lg border border-white/15 font-mono text-[11px] font-bold flex items-center justify-center md:justify-between">
+                <span>FM</span>
+                <span class="hidden md:inline text-[9px] opacity-80">MOD</span>
+              </button>
+              <button data-mod="sync" class="aurora-pad led-pad active-green py-2 px-2 rounded-lg border border-white/15 font-mono text-[11px] font-bold flex items-center justify-center md:justify-between">
+                <span>SYNC</span>
+                <span class="hidden md:inline text-[9px] opacity-80">LCK</span>
+              </button>
+              <button data-mod="sub" class="aurora-pad led-pad bg-[#1b2230] text-slate-400 py-2 px-2 rounded-lg border border-white/10 font-mono text-[11px] font-bold flex items-center justify-center md:justify-between">
+                <span>SUB</span>
+                <span class="hidden md:inline text-[9px] opacity-60">-1 OCT</span>
+              </button>
+            </div>
+            <!-- Physical Toggle Switches (SAW/SINE, NORM/WIDE, QUAD/MONO) -->
+            <div class="grid grid-cols-3 gap-1 pt-1 border-t border-white/5 text-center font-mono text-[9px] text-slate-400">
+              <div>
+                <div class="text-amber-300">SAW</div>
+                <div class="my-0.5 mx-auto w-3 h-4 rounded bg-slate-700 border border-slate-500 flex items-start justify-center p-0.5"><span class="w-1.5 h-1.5 rounded-full bg-amber-300"></span></div>
+                <div>WAVE</div>
+              </div>
+              <div>
+                <div class="text-cyan-300">NORM</div>
+                <div class="my-0.5 mx-auto w-3 h-4 rounded bg-slate-700 border border-slate-500 flex items-start justify-center p-0.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-300"></span></div>
+                <div>RANGE</div>
+              </div>
+              <div>
+                <div class="text-emerald-300">QUAD</div>
+                <div class="my-0.5 mx-auto w-3 h-4 rounded bg-slate-700 border border-slate-500 flex items-start justify-center p-0.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-300"></span></div>
+                <div>MODE</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center Column: Aetheric Osc 1 Live Oscilloscope + Cutoff/Resonance Rotary Dials -->
+          <div class="md:col-span-6 bg-[#0c1018] rounded-xl p-2.5 border border-cyan-500/20 flex flex-col justify-between gap-2.5">
+            <!-- Oscilloscope Screen -->
+            <div class="rounded-lg bg-[#06090f] border border-cyan-500/30 p-2 relative overflow-hidden">
+              <div class="flex items-center justify-between font-mono text-[10px] mb-1">
+                <span class="text-cyan-300">Aetheric Osc 1</span>
+                <span id="scopeReadout" class="text-amber-300">440 Hz // CUTOFF 1850 Hz</span>
+              </div>
+              <canvas id="oscilloscopeCanvas" class="w-full h-24 block rounded"></canvas>
+            </div>
+
+            <!-- Rotary Knobs Row (Frequency, Filter Cutoff, Resonance, Drive) -->
+            <div class="grid grid-cols-4 gap-2 pt-1">
+              <div class="knob-container flex flex-col items-center" data-param="frequency" data-min="55" data-max="1760" data-val="220" data-color="#f59e0b" data-unit="Hz"></div>
+              <div class="knob-container flex flex-col items-center" data-param="cutoff" data-min="120" data-max="8200" data-val="1850" data-color="#22d3ee" data-unit="Hz"></div>
+              <div class="knob-container flex flex-col items-center" data-param="resonance" data-min="0" data-max="100" data-val="42" data-color="#3b82f6" data-unit="%"></div>
+              <div class="knob-container flex flex-col items-center" data-param="drive" data-min="0" data-max="100" data-val="28" data-color="#ec4899" data-unit="%"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: FX 1 REVERB & FX 2 DELAY Units (from Aether Synth MK.1) -->
+          <div class="md:col-span-3 flex flex-col gap-2">
+            <!-- FX 1: REVERB -->
+            <div class="flex-1 bg-[#0b1520] rounded-xl p-2 border border-cyan-500/30 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] font-bold text-cyan-300">FX 1: REVERB</span>
+                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee]"></span>
+              </div>
+              <div class="grid grid-cols-2 gap-1 my-1">
+                <div class="knob-container flex flex-col items-center" data-param="reverbSize" data-min="0" data-max="100" data-val="65" data-color="#22d3ee" data-unit="%"></div>
+                <div class="knob-container flex flex-col items-center" data-param="reverbMix" data-min="0" data-max="100" data-val="40" data-color="#38bdf8" data-unit="%"></div>
+              </div>
+            </div>
+
+            <!-- FX 2: DELAY -->
+            <div class="flex-1 bg-[#170e22] rounded-xl p-2 border border-fuchsia-500/30 flex flex-col justify-between">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-[10px] font-bold text-fuchsia-300">FX 2: DELAY</span>
+                <span class="w-2 h-2 rounded-full bg-fuchsia-400 shadow-[0_0_6px_#e879f9]"></span>
+              </div>
+              <div class="grid grid-cols-2 gap-1 my-1">
+                <div class="knob-container flex flex-col items-center" data-param="delayTime" data-min="50" data-max="800" data-val="320" data-color="#e879f9" data-unit="ms"></div>
+                <div class="knob-container flex flex-col items-center" data-param="delayFdbk" data-min="0" data-max="85" data-val="38" data-color="#c084fc" data-unit="%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BOTTOM MODULE: STUDIO CONTROL DECK (from Image 6552.png) -->
+      <div class="metal-panel rounded-2xl p-3 sm:p-4 border border-white/10 flex flex-col gap-3">
+        <!-- Upper Section: Mix & AMP ENV Sliders + Transport Illuminated Buttons -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+
+          <!-- Mix & AMP ENV Vertical Faders (Volume, Attack, Decay, Sustain, Release) -->
+          <div class="md:col-span-6 bg-[#0c1018] rounded-xl p-2.5 border border-white/10">
+            <div class="flex items-center justify-between font-mono text-[10px] text-slate-400 mb-2">
+              <span>2. MIX &amp; AMP ENV SLIDERS</span>
+              <span id="envReadout" class="text-cyan-300">ADSR ACTIVE</span>
+            </div>
+            <div class="grid grid-cols-5 gap-2 text-center">
+              <div class="fader-unit flex flex-col items-center" data-fader="masterVol" data-val="78" data-color="#10b981" data-label="VOL"></div>
+              <div class="fader-unit flex flex-col items-center" data-fader="attack" data-val="18" data-color="#f59e0b" data-label="ATK"></div>
+              <div class="fader-unit flex flex-col items-center" data-fader="decay" data-val="45" data-color="#22d3ee" data-label="DEC"></div>
+              <div class="fader-unit flex flex-col items-center" data-fader="sustain" data-val="70" data-color="#22d3ee" data-label="SUS"></div>
+              <div class="fader-unit flex flex-col items-center" data-fader="release" data-val="52" data-color="#3b82f6" data-label="REL"></div>
+            </div>
+          </div>
+
+          <!-- 3. Illuminated Transport & Modulation Buttons + 5. Live Input/Output LED Meter -->
+          <div class="md:col-span-6 bg-[#0c1018] rounded-xl p-2.5 border border-white/10 flex flex-col justify-between gap-2.5">
+            <div>
+              <div class="font-mono text-[10px] text-slate-400 mb-1.5">3. ILLUMINATED TRANSPORT &amp; LFO</div>
+              <div class="grid grid-cols-4 gap-1.5">
+                <button data-transport="play" class="transport-btn led-pad bg-[#19202e] text-slate-300 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">PLAY</button>
+                <button data-transport="rec" class="transport-btn led-pad bg-[#19202e] text-rose-400 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">REC</button>
+                <button data-transport="stop" class="transport-btn led-pad bg-[#19202e] text-slate-300 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">STOP</button>
+                <button data-transport="loop" class="transport-btn led-pad bg-[#19202e] text-slate-300 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">LOOP</button>
+                <button data-transport="sync" class="transport-btn led-pad active-cyan py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">SYNC</button>
+                <button data-transport="lfo1" class="transport-btn led-pad active-green py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">LFO 1</button>
+                <button data-transport="lfo2" class="transport-btn led-pad bg-[#19202e] text-amber-300 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">LFO 2</button>
+                <button data-transport="arp" class="transport-btn led-pad bg-[#19202e] text-blue-300 py-1.5 rounded-lg border border-white/10 font-mono text-[10px] font-bold">ARP</button>
+              </div>
+            </div>
+
+            <!-- 5. Segmented Input / Output VU Meters -->
+            <div>
+              <div class="flex items-center justify-between font-mono text-[10px] text-slate-400 mb-1">
+                <span>5. INPUT / OUTPUT METERS</span>
+                <span id="dbMeterLabel" class="text-emerald-400">-3.2 dB</span>
+              </div>
+              <div class="space-y-1 bg-[#06090f] p-1.5 rounded-lg border border-white/5">
+                <div id="vuMeterL" class="grid grid-cols-20 gap-0.5 h-2"></div>
+                <div id="vuMeterR" class="grid grid-cols-20 gap-0.5 h-2"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Lower Section: 4. Toggles & Switches + 6. Waveforms Selector -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 pt-1 border-t border-white/10">
+          <!-- 4. Toggles & Switches -->
+          <div class="md:col-span-6 bg-[#0c1018] rounded-xl p-2.5 border border-white/10">
+            <div class="font-mono text-[10px] text-slate-400 mb-2">4. TOGGLES &amp; SWITCHES</div>
+            <div class="grid grid-cols-4 gap-2">
+              <button data-switch="filterOn" class="switch-toggle flex flex-col items-center gap-1 p-1.5 rounded-lg bg-[#141a26] border border-emerald-500/40">
+                <span class="font-mono text-[9px] text-slate-300">FILTER</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-[#0b0e14] font-mono text-[9px] font-bold switch-pill">ON</span>
+              </button>
+              <button data-switch="seqActive" class="switch-toggle flex flex-col items-center gap-1 p-1.5 rounded-lg bg-[#141a26] border border-white/10">
+                <span class="font-mono text-[9px] text-slate-300">SEQ</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-mono text-[9px] font-bold switch-pill">OFF</span>
+              </button>
+              <button data-switch="mono" class="switch-toggle flex flex-col items-center gap-1 p-1.5 rounded-lg bg-[#141a26] border border-white/10">
+                <span class="font-mono text-[9px] text-slate-300">MONO</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-mono text-[9px] font-bold switch-pill">OFF</span>
+              </button>
+              <button data-switch="hardSync" class="switch-toggle flex flex-col items-center gap-1 p-1.5 rounded-lg bg-[#141a26] border border-white/10">
+                <span class="font-mono text-[9px] text-slate-300">HARD</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-mono text-[9px] font-bold switch-pill">OFF</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 6. Waveforms Selector -->
+          <div class="md:col-span-6 bg-[#0c1018] rounded-xl p-2.5 border border-white/10">
+            <div class="font-mono text-[10px] text-slate-400 mb-2">6. OSCILLATOR WAVEFORMS</div>
+            <div class="grid grid-cols-4 gap-2">
+              <button data-wave="sine" class="wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-400 hover:text-cyan-300 transition">
+                <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 8 C 6 1, 10 1, 12 8 C 14 15, 18 15, 22 8"/></svg>
+                <span class="font-mono text-[9px] mt-1">SINE</span>
+              </button>
+              <button data-wave="square" class="wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-400 hover:text-cyan-300 transition">
+                <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 13 V 3 H 12 V 13 H 22 V 3"/></svg>
+                <span class="font-mono text-[9px] mt-1">SQUARE</span>
+              </button>
+              <button data-wave="sawtooth" class="wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#172436] border border-cyan-400 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.3)] transition">
+                <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 13 L 12 3 V 13 L 22 3"/></svg>
+                <span class="font-mono text-[9px] mt-1">SAW</span>
+              </button>
+              <button data-wave="triangle" class="wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-400 hover:text-cyan-300 transition">
+                <svg class="w-6 h-4" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12 L 7 3 L 17 13 L 22 4"/></svg>
+                <span class="font-mono text-[9px] mt-1">TRIANGLE</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- 5. FULL-STACK API & BACKEND INSPECTOR DRAWER (Simulated REST/WebSocket + Node.js Server Code) -->
+  <div id="backendDrawer" class="fixed inset-0 z-50 hidden">
+    <div id="drawerBackdrop" class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
+    <aside class="absolute right-0 top-0 bottom-0 w-full max-w-2xl bg-[#0e131d] border-l border-cyan-500/30 shadow-2xl flex flex-col overflow-hidden">
+      <!-- Drawer Header -->
+      <div class="p-4 border-b border-white/10 flex items-center justify-between bg-[#121824]">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <h2 class="font-mono font-bold text-sm text-white">FULL-STACK TELEMETRY &amp; NODE.JS BACKEND</h2>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5">Live WebSocket State Sync, LocalStorage Patch Slots &amp; Production Express Server Code</p>
+        </div>
+        <button id="closeDrawerBtn" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-slate-300 font-mono text-xs">ESC / CLOSE</button>
+      </div>
+
+      <!-- Drawer Tabs -->
+      <div class="flex border-b border-white/10 bg-[#0b0e14] px-4 pt-2 gap-2 font-mono text-xs">
+        <button data-tab="payloadTab" class="drawer-tab px-3 py-2 rounded-t-lg bg-[#161e2e] text-cyan-300 border-t border-x border-cyan-500/40 font-semibold">Live State &amp; Patch Slots</button>
+        <button data-tab="serverTab" class="drawer-tab px-3 py-2 rounded-t-lg text-slate-400 hover:text-white">Node.js + Express + WS Server</button>
+      </div>
+
+      <!-- Drawer Content -->
+      <div class="flex-1 overflow-y-auto p-4 space-y-4">
+        <!-- Tab 1: Live JSON Payload & Patch Persistence -->
+        <div id="payloadTab" class="space-y-4">
+          <div class="bg-[#090c12] rounded-xl p-3 border border-white/10">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-emerald-400 font-bold">PATCH PERSISTENCE SLOTS (LOCALSTORAGE + API SYNC)</span>
+              <button id="downloadJsonBtn" class="px-2.5 py-1 rounded bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 text-cyan-300 font-mono text-[11px]">Export .JSON</button>
+            </div>
+            <div class="grid grid-cols-3 gap-2">
+              <div class="p-2 rounded-lg bg-[#111622] border border-white/10 flex flex-col gap-1.5">
+                <span class="font-mono text-[10px] text-slate-400">SLOT 01 // INIT</span>
+                <div class="flex gap-1">
+                  <button onclick="savePatchSlot(1)" class="flex-1 py-1 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] hover:bg-emerald-500/30">SAVE</button>
+                  <button onclick="loadPatchSlot(1)" class="flex-1 py-1 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] hover:bg-cyan-500/30">LOAD</button>
+                </div>
+              </div>
+              <div class="p-2 rounded-lg bg-[#111622] border border-white/10 flex flex-col gap-1.5">
+                <span class="font-mono text-[10px] text-slate-400">SLOT 02 // RWA</span>
+                <div class="flex gap-1">
+                  <button onclick="savePatchSlot(2)" class="flex-1 py-1 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] hover:bg-emerald-500/30">SAVE</button>
+                  <button onclick="loadPatchSlot(2)" class="flex-1 py-1 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] hover:bg-cyan-500/30">LOAD</button>
+                </div>
+              </div>
+              <div class="p-2 rounded-lg bg-[#111622] border border-white/10 flex flex-col gap-1.5">
+                <span class="font-mono text-[10px] text-slate-400">SLOT 03 // EMP</span>
+                <div class="flex gap-1">
+                  <button onclick="savePatchSlot(3)" class="flex-1 py-1 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] hover:bg-emerald-500/30">SAVE</button>
+                  <button onclick="loadPatchSlot(3)" class="flex-1 py-1 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[10px] hover:bg-cyan-500/30">LOAD</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#090c12] rounded-xl p-3 border border-white/10">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-cyan-300">LIVE WEBSOCKET TELEMETRY PAYLOAD (ws://aether.twe.io/v4)</span>
+              <span class="font-mono text-[10px] text-slate-500">20Hz STREAM</span>
+            </div>
+            <pre id="liveJsonOutput" class="font-mono text-[11px] text-emerald-300 overflow-x-auto leading-relaxed"></pre>
+          </div>
+        </div>
+
+        <!-- Tab 2: Full-Stack Node.js + Express + WebSocket Server Boilerplate -->
+        <div id="serverTab" class="hidden space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs text-amber-300">server.js — Full-Stack Express REST + WebSocket Telemetry Hub</span>
+            <button id="copyServerCodeBtn" class="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-500/40 text-amber-300 font-mono text-xs">Copy Backend Code</button>
+          </div>
+          <pre id="backendBoilerplateCode" class="bg-[#090c12] p-3 rounded-xl border border-white/10 font-mono text-[11px] text-slate-300 overflow-x-auto leading-relaxed"></pre>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    /**
+     * =========================================================================
+     * AETHER TECH-SUPERPOWER & GLOBAL NODE COMMAND DECK — UNIFIED ENGINE
+     * =========================================================================
+     */
+
+    // 1. GLOBAL APPLICATION STATE
+    const defaultState = {
+      audioEnabled: false,
+      ledgerLikes: 108,
+      slippage: '0.00004%',
+      globeMode: 'grid', // 'grid' | 'rwa'
+      selectedNode: 'houston',
+      controlsVisible: true,
+      superpowerMode: false,
+      activePower: null, // 'chronos' | 'emp' | 'quantum' | 'gravity'
+      synth: {
+        frequency: 220,
+        cutoff: 1850,
+        resonance: 42,
+        drive: 28,
+        reverbSize: 65,
+        reverbMix: 40,
+        delayTime: 320,
+        delayFdbk: 38,
+        masterVol: 78,
+        attack: 18,
+        decay: 45,
+        sustain: 70,
+        release: 52,
+        waveform: 'sawtooth',
+        modules: { oscA: true, oscB: true, fm: true, sync: true, sub: false },
+        switches: { filterOn: true, seqActive: false, mono: false, hardSync: false },
+        transport: { play: false, rec: false, loop: false, sync: true, lfo1: true, lfo2: false, arp: false }
+      }
+    };
+
+    let appState = JSON.parse(JSON.stringify(defaultState));
+
+    // Load saved state from localStorage if available
+    try {
+      const saved = localStorage.getItem('aether_command_state_v1');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        appState = { ...appState, ...parsed, audioEnabled: false };
+      }
+    } catch (e) {
+      console.warn('LocalStorage unavailable:', e);
+    }
+
+    function persistState() {
+      try {
+        localStorage.setItem('aether_command_state_v1', JSON.stringify(appState));
+      } catch (e) {}
+    }
+
+    // RWA Hub Nodes Database
+    const RWA_NODES = {
+      houston:   { name: 'HOUSTON',   lat: 29.76, lon: -95.36, color: '#fbbf24', sector: 'ENERGY & ORBITAL LOGISTICS' },
+      singapore: { name: 'SINGAPORE', lat: 1.35,  lon: 103.82, color: '#34d399', sector: 'QUANTUM LIQUIDITY & MARITIME' },
+      rotterdam: { name: 'ROTTERDAM', lat: 51.92, lon: 4.48,   color: '#22d3ee', sector: 'EURO-GRID CONTAINMENT HUB' },
+      dubai:     { name: 'DUBAI',     lat: 25.20, lon: 55.27,  color: '#e879f9', sector: 'SOVEREIGN AETHER RELAY' }
+    };
+
+    // Toast Notification Helper (Replaces alert())
+    let toastTimer = null;
+    function showToast(title, message, colorClass = 'bg-cyan-400') {
+      const banner = document.getElementById('toastBanner');
+      const dot = document.getElementById('toastDot');
+      document.getElementById('toastTitle').textContent = title;
+      document.getElementById('toastMessage').textContent = message;
+      dot.className = `w-2.5 h-2.5 rounded-full animate-ping ${colorClass}`;
+      banner.classList.remove('opacity-0', 'translate-y-2');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        banner.classList.add('opacity-0', 'translate-y-2');
+      }, 3000);
+    }
+
+    // =========================================================================
+    // 2. REAL-TIME WEB AUDIO API SYNTHESIZER ENGINE
+    // =========================================================================
+    class AetherAudioEngine {
+      constructor() {
+        this.ctx = null;
+        this.masterGain = null;
+        this.filter = null;
+        this.delayNode = null;
+        this.delayFeedback = null;
+        this.analyser = null;
+        this.activeVoices = new Map();
+        this.arpInterval = null;
+        this.arpStep = 0;
+        this.droneOsc = null;
+      }
+
+      init() {
+        if (this.ctx) return;
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        this.ctx = new AudioCtx();
+
+        this.masterGain = this.ctx.createGain();
+        this.masterGain.gain.value = (appState.synth.masterVol / 100) * 0.35;
+
+        this.filter = this.ctx.createBiquadFilter();
+        this.filter.type = 'lowpass';
+        this.filter.frequency.value = appState.synth.cutoff;
+        this.filter.Q.value = (appState.synth.resonance / 100) * 18;
+
+        // Delay FX loop
+        this.delayNode = this.ctx.createDelay(2.0);
+        this.delayNode.delayTime.value = appState.synth.delayTime / 1000;
+        this.delayFeedback = this.ctx.createGain();
+        this.delayFeedback.gain.value = (appState.synth.delayFdbk / 100) * 0.75;
+
+        this.delayNode.connect(this.delayFeedback);
+        this.delayFeedback.connect(this.delayNode);
+
+        this.analyser = this.ctx.createAnalyser();
+        this.analyser.fftSize = 512;
+
+        // Routing: Filter -> MasterGain -> Analyser -> Destination
+        //                 -> DelayNode -> MasterGain
+        this.filter.connect(this.masterGain);
+        this.filter.connect(this.delayNode);
+        this.delayNode.connect(this.masterGain);
+        this.masterGain.connect(this.analyser);
+        this.analyser.connect(this.ctx.destination);
+      }
+
+      enable() {
+        this.init();
+        if (this.ctx.state === 'suspended') {
+          this.ctx.resume();
+        }
+        appState.audioEnabled = true;
+        this.updateParams();
+      }
+
+      disable() {
+        appState.audioEnabled = false;
+        this.stopAll();
+        if (this.ctx && this.ctx.state === 'running') {
+          this.ctx.suspend();
+        }
+      }
+
+      updateParams() {
+        if (!this.ctx) return;
+        const now = this.ctx.currentTime;
+        const s = appState.synth;
+        this.masterGain.gain.setTargetAtTime(appState.audioEnabled ? (s.masterVol / 100) * 0.35 : 0, now, 0.03);
+        this.filter.frequency.setTargetAtTime(s.switches.filterOn ? s.cutoff : 18000, now, 0.03);
+        this.filter.Q.setTargetAtTime((s.resonance / 100) * 18, now, 0.03);
+        this.delayNode.delayTime.setTargetAtTime(s.delayTime / 1000, now, 0.04);
+        this.delayFeedback.gain.setTargetAtTime((s.delayFdbk / 100) * 0.72, now, 0.04);
+      }
+
+      triggerNote(freq, duration = 0.55) {
+        if (!appState.audioEnabled) {
+          this.enable();
+          updateAudioButtonUI();
+        }
+        const now = this.ctx.currentTime;
+        const s = appState.synth;
+
+        const envGain = this.ctx.createGain();
+        const atk = Math.max(0.01, (s.attack / 100) * 0.6);
+        const dec = Math.max(0.05, (s.decay / 100) * 0.8);
+        const sus = Math.max(0.05, s.sustain / 100);
+        const rel = Math.max(0.08, (s.release / 100) * 1.2);
+
+        envGain.gain.setValueAtTime(0.001, now);
+        envGain.gain.linearRampToValueAtTime(0.6, now + atk);
+        envGain.gain.exponentialRampToValueAtTime(Math.max(0.01, 0.6 * sus), now + atk + dec);
+        envGain.gain.exponentialRampToValueAtTime(0.0008, now + duration + rel);
+
+        const oscs = [];
+
+        // OSC A
+        if (s.modules.oscA) {
+          const osc1 = this.ctx.createOscillator();
+          osc1.type = s.waveform;
+          osc1.frequency.setValueAtTime(freq, now);
+          osc1.connect(envGain);
+          osc1.start(now);
+          osc1.stop(now + duration + rel + 0.05);
+          oscs.push(osc1);
+        }
+
+        // OSC B (Detuned harmonic twin)
+        if (s.modules.oscB) {
+          const osc2 = this.ctx.createOscillator();
+          osc2.type = s.waveform === 'sine' ? 'triangle' : s.waveform;
+          osc2.frequency.setValueAtTime(freq * 1.006, now);
+          osc2.connect(envGain);
+          osc2.start(now);
+          osc2.stop(now + duration + rel + 0.05);
+          oscs.push(osc2);
+        }
+
+        // SUB Oscillator (-1 Octave)
+        if (s.modules.sub) {
+          const subOsc = this.ctx.createOscillator();
+          subOsc.type = 'sine';
+          subOsc.frequency.setValueAtTime(freq * 0.5, now);
+          subOsc.connect(envGain);
+          subOsc.start(now);
+          subOsc.stop(now + duration + rel + 0.05);
+          oscs.push(subOsc);
+        }
+
+        // FM Modulation
+        if (s.modules.fm && oscs.length > 0) {
+          const fmOsc = this.ctx.createOscillator();
+          const fmGain = this.ctx.createGain();
+          fmOsc.frequency.setValueAtTime(freq * 2, now);
+          fmGain.gain.setValueAtTime(s.drive * 2.5, now);
+          fmOsc.connect(fmGain);
+          fmGain.connect(oscs[0].frequency);
+          fmOsc.start(now);
+          fmOsc.stop(now + duration + rel + 0.05);
+        }
+
+        envGain.connect(this.filter);
+      }
+
+      toggleArp(active) {
+        clearInterval(this.arpInterval);
+        if (!active) return;
+        const scaleRatios = [1, 1.25, 1.5, 1.875, 2, 1.5, 1.25, 0.75];
+        this.arpInterval = setInterval(() => {
+          if (!appState.audioEnabled) return;
+          const base = appState.synth.frequency;
+          const noteFreq = base * scaleRatios[this.arpStep % scaleRatios.length];
+          this.triggerNote(noteFreq, 0.16);
+          this.arpStep++;
+        }, appState.activePower === 'emp' ? 110 : 190);
+      }
+
+      stopAll() {
+        clearInterval(this.arpInterval);
+        appState.synth.transport.arp = false;
+        appState.synth.transport.play = false;
+      }
+    }
+
+    const audioEngine = new AetherAudioEngine();
+
+    // =========================================================================
+    // 3. INTERACTIVE ROTARY KNOBS & VERTICAL FADERS BUILDER
+    // =========================================================================
+    function renderRotaryKnobs() {
+      document.querySelectorAll('.knob-container').forEach(container => {
+        const param = container.dataset.param;
+        const min = parseFloat(container.dataset.min);
+        const max = parseFloat(container.dataset.max);
+        const color = container.dataset.color || '#22d3ee';
+        const unit = container.dataset.unit || '';
+        const val = appState.synth[param] ?? parseFloat(container.dataset.val);
+        appState.synth[param] = val;
+
+        const pct = (val - min) / (max - min);
+        const angle = -135 + pct * 270;
+        const dashArray = 126;
+        const dashOffset = dashArray - pct * dashArray * 0.75;
+
+        container.innerHTML = `
+          <div class="rotary-dial relative w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center" title="Drag up/down or scroll to adjust ${param}">
+            <svg class="w-full h-full -rotate-[225deg]" viewBox="0 0 50 50">
+              <circle cx="25" cy="25" r="20" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-dasharray="94 126" stroke-linecap="round"/>
+              <circle class="knob-arc" cx="25" cy="25" r="20" fill="none" stroke="${color}" stroke-width="3.5" stroke-dasharray="${pct * 94} 126" stroke-linecap="round" style="filter: drop-shadow(0 0 4px ${color})"/>
+            </svg>
+            <div class="knob-cap absolute w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-b from-slate-700 to-slate-950 border border-slate-500/60 shadow-lg flex items-center justify-center" style="transform: rotate(${angle}deg)">
+              <span class="w-0.5 h-3 bg-white rounded-full -translate-y-1.5" style="box-shadow: 0 0 5px ${color}"></span>
+            </div>
+          </div>
+          <div class="font-mono text-[9px] uppercase text-slate-400 mt-1 tracking-tight">${param.replace(/([A-Z])/g, ' $1')}</div>
+          <div class="knob-val font-mono text-[10px] font-bold" style="color:${color}">${Math.round(val)}${unit}</div>
+        `;
+
+        const dial = container.querySelector('.rotary-dial');
+        let startY = 0;
+        let startVal = val;
+
+        const updateValue = (newVal) => {
+          const clamped = Math.min(max, Math.max(min, newVal));
+          appState.synth[param] = clamped;
+          const p = (clamped - min) / (max - min);
+          const ang = -135 + p * 270;
+          container.querySelector('.knob-arc').setAttribute('stroke-dasharray', `${p * 94} 126`);
+          container.querySelector('.knob-cap').style.transform = `rotate(${ang}deg)`;
+          container.querySelector('.knob-val').textContent = `${Math.round(clamped)}${unit}`;
+          document.getElementById('scopeReadout').textContent = `${Math.round(appState.synth.frequency)} Hz // CUTOFF ${Math.round(appState.synth.cutoff)} Hz`;
+          audioEngine.updateParams();
+          persistState();
+        };
+
+        const onMove = (clientY) => {
+          const delta = startY - clientY;
+          const range = max - min;
+          updateValue(startVal + (delta / 120) * range);
+        };
+
+        dial.addEventListener('mousedown', (e) => {
+          startY = e.clientY;
+          startVal = appState.synth[param];
+          const mm = (ev) => onMove(ev.clientY);
+          const mu = () => { window.removeEventListener('mousemove', mm); window.removeEventListener('mouseup', mu); };
+          window.addEventListener('mousemove', mm);
+          window.addEventListener('mouseup', mu);
+        });
+
+        dial.addEventListener('touchstart', (e) => {
+          startY = e.touches[0].clientY;
+          startVal = appState.synth[param];
+          const tm = (ev) => { ev.preventDefault(); onMove(ev.touches[0].clientY); };
+          const tu = () => { window.removeEventListener('touchmove', tm); window.removeEventListener('touchend', tu); };
+          window.addEventListener('touchmove', tm, { passive: false });
+          window.addEventListener('touchend', tu);
+        }, { passive: false });
+
+        dial.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          const step = (max - min) * 0.03 * (e.deltaY < 0 ? 1 : -1);
+          updateValue(appState.synth[param] + step);
+        }, { passive: false });
+      });
+    }
+
+    function renderVerticalFaders() {
+      document.querySelectorAll('.fader-unit').forEach(unit => {
+        const key = unit.dataset.fader;
+        const color = unit.dataset.color;
+        const label = unit.dataset.label;
+        const val = appState.synth[key] ?? parseFloat(unit.dataset.val);
+        appState.synth[key] = val;
+
+        unit.innerHTML = `
+          <div class="fader-val font-mono text-[9px] font-bold mb-1" style="color:${color}">${Math.round(val)}%</div>
+          <div class="fader-track w-3.5 h-24 rounded-full">
+            <div class="fader-fill absolute bottom-0 left-0 right-0 rounded-full" style="height:${val}%; background:${color}; box-shadow: 0 0 8px ${color}"></div>
+            <div class="fader-thumb" style="bottom: calc(${val}% - 7px)"></div>
+          </div>
+          <div class="font-mono text-[9px] text-slate-400 mt-1.5">${label}</div>
+        `;
+
+        const track = unit.querySelector('.fader-track');
+        const setFromEvent = (clientY) => {
+          const rect = track.getBoundingClientRect();
+          const pct = Math.min(100, Math.max(0, ((rect.bottom - clientY) / rect.height) * 100));
+          appState.synth[key] = pct;
+          unit.querySelector('.fader-fill').style.height = `${pct}%`;
+          unit.querySelector('.fader-thumb').style.bottom = `calc(${pct}% - 7px)`;
+          unit.querySelector('.fader-val').textContent = `${Math.round(pct)}%`;
+          audioEngine.updateParams();
+          persistState();
+        };
+
+        track.addEventListener('mousedown', (e) => {
+          setFromEvent(e.clientY);
+          const mm = (ev) => setFromEvent(ev.clientY);
+          const mu = () => { window.removeEventListener('mousemove', mm); window.removeEventListener('mouseup', mu); };
+          window.addEventListener('mousemove', mm);
+          window.addEventListener('mouseup', mu);
+        });
+
+        track.addEventListener('touchstart', (e) => {
+          e.preventDefault();
+          setFromEvent(e.touches[0].clientY);
+          const tm = (ev) => { ev.preventDefault(); setFromEvent(ev.touches[0].clientY); };
+          const tu = () => { window.removeEventListener('touchmove', tm); window.removeEventListener('touchend', tu); };
+          window.addEventListener('touchmove', tm, { passive: false });
+          window.addEventListener('touchend', tu);
+        }, { passive: false });
+      });
+    }
+
+    // =========================================================================
+    // 4. INTERACTIVE 3D-STYLE EARTH CONTAINMENT GRID & RWA HUB NODES GLOBE
+    // =========================================================================
+    const earthCanvas = document.getElementById('earthCanvas');
+    const eCtx = earthCanvas.getContext('2d');
+    let globeRotY = 0.6;
+    let globeRotX = 0.25;
+    let targetRotY = 0.6;
+    let isDraggingGlobe = false;
+    let lastGlobeX = 0;
+    let lastGlobeY = 0;
+
+    function resizeCanvases() {
+      const gContainer = document.getElementById('globeContainer');
+      if (gContainer) {
+        const rect = gContainer.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        earthCanvas.width = rect.width * dpr;
+        earthCanvas.height = Math.max(280, rect.height) * dpr;
+        eCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      const scopeCanvas = document.getElementById('oscilloscopeCanvas');
+      if (scopeCanvas) {
+        const sRect = scopeCanvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        scopeCanvas.width = sRect.width * dpr;
+        scopeCanvas.height = sRect.height * dpr;
+      }
+    }
+
+    // Globe Drag Interaction (Mouse & Touch)
+    earthCanvas.addEventListener('mousedown', (e) => { isDraggingGlobe = true; lastGlobeX = e.clientX; lastGlobeY = e.clientY; });
+    window.addEventListener('mouseup', () => { isDraggingGlobe = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDraggingGlobe) return;
+      globeRotY += (e.clientX - lastGlobeX) * 0.008;
+      globeRotX = Math.max(-0.8, Math.min(0.8, globeRotX + (e.clientY - lastGlobeY) * 0.006));
+      lastGlobeX = e.clientX;
+      lastGlobeY = e.clientY;
+    });
+
+    earthCanvas.addEventListener('touchstart', (e) => {
+      isDraggingGlobe = true;
+      lastGlobeX = e.touches[0].clientX;
+      lastGlobeY = e.touches[0].clientY;
+    }, { passive: true });
+    window.addEventListener('touchend', () => { isDraggingGlobe = false; });
+    earthCanvas.addEventListener('touchmove', (e) => {
+      if (!isDraggingGlobe) return;
+      globeRotY += (e.touches[0].clientX - lastGlobeX) * 0.008;
+      globeRotX = Math.max(-0.8, Math.min(0.8, globeRotX + (e.touches[0].clientY - lastGlobeY) * 0.006));
+      lastGlobeX = e.touches[0].clientX;
+      lastGlobeY = e.touches[0].clientY;
+    }, { passive: true });
+
+    function project3D(latDeg, lonDeg, radius, cx, cy, rotY, rotX) {
+      const lat = (latDeg * Math.PI) / 180;
+      const lon = (lonDeg * Math.PI) / 180 + rotY;
+      let x = radius * Math.cos(lat) * Math.sin(lon);
+      let y = -radius * Math.sin(lat);
+      let z = radius * Math.cos(lat) * Math.cos(lon);
+
+      // Tilt X
+      const y2 = y * Math.cos(rotX) - z * Math.sin(rotX);
+      const z2 = y * Math.sin(rotX) + z * Math.cos(rotX);
+      return { x: cx + x, y: cy + y2, z: z2 };
+    }
+
+    function drawGlobe(time) {
+      const w = earthCanvas.clientWidth;
+      const h = earthCanvas.clientHeight;
+      if (!w || !h) return;
+
+      eCtx.clearRect(0, 0, w, h);
+      const cx = w / 2;
+      const cy = h / 2;
+      const radius = Math.min(w, h) * 0.36;
+
+      // Auto-rotation speed modified by Superpower Mode
+      let rotSpeed = 0.0035;
+      if (appState.activePower === 'chronos') rotSpeed = 0.0006;
+      if (appState.activePower === 'emp') rotSpeed = 0.015;
+      if (appState.activePower === 'quantum') rotSpeed = -0.008;
+      if (!isDraggingGlobe) globeRotY += rotSpeed;
+
+      // Palette shifts during Superpowers
+      const primaryColor = appState.activePower === 'quantum' ? '#e879f9'
+                         : appState.activePower === 'emp' ? '#fbbf24'
+                         : appState.activePower === 'chronos' ? '#38bdf8'
+                         : '#10b981';
+
+      // 1. Outer Containment Cage Wireframe Sphere (matches 6564.jpg & 6556.jpg)
+      const outerRadius = radius * 1.18;
+      eCtx.strokeStyle = appState.globeMode === 'grid' ? 'rgba(16, 185, 129, 0.22)' : 'rgba(34, 211, 238, 0.14)';
+      eCtx.lineWidth = 1;
+      for (let lon = -180; lon < 180; lon += 20) {
+        eCtx.beginPath();
+        for (let lat = -90; lat <= 90; lat += 10) {
+          const p = project3D(lat, lon, outerRadius, cx, cy, globeRotY * 0.7, globeRotX);
+          if (lat === -90) eCtx.moveTo(p.x, p.y);
+          else eCtx.lineTo(p.x, p.y);
+        }
+        eCtx.stroke();
+      }
+
+      // 2. Inner Translucent Emerald / Obsidian Globe Body
+      const grad = eCtx.createRadialGradient(cx - radius * 0.25, cy - radius * 0.25, radius * 0.1, cx, cy, radius);
+      if (appState.globeMode === 'grid') {
+        grad.addColorStop(0, 'rgba(52, 211, 153, 0.35)');
+        grad.addColorStop(0.55, 'rgba(6, 78, 59, 0.55)');
+        grad.addColorStop(1, 'rgba(6, 24, 20, 0.92)');
+      } else {
+        grad.addColorStop(0, 'rgba(56, 189, 248, 0.25)');
+        grad.addColorStop(0.6, 'rgba(15, 23, 42, 0.78)');
+        grad.addColorStop(1, 'rgba(9, 13, 22, 0.95)');
+      }
+
+      eCtx.beginPath();
+      eCtx.arc(cx, cy, radius, 0, Math.PI * 2);
+      eCtx.fillStyle = grad;
+      eCtx.fill();
+      eCtx.strokeStyle = primaryColor;
+      eCtx.lineWidth = 1.5;
+      eCtx.stroke();
+
+      // 3. Latitude & Longitude Geodesic Grid Lines
+      eCtx.strokeStyle = appState.globeMode === 'grid' ? 'rgba(52, 211, 153, 0.32)' : 'rgba(56, 189, 248, 0.22)';
+      eCtx.lineWidth = 0.8;
+
+      for (let lat = -60; lat <= 60; lat += 30) {
+        eCtx.beginPath();
+        let started = false;
+        for (let lon = -180; lon <= 180; lon += 6) {
+          const p = project3D(lat, lon, radius, cx, cy, globeRotY, globeRotX);
+          if (p.z > 0) {
+            if (!started) { eCtx.moveTo(p.x, p.y); started = true; }
+            else eCtx.lineTo(p.x, p.y);
+          } else {
+            started = false;
+          }
+        }
+        eCtx.stroke();
+      }
+
+      for (let lon = -180; lon < 180; lon += 30) {
+        eCtx.beginPath();
+        let started = false;
+        for (let lat = -90; lat <= 90; lat += 6) {
+          const p = project3D(lat, lon, radius, cx, cy, globeRotY, globeRotX);
+          if (p.z > 0) {
+            if (!started) { eCtx.moveTo(p.x, p.y); started = true; }
+            else eCtx.lineTo(p.x, p.y);
+          } else {
+            started = false;
+          }
+        }
+        eCtx.stroke();
+      }
+
+      // 4. Equatorial Gold/Emerald Containment Ring (Matches 6564.jpg & 6556.jpg)
+      eCtx.beginPath();
+      for (let lon = 0; lon <= 360; lon += 4) {
+        const p = project3D(0, lon, radius * 1.13, cx, cy, globeRotY, globeRotX);
+        if (lon === 0) eCtx.moveTo(p.x, p.y);
+        else eCtx.lineTo(p.x, p.y);
+      }
+      eCtx.strokeStyle = appState.globeMode === 'grid' ? '#fde68a' : '#34d399';
+      eCtx.lineWidth = 2;
+      eCtx.stroke();
+
+      // 5. Render RWA Hub Nodes & Geodesic Energy Beams
+      const activeKey = appState.selectedNode;
+      const activeNode = RWA_NODES[activeKey];
+      const activeProj = project3D(activeNode.lat, activeNode.lon, radius, cx, cy, globeRotY, globeRotX);
+
+      Object.entries(RWA_NODES).forEach(([key, node]) => {
+        const p = project3D(node.lat, node.lon, radius, cx, cy, globeRotY, globeRotX);
+        const isSelected = key === activeKey;
+
+        // Draw energy arc from selected node to other nodes
+        if (!isSelected && activeProj.z > -radius * 0.3 && p.z > -radius * 0.3) {
+          eCtx.beginPath();
+          eCtx.moveTo(activeProj.x, activeProj.y);
+          const midX = (activeProj.x + p.x) / 2;
+          const midY = (activeProj.y + p.y) / 2 - 28;
+          eCtx.quadraticCurveTo(midX, midY, p.x, p.y);
+          eCtx.strokeStyle = appState.activePower === 'gravity' ? 'rgba(236,72,153,0.75)' : 'rgba(167, 243, 208, 0.55)';
+          eCtx.lineWidth = isSelected ? 2 : 1.3;
+          eCtx.stroke();
+        }
+
+        if (p.z > -15) {
+          const pulse = 1 + Math.sin(time * 0.006) * 0.25;
+          // Target Reticle Ring for Selected Node (Matches 6564.jpg)
+          if (isSelected) {
+            eCtx.beginPath();
+            eCtx.arc(p.x, p.y, 11 * pulse, 0, Math.PI * 2);
+            eCtx.strokeStyle = '#ffffff';
+            eCtx.lineWidth = 1.8;
+            eCtx.stroke();
+          }
+
+          // Node Sphere
+          eCtx.beginPath();
+          eCtx.arc(p.x, p.y, isSelected ? 5.5 : 4.2, 0, Math.PI * 2);
+          eCtx.fillStyle = node.color;
+          eCtx.shadowColor = node.color;
+          eCtx.shadowBlur = 12;
+          eCtx.fill();
+          eCtx.shadowBlur = 0;
+
+          // City Label
+          eCtx.font = '600 10px "JetBrains Mono", monospace';
+          eCtx.fillStyle = isSelected ? '#ffffff' : 'rgba(226, 232, 240, 0.75)';
+          eCtx.fillText(node.name, p.x + 9, p.y + 3);
+        }
+      });
+    }
+
+    // =========================================================================
+    // 5. REAL-TIME OSCILLOSCOPE & SEGMENTED LED VU METERS
+    // =========================================================================
+    const scopeCanvas = document.getElementById('oscilloscopeCanvas');
+    const sCtx = scopeCanvas.getContext('2d');
+
+    function drawOscilloscope(time) {
+      const w = scopeCanvas.width;
+      const h = scopeCanvas.height;
+      if (!w || !h) return;
+
+      sCtx.clearRect(0, 0, w, h);
+
+      // Subtle background grid
+      sCtx.strokeStyle = 'rgba(34, 211, 238, 0.08)';
+      sCtx.lineWidth = 1;
+      for (let x = 0; x < w; x += 28) {
+        sCtx.beginPath(); sCtx.moveTo(x, 0); sCtx.lineTo(x, h); sCtx.stroke();
+      }
+      for (let y = 0; y < h; y += 20) {
+        sCtx.beginPath(); sCtx.moveTo(0, y); sCtx.lineTo(w, y); sCtx.stroke();
+      }
+
+      // Waveform path
+      sCtx.beginPath();
+      const waveColor = appState.activePower === 'emp' ? '#fbbf24'
+                      : appState.activePower === 'quantum' ? '#f472b6'
+                      : '#22d3ee';
+      sCtx.strokeStyle = waveColor;
+      sCtx.lineWidth = 2.5;
+      sCtx.shadowColor = waveColor;
+      sCtx.shadowBlur = 8;
+
+      if (audioEngine.analyser && appState.audioEnabled) {
+        const bufferLength = audioEngine.analyser.frequencyBinCount;
+        const dataArray = new Uint8Array(bufferLength);
+        audioEngine.analyser.getByteTimeDomainData(dataArray);
+        const sliceWidth = w / bufferLength;
+        let x = 0;
+        for (let i = 0; i < bufferLength; i++) {
+          const v = dataArray[i] / 128.0;
+          const y = (v * h) / 2;
+          if (i === 0) sCtx.moveTo(x, y);
+          else sCtx.lineTo(x, y);
+          x += sliceWidth;
+        }
+      } else {
+        // Synthetic preview wave reflecting chosen waveform & frequency
+        const freqFactor = (appState.synth.frequency / 220) * 3;
+        const amp = (h * 0.32) * (appState.synth.masterVol / 100);
+        for (let x = 0; x < w; x++) {
+          const phase = (x / w) * Math.PI * 2 * freqFactor + time * 0.005;
+          let sample = Math.sin(phase);
+          if (appState.synth.waveform === 'square') sample = sample >= 0 ? 0.85 : -0.85;
+          if (appState.synth.waveform === 'sawtooth') sample = ((phase % (Math.PI * 2)) / Math.PI) - 1;
+          if (appState.synth.waveform === 'triangle') sample = Math.asin(Math.sin(phase)) * (2 / Math.PI);
+          const y = h / 2 + sample * amp * Math.sin((x / w) * Math.PI);
+          if (x === 0) sCtx.moveTo(x, y);
+          else sCtx.lineTo(x, y);
+        }
+      }
+      sCtx.stroke();
+      sCtx.shadowBlur = 0;
+    }
+
+    // Build & Animate 20-Segment Stereo LED VU Meters
+    function initVuMeters() {
+      ['vuMeterL', 'vuMeterR'].forEach(id => {
+        const el = document.getElementById(id);
+        el.innerHTML = '';
+        for (let i = 0; i < 20; i++) {
+          const seg = document.createElement('div');
+          seg.className = 'rounded-[1px] bg-slate-800 transition-colors duration-75';
+          el.appendChild(seg);
+        }
+      });
+    }
+
+    function updateVuMeters(time) {
+      const baseLevel = appState.audioEnabled ? 13 + Math.sin(time * 0.015) * 4 : 4 + Math.sin(time * 0.004) * 2;
+      const levelL = Math.min(20, Math.max(1, Math.round(baseLevel * (appState.synth.masterVol / 85))));
+      const levelR = Math.min(20, Math.max(1, Math.round((baseLevel + Math.cos(time * 0.02) * 1.5) * (appState.synth.masterVol / 85))));
+
+      [
+        { id: 'vuMeterL', lvl: levelL },
+        { id: 'vuMeterR', lvl: levelR }
+      ].forEach(({ id, lvl }) => {
+        const children = document.getElementById(id).children;
+        for (let i = 0; i < children.length; i++) {
+          if (i < lvl) {
+            if (i < 13) children[i].style.backgroundColor = '#10b981';
+            else if (i < 17) children[i].style.backgroundColor = '#f59e0b';
+            else children[i].style.backgroundColor = '#ef4444';
+          } else {
+            children[i].style.backgroundColor = '#1e293b';
+          }
+        }
+      });
+
+      const db = (-24 + (levelL / 20) * 24).toFixed(1);
+      document.getElementById('dbMeterLabel').textContent = `${db} dB`;
+    }
+
+    // =========================================================================
+    // 6. INTERACTIVE SYNTH KEYBOARD & CONTROLS WIRING
+    // =========================================================================
+    const NOTES = [
+      { note: 'C3', freq: 130.81, key: 'A' },
+      { note: 'D3', freq: 146.83, key: 'S' },
+      { note: 'E3', freq: 164.81, key: 'D' },
+      { note: 'G3', freq: 196.00, key: 'F' },
+      { note: 'A3', freq: 220.00, key: 'G' },
+      { note: 'C4', freq: 261.63, key: 'H' },
+      { note: 'D4', freq: 293.66, key: 'J' },
+      { note: 'E4', freq: 329.63, key: 'K' }
+    ];
+
+    function buildKeyboard() {
+      const kb = document.getElementById('synthKeyboard');
+      kb.innerHTML = '';
+      NOTES.forEach(n => {
+        const btn = document.createElement('button');
+        btn.dataset.key = n.key;
+        btn.className = 'rounded-xl bg-gradient-to-b from-[#1a2232] to-[#0f141e] hover:from-cyan-950/60 hover:to-[#131b29] active:scale-95 border border-white/15 hover:border-cyan-400/60 flex flex-col items-center justify-between py-2 transition shadow-md';
+        btn.innerHTML = `
+          <span class="font-mono text-[10px] text-cyan-300 font-bold">${n.note}</span>
+          <span class="px-1.5 py-0.5 rounded bg-black/50 font-mono text-[9px] text-slate-400">${n.key}</span>
+        `;
+        const play = () => {
+          appState.synth.frequency = n.freq;
+          audioEngine.triggerNote(n.freq, 0.6);
+          btn.classList.add('border-cyan-400', 'shadow-[0_0_15px_rgba(34,211,238,0.45)]');
+          setTimeout(() => btn.classList.remove('border-cyan-400', 'shadow-[0_0_15px_rgba(34,211,238,0.45)]'), 220);
+        };
+        btn.addEventListener('mousedown', play);
+        btn.addEventListener('touchstart', (e) => { e.preventDefault(); play(); }, { passive: false });
+        kb.appendChild(btn);
+      });
+    }
+
+    // Keyboard shortcuts [A-K]
+    window.addEventListener('keydown', (e) => {
+      if (e.repeat) return;
+      const upper = e.key.toUpperCase();
+      const found = NOTES.find(n => n.key === upper);
+      if (found) {
+        audioEngine.triggerNote(found.freq, 0.6);
+        const btn = document.querySelector(`#synthKeyboard button[data-key="${upper}"]`);
+        if (btn) {
+          btn.classList.add('border-cyan-400', 'scale-95');
+          setTimeout(() => btn.classList.remove('border-cyan-400', 'scale-95'), 180);
+        }
+      }
+    });
+
+    // Aurora Module Pads (OSC A, OSC B, FM, SYNC, SUB)
+    const modColorMap = { oscA: 'active-red', oscB: 'active-blue', fm: 'active-amber', sync: 'active-green', sub: 'active-cyan' };
+    document.querySelectorAll('.aurora-pad').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mod = btn.dataset.mod;
+        const active = !appState.synth.modules[mod];
+        appState.synth.modules[mod] = active;
+        const cls = modColorMap[mod];
+        if (active) {
+          btn.classList.add(cls);
+          btn.classList.remove('bg-[#1b2230]', 'text-slate-400');
+        } else {
+          btn.classList.remove(cls);
+          btn.classList.add('bg-[#1b2230]', 'text-slate-400');
+        }
+        audioEngine.triggerNote(appState.synth.frequency, 0.25);
+        persistState();
+      });
+    });
+
+    // Waveform Selector Buttons
+    document.querySelectorAll('.wave-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const wave = btn.dataset.wave;
+        appState.synth.waveform = wave;
+        document.querySelectorAll('.wave-btn').forEach(b => {
+          b.className = 'wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-400 hover:text-cyan-300 transition';
+        });
+        btn.className = 'wave-btn flex flex-col items-center justify-center p-1.5 rounded-lg bg-[#172436] border border-cyan-400 text-cyan-300 shadow-[0_0_12px_rgba(34,211,238,0.3)] transition';
+        audioEngine.triggerNote(appState.synth.frequency, 0.3);
+        persistState();
+      });
+    });
+
+    // Transport & Modulation Buttons
+    document.querySelectorAll('.transport-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tr = btn.dataset.transport;
+        if (tr === 'stop') {
+          audioEngine.stopAll();
+          document.querySelectorAll('.transport-btn').forEach(b => b.classList.remove('active-green', 'active-red', 'active-cyan', 'active-amber'));
+          showToast('TRANSPORT HALTED', 'All arpeggiator & sequence loops stopped.', 'bg-rose-400');
+          return;
+        }
+        const next = !appState.synth.transport[tr];
+        appState.synth.transport[tr] = next;
+        const colorCls = tr === 'rec' ? 'active-red' : tr === 'arp' ? 'active-cyan' : tr === 'lfo2' ? 'active-amber' : 'active-green';
+        btn.classList.toggle(colorCls, next);
+
+        if (tr === 'arp' || tr === 'play') {
+          audioEngine.toggleArp(next);
+        }
+        persistState();
+      });
+    });
+
+    // Switches (Filter, Seq, Mono, Hard)
+    document.querySelectorAll('.switch-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const sw = btn.dataset.switch;
+        const next = !appState.synth.switches[sw];
+        appState.synth.switches[sw] = next;
+        const pill = btn.querySelector('.switch-pill');
+        if (next) {
+          btn.classList.add('border-emerald-500/40');
+          pill.textContent = 'ON';
+          pill.className = 'px-2 py-0.5 rounded-full bg-emerald-500 text-[#0b0e14] font-mono text-[9px] font-bold switch-pill';
+        } else {
+          btn.classList.remove('border-emerald-500/40');
+          pill.textContent = 'OFF';
+          pill.className = 'px-2 py-0.5 rounded-full bg-slate-700 text-slate-300 font-mono text-[9px] font-bold switch-pill';
+        }
+        audioEngine.updateParams();
+        persistState();
+      });
+    });
+
+    // =========================================================================
+    // 7. SPECIALTIES MODE: TECH-SUPERPOWERS OVERDRIVE PRESETS
+    // =========================================================================
+    const SUPERPOWER_PRESETS = {
+      chronos: {
+        label: 'CHRONOS TIME-DILATION',
+        hud: 'TIME DILATION // 0.15x',
+        slippage: '0.00001%',
+        freq: 82.41, cutoff: 640, resonance: 68, waveform: 'sine',
+        toast: 'Orbital velocity dilated. Sub-harmonic chronos field engaged.'
+      },
+      emp: {
+        label: 'AETHER EMP OVERDRIVE',
+        hud: 'HIGH-VOLTAGE EMP PULSE',
+        slippage: '0.00420%',
+        freq: 329.63, cutoff: 6400, resonance: 85, waveform: 'sawtooth',
+        toast: 'Electromagnetic pulse triggered! High-frequency arpeggiator active.'
+      },
+      quantum: {
+        label: 'QUANTUM PHASE-SHIFT',
+        hud: 'PHASE INVERSION // 180°',
+        slippage: '0.00000%',
+        freq: 440.00, cutoff: 3800, resonance: 92, waveform: 'triangle',
+        toast: 'Containment grid phase-shifted into quantum superposition.'
+      },
+      gravity: {
+        label: 'ORBITAL GRAVITY WELL',
+        hud: 'SINGULARITY CONVERGENCE',
+        slippage: '0.00009%',
+        freq: 110.00, cutoff: 1200, resonance: 75, waveform: 'square',
+        toast: 'RWA Hub Nodes locked into central orbital gravity well.'
+      }
+    };
+
+    function activateSuperpower(powerKey) {
+      appState.superpowerMode = true;
+      appState.activePower = powerKey;
+      const preset = SUPERPOWER_PRESETS[powerKey];
+
+      document.getElementById('superpowerDeck').classList.add('superpower-active-frame');
+      document.getElementById('spMasterLed').className = 'w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]';
+      document.getElementById('spMasterState').textContent = 'OVERDRIVE';
+      document.getElementById('spMasterState').className = 'px-1.5 py-0.5 rounded bg-cyan-500/20 text-[10px] text-cyan-300 font-bold';
+      document.getElementById('superpowerHudTag').textContent = preset.hud;
+      document.getElementById('slippageValue').textContent = preset.slippage;
+
+      document.querySelectorAll('.power-btn').forEach(b => {
+        const active = b.dataset.power === powerKey;
+        b.classList.toggle('border-cyan-400', active);
+        b.classList.toggle('bg-[#192336]', active);
+      });
+
+      appState.synth.frequency = preset.freq;
+      appState.synth.cutoff = preset.cutoff;
+      appState.synth.resonance = preset.resonance;
+      appState.synth.waveform = preset.waveform;
+      renderRotaryKnobs();
+      audioEngine.updateParams();
+      audioEngine.triggerNote(preset.freq, 0.8);
+      if (powerKey === 'emp') audioEngine.toggleArp(true);
+
+      showToast(preset.label, preset.toast, 'bg-fuchsia-400');
+      persistState();
+    }
+
+    document.getElementById('superpowerMasterToggle').addEventListener('click', () => {
+      if (appState.superpowerMode) {
+        appState.superpowerMode = false;
+        appState.activePower = null;
+        audioEngine.toggleArp(false);
+        document.getElementById('superpowerDeck').classList.remove('superpower-active-frame');
+        document.getElementById('spMasterLed').className = 'w-2.5 h-2.5 rounded-full bg-slate-600';
+        document.getElementById('spMasterState').textContent = 'STANDBY';
+        document.getElementById('superpowerHudTag').textContent = 'NOMINAL FIELD';
+        document.getElementById('slippageValue').textContent = '0.00004%';
+        document.querySelectorAll('.power-btn').forEach(b => b.classList.remove('border-cyan-400', 'bg-[#192336]'));
+        showToast('SUPERPOWERS STANDBY', 'Command deck returned to nominal grid parameters.');
+      } else {
+        activateSuperpower('chronos');
+      }
+      persistState();
+    });
+
+    document.querySelectorAll('.power-btn').forEach(btn => {
+      btn.addEventListener('click', () => activateSuperpower(btn.dataset.power));
+    });
+
+    // =========================================================================
+    // 8. GLOBE CONTROLS, HEADER ACTIONS & BACKEND INSPECTOR DRAWER
+    // =========================================================================
+    document.getElementById('btnRwaMode').addEventListener('click', () => {
+      appState.globeMode = 'rwa';
+      document.getElementById('globeModeLabel').textContent = 'RWA HUB NODES';
+      document.getElementById('btnRwaMode').className = 'flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-cyan-400 text-[#0b0e14] font-bold font-mono text-xs shadow-[0_0_15px_rgba(34,211,238,0.45)] transition';
+      document.getElementById('btnGridMode').className = 'flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#161d2b] hover:bg-[#1e2738] border border-white/10 font-mono text-xs text-slate-300 transition';
+      persistState();
+    });
+
+    document.getElementById('btnGridMode').addEventListener('click', () => {
+      appState.globeMode = 'grid';
+      document.getElementById('globeModeLabel').textContent = 'EARTH CONTAINMENT GRID';
+      document.getElementById('btnGridMode').className = 'flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-emerald-500 text-[#0b0e14] font-bold font-mono text-xs shadow-[0_0_15px_rgba(16,185,129,0.45)] transition';
+      document.getElementById('btnRwaMode').className = 'flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-[#161d2b] hover:bg-[#1e2738] border border-white/10 font-mono text-xs text-slate-300 transition';
+      persistState();
+    });
+
+    document.querySelectorAll('.node-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.node;
+        appState.selectedNode = key;
+        const node = RWA_NODES[key];
+        document.getElementById('selectedNodeName').textContent = node.name;
+        document.getElementById('selectedNodeCoords').textContent = `${node.lat.toFixed(2)}°, ${node.lon.toFixed(2)}°`;
+
+        document.querySelectorAll('.node-btn').forEach(b => {
+          b.className = 'node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#141a26] border border-white/10 text-slate-300 hover:text-white font-mono text-xs transition';
+        });
+        btn.className = 'node-btn flex-1 py-1.5 px-2.5 rounded-lg bg-[#182030] border border-amber-400/70 text-amber-300 font-mono text-xs font-semibold transition';
+
+        // Orient globe toward selected longitude
+        globeRotY = -(node.lon * Math.PI) / 180;
+        audioEngine.triggerNote(220 + Object.keys(RWA_NODES).indexOf(key) * 55, 0.35);
+        showToast(`NODE LOCKED: ${node.name}`, `${node.sector} (${node.lat}°, ${node.lon}°)`, 'bg-amber-400');
+        persistState();
+      });
+    });
+
+    document.getElementById('resetGlobeBtn').addEventListener('click', () => {
+      globeRotY = 0.6;
+      globeRotX = 0.25;
+      showToast('ORBITAL GYRO RESET', 'Containment sphere aligned to prime meridian.');
+    });
+
+    document.getElementById('toggleGlobeControlsBtn').addEventListener('click', () => {
+      appState.controlsVisible = !appState.controlsVisible;
+      const dock = document.getElementById('globeControlDock');
+      dock.classList.toggle('hidden', !appState.controlsVisible);
+      document.getElementById('hideControlsText').textContent = appState.controlsVisible ? 'Hide Controls' : 'Show Controls';
+    });
+
+    // Love in the Ledger button
+    document.getElementById('loveLedgerBtn').addEventListener('click', () => {
+      appState.ledgerLikes++;
+      document.getElementById('ledgerCount').textContent = appState.ledgerLikes;
+      const heart = document.getElementById('heartIcon');
+      heart.setAttribute('fill', '#fb7185');
+      heart.classList.add('scale-125');
+      setTimeout(() => heart.classList.remove('scale-125'), 220);
+      audioEngine.triggerNote(523.25, 0.3);
+      showToast('LEDGER RESONANCE RECORDED', `Immutable block #${appState.ledgerLikes} signed on TWE.`, 'bg-rose-400');
+      persistState();
+    });
+
+    // Master Audio Button
+    function updateAudioButtonUI() {
+      const on = appState.audioEnabled;
+      document.getElementById('audioOffIcon').classList.toggle('hidden', on);
+      document.getElementById('audioOnIcon').classList.toggle('hidden', !on);
+      document.getElementById('audioStatusLabel').textContent = on ? 'AUDIO: LIVE' : 'AUDIO: OFF';
+      document.getElementById('masterAudioBtn').classList.toggle('border-emerald-400', on);
+    }
+
+    document.getElementById('masterAudioBtn').addEventListener('click', () => {
+      if (appState.audioEnabled) {
+        audioEngine.disable();
+        showToast('WEB AUDIO MUTED', 'Synthesizer output suspended.', 'bg-rose-400');
+      } else {
+        audioEngine.enable();
+        audioEngine.triggerNote(261.63, 0.4);
+        showToast('WEB AUDIO ENGINE ONLINE', 'Aurora & Aether Synth MK.1 ready.', 'bg-emerald-400');
+      }
+      updateAudioButtonUI();
+    });
+
+    // Backend Inspector Drawer Logic
+    const backendDrawer = document.getElementById('backendDrawer');
+    const openDrawer = () => backendDrawer.classList.remove('hidden');
+    const closeDrawer = () => backendDrawer.classList.add('hidden');
+
+    document.getElementById('toggleBackendBtn').addEventListener('click', openDrawer);
+    document.getElementById('openApiHeaderBtn').addEventListener('click', openDrawer);
+    document.getElementById('closeDrawerBtn').addEventListener('click', closeDrawer);
+    document.getElementById('drawerBackdrop').addEventListener('click', closeDrawer);
+
+    document.querySelectorAll('.drawer-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.drawer-tab').forEach(t => {
+          t.className = 'drawer-tab px-3 py-2 rounded-t-lg text-slate-400 hover:text-white';
+        });
+        tab.className = 'drawer-tab px-3 py-2 rounded-t-lg bg-[#161e2e] text-cyan-300 border-t border-x border-cyan-500/40 font-semibold';
+        document.getElementById('payloadTab').classList.toggle('hidden', tab.dataset.tab !== 'payloadTab');
+        document.getElementById('serverTab').classList.toggle('hidden', tab.dataset.tab !== 'serverTab');
+      });
+    });
+
+    // Patch Slots Save / Load
+    window.savePatchSlot = (slot) => {
+      localStorage.setItem(`aether_patch_slot_${slot}`, JSON.stringify(appState));
+      showToast(`PATCH SAVED TO SLOT 0${slot}`, 'Synth & Grid telemetry persisted to local storage.', 'bg-emerald-400');
+    };
+
+    window.loadPatchSlot = (slot) => {
+      const raw = localStorage.getItem(`aether_patch_slot_${slot}`);
+      if (!raw) {
+        showToast(`SLOT 0${slot} EMPTY`, 'Save a configuration to this slot first.', 'bg-amber-400');
+        return;
+      }
+      appState = { ...JSON.parse(raw), audioEnabled: appState.audioEnabled };
+      renderRotaryKnobs();
+      renderVerticalFaders();
+      audioEngine.updateParams();
+      showToast(`PATCH LOADED FROM SLOT 0${slot}`, 'Restored synth dials and global node lock.', 'bg-cyan-400');
+    };
+
+    // Export JSON Snapshot
+    document.getElementById('downloadJsonBtn').addEventListener('click', () => {
+      const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(appState, null, 2));
+      const a = document.createElement('a');
+      a.setAttribute('href', dataStr);
+      a.setAttribute('download', `aether-command-patch-${Date.now()}.json`);
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      showToast('PATCH EXPORTED', 'Downloaded JSON telemetry snapshot.');
+    });
+
+    // Populate Full-Stack Node.js + Express + WebSocket Server Boilerplate
+    const NODE_SERVER_BOILERPLATE = `// server.js — Full-Stack Node.js + Express + WebSocket Backend
+// Run: npm install express ws cors && node server.js
+
+const express = require('express');
+const http = require('http');
+const WebSocket = require('ws');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server, path: '/v4' });
+
+// In-memory RWA Hub Node & Synth Telemetry State
+let commandState = {
+  slippage: '0.00004%',
+  ledgerLikes: 108,
+  activeNode: 'houston',
+  superpowerMode: null,
+  patches: {}
+};
+
+// REST API: Fetch current Command Deck State
+app.get('/api/telemetry', (req, res) => {
+  res.json({ status: 'ONLINE', timestamp: Date.now(), data: commandState });
+});
+
+// REST API: Persist Synth & Containment Patch
+app.post('/api/patches/:slot', (req, res) => {
+  const { slot } = req.params;
+  commandState.patches[slot] = req.body;
+  broadcast({ type: 'PATCH_SAVED', slot, payload: req.body });
+  res.status(201).json({ saved: true, slot });
+});
+
+// WebSocket Real-Time Grid & Synth Broadcast
+function broadcast(msg) {
+  const data = JSON.stringify(msg);
+  wss.clients.forEach(client => {
+    if (client.readyState === WebSocket.OPEN) client.send(data);
+  });
+}
+
+wss.on('connection', (ws) => {
+  ws.send(JSON.stringify({ type: 'INIT_SYNC', state: commandState }));
+  ws.on('message', (raw) => {
+    const event = JSON.parse(raw);
+    commandState = { ...commandState, ...event.state };
+    broadcast({ type: 'TELEMETRY_UPDATE', state: commandState });
+  });
+});
+
+server.listen(8080, () => console.log('Aether Command Server running on :8080'));`;
+
+    document.getElementById('backendBoilerplateCode').textContent = NODE_SERVER_BOILERPLATE;
+
+    document.getElementById('copyServerCodeBtn').addEventListener('click', () => {
+      const textarea = document.createElement('textarea');
+      textarea.value = NODE_SERVER_BOILERPLATE;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      textarea.remove();
+      showToast('BACKEND CODE COPIED', 'Node.js + Express + WS server copied to clipboard.', 'bg-amber-400');
+    });
+
+    // =========================================================================
+    // 9. MAIN ANIMATION & TELEMETRY LOOP
+    // =========================================================================
+    let lastJsonUpdate = 0;
+    function mainLoop(time) {
+      drawGlobe(time);
+      drawOscilloscope(time);
+      updateVuMeters(time);
+
+      if (time - lastJsonUpdate > 350 && !backendDrawer.classList.contains('hidden')) {
+        const telemetrySnapshot = {
+          timestamp: new Date().toISOString(),
+          node: RWA_NODES[appState.selectedNode],
+          globeMode: appState.globeMode,
+          superpower: appState.activePower || 'NOMINAL',
+          qammSlippage: document.getElementById('slippageValue').textContent,
+          synth: appState.synth
+        };
+        document.getElementById('liveJsonOutput').textContent = JSON.stringify(telemetrySnapshot, null, 2);
+        lastJsonUpdate = time;
+      }
+
+      requestAnimationFrame(mainLoop);
+    }
+
+    window.addEventListener('resize', resizeCanvases);
+    window.addEventListener('load', () => {
+      resizeCanvases();
+      renderRotaryKnobs();
+      renderVerticalFaders();
+      initVuMeters();
+      buildKeyboard();
+      requestAnimationFrame(mainLoop);
+    });
+  </script>
+</body>
+</html>

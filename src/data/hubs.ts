@@ -1,0 +1,148 @@
+import type { HubDefinition } from '../types/twe';
+
+export const WORKSPACE_HUBS: HubDefinition[] = [
+  {
+    id: 'overview',
+    label: 'Overview',
+    group: 'Core Systems',
+    description: 'Executive Graphite & Gold portfolio telemetry, Sovereign Vault summary, and live order tape.',
+  },
+  {
+    id: 'four-token-systems',
+    label: '4-Token Systems',
+    group: 'Core Systems',
+    description: '22 domain tables across AI Generation Batches, Auth/Session Tokens, Digital Assets, and Append-Only Credits.',
+  },
+  {
+    id: 'token-atlas',
+    label: 'Token Atlas',
+    group: 'Core Systems',
+    description: 'Server-sorted, chunk-paginated asset registry with classification summary and batch progress operations.',
+  },
+  {
+    id: 'cloud-database',
+    label: 'Cloud Database',
+    group: 'Core Systems',
+    description: 'Persistent owner-isolated Firestore ledger for digital assets, linked ATS orders, vault receipts, and NFT editions.',
+  },
+  {
+    id: 'token-foundry',
+    label: 'Token Foundry',
+    group: 'Assets & Studio',
+    description: '10,000-token batch synthesizer with OpenZeppelin Solidity, EVM bytecode, CloudHSM custody, and NFT generator.',
+  },
+  {
+    id: 'infinite-foundry',
+    label: 'Infinite Web Foundry',
+    group: 'Assets & Studio',
+    description: 'Arbitrary-precision BigInt Token & NFT webpage foundry with deterministic CREATE2 contract IDs, Solidity contracts, and live HTML5 pages.',
+  },
+  {
+    id: 'asset-vault',
+    label: 'Asset Vault',
+    group: 'Markets & Custody',
+    description: 'Sovereign Wealth & Asset Possession Vault (UUID af230af8-bf63-4308-968a-9962ed14e565, 2^256 - 1 units).',
+  },
+  {
+    id: 'nft-studio',
+    label: 'NFT Studio',
+    group: 'Assets & Studio',
+    description: 'HashLips Art Engine 2.0 multi-layer canvas compositor with trait rarity weighting and PNG export.',
+  },
+  {
+    id: 'cmdtx-codex',
+    label: 'CMDTX & NFT Codex',
+    group: 'Assets & Studio',
+    description: 'OpenZeppelin ERC-721/1155 metadata, Web Crypto SHA-256 hashing, IPFS CIDv1 pinning, and EIP-681 QR.',
+  },
+  {
+    id: 'company-directory',
+    label: 'Company Directory',
+    group: 'Governance & Infra',
+    description: 'LEI-indexed issuers, qualified custodians, ATS operators, and institutional KYB verification.',
+  },
+  {
+    id: 'sources-studio',
+    label: 'Sources & Studio',
+    group: 'Governance & Infra',
+    description: 'Modular monolith boundaries, BigInt serialization invariants, and ledger checkpoint architecture.',
+  },
+  {
+    id: 'project-archive',
+    label: 'Project Archive',
+    group: 'Assets & Studio',
+    description: 'Exportable workspace snapshots, archived foundry runs, and verifiable manifest digests.',
+  },
+  {
+    id: 'portfolio-watchlist',
+    label: 'Portfolio & Watchlist',
+    group: 'Markets & Custody',
+    description: 'Position cost basis, unrealized P&L, paper USD liquidity, and watchlisted 24h sparklines.',
+  },
+  {
+    id: 'market-exchange',
+    label: 'Market & Exchange',
+    group: 'Markets & Custody',
+    description: 'Simulated ATS order matching, 14-period Wilder RSI signals, Recharts sparklines, and live SSE fills.',
+  },
+  {
+    id: 'deploy-registry',
+    label: 'Deploy & Registry',
+    group: 'Governance & Infra',
+    description: 'Pre-flight readiness gates, immutable contract registry, and tweRouter / REST API specification.',
+  },
+  {
+    id: 'risk-security',
+    label: 'Risk & Security',
+    group: 'Markets & Custody',
+    description: 'ERC-20 0xa9059cbb calldata security auditor, constant-product AMM (x * y = k) math, and risk controls.',
+  },
+  {
+    id: 'compliance-edgar',
+    label: 'Compliance & EDGAR',
+    group: 'Governance & Infra',
+    description: 'SEC Form ATS-N, Form D, Reg S, MiCA Whitepaper filings, and jurisdiction restriction matrix.',
+  },
+  {
+    id: 'sec-monitor',
+    label: 'SEC Monitor',
+    group: 'Governance & Infra',
+    description: 'Real-time edgartools 10-K/10-Q/8-K watchlist feed, Risk Heatmap, XBRL Analytics charts, RSS stream, and automated alerts.',
+  },
+  {
+    id: 'chain-connections',
+    label: 'Chain Connections',
+    group: 'Governance & Infra',
+    description: 'Multi-chain EIP-155 RPC telemetry across Ethereum, Base, Arbitrum, Polygon, Solana, and Sepolia.',
+  },
+  {
+    id: 'ai-art-studio',
+    label: 'AI & Art Studio',
+    group: 'Assets & Studio',
+    description: 'Gemini 4 Hydrogen multimodal image analysis and SVG emblem + OpenZeppelin metadata synthesis.',
+  },
+  {
+    id: 'planetary-system',
+    label: 'Planetary System',
+    group: 'Markets & Custody',
+    description: '3D Earth Containment globe, 46 World Commodities Registry & Tokenizer API, uint256 TWECommodityEncoder, and qAMM v2.',
+  },
+  {
+    id: 'governance-portal',
+    label: 'Governance Portal',
+    group: 'Governance & Infra',
+    description: 'TokenGovernanceDAO proposals, weighted quorum voting, Omega RBAC access control, and Bridge.xyz KYC onboarding.',
+  },
+  {
+    id: 'staking-pool',
+    label: 'Staking Pool',
+    group: 'Governance & Infra',
+    description: 'TWATS governance staking lockup tiers, live protocol fee yield accrual, and boosted DAO voting weight.',
+  },
+  {
+    id: 'token-namer',
+    label: 'Token Namer',
+    group: 'Governance & Infra',
+    description: '10,000-token Infinite Horizon Cosmic Nexus naming engine with duplicate-word guard, Bitcoin 600 series, and Solidity export.',
+  },
+];

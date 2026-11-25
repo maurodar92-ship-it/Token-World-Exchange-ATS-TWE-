@@ -1,0 +1,128 @@
+{
+  "name": "FiberArray (FIBRN) #5983...0313",
+  "description": "Official Genesis Metadata for **FiberArray** [FIBRN], an institutional-grade ERC-1155 protocol deployed to **Arbitrum One** (Chain ID: 42161).\n\n### Deployment & Protocol Profile:\n- **Contract Standard:** ERC-1155\n- **Narrative Sector:** DePIN (Physical Infrastructure)\n- **Initial Supply:** 206,000,000\n- **Security Audit:** Certified by Trail of Bits (Score: 84/100)\n- **Simulated Gas Estimate:** 4,015,000 gas units (0.000486 ETH / ~$1.52 USD)\n- **Deployment Success Rate:** 90.5% under EIP-1559 mempool conditions\n- **Bytecode Footprint:** 9880 bytes (well within 24,576 byte EIP-170 Spurious Dragon ceiling)\n\nStructured for automated ingestion by OpenSea, LooksRare, Magic Eden, and ERC-721/1155 indexing pipelines.",
+  "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20800%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Crect%20width%3D%22800%22%20height%3D%22800%22%20fill%3D%22%230A0A0C%22%2F%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3CradialGradient%20id%3D%22grad%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%20fx%3D%2230%25%22%20fy%3D%2230%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F27D26%22%20stop-opacity%3D%220.8%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230A0A0C%22%20stop-opacity%3D%220.1%22%2F%3E%0A%20%20%20%20%20%20%3C%2FradialGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22lineGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F27D26%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300F0FF%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22400%22%20cy%3D%22400%22%20r%3D%22320%22%20fill%3D%22url(%23grad)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22400%22%20cy%3D%22400%22%20r%3D%22280%22%20fill%3D%22none%22%20stroke%3D%22url(%23lineGrad)%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%228%206%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22340%22%20fill%3D%22%23FFFFFF%22%20font-family%3D%22monospace%22%20font-size%3D%2244%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EFiberArray%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22400%22%20fill%3D%22%23F27D26%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EFIBRN%20%E2%80%A2%20ERC-1155%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22450%22%20fill%3D%22%238E9299%22%20font-family%3D%22monospace%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%3EARBITRUM%20ONE%20(ID%3A%2042161)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22520%22%20fill%3D%22%2334D399%22%20font-family%3D%22monospace%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%3EDEPLOYMENT%20SIMULATION%3A%2090.5%25%20SUCCESS%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22550%22%20fill%3D%22%238E9299%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3EEST.%20GAS%3A%204%2C015%2C000%20UNITS%20%7C%200.000486%20ETH%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
+  "external_url": "https://arbiscan.io/address/0x2535A2B8B6Cece6567154b192bB3a283d5dE41D0",
+  "background_color": "0A0A0C",
+  "attributes": [
+    {
+      "trait_type": "Intended Blockchain",
+      "value": "Arbitrum One"
+    },
+    {
+      "trait_type": "Token Standard",
+      "value": "ERC-1155"
+    },
+    {
+      "trait_type": "Sector Narrative",
+      "value": "DePIN (Physical Infrastructure)"
+    },
+    {
+      "trait_type": "Launch Status",
+      "value": "Paused"
+    },
+    {
+      "trait_type": "Security Audit Score",
+      "value": 84,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Audit Verification Firm",
+      "value": "Trail of Bits"
+    },
+    {
+      "trait_type": "Vanity Contract Address",
+      "value": "Standard Cryptographic Hash"
+    },
+    {
+      "trait_type": "Decimals",
+      "value": 9,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Simulated Deployment Success Rate",
+      "value": 90.5,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Simulated Deployment Gas Units",
+      "value": 4015000,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "Simulated Deployment Cost (USD)",
+      "value": 1.52,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "EVM Bytecode Size (Bytes)",
+      "value": 9880,
+      "display_type": "number"
+    },
+    {
+      "trait_type": "EIP-170 Code Size Safety Score",
+      "value": 75.9,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Mempool Clearance Probability",
+      "value": 97.7,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Genesis Creation Date",
+      "display_type": "date",
+      "value": 1788582184
+    }
+  ],
+  "properties": {
+    "category": "smart_contract_asset",
+    "files": [
+      {
+        "uri": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20800%22%20width%3D%22100%25%22%20height%3D%22100%25%22%3E%0A%20%20%20%20%3Crect%20width%3D%22800%22%20height%3D%22800%22%20fill%3D%22%230A0A0C%22%2F%3E%0A%20%20%20%20%3Cdefs%3E%0A%20%20%20%20%20%20%3CradialGradient%20id%3D%22grad%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2250%25%22%20fx%3D%2230%25%22%20fy%3D%2230%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F27D26%22%20stop-opacity%3D%220.8%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%230A0A0C%22%20stop-opacity%3D%220.1%22%2F%3E%0A%20%20%20%20%20%20%3C%2FradialGradient%3E%0A%20%20%20%20%20%20%3ClinearGradient%20id%3D%22lineGrad%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23F27D26%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300F0FF%22%2F%3E%0A%20%20%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3C%2Fdefs%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22400%22%20cy%3D%22400%22%20r%3D%22320%22%20fill%3D%22url(%23grad)%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22400%22%20cy%3D%22400%22%20r%3D%22280%22%20fill%3D%22none%22%20stroke%3D%22url(%23lineGrad)%22%20stroke-width%3D%223%22%20stroke-dasharray%3D%228%206%22%2F%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22340%22%20fill%3D%22%23FFFFFF%22%20font-family%3D%22monospace%22%20font-size%3D%2244%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EFiberArray%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22400%22%20fill%3D%22%23F27D26%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EFIBRN%20%E2%80%A2%20ERC-1155%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22450%22%20fill%3D%22%238E9299%22%20font-family%3D%22monospace%22%20font-size%3D%2218%22%20text-anchor%3D%22middle%22%3EARBITRUM%20ONE%20(ID%3A%2042161)%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22520%22%20fill%3D%22%2334D399%22%20font-family%3D%22monospace%22%20font-size%3D%2216%22%20text-anchor%3D%22middle%22%3EDEPLOYMENT%20SIMULATION%3A%2090.5%25%20SUCCESS%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22400%22%20y%3D%22550%22%20fill%3D%22%238E9299%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%20text-anchor%3D%22middle%22%3EEST.%20GAS%3A%204%2C015%2C000%20UNITS%20%7C%200.000486%20ETH%3C%2Ftext%3E%0A%20%20%3C%2Fsvg%3E",
+        "type": "image/svg+xml"
+      }
+    ],
+    "creators": [
+      {
+        "address": "0x5AfE48A2F594F8e619e63b09Cd4d64593C1FC891",
+        "share": 100
+      }
+    ],
+    "contract": {
+      "address": "0x2535A2B8B6Cece6567154b192bB3a283d5dE41D0",
+      "token_id": "598388146534022129773130313",
+      "standard": "ERC-1155",
+      "chain": "arbitrum",
+      "network_id": 42161,
+      "deployer": "0x5AfE48A2F594F8e619e63b09Cd4d64593C1FC891"
+    },
+    "simulated_deployment": {
+      "total_gas_units": 4015000,
+      "gas_cost_native": "0.000486 ETH",
+      "gas_cost_usd": 1.52,
+      "success_rate_percentage": 90.5,
+      "mempool_clearance_score": 97.7,
+      "code_size_safety_score": 75.9,
+      "block_gas_safety_score": 99.2,
+      "bytecode_size_bytes": 9880,
+      "eip170_limit_bytes": 24576,
+      "solc_version": "v0.8.24+commit.e11b9ed9",
+      "optimizer_runs": 200,
+      "evm_target": "cancun"
+    },
+    "tokenomics": {
+      "initial_supply": "206,000,000",
+      "decimals": 9,
+      "market_cap_usd": 7499997515705,
+      "simulated_price_usd": 7499.9975,
+      "security_score": 84,
+      "audit_firm": "Trail of Bits",
+      "launch_status": "Paused"
+    }
+  }
+}

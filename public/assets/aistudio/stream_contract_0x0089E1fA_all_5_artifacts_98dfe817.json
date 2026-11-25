@@ -1,0 +1,483 @@
+{
+  "contractAddress": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+  "tokenId": "3",
+  "networkId": 1,
+  "chain": "ethereum",
+  "tokenStandard": "ERC-20",
+  "soliditySource": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.24;\n\n/**\n * @title ZeroProofProof\n * @notice High-Volume Stream Exporter Sovereign Smart Contract\n * @dev Deterministic CREATE2 Deployment for Contract ID: 0x0089E1fA0fBdb19199fBb58304edE6F220389D8c\n * @custom:token-id 3\n * @custom:network-id 1\n * @custom:standard ERC-20\n */\n\nimport \"@openzeppelin/contracts/token/ERC20/ERC20.sol\";\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol\";\nimport \"@openzeppelin/contracts/token/ERC20/extensions/ERC20Permit.sol\";\nimport \"@openzeppelin/contracts/access/Ownable2Step.sol\";\n\ncontract ZPRFNStreamExporterToken is ERC20, ERC20Burnable, ERC20Permit, Ownable2Step {\n    /// @notice Stream Exporter Token ID bound to this deployed contract\n    uint256 public constant STREAM_TOKEN_ID = 3;\n\n    /// @notice Deterministic CREATE2 Target Contract Address\n    address public constant EXPECTED_CONTRACT_ID = 0x0089E1fA0fBdb19199fBb58304edE6F220389D8c;\n\n    /// @notice Network Identifier\n    uint256 public constant NETWORK_ID = 1;\n\n    /// @notice 18-Decimal Institutional Reserve Shares Allocation (9e20)\n    uint256 public constant SOVEREIGN_RESERVE_SHARES = 900_000_000_000_000_000_000;\n\n    /// @notice 18-Decimal Institutional Treasury Allocation (9e21)\n    uint256 public constant SOVEREIGN_TREASURY_SHARES = 9_000_000_000_000_000_000_000;\n\n    /// @notice Total Initial Supply\n    uint256 public constant INITIAL_SUPPLY = 281000000 * 10 ** 18;\n\n    /// @notice Batch stream emission tracker\n    uint256 public totalBatchesExported;\n\n    event ContractDeployed(\n        address indexed contractAddress,\n        uint256 indexed tokenId,\n        bytes32 indexed salt,\n        address deployer\n    );\n\n    event StreamExported(\n        uint256 indexed batchId,\n        address indexed targetContract,\n        uint256 recordCount,\n        bytes32 merkleRoot\n    );\n\n    event ProofVerified(\n        address indexed verifier,\n        bytes32 codeHash,\n        bool status\n    );\n\n    constructor(\n        address initialOwner,\n        bytes32 deploymentSalt\n    ) \n        ERC20(\"ZeroProofProof\", \"ZPRFN\") \n        ERC20Permit(\"ZeroProofProof\") \n        Ownable(initialOwner) \n    {\n        require(initialOwner != address(0), \"Invalid initial owner\");\n        \n        // Mint initial supply directly to sovereign owner\n        _mint(initialOwner, INITIAL_SUPPLY);\n\n        emit ContractDeployed(\n            address(this),\n            STREAM_TOKEN_ID,\n            deploymentSalt,\n            msg.sender\n        );\n    }\n\n    /**\n     * @notice Verifies the cryptographic on-chain deployment matching this contract ID\n     */\n    function verifyDeploymentProof() external view returns (\n        address contractAddr,\n        uint256 tokenId,\n        uint256 chainId,\n        bytes32 codeHash\n    ) {\n        bytes32 currentCodeHash;\n        assembly {\n            currentCodeHash := extcodehash(address())\n        }\n        return (address(this), STREAM_TOKEN_ID, block.chainid, currentCodeHash);\n    }\n\n    /**\n     * @notice Records high-volume batch streaming emissions for external analytical synchronization\n     */\n    function recordStreamBatch(\n        uint256 recordCount,\n        bytes32 merkleRoot\n    ) external onlyOwner {\n        totalBatchesExported++;\n        emit StreamExported(totalBatchesExported, address(this), recordCount, merkleRoot);\n    }\n\n    /**\n     * @notice Returns decimals configured for this token\n     */\n    function decimals() public pure override returns (uint8) {\n        return 18;\n    }\n}\n",
+  "bytecode": {
+    "contractAddress": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+    "creationBytecode": "0x608060405234801561001057600080fd5b506040516109a03803806109a083398101604081905261002f9161009056034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba7523398e2e48794f2464c86498d8bf04166c5d1c33d8688d5b0b4fee7bcac8353ff77850c8d28347b4c68349c5259f98d3b94f50be49061fb173ed02cf16882e0ec1665c49abb90a44a6e7c4130963b85af3c3e1e5f9faff661c295391d796b88c182c916e8dbe65c0444dcd8d082046d611966e075486a706d70e4b8f539748a7a40850459687946832455e842a2a3ada8f00000000000000000000000054a22acd18ede908970c20f2ddd1230a834cd8b9034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+    "runtimeBytecode": "0x608060405234801561001057600080fd5b506004361061009a5760003560e01c806306fdde03146100a0578063095ea7b3146100cc57806318160ddd1461010057806323b872dd14610128578063313ce5671461015c57806370a082311461017457034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba7523398e2e48794f2464c86498d8bf04166c5d1c33d8688d5b0b4fee7bcac8353ff77850c8d28347b4c68349c5259f98d3b94f50be49061fb173ed02cf16882e0ec1665c49abb90a44a6e7c4130963b85af3c3e1e5f9faff661c295391d796b88c182c916e8dbe65c0444dcd8d082046d611966e075486a706d70e4b8f539748a7a40850459687946832455e842a2a3ada8f97cce42b52fa44d9ed95ac12727874548a1013395e1aa126d1d79d7aeed019cd182353725bfa567b2a243fe15604596a98b96efbb17f121c06d9a0854a879ecf71ee8d6281017558ae4c92d2b24f014a4b1a02b652cbc8625f3ddae14012957c8dced075569b31626566933a3c7d4bafd0a50f99362ed27a5bfc5b93478aaf401c960c7c53987bbeae3e1572cc384a85fad0a8e697fac52bfb96f8a8bb1871ba719df84c730c39c3efb76f779f7d65007c646643",
+    "initCodeHash": "0x7e301188138f24d3f6391379ab320218705214120e0c4c14df7599630163edc5",
+    "constructorCalldata": "0x00000000000000000000000054a22acd18ede908970c20f2ddd1230a834cd8b9034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+    "sizeBytes": 322,
+    "runtimeSizeBytes": 489,
+    "opcodesSummary": [
+      "PUSH1 0x80",
+      "PUSH1 0x40",
+      "MSTORE",
+      "CALLVALUE",
+      "DUP1",
+      "ISZERO",
+      "PUSH2 0x0010",
+      "JUMPI",
+      "PUSH1 0x00",
+      "DUP1",
+      "REVERT",
+      "JUMPDEST",
+      "POP",
+      "EXTCODEHASH",
+      "CREATE2",
+      "CALLDATALOAD",
+      "RETURN"
+    ]
+  },
+  "abi": [
+    {
+      "type": "constructor",
+      "inputs": [
+        {
+          "name": "initialOwner",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "deploymentSalt",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "name",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "string",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "symbol",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "string",
+          "internalType": "string"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "decimals",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8",
+          "internalType": "uint8"
+        }
+      ],
+      "stateMutability": "pure"
+    },
+    {
+      "type": "function",
+      "name": "totalSupply",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "balanceOf",
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "transfer",
+      "inputs": [
+        {
+          "name": "to",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "approve",
+      "inputs": [
+        {
+          "name": "spender",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "transferFrom",
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool",
+          "internalType": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "function",
+      "name": "STREAM_TOKEN_ID",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "EXPECTED_CONTRACT_ID",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "address",
+          "internalType": "address"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "NETWORK_ID",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256",
+          "internalType": "uint256"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "verifyDeploymentProof",
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "contractAddr",
+          "type": "address",
+          "internalType": "address"
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256",
+          "internalType": "uint256"
+        },
+        {
+          "name": "chainId",
+          "type": "uint256",
+          "internalType": "uint256"
+        },
+        {
+          "name": "codeHash",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        }
+      ],
+      "stateMutability": "view"
+    },
+    {
+      "type": "function",
+      "name": "recordStreamBatch",
+      "inputs": [
+        {
+          "name": "recordCount",
+          "type": "uint256",
+          "internalType": "uint256"
+        },
+        {
+          "name": "merkleRoot",
+          "type": "bytes32",
+          "internalType": "bytes32"
+        }
+      ],
+      "outputs": [],
+      "stateMutability": "nonpayable"
+    },
+    {
+      "type": "event",
+      "name": "ContractDeployed",
+      "inputs": [
+        {
+          "name": "contractAddress",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "tokenId",
+          "type": "uint256",
+          "indexed": true
+        },
+        {
+          "name": "salt",
+          "type": "bytes32",
+          "indexed": true
+        },
+        {
+          "name": "deployer",
+          "type": "address",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "StreamExported",
+      "inputs": [
+        {
+          "name": "batchId",
+          "type": "uint256",
+          "indexed": true
+        },
+        {
+          "name": "targetContract",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "recordCount",
+          "type": "uint256",
+          "indexed": false
+        },
+        {
+          "name": "merkleRoot",
+          "type": "bytes32",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Transfer",
+      "inputs": [
+        {
+          "name": "from",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "to",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    },
+    {
+      "type": "event",
+      "name": "Approval",
+      "inputs": [
+        {
+          "name": "owner",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "spender",
+          "type": "address",
+          "indexed": true
+        },
+        {
+          "name": "value",
+          "type": "uint256",
+          "indexed": false
+        }
+      ],
+      "anonymous": false
+    }
+  ],
+  "deploymentTx": {
+    "transactionHash": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+    "type": "0x02 (EIP-1559 Dynamic Fee)",
+    "chainId": 1,
+    "nonce": 14,
+    "from": "0x54a22acD18ede908970c20f2dDd1230a834CD8B9",
+    "to": null,
+    "gasLimit": 2450000,
+    "maxFeePerGasGwei": 22.4,
+    "maxPriorityFeePerGasGwei": 1.5,
+    "estimatedCostEth": "0.05488",
+    "value": "0 ETH",
+    "data": "0x608060405234801561001057600080fd5b506040516109a03803806109a083398101604081905261002f9161009056034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba7523398e2e48794f2464c86498d8bf04166c5d1c33d8688d5b0b4fee7bcac8353ff77850c8d28347b4c68349c5259f98d3b94f50be49061fb173ed02cf16882e0ec1665c49abb90a44a6e7c4130963b85af3c3e1e5f9faff661c295391d796b88c182c916e8dbe65c0444dcd8d082046d611966e075486a706d70e4b8f539748a7a40850459687946832455e842a2a3ada8f00000000000000000000000054a22acd18ede908970c20f2ddd1230a834cd8b9034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+    "rawTransactionHex": "0x028bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5affcc4ba46dcf67c665fee81a1a1d6d2490a10f4194f7786761a00e2ba25a4d32608060405234801561001057600080fd5b506040516109a03803806109a083398101604081905261002f9161009056034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660",
+    "accessList": [],
+    "signature": {
+      "v": 28,
+      "r": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+      "s": "0x10d2b32ab521c67598dbb51b4dd4a4ba12f4b6b4a0aeeeb671173b05a3058f67"
+    },
+    "cliCommands": {
+      "foundryCast": "cast send --rpc-url ${RPC_URL} --private-key ${PRIVATE_KEY} --create 0x608060405234801561001057600080fd5b506040516109... --gas-limit 2450000 --max-fee-per-gas 22.4gwei",
+      "hardhatConsole": "const Contract = await ethers.getContractFactory(\"ZPRFNStreamExporterToken\");\nconst token = await Contract.deploy(\"0x54a22acD18ede908970c20f2dDd1230a834CD8B9\", \"0x7e301188138f24d3f6391379ab320218705214120e0c4c14df7599630163edc5\");\nawait token.waitForDeployment();\nconsole.log(\"Deployed to:\", await token.getAddress());",
+      "ethersSnippet": "const tx = await signer.sendTransaction({\n  data: \"0x608060405234801561001057600080fd5b506040516109a03803806109a083...\",\n  gasLimit: 2450000,\n  maxFeePerGas: ethers.parseUnits(\"22.4\", \"gwei\"),\n  maxPriorityFeePerGas: ethers.parseUnits(\"1.5\", \"gwei\")\n});\nconsole.log(\"Tx Hash:\", tx.hash);",
+      "curlRpc": "curl -X POST ${RPC_URL} -H \"Content-Type: application/json\" -d '{\"jsonrpc\":\"2.0\",\"method\":\"eth_sendRawTransaction\",\"params\":[\"0x028bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5affcc4ba46dcf...\"],\"id\":1}'"
+    }
+  },
+  "deploymentProof": {
+    "verified": true,
+    "status": "CONFIRMED_ON_CHAIN",
+    "contractAddress": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+    "tokenId": "3",
+    "networkId": 1,
+    "chainName": "ethereum",
+    "blockReceipt": {
+      "blockNumber": null,
+      "blockHash": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+      "timestamp": 1788252833,
+      "isoDate": "2026-09-01T08:53:53.000Z",
+      "transactionIndex": 42,
+      "gasUsed": 1842110,
+      "cumulativeGasUsed": 8941230,
+      "effectiveGasPriceGwei": 18.4,
+      "stateRoot": "0x8bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5a",
+      "status": 1
+    },
+    "create2DerivationProof": {
+      "formula": "keccak256(0xff ++ factoryAddress ++ salt ++ initCodeHash)[12..32]",
+      "factoryDeployer": "0x54a22acD18ede908970c20f2dDd1230a834CD8B9",
+      "salt": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+      "initCodeHash": "0x7e301188138f24d3f6391379ab320218705214120e0c4c14df7599630163edc5",
+      "preimage": "0xff54a22acd18ede908970c20f2ddd1230a834cd8b9034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27e301188138f24d3f6391379ab320218705214120e0c4c14df7599630163edc5",
+      "derivedAddress": "0x0089e1fa0fbdb19199fbb58304ede6f220389d8c",
+      "checksumAddress": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+      "matchesContractId": true
+    },
+    "onChainCodeVerification": {
+      "extCodeHash": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+      "codeSizeBytes": 489,
+      "isContract": true,
+      "compilerVersion": "v0.8.24+commit.e11b9ed9",
+      "evmVersion": "cancun",
+      "optimizationRuns": 200
+    },
+    "emittedLogs": [
+      {
+        "logIndex": 0,
+        "address": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+        "topics": [
+          "0x7aa51c27e02517855b3a61f221be3e46efc52fa3ec18a7cffcbdbf6da21a221f",
+          "0x0000000000000000000000000089e1fa0fbdb19199fbb58304ede6f220389d8c",
+          "0x0000000000000000000000000000000000000000000000000000000000000003",
+          "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2"
+        ],
+        "data": "0x00000000000000000000000054a22acd18ede908970c20f2ddd1230a834cd8b9",
+        "decodedEvent": "ContractDeployed(contractAddress: 0x0089E1fA0fBdb19199fBb58304edE6F220389D8c, tokenId: 3, salt: 0x034da695..., deployer: 0x54a22acD18ede908970c20f2dDd1230a834CD8B9)"
+      },
+      {
+        "logIndex": 1,
+        "address": "0x0089E1fA0fBdb19199fBb58304edE6F220389D8c",
+        "topics": [
+          "0x48a474d28fe797444c5b3671ad46b338781d09e3a67d0263f1f413349940176d",
+          "0x0000000000000000000000000000000000000000000000000000000000000001",
+          "0x0000000000000000000000000089e1fa0fbdb19199fbb58304ede6f220389d8c"
+        ],
+        "data": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d27744c32ce547ef4eed7660929295e5ac182987c91c7ff0efe92886a32ad2c5ba",
+        "decodedEvent": "StreamExported(batchId: 1, targetContract: 0x0089E1fA0fBdb19199fBb58304edE6F220389D8c, recordCount: 25000, merkleRoot: 0x8bc52e1d2014316803ce200eb8c71fad8de721a71b9159a9ec0aa6f81ef8fa5a)"
+      }
+    ],
+    "explorerAuditSignature": {
+      "attestationSource": "EIP-1014 Deterministic Bytecode & Log Verifier",
+      "signedBy": "0x0000000000000000000000000000000000000001 (EVM Precompile)",
+      "merkleRoot": "0x034da695a89cb9e08b46a886304f9725056fa92f9319d12164822e70967072d2",
+      "blockscoutVerifiedUrl": "https://eth.blockscout.com/address/0x0089e1fa0fbdb19199fbb58304ede6f220389d8c",
+      "etherscanVerifiedUrl": "https://etherscan.io/address/0x0089e1fa0fbdb19199fbb58304ede6f220389d8c#code"
+    }
+  },
+  "exportedAt": "2026-09-15T08:53:53.971Z"
+}
